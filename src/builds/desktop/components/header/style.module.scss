@@ -1,0 +1,78 @@
+@use '../../../../utils/styles/base/_variables' as v;
+@import url("../../../../utils/styles/base/_normalize.scss");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.Header, .TopBanner, .TopBanner a, .Navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header {
+  flex-direction: column;
+  border-bottom: 1px solid v.$dark-shade-15;
+  background-color: v.$dark-shade-10;
+
+  .TopBanner {
+    gap: 10px;
+    height: 67px;
+    width: 100%;
+    background-color: v.$dark-shade-08;
+    border-bottom: 1px solid v.$dark-shade-15;
+
+    a {
+      gap: 10px;
+      font-size: 18px;
+      color: v.$grey-shade-60;
+    }
+
+    svg {
+      font-size: 24px;
+      color: v.$yellow-shade-55;
+    }
+  }
+
+  .Navbar {
+    justify-content: space-between;
+    height: 103px;
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 162px;
+
+    > button {
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 14px 20px;
+      border-radius: 10px;
+      background-color: v.$yellow-shade-55;
+    }
+
+    .ButtonsContainer ul {
+      display: flex;
+      gap: 10px;
+
+      a {
+        border-radius: 10px;
+        padding: 14px 24px;
+        color: v.$grey-shade-50;
+        transition: .2s ease-in-out;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .Active {
+        background-color: v.$dark-shade-08;
+        border: 1px solid v.$dark-shade-20;
+        color: white;
+      }
+    }
+  }
+}
+
+
