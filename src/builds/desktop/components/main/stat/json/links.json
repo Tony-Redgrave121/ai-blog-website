@@ -1,0 +1,23 @@
+[
+  {
+    "img": "news",
+    "title": "Latest News Updates",
+    "desc": "Stay Current",
+    "serv": "Over 1,000 articles published monthly",
+    "link": "/"
+  },
+  {
+    "img": "contributors",
+    "title": "Expert Contributors",
+    "desc": "Trusted Insights",
+    "serv": "50+ renowned AI experts on our team",
+    "link": "/"
+  },
+  {
+    "img": "readership",
+    "title": "Global Readership",
+    "desc": "Worldwide Impact",
+    "serv": "2 million monthly readers",
+    "link": "/"
+  }
+]

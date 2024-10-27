@@ -1,0 +1,47 @@
+@use '../../../../utils/styles/base/_variables' as v;
+@import url("../../../../utils/styles/base/_normalize.scss");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.Button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background-color: v.$dark-shade-08;
+  border: 1px solid v.$dark-shade-20;
+  color: v.$grey-shade-60;
+  transition: .2s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+
+  svg {
+    font-size: 24px;
+    color: v.$yellow-shade-55;
+  }
+}
+
+.SelectButton {
+  justify-content: center;
+  padding: 30px 24px;
+  max-width: 250px;
+  width: 100%;
+
+  &:hover {
+    color: white;
+    background-color: v.$dark-shade-20;
+    border: 1px solid v.$dark-shade-15;
+  }
+}
+
+.ActiveSelectButton {
+  color: white;
+  background-color: v.$dark-shade-20;
+  border: 1px solid v.$dark-shade-15;
+}

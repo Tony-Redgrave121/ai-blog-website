@@ -1,0 +1,197 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.StatContainer {
+  background-color: #141414;
+  border-bottom: 1px solid #262626;
+}
+.StatContainer .TopSubContainer {
+  display: flex;
+}
+.StatContainer .TopSubContainer .LeftContainer {
+  flex-grow: 1;
+  border-right: 1px solid #262626;
+}
+.StatContainer .TopSubContainer .LeftContainer .TextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 162px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.StatContainer .TopSubContainer .LeftContainer .TextBlock :first-child {
+  color: #666666;
+  font-size: 30px;
+}
+.StatContainer .TopSubContainer .LeftContainer .TextBlock h1 {
+  color: white;
+  font-size: 70px;
+  font-weight: 500;
+  line-height: unset;
+}
+.StatContainer .TopSubContainer .LeftContainer .TextBlock :last-child {
+  font-family: "Inter", sans-serif;
+  color: #7E7E81;
+  font-size: 18px;
+  font-weight: unset;
+  line-height: 27px;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock {
+  display: flex;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock h3 {
+  display: flex;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: unset;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock h3 p {
+  color: #FFD11A;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock div > p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: unset;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock {
+  display: flex;
+  border-top: 1px solid #262626;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock > :nth-child(1) {
+  flex: 3;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock > :nth-child(2) {
+  flex: 2.5;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock > :nth-child(3) {
+  flex: 2;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock .Stat {
+  display: flex;
+  justify-content: left;
+  padding: 50px 0 50px 162px;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock .Stat:not(:first-child) {
+  padding-left: 50px;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock .Stat:not(:last-child) {
+  border-right: 1px solid #262626;
+}
+.StatContainer .TopSubContainer .LeftContainer .StatBlock .Stat h3 {
+  margin-bottom: 10px;
+}
+.StatContainer .TopSubContainer .RightContainer {
+  position: relative;
+  display: flex;
+  width: 65%;
+  justify-content: end;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  padding: 150px 162px 80px 80px;
+  gap: 39px;
+  color: #98989A;
+}
+.StatContainer .TopSubContainer .RightContainer > img {
+  position: absolute;
+  top: -7%;
+  left: -9%;
+  transform: rotate(35.39deg);
+  width: 65%;
+  mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer {
+  display: flex;
+  z-index: 1;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock {
+  display: flex;
+  border-radius: 100px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  padding: 10px;
+  width: 231px;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock img {
+  position: relative;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(2) {
+  left: -5%;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(3) {
+  left: -10%;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(4) {
+  left: -15%;
+}
+.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(5) {
+  left: -20%;
+}
+.StatContainer .TopSubContainer .RightContainer .TextBlock h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.StatContainer .TopSubContainer .RightContainer .TextBlock p {
+  font-size: 18px;
+  line-height: 27px;
+}
+.StatContainer .DownSubContainer {
+  display: flex;
+  border-top: 1px solid #262626;
+}
+.StatContainer .DownSubContainer .LinkContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex: 1;
+  padding: 50px 0;
+}
+.StatContainer .DownSubContainer .LinkContainer:not(:last-child) {
+  border-right: 1px solid #262626;
+}
+.StatContainer .DownSubContainer .LinkContainer .LinkBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.StatContainer .DownSubContainer .LinkContainer .LinkBlock img {
+  width: 50px;
+}
+.StatContainer .DownSubContainer .LinkContainer .LinkBlock div h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.StatContainer .DownSubContainer .LinkContainer .LinkBlock div p {
+  font-size: 18px;
+}
+.StatContainer .DownSubContainer .LinkContainer .LinkBlock p {
+  color: #7E7E81;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.StatContainer .DownSubContainer .LinkContainer > :last-child {
+  display: flex;
+  align-items: center;
+}
+.StatContainer .DownSubContainer .LinkContainer > :last-child a {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 100px;
+  color: black;
+  background-color: #FFD11A;
+  transition: 0.2s ease-in-out;
+}
+.StatContainer .DownSubContainer .LinkContainer > :last-child a:hover {
+  background-color: white;
+}
+
+/*# sourceMappingURL=style.module.css.map */

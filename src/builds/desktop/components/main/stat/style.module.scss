@@ -1,0 +1,224 @@
+@use '../../../../../utils/styles/base/_variables' as v;
+@use "../../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../../utils/styles/base/_normalize.scss");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.StatContainer {
+  background-color: v.$dark-shade-08;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  .TopSubContainer {
+    display: flex;
+
+    .LeftContainer {
+      flex-grow: 1;
+      border-right: 1px solid v.$dark-shade-15;
+
+      .TextBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 162px;
+        font-family: "Kumbh Sans", sans-serif;
+
+        :first-child {
+          color: v.$dark-shade-40;
+          font-size: 30px;
+        }
+
+        h1 {
+          @include m.font(white, 70px, 500, unset);
+        }
+
+        :last-child {
+          font-family: "Inter", sans-serif;
+          @include m.font(v.$grey-shade-50, 18px, unset, 27px);
+        }
+      }
+
+      .StatBlock {
+        display: flex;
+
+        h3 {
+          display: flex;
+          @include m.font(white, 40px, 600, unset);
+
+          p {
+            color: v.$yellow-shade-55;
+          }
+        }
+
+        div > p {
+          @include m.font(v.$grey-shade-60, 18px, 400, unset);
+        }
+      }
+
+      .StatBlock {
+        display: flex;
+        border-top: 1px solid v.$dark-shade-15;
+
+        > :nth-child(1) {
+          flex: 3;
+        }
+
+        > :nth-child(2) {
+          flex: 2.5;
+        }
+
+        > :nth-child(3) {
+          flex: 2;
+        }
+
+        .Stat {
+          display: flex;
+          justify-content: left;
+          padding: 50px 0 50px 162px;
+
+          &:not(:first-child) {
+            padding-left: 50px;
+          }
+
+          &:not(:last-child) {
+            border-right: 1px solid v.$dark-shade-15;
+          }
+
+          h3 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .RightContainer {
+      position: relative;
+      display: flex;
+      width: 65%;
+      justify-content: end;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+      padding: 150px 162px 80px 80px;
+      gap: 39px;
+      color: v.$grey-shade-60;
+
+      > img {
+        position: absolute;
+        top: -7%;
+        left: -9%;
+        transform: rotate(35.39deg);
+        width: 65%;
+        mask-image: linear-gradient(to bottom, transparent, v.$dark-shade-08 50%, transparent);
+      }
+
+      .DeveloperContainer {
+        display: flex;
+        z-index: 1;
+
+        .DeveloperBlock {
+          display: flex;
+          border-radius: 100px;
+          background-color: v.$dark-shade-10;
+          border: 1px solid v.$dark-shade-15;
+          padding: 10px;
+          width: 231px;
+
+          img {
+            position: relative;
+          }
+
+          :nth-child(2) {
+            left: -5%;
+          }
+
+          :nth-child(3) {
+            left: -10%;
+          }
+
+          :nth-child(4) {
+            left: -15%;
+          }
+
+          :nth-child(5) {
+            left: -20%;
+          }
+        }
+      }
+
+      .TextBlock {
+        h3 {
+          color: white;
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+
+  .DownSubContainer {
+    display: flex;
+    border-top: 1px solid v.$dark-shade-15;
+
+    .LinkContainer {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex: 1;
+      padding: 50px 0;
+
+      &:not(:last-child) {
+        border-right: 1px solid v.$dark-shade-15;
+      }
+
+      .LinkBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 50px;
+        }
+
+        div {
+          h3 {
+            @include m.font(white, 20px, 500, 30px);
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+
+        p {
+          @include m.font(v.$grey-shade-50, 20px, 400, 27px);
+        }
+      }
+
+      > :last-child {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: flex;
+          justify-content: center;
+          padding: 14px;
+          border-radius: 100px;
+          color: black;
+          background-color: v.$yellow-shade-55;
+          transition: .2s ease-in-out;
+
+          &:hover {
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+}
