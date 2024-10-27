@@ -1,0 +1,81 @@
+@import url("../../../../utils/styles/base/_normalize.scss");
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.Main {
+  background-color: #141414;
+  padding: 162px;
+}
+.Main .TopSubContainer {
+  display: flex;
+  height: 755px;
+}
+.Main .TopSubContainer .LeftContainer {
+  flex-grow: 1;
+  border-right: 1px solid #262626;
+}
+.Main .TopSubContainer .LeftContainer .TextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.Main .TopSubContainer .LeftContainer .TextBlock :first-child {
+  color: #666666;
+  font-size: 30px;
+}
+.Main .TopSubContainer .LeftContainer .TextBlock h1 {
+  color: white;
+  font-size: 70px;
+}
+.Main .TopSubContainer .LeftContainer .TextBlock :last-child {
+  font-family: "Inter", sans-serif;
+  color: #7E7E81;
+  font-size: 18px;
+}
+.Main .TopSubContainer .LeftContainer .StatBlock {
+  display: flex;
+}
+.Main .TopSubContainer .LeftContainer .StatBlock h3 {
+  display: flex;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+.Main .TopSubContainer .LeftContainer .StatBlock h3 p {
+  color: #FFD11A;
+}
+.Main .TopSubContainer .LeftContainer .StatBlock div > p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #98989A;
+}
+.Main .TopSubContainer .LeftContainer .StatBlock > * {
+  border-right: 1px solid #262626;
+}
+.Main .TopSubContainer .RightContainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../../utils/icons/main/abstract-design.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Main .TopSubContainer .RightContainer .DeveloperContainer {
+  display: flex;
+}
+.Main .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock {
+  border-radius: 100px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  padding: 10px;
+}
+.Main .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock img {
+  position: relative;
+}
+.Main button svg {
+  font-size: 24px;
+  color: #FFD11A;
+}
+
+/*# sourceMappingURL=style.module.css.map */
