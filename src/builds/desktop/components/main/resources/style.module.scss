@@ -1,0 +1,112 @@
+@use '../../../../../utils/styles/base/_variables' as v;
+@use "../../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../../utils/styles/base/_normalize.scss");
+
+h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.TopicContainer {
+  display: flex;
+  background-color: v.$dark-shade-08;
+  padding: 0 162px;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  .TextBlock {
+    p {
+      @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+    }
+
+    h2 {
+      @include m.font(white, 20px, 600, 30px);
+    }
+  }
+
+  .TopicContainerLeft {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid v.$dark-shade-15;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding-right: 80px;
+
+      > img {
+        width: 80px;
+      }
+
+      h1 {
+        font-family: "Kumbh Sans", sans-serif;
+        @include m.font(white, 40px, 600, 60px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 20px, 400, 30px);
+      }
+
+      button {
+        justify-content: center;
+      }
+
+      > :last-child {
+        display: flex;
+
+        > div {
+          display: flex;
+          gap: 50px;
+          background-color: v.$dark-shade-10;
+          border: 1px solid v.$dark-shade-15;
+          border-radius: 13px;
+          padding: 30px;
+        }
+      }
+    }
+  }
+
+  .TopicContainerRight {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 80px 0 80px 80px;
+
+    > span {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      h2 {
+        text-wrap: nowrap;
+        @include m.font(white, 24px, 600, 36px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+      }
+    }
+
+    > :last-child {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .DownloadBlock {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      > div {
+        background-color: v.$dark-shade-10;
+        border: 1px solid v.$dark-shade-15;
+        padding: 30px;
+        border-radius: 13px;
+        flex-grow: 1;
+      }
+
+      > :first-child {
+        flex-grow: 0;
+      }
+    }
+  }
+}

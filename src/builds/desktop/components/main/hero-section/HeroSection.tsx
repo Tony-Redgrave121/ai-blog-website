@@ -7,9 +7,9 @@ import {Link} from "react-router-dom"
 import formatCompact from "../../../../../utils/formats/formatCompact";
 import links from './json/links.json'
 import stats from './json/stats.json'
-import developers from './json/developers.json'
+import Developer from './developer/Developers'
 
-const Stat = () => {
+const HeroSection = () => {
     return (
         <div className={style.StatContainer}>
             <div className={style.TopSubContainer}>
@@ -36,16 +36,7 @@ const Stat = () => {
                 </div>
                 <div className={style.RightContainer}>
                     <img src={AbstractDesign} alt="Abstract Design"/>
-                    <div className={style.DeveloperContainer}>
-                        <div className={style.DeveloperBlock}>
-                            {
-                                developers.map(developer => (
-                                    <img src={require(`../../../../../utils/icons/main/developers/${developer.developer}.png`)}
-                                         alt={developer.developer} key={developer.developer}/>
-                                ))
-                            }
-                        </div>
-                    </div>
+                    <Developer />
                     <div className={style.TextBlock}>
                         <h3>Explore 1000+ resources</h3>
                         <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
@@ -79,4 +70,4 @@ const Stat = () => {
     )
 }
 
-export default Stat
+export default HeroSection

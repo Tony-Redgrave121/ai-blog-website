@@ -35,13 +35,26 @@
 
   &:hover {
     color: white;
-    background-color: v.$dark-shade-20;
+    background-color: v.$dark-shade-10;
     border: 1px solid v.$dark-shade-15;
   }
 }
 
 .ActiveSelectButton {
-  color: white;
-  background-color: v.$dark-shade-20;
+  color: v.$grey-shade-60;;
+  background-color: v.$dark-shade-10;
   border: 1px solid v.$dark-shade-15;
+}
+
+.PostButton {
+  gap: 4px;
+  color: v.$grey-shade-60;
+  background-color: v.$dark-shade-10;
+  border: 1px solid v.$dark-shade-15;
+  border-radius: 100px;
+  padding: 8px 16px;
+
+  svg {
+    color: v.$grey-shade-60;
+  }
 }

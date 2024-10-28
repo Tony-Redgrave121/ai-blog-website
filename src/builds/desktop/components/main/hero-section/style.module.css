@@ -104,33 +104,6 @@
   width: 65%;
   mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
 }
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer {
-  display: flex;
-  z-index: 1;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock {
-  display: flex;
-  border-radius: 100px;
-  background-color: #1A1A1A;
-  border: 1px solid #262626;
-  padding: 10px;
-  width: 231px;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock img {
-  position: relative;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(2) {
-  left: -5%;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(3) {
-  left: -10%;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(4) {
-  left: -15%;
-}
-.StatContainer .TopSubContainer .RightContainer .DeveloperContainer .DeveloperBlock :nth-child(5) {
-  left: -20%;
-}
 .StatContainer .TopSubContainer .RightContainer .TextBlock h3 {
   color: white;
   font-size: 24px;

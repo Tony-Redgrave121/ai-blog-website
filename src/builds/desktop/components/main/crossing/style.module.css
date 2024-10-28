@@ -7,11 +7,9 @@
   border-bottom: 1px solid #262626;
 }
 .CrossingContainer > :first-child {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 80%;
 }
-.CrossingContainer:last-child {
+.CrossingContainer .ButtonBlock {
   display: flex;
   align-items: center;
 }
@@ -23,6 +21,7 @@
   border-radius: 4px;
   background-color: #333333;
   font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
   color: white;
   font-size: 20px;
   font-weight: 500;

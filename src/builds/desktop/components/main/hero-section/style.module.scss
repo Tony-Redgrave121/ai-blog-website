@@ -113,40 +113,6 @@
         mask-image: linear-gradient(to bottom, transparent, v.$dark-shade-08 50%, transparent);
       }
 
-      .DeveloperContainer {
-        display: flex;
-        z-index: 1;
-
-        .DeveloperBlock {
-          display: flex;
-          border-radius: 100px;
-          background-color: v.$dark-shade-10;
-          border: 1px solid v.$dark-shade-15;
-          padding: 10px;
-          width: 231px;
-
-          img {
-            position: relative;
-          }
-
-          :nth-child(2) {
-            left: -5%;
-          }
-
-          :nth-child(3) {
-            left: -10%;
-          }
-
-          :nth-child(4) {
-            left: -15%;
-          }
-
-          :nth-child(5) {
-            left: -20%;
-          }
-        }
-      }
-
       .TextBlock {
         h3 {
           color: white;

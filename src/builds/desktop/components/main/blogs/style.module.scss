@@ -8,17 +8,16 @@
 
 .TabsContainer {
   background-color: v.$dark-shade-08;
-  padding: 0 162px;
 
   > * {
-    border-bottom: 1px solid v.$dark-shade-08;
+    border-bottom: 1px solid v.$dark-shade-15;
   }
 
   .SelectContainer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 50px 0;
+    padding: 50px 162px;
   }
 
   .PostContainer {
@@ -26,8 +25,10 @@
     justify-content: space-between;
     align-items: start;
     gap: 50px;
+    padding: 80px 162px;
 
-    >:last-child {
+
+    > :last-child {
       align-self: center;
       flex-wrap: nowrap;
     }
@@ -36,6 +37,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
+      width: 25%;
 
       div {
         h3 {
@@ -50,26 +52,27 @@
 
     .PostContainerRight {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+      width: 50%;
 
-      > :first-child {
+      > p {
+        @include m.font(v.$grey-shade-60, 20px, 600, 30px);
+      }
+
+      div {
+        h1 {
+          @include m.font(white, 26px, 600, 39px);
+        }
+
+        p {
+          @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+        }
+      }
+
+      > :last-child {
         display: flex;
-        flex-direction: column;
-        gap: 50px;
-
-        > p {
-          @include m.font(v.$grey-shade-60, 20px, 600, 30px);
-        }
-
-        div {
-          h1 {
-            @include m.font(white, 26px, 600, 39px);
-          }
-
-          p {
-            @include m.font(v.$grey-shade-60, 18px, 400, 27px);
-          }
-        }
+        gap: 10px;
       }
     }
   }

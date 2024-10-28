@@ -13,7 +13,7 @@ interface IBlog {
     params: Array<IParams>,
 }
 
-const Blog: React.FC<IBlog> = ({icon, desc, title, params}) => {
+const Features: React.FC<IBlog> = ({icon, desc, title, params}) => {
     return (
         <div className={style.BlogContainer}>
             <div className={style.BlogContainerLeft}>
@@ -37,4 +37,4 @@ const Blog: React.FC<IBlog> = ({icon, desc, title, params}) => {
     )
 }
 
-export default Blog
+export default Features

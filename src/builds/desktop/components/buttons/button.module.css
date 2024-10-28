@@ -31,14 +31,26 @@
 }
 .SelectButton:hover {
   color: white;
-  background-color: #333333;
+  background-color: #1A1A1A;
   border: 1px solid #262626;
 }
 
 .ActiveSelectButton {
-  color: white;
-  background-color: #333333;
+  color: #98989A;
+  background-color: #1A1A1A;
   border: 1px solid #262626;
+}
+
+.PostButton {
+  gap: 4px;
+  color: #98989A;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 100px;
+  padding: 8px 16px;
+}
+.PostButton svg {
+  color: #98989A;
 }
 
 /*# sourceMappingURL=button.module.css.map */
