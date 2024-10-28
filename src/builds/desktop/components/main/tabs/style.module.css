@@ -1,0 +1,74 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.TabsContainer {
+  background-color: #141414;
+  padding: 0 162px;
+}
+.TabsContainer > * {
+  border-bottom: 1px solid #141414;
+}
+.TabsContainer .SelectContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+.TabsContainer .PostContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 50px;
+}
+.TabsContainer .PostContainer > :last-child {
+  align-self: center;
+  flex-wrap: nowrap;
+}
+.TabsContainer .PostContainer .PostContainerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.TabsContainer .PostContainer .PostContainerLeft div h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.TabsContainer .PostContainer .PostContainerLeft div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TabsContainer .PostContainer .PostContainerRight {
+  display: flex;
+  align-items: center;
+}
+.TabsContainer .PostContainer .PostContainerRight > :first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.TabsContainer .PostContainer .PostContainerRight > :first-child > p {
+  color: #98989A;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.TabsContainer .PostContainer .PostContainerRight > :first-child div h1 {
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 39px;
+}
+.TabsContainer .PostContainer .PostContainerRight > :first-child div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/*# sourceMappingURL=style.module.css.map */
