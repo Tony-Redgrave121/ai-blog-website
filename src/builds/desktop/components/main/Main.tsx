@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react'
-import HeroSection from "./hero-section/HeroSection";
-import Crossing from "./crossing/Сrossing";
-import Features from "./features/Features";
+import HeroSection from "./hero-section/HeroSection"
+import Crossing from "./crossing/Сrossing"
+import Features from "./features/Features"
 import technology from "./features/technology.json"
-import {HiArrowUpRight} from "react-icons/hi2";
-import Button from "../buttons/Button";
-import Blogs from "./blogs/Blogs";
-import IPostLow from "../../../../utils/types/IPostLow";
-import Resources from "./resources/Resources";
+import {HiArrowUpRight} from "react-icons/hi2"
+import Button from "../buttons/Button"
+import Blogs from "./blogs/Blogs"
+import IPostLow from "../../../../utils/types/IPostLow"
+import Resources from "./resources/Resources"
+import Testimonials from "./testimonials/Testimonials"
 
 const Main = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
@@ -34,7 +35,9 @@ const Main = () => {
             <Crossing desc="Explore FutureTech's In-Depth Resources Posts" title="A Knowledge Treasure Trove"><Button foo={() => {}}>View All Blogs <HiArrowUpRight/></Button></Crossing>
             <Blogs posts={posts}></Blogs>
             <Crossing desc="Your Gateway to In-Depth Information" title="Unlock Valuable Knowledge with FutureTech's Resources"><Button foo={() => {}}>View All Resources <HiArrowUpRight/></Button></Crossing>
-            <Resources></Resources>
+            <Resources />
+            <Crossing desc="What Our Readers Say" title="Real Words from Real Readers"><Button foo={() => {}}>View All Testimonials <HiArrowUpRight/></Button></Crossing>
+            <Testimonials />
         </main>
     )
 }

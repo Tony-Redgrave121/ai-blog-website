@@ -6,7 +6,7 @@ h2, h3, p {
   font-family: "Inter", sans-serif;
 }
 
-.TopicContainer {
+.ResourceContainer {
   display: flex;
   background-color: v.$dark-shade-08;
   padding: 0 162px;
@@ -22,9 +22,10 @@ h2, h3, p {
     }
   }
 
-  .TopicContainerLeft {
+  .ResourceContainerLeft {
     display: flex;
     align-items: center;
+    width: 40%;
     border-right: 1px solid v.$dark-shade-15;
 
     > div {
@@ -65,11 +66,12 @@ h2, h3, p {
     }
   }
 
-  .TopicContainerRight {
+  .ResourceContainerRight {
     display: flex;
     gap: 30px;
     flex-direction: column;
     padding: 80px 0 80px 80px;
+    width: 60%;
 
     > span {
       display: flex;

@@ -7,7 +7,6 @@ interface IDeveloper {
 }
 
 const Developers: React.FC<IDeveloper> = ({type}) => {
-    console.log(style[type!])
     return (
         <div className={style.DeveloperContainer}>
             <div className={`${style.DeveloperBlock} ${type ? style[type] : null}`}>

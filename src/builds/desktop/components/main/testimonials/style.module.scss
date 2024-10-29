@@ -1,0 +1,90 @@
+@use '../../../../../utils/styles/base/_variables' as v;
+@use "../../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../../utils/styles/base/_normalize.scss");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.TestimonialsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: v.$dark-shade-08;
+
+  > :nth-child(n + 1) {
+    padding: 80px 50px;
+    border-left: 1px solid v.$dark-shade-15;
+    border-bottom: 1px solid v.$dark-shade-15;
+    width: calc(33.333333% - 81px);
+  }
+
+  > :nth-child(3n + 1) {
+    padding: 80px 50px 80px 162px;
+    border-bottom: 1px solid v.$dark-shade-15;
+    width: calc(33.333333% + 40.5px);
+  }
+
+  > :nth-child(3n) {
+    padding: 80px 162px 80px 50px;
+    border-bottom: 1px solid v.$dark-shade-15;
+    width: calc(33.333333% + 40.5px);
+  }
+
+  .TestimonialsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    .RateBlock {
+      display: flex;
+      gap: 7px;
+      background-color: v.$dark-shade-08;
+      border: 1px solid v.$dark-shade-15;
+      border-radius: 100px;
+      padding: 10px 16px;
+
+      svg {
+        color: #FFCE22;
+      }
+    }
+
+    > :first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      img {
+        width: 60px;
+      }
+
+      h2 {
+        @include m.font(white, 20px, 500, 30px);
+      }
+
+      p {
+        @include m.font(v.$dark-shade-40, 18px, 400, 27px);
+      }
+    }
+
+    > :last-child {
+      > :first-child {
+        position: relative;
+        top: -35px;
+        display: flex;
+        justify-content: center;
+      }
+
+      position: relative;
+      text-align: center;
+      padding: 10px 30px 30px 30px;
+      background-color: v.$dark-shade-10;
+      border: 1px solid v.$dark-shade-15;
+      border-radius: 12px;
+
+      p {
+        @include m.font(white, 18px, 400, 27px);
+      }
+    }
+  }
+}
