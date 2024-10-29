@@ -1,0 +1,109 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.TopicContainer {
+  display: flex;
+  background-color: #141414;
+  padding: 0 162px;
+  border-bottom: 1px solid #262626;
+}
+.TopicContainer .TextBlock p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TopicContainer .TextBlock h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.TopicContainer .TopicContainerLeft {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #262626;
+}
+.TopicContainer .TopicContainerLeft > div {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-right: 80px;
+}
+.TopicContainer .TopicContainerLeft > div > img {
+  width: 80px;
+}
+.TopicContainer .TopicContainerLeft > div h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+}
+.TopicContainer .TopicContainerLeft > div p {
+  color: #98989A;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.TopicContainer .TopicContainerLeft > div button {
+  justify-content: center;
+}
+.TopicContainer .TopicContainerLeft > div > :last-child {
+  display: flex;
+}
+.TopicContainer .TopicContainerLeft > div > :last-child > div {
+  display: flex;
+  gap: 50px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 13px;
+  padding: 30px;
+}
+.TopicContainer .TopicContainerRight {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  padding: 80px 0 80px 80px;
+}
+.TopicContainer .TopicContainerRight > span {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.TopicContainer .TopicContainerRight > span h2 {
+  text-wrap: nowrap;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+.TopicContainer .TopicContainerRight > span p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TopicContainer .TopicContainerRight > :last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.TopicContainer .TopicContainerRight > :last-child .DownloadBlock {
+  display: flex;
+  justify-content: space-between;
+}
+.TopicContainer .TopicContainerRight > :last-child > div {
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  padding: 30px;
+  border-radius: 13px;
+  flex-grow: 1;
+}
+.TopicContainer .TopicContainerRight > :last-child > :first-child {
+  flex-grow: 0;
+}
+
+/*# sourceMappingURL=style.module.css.map */

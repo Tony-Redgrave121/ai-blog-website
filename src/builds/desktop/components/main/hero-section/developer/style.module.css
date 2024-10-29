@@ -1,0 +1,43 @@
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+.DeveloperContainer {
+  display: flex;
+  z-index: 1;
+}
+.DeveloperContainer .DeveloperBlock {
+  display: flex;
+  border-radius: 100px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  padding: 10px;
+  width: 230px;
+}
+.DeveloperContainer .DeveloperBlock img {
+  position: relative;
+  width: 60px;
+  border: 2px solid #666666;
+  border-radius: 100px;
+}
+.DeveloperContainer .DeveloperBlock :nth-child(2) {
+  left: -5%;
+}
+.DeveloperContainer .DeveloperBlock :nth-child(3) {
+  left: -10%;
+}
+.DeveloperContainer .DeveloperBlock :nth-child(4) {
+  left: -15%;
+}
+.DeveloperContainer .DeveloperBlock :nth-child(5) {
+  left: -20%;
+}
+.DeveloperContainer .DeveloperTopicBlock {
+  border-radius: 12px;
+  background-color: #141414;
+  border: none;
+  padding: 10px;
+  width: 194px;
+}
+.DeveloperContainer .DeveloperTopicBlock img {
+  width: 50px;
+}
+
+/*# sourceMappingURL=style.module.css.map */
