@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header className={style.Header}>
             <div className={style.TopBanner}>
-                <a href="https://">Subscribe to our Newsletter For New & latest Blogs and Resources <HiArrowUpRight /></a>
+                <a href="https://">Subscribe to our Newsletter For New & latest Blogs and TCA <HiArrowUpRight /></a>
             </div>
             <div className={style.Navbar}>
                 <a href="https://"><img src={DesktopLogo} alt="Desktop Logo" /></a>
@@ -16,7 +16,7 @@ const Header = () => {
                         <li><a href="/Home" className={style.Active}>Home</a></li>
                         <li><a href="/News">News</a></li>
                         <li><a href="/Podcasts">Podcasts</a></li>
-                        <li><a href="/Resources">Resources</a></li>
+                        <li><a href="/Resources">TCA</a></li>
                     </ul>
                 </nav>
                 <button type="button">Contact Us</button>

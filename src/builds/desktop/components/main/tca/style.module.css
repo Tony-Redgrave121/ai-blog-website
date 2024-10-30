@@ -1,0 +1,95 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.TCAContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  background-color: #1A1A1A;
+  padding: 120px 162px;
+  border-bottom: 1px solid #262626;
+}
+.TCAContainer > :first-child {
+  display: flex;
+  gap: 80px;
+}
+.TCAContainer > :first-child > :last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.TCAContainer > :first-child > :last-child span {
+  display: flex;
+}
+.TCAContainer > :first-child > :last-child span h3 {
+  border-radius: 4px;
+  padding: 6px 10px;
+  background-color: #333333;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.TCAContainer > :first-child > :last-child h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  color: white;
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 75.4px;
+}
+.TCAContainer > :first-child > :last-child p {
+  color: #7E7E81;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TCAContainer > :last-child {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+  background-color: #141414;
+}
+.TCAContainer > :last-child div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+  background-color: #1A1A1A;
+}
+.TCAContainer > :last-child div span {
+  display: flex;
+  justify-content: space-between;
+}
+.TCAContainer > :last-child div span a {
+  display: flex;
+  padding: 14px;
+  background-color: #FFD11A;
+  border-radius: 100px;
+  transition: background-color 0.2s ease-in-out;
+}
+.TCAContainer > :last-child div span a:hover {
+  background-color: white;
+}
+.TCAContainer > :last-child div span a svg {
+  color: black;
+}
+.TCAContainer > :last-child div span h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+}
+.TCAContainer > :last-child div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/*# sourceMappingURL=style.module.css.map */
