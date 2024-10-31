@@ -1,12 +1,13 @@
-import React from 'react';
-import HomePage from "./builds/desktop/pages/home_page/HomePage";
+import React from 'react'
+import AppRouter from "./router/AppRouter"
+import {BrowserRouter} from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <HomePage />
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <AppRouter/>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,33 @@
+@use '../../../../../utils/styles/base/_variables' as v;
+@use "../../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../../utils/styles/base/_normalize.scss");
+
+.CrossingTitleSection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 120px 162px;
+  background-color: v.$dark-shade-08;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  > div {
+    max-width: 1920px;
+    width: 100%;
+
+    h1 {
+      font-family: "Kumbh Sans", sans-serif;
+      @include m.font(white, 58px, 500, 75.4px)
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+
+      p {
+        font-family: "Inter", sans-serif;
+        @include m.font(v.$grey-shade-60, 18px, 400, 27px)
+      }
+    }
+  }
+}

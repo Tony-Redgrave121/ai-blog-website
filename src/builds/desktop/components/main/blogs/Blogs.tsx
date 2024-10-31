@@ -23,7 +23,8 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                 }
             </div>
             { posts && posts.map(post => (
-                    <div className={style.PostContainer} key={post.postId}>
+                <div className={style.PostContainer} key={post.postId}>
+                    <div>
                         <div className={style.PostContainerLeft}>
                             <img src={require(`../../../../../utils/icons/main/developers/${post.userImg}`)}
                                  alt={post.userName}/>
@@ -43,7 +44,8 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                                 }} type={["PostButton"]}>{post.postState ? <HiHeart color="#FF5500"/> :
                                     <HiOutlineHeart/>} {formatCompact(post.postLikeCount)}</Button>
                                 <Button foo={() => {
-                                }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}</Button>
+                                }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
+                                </Button>
                                 <Button foo={() => {
                                 }} type={["PostButton"]}><VscSend/> {formatCompact(post.postReplyCount)}</Button>
                             </div>
@@ -53,7 +55,8 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                             }}>View Blog <HiArrowUpRight/></Button>
                         </div>
                     </div>
-                ))
+                </div>
+            ))
             }
         </div>
     )

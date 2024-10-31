@@ -11,36 +11,40 @@
   align-items: center;
 }
 
+.TopBanner {
+  gap: 10px;
+  height: 67px;
+  width: 100%;
+  background-color: v.$dark-shade-08;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  a {
+    gap: 10px;
+    font-size: 18px;
+    color: v.$grey-shade-60;
+  }
+
+  svg {
+    font-size: 24px;
+    color: v.$yellow-shade-55;
+  }
+}
+
 .Header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   flex-direction: column;
   border-bottom: 1px solid v.$dark-shade-15;
   background-color: v.$dark-shade-10;
-
-  .TopBanner {
-    gap: 10px;
-    height: 67px;
-    width: 100%;
-    background-color: v.$dark-shade-08;
-    border-bottom: 1px solid v.$dark-shade-15;
-
-    a {
-      gap: 10px;
-      font-size: 18px;
-      color: v.$grey-shade-60;
-    }
-
-    svg {
-      font-size: 24px;
-      color: v.$yellow-shade-55;
-    }
-  }
+  transition: .3s background-color ease;
+  padding: 0 162px;
 
   .Navbar {
     justify-content: space-between;
     height: 103px;
     max-width: 1920px;
     width: 100%;
-    padding: 0 162px;
 
     > button {
       font-size: 18px;

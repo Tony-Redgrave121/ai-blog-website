@@ -1,0 +1,68 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h2, p {
+  font-family: "Inter", sans-serif;
+}
+
+.HeaderSection {
+  display: flex;
+  justify-content: center;
+  padding: 80px 162px;
+  background-color: #141414;
+  border-bottom: 1px solid #262626;
+}
+.HeaderSection > div {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1920px;
+  width: 100%;
+}
+.HeaderSection > div img {
+  max-width: 515px;
+  max-height: 427px;
+  border-radius: 12px;
+}
+.HeaderSection > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+.HeaderSection > div > div > :first-child h2 {
+  margin-bottom: 30px;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
+.HeaderSection > div > div > :first-child p {
+  color: #98989A;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.HeaderSection > div > div .StatContainer {
+  display: flex;
+  gap: 50px;
+}
+.HeaderSection > div > div .StatContainer div {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.HeaderSection > div > div .StatContainer div > :last-child {
+  margin-top: 4px;
+  color: white;
+}
+.HeaderSection > div > div > :last-child {
+  display: flex;
+  justify-content: space-between;
+}
+.HeaderSection > div > div > :last-child span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

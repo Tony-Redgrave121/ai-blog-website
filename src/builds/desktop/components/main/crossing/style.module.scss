@@ -4,13 +4,20 @@
 
 .CrossingContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 120px 162px;
   background-color: v.$dark-shade-10;
   border-bottom: 1px solid v.$dark-shade-15;
 
-  > :first-child {
-    width: 80%;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 100%;
+
+    > :first-child {
+      width: 80%;
+    }
   }
 
   .ButtonBlock {
@@ -20,6 +27,7 @@
 
   span {
     display: flex;
+
     p {
       padding: 6px 10px;
       border-radius: 4px;

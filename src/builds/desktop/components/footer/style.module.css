@@ -3,9 +3,10 @@ h3, p {
   font-family: "Inter", sans-serif;
 }
 
-.Header, .TopBanner, .TopBanner a, .Navbar {
+.Footer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -31,9 +32,13 @@ h3, p {
 .Footer a:hover {
   color: white;
 }
-.Footer > :first-child {
+.Footer > :first-child, .Footer > :last-child {
   display: flex;
   justify-content: space-between;
+  max-width: 1920px;
+  width: 100%;
+}
+.Footer > :first-child {
   padding: 80px 0;
 }
 .Footer > :first-child ul > :first-child {
@@ -58,8 +63,6 @@ h3, p {
   line-height: 24px;
 }
 .Footer > :last-child {
-  display: flex;
-  justify-content: space-between;
   border-top: 1px solid #262626;
   padding: 40px 0;
 }

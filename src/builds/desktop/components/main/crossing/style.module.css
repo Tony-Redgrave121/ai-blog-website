@@ -1,12 +1,18 @@
 @import url("../../../../../utils/styles/base/_normalize.scss");
 .CrossingContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 120px 162px;
   background-color: #1A1A1A;
   border-bottom: 1px solid #262626;
 }
-.CrossingContainer > :first-child {
+.CrossingContainer > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1920px;
+  width: 100%;
+}
+.CrossingContainer > div > :first-child {
   width: 80%;
 }
 .CrossingContainer .ButtonBlock {
