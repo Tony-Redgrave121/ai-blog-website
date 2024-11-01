@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import Layout from "../builds/desktop/pages/Layout";
 import UserRoutes from "./UserRoutes";
-import NotFoundPage from "../builds/desktop/pages/not_found_page/NotFoundPage"
+import NotFoundPage from "../builds/desktop/pages/notFoundPage/NotFoundPage"
 
 const AppRouter = () => {
     return (

@@ -4,7 +4,7 @@ import Button from "../../buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import formatCompact from "../../../../../utils/formats/formatCompact";
 import { HiOutlineEye } from "react-icons/hi2";
-import Developer from '../hero_section/developer/Developers'
+import Developer from '../heroSection/developer/Developers'
 
 interface IResource {
     resourceId: string,

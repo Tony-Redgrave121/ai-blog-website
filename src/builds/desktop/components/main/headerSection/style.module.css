@@ -1,0 +1,100 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h2, p {
+  font-family: "Inter", sans-serif;
+}
+
+.HeaderSection {
+  background-color: #141414;
+  border-bottom: 1px solid #262626;
+}
+.HeaderSection > div {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #262626;
+}
+.HeaderSection > div .HeaderBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  padding: 80px 162px;
+}
+.HeaderSection > div .HeaderBlock > div {
+  display: flex;
+  align-items: center;
+}
+.HeaderSection > div .HeaderBlock > div img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+.HeaderSection > div .HeaderBlock > div > div {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  width: 100%;
+}
+.HeaderSection > div .HeaderBlock > div > div > :first-child h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
+.HeaderSection > div .HeaderBlock > div > div > :first-child p {
+  color: #98989A;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.HeaderSection > div .HeaderBlock > div > div .StatContainer {
+  display: flex;
+  gap: 50px;
+}
+.HeaderSection > div .HeaderBlock > div > div .StatContainer div {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.HeaderSection > div .HeaderBlock > div > div .StatContainer div > :last-child {
+  margin-top: 4px;
+  color: white;
+}
+.HeaderSection > div .HeaderBlock > div > div > :last-child {
+  display: flex;
+  justify-content: space-between;
+}
+.HeaderSection > div .HeaderBlock > div > div > :last-child span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.HeaderSection > div .WideSection {
+  max-width: 1920px;
+  width: 100%;
+  gap: 80px;
+}
+.HeaderSection > div .WideSection > div {
+  gap: 50px;
+}
+.HeaderSection > div .WideSection h2 {
+  margin-bottom: 30px;
+}
+.HeaderSection > div .WideSection img {
+  max-width: 515px;
+  max-height: 427px;
+}
+.HeaderSection > div .ShortSection {
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 630px;
+  width: 33.33333%;
+}
+.HeaderSection > div .ShortSection > div {
+  gap: 20px;
+}
+.HeaderSection > div .ShortSection img {
+  width: 100%;
+  max-height: 222px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

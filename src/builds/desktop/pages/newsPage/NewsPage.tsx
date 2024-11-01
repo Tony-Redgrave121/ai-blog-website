@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react'
 import Blogs from "../../components/main/blogs/Blogs";
 import IPostLow from "../../../../utils/types/IPostLow";
-import HeaderSection from "../../components/main/header_section/HeaderSection";
+import HeaderSection from "../../components/main/headerSection/HeaderSection";
 import Crossing from "../../components/main/crossing/Сrossing";
 import Button from "../../components/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
-import CrossingTitle from "../../components/main/crossing_title/CrossingTitle";
+import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 
 const NewsPage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()

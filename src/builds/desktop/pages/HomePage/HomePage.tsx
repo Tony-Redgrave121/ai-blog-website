@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import HeroSection from "../../components/main/hero_section/HeroSection";
+import HeroSection from "../../components/main/heroSection/HeroSection";
 import Crossing from "../../components/main/crossing/Сrossing";
 import technology from "../../components/main/features/technology.json";
 import Features from "../../components/main/features/Features";
