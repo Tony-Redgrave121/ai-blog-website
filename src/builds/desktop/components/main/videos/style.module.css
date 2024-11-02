@@ -1,0 +1,54 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h2, p {
+  font-family: "Inter", sans-serif;
+}
+
+.VideosSection {
+  background-color: #141414;
+}
+.VideosSection > div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.VideosSection > div > :nth-child(odd) {
+  padding: 80px 80px 80px 162px;
+  border-right: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+}
+.VideosSection > div > :nth-child(odd) > div {
+  justify-self: right;
+}
+.VideosSection > div > :nth-child(even) {
+  padding: 80px 162px 80px 80px;
+  border-bottom: 1px solid #262626;
+}
+.VideosSection > div .VideoBlock {
+  width: 50%;
+}
+.VideosSection > div .VideoBlock > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 880px;
+}
+.VideosSection > div .VideoBlock > div video {
+  object-fit: cover;
+  height: 412px;
+  width: 100%;
+  border-radius: 12px;
+}
+.VideosSection > div .VideoBlock > div h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+.VideosSection > div .VideoBlock > div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

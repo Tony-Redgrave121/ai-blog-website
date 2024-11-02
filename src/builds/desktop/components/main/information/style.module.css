@@ -1,0 +1,75 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+h1, h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.InformationContainer {
+  background-color: #141414;
+}
+.InformationContainer > :first-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: end;
+  border-bottom: 1px solid #262626;
+  box-shadow: 0 -70px 150px 70px rgb(20, 20, 20) inset;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 598px;
+  padding: 50px 0;
+}
+.InformationContainer > :first-child h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 96px;
+}
+.InformationContainer > :last-child {
+  display: flex;
+}
+.InformationContainer > :last-child .SideBar {
+  width: 100%;
+  max-width: 682px;
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer > :last-child .SideBar .ReactionBlock {
+  display: flex;
+  gap: 14px;
+  padding: 50px 162px 50px 80px;
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer > :last-child .SideBar > :last-child {
+  display: flex;
+  gap: 50px;
+  padding: 80px 162px 80px 80px;
+}
+.InformationContainer .ContentBlock div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 80px 80px 80px 162px;
+  border-bottom: 1px solid #262626;
+  border-right: 1px solid #262626;
+}
+.InformationContainer .ContentBlock h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 42px;
+}
+.InformationContainer .ContentBlock h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.InformationContainer .ContentBlock p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

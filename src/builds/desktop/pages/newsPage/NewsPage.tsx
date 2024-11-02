@@ -6,6 +6,7 @@ import Crossing from "../../components/main/crossing/Сrossing";
 import Button from "../../components/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
+import Videos from "../../components/main/videos/Videos";
 
 const NewsPage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
@@ -26,7 +27,8 @@ const NewsPage = () => {
             <HeaderSection />
             <Crossing desc="Welcome to Our News Hub" title="Discover the World of Headlines"><Button foo={() => {}}>View All News <HiArrowUpRight/></Button></Crossing>
             <Blogs posts={posts}/>
-            <Crossing desc="Featured Videos" title="Visual Insights for the Modern Viewer"><Button foo={() => {}}>View All <HiArrowUpRight/></Button></Crossing>
+            <Crossing desc="Featured Player" title="Visual Insights for the Modern Viewer"><Button foo={() => {}}>View All <HiArrowUpRight/></Button></Crossing>
+            <Videos></Videos>
         </main>
     )
 }

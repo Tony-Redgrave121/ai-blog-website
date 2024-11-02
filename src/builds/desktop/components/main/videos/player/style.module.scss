@@ -1,0 +1,35 @@
+@use '../../../../../../utils/styles/base/_variables' as v;
+@use "../../../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+
+.VideoPlayer {
+  position: relative;
+  width: 100%;
+
+  span {
+    position: absolute;
+    bottom: 2px;
+    left: -12px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    padding: 10px 24px;
+    box-shadow: 0 -64px 40px -22px rgba(20, 20, 20, 1) inset;
+    -webkit-box-shadow: 0 -64px 40px -22px rgba(20, 20, 20, 1) inset;
+    -moz-box-shadow: 0 -64px 40px -22px rgba(20, 20, 20, 1) inset;
+    border-radius: 12px;
+
+    svg {
+      cursor: pointer;
+      font-size: 70px;
+      color: white;
+    }
+
+    time {
+      display: flex;
+      align-items: end;
+      font-family: "Inter", sans-serif;
+      @include m.font(v.$grey-shade-50, 18px, 400, 27px);
+    }
+  }
+}

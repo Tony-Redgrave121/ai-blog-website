@@ -76,33 +76,34 @@ const HeaderSection = () => {
         <section className={style.HeaderSection}>
             {
                 arr.map((section, index) => (
-                    <div>
+                    <div key={index}>
                         <div className={style.HeaderBlock}>
-                            {
-                                section.section.map(item => (
-                                    <div
-                                        className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]}>
-                                        <img src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)}
-                                            alt={item.title}/>
-                                        <div>
+                            <div>
+                                {
+                                    section.section.map(item => (
+                                        <div className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]} key={item.title}>
+                                            <img
+                                                src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)}
+                                                alt={item.title}/>
                                             <div>
-                                                <h2>{item.title}</h2>
-                                                <p>{item.desc}</p>
-                                            </div>
-                                            {
-                                                item.stat.length > 0 &&
-                                                <div className={style.StatContainer}>
-                                                    {
-                                                        item.stat.map(stat => (
-                                                            <div>
-                                                                <p>{stat.name}</p>
-                                                                <p>{stat.value}</p>
-                                                            </div>
-                                                        ))
-                                                    }
+                                                <div>
+                                                    <h2>{item.title}</h2>
+                                                    <p>{item.desc}</p>
                                                 </div>
-                                            }
-                                            <div>
+                                                {
+                                                    item.stat.length > 0 &&
+                                                    <div className={style.StatContainer}>
+                                                        {
+                                                            item.stat.map(stat => (
+                                                                <div key={stat.name}>
+                                                                    <p>{stat.name}</p>
+                                                                    <p>{stat.value}</p>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </div>
+                                                }
+                                                <div>
                                                 <span>
                                                     <Button foo={() => {
                                                     }} type={["PostButton"]}>{0 ? <HiHeart color="#FF5500"/> :
@@ -110,13 +111,14 @@ const HeaderSection = () => {
                                                     <Button foo={() => {
                                                     }} type={["PostButton"]}><VscSend/> {formatCompact(item.replyCount)}</Button>
                                                 </span>
-                                                <Button foo={() => {
-                                                }}>Read More {item.stat.length === 0 && <HiArrowUpRight/>}</Button>
+                                                    <Button foo={() => {
+                                                    }}>Read More {item.stat.length === 0 && <HiArrowUpRight/>}</Button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))
-                            }
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 ))

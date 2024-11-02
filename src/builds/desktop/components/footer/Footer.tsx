@@ -58,7 +58,7 @@ const Footer = () => {
                     linkButton: false
                 },
                 {
-                    linkName: "Featured Videos",
+                    linkName: "Featured Player",
                     link: "/",
                     linkNew: false,
                     linkButton: false
