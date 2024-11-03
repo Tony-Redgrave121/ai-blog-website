@@ -1,4 +1,4 @@
-export default interface  IPostLow {
+export default interface IPostLow {
     userId: string,
         userImg: string,
         userName: string,

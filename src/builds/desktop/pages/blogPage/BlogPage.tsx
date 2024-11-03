@@ -1,29 +1,32 @@
 import React, {useEffect} from 'react'
-import IPostLow from "../../../../utils/types/IPostLow";
 import HeaderSection from "../../components/main/headerSection/HeaderSection";
-import Videos from "../../components/main/videos/Videos";
+import IBlog from '../../../../utils/types/IBlog'
 import Information from "../../components/main/information/Information";
 
 const BlogPage = () => {
-    // const [posts, setPosts] = React.useState<Array<IPostLow>>()
-    //
-    // useEffect(() => {
-    //     fetch("http://localhost:3000/server/posts/posts.json")
-    //         .then(response => {
-    //             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-    //             return response.json();
-    //         })
-    //         .then(data => setPosts(data))
-    //         .catch(error => console.log(error))
-    // }, [])
+    const [blog, setBlog] = React.useState<IBlog>()
+
+    useEffect(() => {
+        const url = new URL(window.location.href)
+        const blogName = url.pathname.split("/")[2]
+
+        fetch(`http://localhost:3000/server/blogs/${blogName}.json`)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                setBlog(data)
+            })
+            .catch(error => console.log(error))
+    }, [])
 
     return (
         <main>
-            <HeaderSection />
-            <Information></Information>
-            <Videos></Videos>
+            {blog && <Information blog={blog}/>}
+            <HeaderSection/>
         </main>
     )
 }
 
-export default BlogPage
+export default BlogPage;

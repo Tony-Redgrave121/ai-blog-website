@@ -1,5 +1,5 @@
 import NewsPage from "../builds/desktop/pages/newsPage/NewsPage";
-import HomePage from "../builds/desktop/pages/HomePage/HomePage";
+import HomePage from "../builds/desktop/pages/homePage/HomePage";
 import BlogPage from "../builds/desktop/pages/blogPage/BlogPage";
 
 const UserRoutes = [
