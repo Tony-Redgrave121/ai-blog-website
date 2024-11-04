@@ -1,0 +1,17 @@
+.content-block-node-enter-active {
+    max-height: 1026px!important;
+}
+
+.content-block-node-enter-done {
+    max-height: 5000px!important;
+    transition: 1s max-height ease-in-out;
+}
+
+.content-block-node-exit-active {
+    max-height: 5000px!important;
+}
+
+.content-block-node-exit-done {
+    max-height: 1026px!important;
+    transition: 1s max-height ease-in-out;
+}

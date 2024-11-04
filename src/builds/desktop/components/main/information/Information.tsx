@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import style from "./style.module.css"
-// import './animation.css'
+import './animation.css'
 import {HiArrowDown, HiArrowUp, HiHeart, HiOutlineEye, HiOutlineHeart} from "react-icons/hi2";
 import Button from "../../buttons/Button";
 import formatCompact from "../../../../../utils/formats/formatCompact";
@@ -33,7 +33,7 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                 <h1>{blog.title}</h1>
             </div>
             <div>
-                <CSSTransition nodeRef={contentBlock} in={blockState} timeout={0} classNames="my-ContentBlock">
+                <CSSTransition nodeRef={contentBlock} in={blockState} timeout={0} classNames="content-block-node">
                     <div ref={contentBlock} className={style.ContentBlock}>
                         <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
                         <Button foo={() => handleBlockHeight()}>{blockState ?  <>Read Short Blog <HiArrowUp/></> : <>Read Full Blog <HiArrowDown/></>}</Button>
