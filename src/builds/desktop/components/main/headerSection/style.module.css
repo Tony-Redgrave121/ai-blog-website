@@ -4,7 +4,26 @@ h2, p {
 }
 
 .HeaderSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: #141414;
+}
+.HeaderSection > span {
+  width: 100%;
+  padding: 60px 162px;
+}
+.HeaderSection > span span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+}
+.HeaderSection > span span h2 {
+  color: #98989A;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36.4px;
 }
 .HeaderSection > div {
   border-bottom: 1px solid #262626;

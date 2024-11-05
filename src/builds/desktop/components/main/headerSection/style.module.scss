@@ -7,7 +7,26 @@ h2, p {
 }
 
 .HeaderSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: v.$dark-shade-08;
+
+  > span {
+    width: 100%;
+    padding: 60px 162px;
+
+    span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1920px;
+
+      h2 {
+        @include m.font(v.$grey-shade-60, 28px, 500, 36.4px);
+      }
+    }
+  }
 
   > div {
     border-bottom: 1px solid v.$dark-shade-15;

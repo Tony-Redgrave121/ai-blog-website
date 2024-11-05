@@ -5,83 +5,42 @@ import formatCompact from "../../../../../utils/formats/formatCompact";
 import Button from "../../buttons/Button";
 import {VscSend} from "react-icons/vsc";
 
-// interface ICrossing {
-//     title: string,
-//     subTitle: string,
-//     desc: string,
-// }
+interface ISection {
+    section: Array<{
+        image: string,
+        title: string,
+        desc: string,
+        stat: Array<
+            {
+                name: string,
+                value: string
+            }
+        >,
+        likeCount: number,
+        replyCount: number,
+        link: string
+    }>
+}
 
-const HeaderSection = () => {
-    const arr = [
-        {
-            section: [
-                {
-                    image: "img_1.png",
-                    title: "Global Climate Summit Addresses Urgent Climate Action",
-                    desc: "World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.",
-                    stat: [
-                        {
-                            name: "Category",
-                            value: "Environment"
-                        },
-                        {
-                            name: "Publication Date",
-                            value: "October 10, 2023"
-                        },
-                        {
-                            name: "Author",
-                            value: "Jane Smith"
-                        }
-                    ],
-                    likeCount: 14000,
-                    replyCount: 204,
-                    link: "/"
-                }
-            ]
-        },
-        {
-            section: [
-                {
-                    image: "img_2.png",
-                    title: "A Decisive Victory for Progressive Policies",
-                    desc: "Politics",
-                    stat: [],
-                    likeCount: 2200,
-                    replyCount: 60,
-                    link: "/"
-                },
-                {
-                    image: "img_3.png",
-                    title: "Tech Giants Unveil Cutting-Edge AI Innovations",
-                    desc: "Technology",
-                    stat: [],
-                    likeCount: 6000,
-                    replyCount: 92,
-                    link: "/"
-                },
-                {
-                    image: "img_4.png",
-                    title: "COVID-19 Variants",
-                    desc: "Health",
-                    stat: [],
-                    likeCount: 10000,
-                    replyCount: 124,
-                    link: "/"
-                }
-            ]
-        },
-    ]
+interface IHeaderSection {
+    sections: Array<ISection>
+    children?: React.ReactNode
+}
 
+const HeaderSection: React.FC<IHeaderSection> = ({sections, children}) => {
     return (
         <section className={style.HeaderSection}>
+            {children}
             {
-                arr.map((section, index) => (
+                sections && sections.map((section, index) => (
                     <div key={index}>
                         <div className={style.HeaderBlock}>
                             <div>
                                 {
                                     section.section.map(item => (
-                                        <div className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]} key={item.title}>
+                                        <div
+                                            className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]}
+                                            key={item.title}>
                                             <img
                                                 src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)}
                                                 alt={item.title}/>
