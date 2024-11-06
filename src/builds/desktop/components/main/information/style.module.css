@@ -31,52 +31,55 @@ h1, h2, h3, h4, p {
   line-height: 96px;
 }
 .InformationContainer > :last-child {
-  display: flex;
-}
-.InformationContainer > :last-child .SideBar {
   width: 100%;
-  max-width: 682px;
   border-bottom: 1px solid #262626;
 }
-.InformationContainer > :last-child .SideBar .ReactionBlock {
+.InformationContainer > :last-child > div {
+  display: flex;
+  justify-content: center;
+}
+.InformationContainer > :last-child > div .SideBar {
+  width: 40%;
+  max-width: 842px;
+}
+.InformationContainer > :last-child > div .SideBar .ReactionBlock {
   display: flex;
   gap: 14px;
   padding: 50px 162px 50px 80px;
-  border-bottom: 1px solid #262626;
 }
-.InformationContainer > :last-child .SideBar > :last-child {
+.InformationContainer > :last-child > div .SideBar > :last-child {
   display: flex;
   flex-direction: column;
   gap: 50px;
   padding: 80px 162px 80px 80px;
 }
-.InformationContainer > :last-child .SideBar > :last-child p, .InformationContainer > :last-child .SideBar > :last-child a {
+.InformationContainer > :last-child > div .SideBar > :last-child p, .InformationContainer > :last-child > div .SideBar > :last-child a {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-.InformationContainer > :last-child .SideBar > :last-child section {
+.InformationContainer > :last-child > div .SideBar > :last-child section {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
-.InformationContainer > :last-child .SideBar > :last-child section > div {
+.InformationContainer > :last-child > div .SideBar > :last-child section > div {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: calc(50% - 15px);
 }
-.InformationContainer > :last-child .SideBar > :last-child section > div h4 {
+.InformationContainer > :last-child > div .SideBar > :last-child section > div h4 {
   color: white;
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
 }
-.InformationContainer > :last-child .SideBar > :last-child > div > p {
+.InformationContainer > :last-child > div .SideBar > :last-child > div > p {
   margin-bottom: 16px;
 }
-.InformationContainer > :last-child .SideBar > :last-child ul {
+.InformationContainer > :last-child > div .SideBar > :last-child ul {
   position: sticky;
   top: 20px;
   display: flex;
@@ -87,18 +90,18 @@ h1, h2, h3, h4, p {
   background-color: #1A1A1A;
   list-style: disc;
 }
-.InformationContainer > :last-child .SideBar > :last-child ul li, .InformationContainer > :last-child .SideBar > :last-child ul a {
+.InformationContainer > :last-child > div .SideBar > :last-child ul li, .InformationContainer > :last-child > div .SideBar > :last-child ul a {
   color: white;
 }
-.InformationContainer > :last-child .SideBar > :last-child ul li {
+.InformationContainer > :last-child > div .SideBar > :last-child ul li {
   margin-left: 20px;
 }
 .InformationContainer .ContentBlock {
   position: relative;
-  width: 80%;
+  width: 60%;
   max-height: 1026px;
+  max-width: 1398px;
   overflow: hidden;
-  border-bottom: 1px solid #262626;
 }
 .InformationContainer .ContentBlock:after {
   content: "";

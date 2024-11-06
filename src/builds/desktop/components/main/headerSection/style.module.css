@@ -10,13 +10,15 @@ h2, p {
   background-color: #141414;
 }
 .HeaderSection > span {
-  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 60px 162px;
 }
 .HeaderSection > span span {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1920px;
 }
 .HeaderSection > span span h2 {
