@@ -35,6 +35,8 @@ const BlogPage = () => {
         )
     }
 
+
+
     return (
         <main>
             {blog && <Information blog={blog}/>}

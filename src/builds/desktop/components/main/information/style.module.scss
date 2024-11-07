@@ -41,8 +41,11 @@ h1, h2, h3, h4, p {
       justify-content: center;
 
       .SideBar {
-        width: 40%;
-        max-width: 842px;
+        width: 1000px;
+
+        > div {
+          max-width: 682px;
+        }
 
         .ReactionBlock {
           display: flex;
@@ -107,9 +110,8 @@ h1, h2, h3, h4, p {
 
   .ContentBlock {
     position: relative;
-    width: 60%;
     max-height: 1026px;
-    max-width: 1398px;
+    width: 100%;
     overflow: hidden;
 
     &:after {
@@ -123,19 +125,24 @@ h1, h2, h3, h4, p {
     }
 
     > div {
-      div {
+      > div {
         display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        gap: 30px;
+        justify-content: end;
         padding: 80px 80px 80px 162px;
         border-right: 1px solid v.$dark-shade-15;
         border-bottom: 1px solid v.$dark-shade-15;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          max-width: 1238px;
+        }
       }
 
-      > :last-child {
-        padding: 80px 80px 110px 162px;
-      }
+      //> :last-child {
+      //  padding: 80px 80px 110px 162px;
+      //}
     }
 
     h2 {
@@ -150,15 +157,22 @@ h1, h2, h3, h4, p {
       @include m.font(v.$grey-shade-60, 18px, 400, 27px);
     }
 
-    button {
+    .ButtonBlock {
       position: absolute;
       bottom: 25px;
-      left: 50%;
+      right: 0;
       z-index: 2;
-      transform: translate(-50%);
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 1152px;
 
-      svg {
-        color: v.$grey-shade-60;
+      button {
+        transform: translate(-50%);
+
+        svg {
+          color: v.$grey-shade-60;
+        }
       }
     }
   }

@@ -39,8 +39,10 @@ h1, h2, h3, h4, p {
   justify-content: center;
 }
 .InformationContainer > :last-child > div .SideBar {
-  width: 40%;
-  max-width: 842px;
+  width: 1000px;
+}
+.InformationContainer > :last-child > div .SideBar > div {
+  max-width: 682px;
 }
 .InformationContainer > :last-child > div .SideBar .ReactionBlock {
   display: flex;
@@ -98,9 +100,8 @@ h1, h2, h3, h4, p {
 }
 .InformationContainer .ContentBlock {
   position: relative;
-  width: 60%;
   max-height: 1026px;
-  max-width: 1398px;
+  width: 100%;
   overflow: hidden;
 }
 .InformationContainer .ContentBlock:after {
@@ -112,17 +113,18 @@ h1, h2, h3, h4, p {
   width: calc(100% - 2px);
   background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 80%);
 }
-.InformationContainer .ContentBlock > div div {
+.InformationContainer .ContentBlock > div > div {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 30px;
+  justify-content: end;
   padding: 80px 80px 80px 162px;
   border-right: 1px solid #262626;
   border-bottom: 1px solid #262626;
 }
-.InformationContainer .ContentBlock > div > :last-child {
-  padding: 80px 80px 110px 162px;
+.InformationContainer .ContentBlock > div > div div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1238px;
 }
 .InformationContainer .ContentBlock h2 {
   color: white;
@@ -142,14 +144,20 @@ h1, h2, h3, h4, p {
   font-weight: 400;
   line-height: 27px;
 }
-.InformationContainer .ContentBlock button {
+.InformationContainer .ContentBlock .ButtonBlock {
   position: absolute;
   bottom: 25px;
-  left: 50%;
+  right: 0;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1152px;
+}
+.InformationContainer .ContentBlock .ButtonBlock button {
   transform: translate(-50%);
 }
-.InformationContainer .ContentBlock button svg {
+.InformationContainer .ContentBlock .ButtonBlock button svg {
   color: #98989A;
 }
 

@@ -37,7 +37,12 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                     <CSSTransition nodeRef={contentBlock} in={blockState} timeout={0} classNames="content-block-node">
                         <div ref={contentBlock} className={style.ContentBlock}>
                             <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
-                            <Button foo={() => handleBlockHeight()}>{blockState ?  <>Read Short Blog <HiArrowUp/></> : <>Read Full Blog <HiArrowDown/></>}</Button>
+                            <div className={style.ButtonBlock}>
+                                <Button foo={() => handleBlockHeight()}>{blockState
+                                    ? <>Read Short Blog <HiArrowUp/></>
+                                    : <>Read Full Blog <HiArrowDown/></>}
+                                </Button>
+                            </div>
                         </div>
                     </CSSTransition>
                     <div className={style.SideBar}>
