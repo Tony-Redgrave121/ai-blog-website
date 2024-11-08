@@ -39,21 +39,32 @@ h1, h2, h3, h4, p {
   justify-content: center;
 }
 .InformationContainer > :last-child > div .SideBar {
-  width: 1000px;
+  width: 50%;
 }
 .InformationContainer > :last-child > div .SideBar > div {
-  max-width: 682px;
+  width: 100%;
+  padding: 50px 162px 50px 80px;
+}
+.InformationContainer > :last-child > div .SideBar > div:first-child {
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer > :last-child > div .SideBar > div > div {
+  max-width: 880px;
 }
 .InformationContainer > :last-child > div .SideBar .ReactionBlock {
   display: flex;
   gap: 14px;
-  padding: 50px 162px 50px 80px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child {
+  padding: 80px 162px 80px 80px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child > div {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 80px 162px 80px 80px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child > div > div > p {
+  margin-bottom: 16px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child p, .InformationContainer > :last-child > div .SideBar > :last-child a {
   color: #98989A;
@@ -78,9 +89,6 @@ h1, h2, h3, h4, p {
   font-weight: 500;
   line-height: 27px;
 }
-.InformationContainer > :last-child > div .SideBar > :last-child > div > p {
-  margin-bottom: 16px;
-}
 .InformationContainer > :last-child > div .SideBar > :last-child ul {
   position: sticky;
   top: 20px;
@@ -101,8 +109,8 @@ h1, h2, h3, h4, p {
 .InformationContainer .ContentBlock {
   position: relative;
   max-height: 1026px;
-  width: 100%;
-  overflow: hidden;
+  width: 50%;
+  overflow-y: hidden;
 }
 .InformationContainer .ContentBlock:after {
   content: "";
@@ -124,7 +132,7 @@ h1, h2, h3, h4, p {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 1238px;
+  max-width: 880px;
 }
 .InformationContainer .ContentBlock h2 {
   color: white;
@@ -152,10 +160,10 @@ h1, h2, h3, h4, p {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 1152px;
+  max-width: 960px;
 }
 .InformationContainer .ContentBlock .ButtonBlock button {
-  transform: translate(-50%);
+  transform: translate(-25%);
 }
 .InformationContainer .ContentBlock .ButtonBlock button svg {
   color: #98989A;

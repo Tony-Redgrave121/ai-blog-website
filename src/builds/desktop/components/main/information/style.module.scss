@@ -41,23 +41,38 @@ h1, h2, h3, h4, p {
       justify-content: center;
 
       .SideBar {
-        width: 1000px;
+        width: 50%;
 
         > div {
-          max-width: 682px;
+          width: 100%;
+          padding: 50px 162px 50px 80px;
+
+          &:first-child {
+            border-bottom: 1px solid v.$dark-shade-15;
+          }
+
+          > div {
+            max-width: 880px;
+          }
         }
 
         .ReactionBlock {
           display: flex;
           gap: 14px;
-          padding: 50px 162px 50px 80px;
         }
 
         > :last-child {
-          display: flex;
-          flex-direction: column;
-          gap: 50px;
           padding: 80px 162px 80px 80px;
+
+          > div {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            > div > p {
+              margin-bottom: 16px;
+            }
+          }
 
           p, a {
             @include m.font(v.$grey-shade-60, 18px, 400, 27px);
@@ -78,10 +93,6 @@ h1, h2, h3, h4, p {
                 @include m.font(white, 18px, 500, 27px);
               }
             }
-          }
-
-          > div > p {
-            margin-bottom: 16px;
           }
 
           ul {
@@ -111,8 +122,8 @@ h1, h2, h3, h4, p {
   .ContentBlock {
     position: relative;
     max-height: 1026px;
-    width: 100%;
-    overflow: hidden;
+    width: 50%;
+    overflow-y: hidden;
 
     &:after {
       content: '';
@@ -136,13 +147,9 @@ h1, h2, h3, h4, p {
           display: flex;
           flex-direction: column;
           gap: 30px;
-          max-width: 1238px;
+          max-width: 880px;
         }
       }
-
-      //> :last-child {
-      //  padding: 80px 80px 110px 162px;
-      //}
     }
 
     h2 {
@@ -165,10 +172,10 @@ h1, h2, h3, h4, p {
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: 1152px;
+      max-width: 960px;
 
       button {
-        transform: translate(-50%);
+        transform: translate(-25%);
 
         svg {
           color: v.$grey-shade-60;

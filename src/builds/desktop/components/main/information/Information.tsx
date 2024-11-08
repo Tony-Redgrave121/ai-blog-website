@@ -46,41 +46,50 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                         </div>
                     </CSSTransition>
                     <div className={style.SideBar}>
-                        <div className={style.ReactionBlock}>
-                            <Button foo={() => {}} type={["PostButton"]}>{blog.likeState ? <HiHeart color="#FF5500"/> : <HiOutlineHeart/>} {formatCompact(blog.likeCount)}</Button>
-                            <Button foo={() => {}} type={["PostButton"]}><HiOutlineEye /> {formatCompact(blog.viewCount)}</Button>
-                            <Button foo={() => {}} type={["PostButton"]}><VscSend/> {formatCompact(blog.replyCount)}</Button>
+                        <div>
+                            <div className={style.ReactionBlock}>
+                                <Button foo={() => {
+                                }} type={["PostButton"]}>{blog.likeState ? <HiHeart color="#FF5500"/> :
+                                    <HiOutlineHeart/>} {formatCompact(blog.likeCount)}</Button>
+                                <Button foo={() => {
+                                }} type={["PostButton"]}><HiOutlineEye/> {formatCompact(blog.viewCount)}</Button>
+                                <Button foo={() => {
+                                }} type={["PostButton"]}><VscSend/> {formatCompact(blog.replyCount)}</Button>
+                            </div>
                         </div>
                         <div>
-                            <section>
-                                <div>
-                                    <p>Publication Date</p>
-                                    <h4>{formatDate(blog.date)}</h4>
-                                </div>
-                                <div>
-                                    <p>Category</p>
-                                    <h4>{blog.category}</h4>
-                                </div>
-                                <div>
-                                    <p>Reading Time</p>
-                                    <h4>{Math.round(blog.readingTime / 100)} Min</h4>
-                                </div>
-                                <div>
-                                    <p>Author Name</p>
-                                    <h4>{blog.authorName}</h4>
-                                </div>
-                            </section>
                             <div>
-                                <p>Table of Contents</p>
-                                <nav>
-                                    <ul>
-                                        {
-                                            navigationLink.map(link => (
-                                                <li key={link}><a href={`#${link}`} onClick={handleLink}>{link}</a></li>
-                                            ))
-                                        }
-                                    </ul>
-                                </nav>
+                                <section>
+                                    <div>
+                                        <p>Publication Date</p>
+                                        <h4>{formatDate(blog.date)}</h4>
+                                    </div>
+                                    <div>
+                                        <p>Category</p>
+                                        <h4>{blog.category}</h4>
+                                    </div>
+                                    <div>
+                                        <p>Reading Time</p>
+                                        <h4>{Math.round(blog.readingTime / 100)} Min</h4>
+                                    </div>
+                                    <div>
+                                        <p>Author Name</p>
+                                        <h4>{blog.authorName}</h4>
+                                    </div>
+                                </section>
+                                <div>
+                                    <p>Table of Contents</p>
+                                    <nav>
+                                        <ul>
+                                            {
+                                                navigationLink.map(link => (
+                                                    <li key={link}><a href={`#${link}`} onClick={handleLink}>{link}</a>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
