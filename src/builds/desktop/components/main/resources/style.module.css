@@ -5,6 +5,7 @@ h2, h3, p {
 
 .ResourceContainer {
   display: flex;
+  justify-content: center;
   background-color: #141414;
   padding: 0 162px;
   border-bottom: 1px solid #262626;
@@ -24,7 +25,8 @@ h2, h3, p {
 .ResourceContainer .ResourceContainerLeft {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 50%;
+  max-width: 960px;
   border-right: 1px solid #262626;
 }
 .ResourceContainer .ResourceContainerLeft > div {
@@ -68,7 +70,8 @@ h2, h3, p {
   gap: 30px;
   flex-direction: column;
   padding: 80px 0 80px 80px;
-  width: 60%;
+  width: 50%;
+  max-width: 960px;
 }
 .ResourceContainer .ResourceContainerRight > span {
   display: flex;

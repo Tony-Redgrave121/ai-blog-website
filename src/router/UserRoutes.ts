@@ -1,6 +1,7 @@
 import NewsPage from "../builds/desktop/pages/newsPage/NewsPage";
 import HomePage from "../builds/desktop/pages/homePage/HomePage";
 import BlogPage from "../builds/desktop/pages/blogPage/BlogPage";
+import PodcastPage from "../builds/desktop/pages/podcastPage/PodcastPage";
 
 const UserRoutes = [
     {
@@ -14,6 +15,10 @@ const UserRoutes = [
     {
         path: "/blog/:id",
         Component: BlogPage
+    },
+    {
+        path: "/podcast",
+        Component: PodcastPage
     },
 ]
 

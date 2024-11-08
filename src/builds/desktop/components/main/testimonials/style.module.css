@@ -5,31 +5,44 @@
 
 .TestimonialsContainer {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 162px;
+  border-bottom: 1px solid #262626;
   background-color: #141414;
 }
-.TestimonialsContainer > :nth-child(n+1) {
-  padding: 80px 50px;
+.TestimonialsContainer > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1920px;
+}
+.TestimonialsContainer > div > div {
+  width: 33.3333333%;
+}
+.TestimonialsContainer > div > div:not(:first-child) {
   border-left: 1px solid #262626;
-  border-bottom: 1px solid #262626;
-  width: calc(33.333333% - 81px);
 }
-.TestimonialsContainer > :nth-child(3n+1) {
-  padding: 80px 50px 80px 162px;
-  border-bottom: 1px solid #262626;
-  width: calc(33.333333% + 40.5px);
+.TestimonialsContainer > div > :nth-child(1) {
+  padding: 80px 50px 80px 0;
 }
-.TestimonialsContainer > :nth-child(3n) {
-  padding: 80px 162px 80px 50px;
-  border-bottom: 1px solid #262626;
-  width: calc(33.333333% + 40.5px);
+.TestimonialsContainer > div > :nth-child(2) {
+  padding: 80px 50px;
 }
-.TestimonialsContainer .TestimonialsBlock {
+.TestimonialsContainer > div > :nth-child(3) {
+  padding: 80px 0 80px 50px;
+}
+.TestimonialsContainer > div .TestimonialsBlock {
+  display: flex;
+}
+.TestimonialsContainer > div .TestimonialsBlock > div {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  width: 100%;
+  max-width: 640px;
 }
-.TestimonialsContainer .TestimonialsBlock .RateBlock {
+.TestimonialsContainer > div .TestimonialsBlock > div .RateBlock {
   display: flex;
   gap: 7px;
   background-color: #141414;
@@ -37,31 +50,31 @@
   border-radius: 100px;
   padding: 10px 16px;
 }
-.TestimonialsContainer .TestimonialsBlock .RateBlock svg {
+.TestimonialsContainer > div .TestimonialsBlock > div .RateBlock svg {
   color: #FFCE22;
 }
-.TestimonialsContainer .TestimonialsBlock > :first-child {
+.TestimonialsContainer > div .TestimonialsBlock > div > :first-child {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
 }
-.TestimonialsContainer .TestimonialsBlock > :first-child img {
+.TestimonialsContainer > div .TestimonialsBlock > div > :first-child img {
   width: 60px;
 }
-.TestimonialsContainer .TestimonialsBlock > :first-child h2 {
+.TestimonialsContainer > div .TestimonialsBlock > div > :first-child h2 {
   color: white;
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
 }
-.TestimonialsContainer .TestimonialsBlock > :first-child p {
+.TestimonialsContainer > div .TestimonialsBlock > div > :first-child p {
   color: #666666;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-.TestimonialsContainer .TestimonialsBlock > :last-child {
+.TestimonialsContainer > div .TestimonialsBlock > div > :last-child {
   position: relative;
   text-align: center;
   padding: 10px 30px 30px 30px;
@@ -69,13 +82,13 @@
   border: 1px solid #262626;
   border-radius: 12px;
 }
-.TestimonialsContainer .TestimonialsBlock > :last-child > :first-child {
+.TestimonialsContainer > div .TestimonialsBlock > div > :last-child > :first-child {
   position: relative;
   top: -35px;
   display: flex;
   justify-content: center;
 }
-.TestimonialsContainer .TestimonialsBlock > :last-child p {
+.TestimonialsContainer > div .TestimonialsBlock > div > :last-child p {
   color: white;
   font-size: 18px;
   font-weight: 400;

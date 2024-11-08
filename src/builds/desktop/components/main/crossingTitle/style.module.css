@@ -12,6 +12,7 @@
   width: 100%;
 }
 .CrossingTitleSection > div h1 {
+  white-space: nowrap;
   font-family: "Kumbh Sans", sans-serif;
   color: white;
   font-size: 58px;

@@ -16,11 +16,13 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
     return (
         <div className={style.TabsContainer}>
             <div className={style.SelectContainer}>
-                {
-                    select.map((select, index) => (
-                        <Button foo={() => {}} key={select} type={['SelectButton', index === 0 ? 'ActiveSelectButton' : '']}>{select}</Button>
-                    ))
-                }
+                <div>
+                    {
+                        select.map((select, index) => (
+                            <Button foo={() => {}} key={select} type={['SelectButton', index === 0 ? 'ActiveSelectButton' : '']}>{select}</Button>
+                        ))
+                    }
+                </div>
             </div>
             { posts && posts.map(post => (
                 <div className={style.PostContainer} key={post.postId}>

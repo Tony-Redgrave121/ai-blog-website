@@ -5,15 +5,19 @@
 
 .BlogContainer {
   display: flex;
+  justify-content: center;
   background-color: #141414;
   padding: 0 162px;
   border-bottom: 1px solid #262626;
+}
+.BlogContainer .BlogContainerLeft, .BlogContainer .BlogContainerRight {
+  width: 50%;
+  max-width: 960px;
 }
 .BlogContainer .BlogContainerLeft {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
   gap: 30px;
   padding-right: 80px;
   border-right: 1px solid #262626;
@@ -40,7 +44,6 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 80px 0 80px 80px;
-  width: 60%;
 }
 .BlogContainer .BlogContainerRight div {
   background-color: #1A1A1A;

@@ -15,6 +15,7 @@
     width: 100%;
 
     h1 {
+      white-space: nowrap;
       font-family: "Kumbh Sans", sans-serif;
       @include m.font(white, 58px, 500, 75.4px)
     }
