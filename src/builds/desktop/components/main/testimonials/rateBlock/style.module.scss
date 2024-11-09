@@ -1,0 +1,15 @@
+@use '../../../../../../utils/styles/base/_variables' as v;
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+
+.RateBlock {
+  display: flex;
+  gap: 7px;
+  background-color: v.$dark-shade-08;
+  border: 1px solid v.$dark-shade-15;
+  border-radius: 100px;
+  padding: 10px 16px;
+
+  svg {
+    color: v.$yellow-shade-55;
+  }
+}

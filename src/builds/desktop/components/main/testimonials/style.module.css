@@ -42,17 +42,6 @@
   width: 100%;
   max-width: 640px;
 }
-.TestimonialsContainer > div .TestimonialsBlock > div .RateBlock {
-  display: flex;
-  gap: 7px;
-  background-color: #141414;
-  border: 1px solid #262626;
-  border-radius: 100px;
-  padding: 10px 16px;
-}
-.TestimonialsContainer > div .TestimonialsBlock > div .RateBlock svg {
-  color: #FFCE22;
-}
 .TestimonialsContainer > div .TestimonialsBlock > div > :first-child {
   display: flex;
   justify-content: center;

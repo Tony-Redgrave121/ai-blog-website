@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./style.module.css"
-import { HiStar } from "react-icons/hi2";
 import {ITestimonial} from "../../../../../utils/types/ITestimonial";
+import RateBlock from "./rateBlock/RateBlock";
 
 interface ITestimonialsProps {
     testimonials: Array<ITestimonial>
@@ -24,11 +24,7 @@ const Testimonials: React.FC<ITestimonialsProps> = ({testimonials}) => {
                                 </div>
                                 <div>
                                     <div>
-                                    <span className={style.RateBlock}>
-                                    {
-                                        Array(testimonial.userRate).fill(0).map((_, index) => <HiStar key={index} size={24}/>)
-                                    }
-                                </span>
+                                        <RateBlock rating={testimonial.userRate}></RateBlock>
                                     </div>
                                     <p>{testimonial.userComment}</p>
                                 </div>

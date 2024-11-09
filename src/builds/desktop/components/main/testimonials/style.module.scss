@@ -50,19 +50,6 @@
         width: 100%;
         max-width: 640px;
 
-        .RateBlock {
-          display: flex;
-          gap: 7px;
-          background-color: v.$dark-shade-08;
-          border: 1px solid v.$dark-shade-15;
-          border-radius: 100px;
-          padding: 10px 16px;
-
-          svg {
-            color: #FFCE22;
-          }
-        }
-
         > :first-child {
           display: flex;
           justify-content: center;

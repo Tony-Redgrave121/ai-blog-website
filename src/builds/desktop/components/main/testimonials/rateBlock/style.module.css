@@ -1,0 +1,14 @@
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+.RateBlock {
+  display: flex;
+  gap: 7px;
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 100px;
+  padding: 10px 16px;
+}
+.RateBlock svg {
+  color: #FFD11A;
+}
+
+/*# sourceMappingURL=style.module.css.map */

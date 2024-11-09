@@ -6,7 +6,7 @@ h2, h3, p {
   font-family: "Inter", sans-serif;
 }
 
-.ResourceContainer {
+.PodcastContainer {
   display: flex;
   justify-content: center;
   background-color: v.$dark-shade-08;
@@ -23,7 +23,7 @@ h2, h3, p {
     }
   }
 
-  .ResourceContainerLeft {
+  .PodcastContainerLeft {
     display: flex;
     align-items: center;
     width: 40%;
@@ -35,9 +35,17 @@ h2, h3, p {
       flex-direction: column;
       gap: 50px;
       padding-right: 80px;
+      width: 100%;
 
       > img {
         width: 80px;
+      }
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
       }
 
       h1 {
@@ -54,21 +62,21 @@ h2, h3, p {
       }
 
       > :last-child {
-        display: flex;
-
         > div {
           display: flex;
+          justify-content: space-between;
           gap: 50px;
           background-color: v.$dark-shade-10;
           border: 1px solid v.$dark-shade-15;
           border-radius: 13px;
           padding: 30px;
+          width: 100%;
         }
       }
     }
   }
 
-  .ResourceContainerRight {
+  .PodcastContainerRight {
     display: flex;
     gap: 30px;
     flex-direction: column;
