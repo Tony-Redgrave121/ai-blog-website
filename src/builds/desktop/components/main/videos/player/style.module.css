@@ -15,6 +15,7 @@
   -webkit-box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
   -moz-box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
   border-radius: 12px;
+  opacity: 0;
 }
 .VideoPlayer span svg {
   cursor: pointer;
@@ -29,6 +30,12 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+}
+.VideoPlayer .Short svg {
+  position: relative;
+  left: 50%;
+  margin-bottom: 15%;
+  transform: translate(-50%);
 }
 
 /*# sourceMappingURL=style.module.css.map */

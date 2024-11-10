@@ -1,21 +1,27 @@
 import React, {useEffect, useRef, useState} from 'react'
 import style from "./style.module.css"
+import './animation.css'
 import {HiPlayCircle, HiPauseCircle} from "react-icons/hi2";
+import { CSSTransition } from "react-transition-group"
 
 interface IPlayer {
     src: string
+    type?: string
 }
 
 interface IPlayerState {
     state: boolean,
-    time: string
+    time: string,
+    mouseState: boolean
 }
 
-const Player: React.FC<IPlayer> = ({src}) => {
+const Player: React.FC<IPlayer> = ({src, type}) => {
     const player = useRef<HTMLVideoElement>(null)
+    const playerController = useRef<HTMLSpanElement>(null)
     const [playerState, setPlayerState] = useState<IPlayerState>({
         state: false,
-        time: '0'
+        time: '0',
+        mouseState: false,
     })
 
     const handlePlay = () => {
@@ -44,27 +50,46 @@ const Player: React.FC<IPlayer> = ({src}) => {
     }, [])
 
     useEffect(() => {
-        const videoPlayer = player.current;
+        const videoPlayer = player.current
+        const controller = playerController.current
         const handleVideoEnd = () => setPlayerState((prevState) => ({
             ...prevState,
             state: false,
         }))
 
-        if (videoPlayer) {
+        const handleMouse = (state: boolean) => {
+            setPlayerState((prevState) => ({
+                ...prevState,
+                mouseState: state,
+            }))
+
+            console.log(state)
+        }
+
+        if (videoPlayer && controller) {
             videoPlayer.addEventListener('ended', handleVideoEnd)
-            return () => videoPlayer.removeEventListener('ended', handleVideoEnd)
+            controller.addEventListener('mouseenter', () => handleMouse(true))
+            controller.addEventListener('mouseleave', () => handleMouse(false))
+
+            return () => {
+                videoPlayer.removeEventListener('ended', handleVideoEnd)
+                controller.removeEventListener('mouseenter', () => handleMouse(true))
+                controller.removeEventListener('mouseleave', () => handleMouse(false))
+            }
         }
     }, [])
 
     return (
         <section className={style.VideoPlayer}>
             <video ref={player}>
-                <source src={require(`../../../../../../utils/icons/main/videos/${src}.mp4`)} type="video/mp4"/>
+                <source src={require(`../../../../../../utils/icons/main/${src}.mp4`)} type="video/mp4"/>
             </video>
-            <span>
-                {playerState.state ? <HiPauseCircle onClick={handlePlay}/> : <HiPlayCircle onClick={handlePlay}/>}
-                <time>{playerState.time} min</time>
-            </span>
+            <CSSTransition nodeRef={playerController} in={playerState.mouseState} timeout={200} classNames="player-controller-node">
+                <span className={type && style[type]} ref={playerController}>
+                    {playerState.state ? <HiPauseCircle onClick={handlePlay}/> : <HiPlayCircle onClick={handlePlay}/>}
+                    {!type && <time>{playerState.time} min</time>}
+                </span>
+            </CSSTransition>
         </section>
     )
 }

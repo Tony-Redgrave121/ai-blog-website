@@ -1,0 +1,17 @@
+.player-controller-node-enter-active {
+    opacity: 0!important;
+}
+
+.player-controller-node-enter-done {
+    opacity: 1!important;
+    transition: .3s opacity ease-in-out;
+}
+
+.player-controller-node-exit-active {
+    opacity: 1!important;
+}
+
+.player-controller-node-exit-done {
+    opacity: 0!important;
+    transition: .3s opacity ease-in-out;
+}

@@ -78,7 +78,7 @@ h2, h3, p {
 
   .PodcastContainerRight {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     flex-direction: column;
     padding: 80px 0 80px 80px;
     width: 60%;
@@ -86,12 +86,17 @@ h2, h3, p {
 
     > span {
       display: flex;
-      align-items: center;
-      gap: 50px;
+      flex-direction: column;
+      gap: 30px;
+
+      video {
+        max-height: 455px;
+        border-radius: 20px;
+        width: 100%;
+      }
 
       h2 {
-        text-wrap: nowrap;
-        @include m.font(white, 24px, 600, 36px);
+        @include m.font(white, 26px, 600, 39px);
       }
 
       p {
@@ -101,24 +106,15 @@ h2, h3, p {
 
     > :last-child {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 20px;
-
-      .DownloadBlock {
-        display: flex;
-        justify-content: space-between;
-      }
 
       > div {
         background-color: v.$dark-shade-10;
         border: 1px solid v.$dark-shade-15;
         padding: 30px;
         border-radius: 13px;
-        flex-grow: 1;
-      }
-
-      > :first-child {
-        flex-grow: 0;
+        width: 100%;
       }
     }
   }

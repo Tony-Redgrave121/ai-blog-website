@@ -1,10 +1,7 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import style from "./style.module.css"
 import Button from "../../buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
-import formatCompact from "../../../../../utils/formats/formatCompact";
-import { HiOutlineEye } from "react-icons/hi2";
-import Developer from '../heroSection/developer/Developers'
 import RateBlock from "../testimonials/rateBlock/RateBlock";
 import Player from "../videos/player/Player";
 
@@ -30,13 +27,26 @@ const TopPodcasts = () => {
             podcastRating: 5,
             podcastHost: 'Dr. Sarah Mitchell',
             podcastLink: '/',
-            podcastVideo: 'podcast_video_1',
+            podcastVideo: 'topPodcasts/podcast_video_1',
             podcastVideoTitle: 'Delves into the transformative impact of AI',
             podcastVideoDesc: 'Join Dr. Sarah Mitchell as she delves into the transformative impact of AI on industries, featuring expert interviews and real-world case studies. Explore the possibilities of AI in healthcare, finance, and more.',
             podcastVideoEpisodes: 50,
             podcastVideoEpisodeLength: 30,
             podcastVideoEpisodeRelease: 'Weekly',
-        }
+        },
+        {
+            podcastIcon: 'podcast_2',
+            podcastTitle: 'AI Conversations',
+            podcastRating: 5,
+            podcastHost: 'Mark Anderson',
+            podcastLink: '/',
+            podcastVideo: 'topPodcasts/podcast_video_2',
+            podcastVideoTitle: 'Engage in thought-provoking conversations with leading experts.',
+            podcastVideoDesc: 'Mark discusses the future of AI, the impact on society, and how it\'s shaping industries worldwide. Engage in thought-provoking conversations with leading experts.',
+            podcastVideoEpisodes: 40,
+            podcastVideoEpisodeLength: 40,
+            podcastVideoEpisodeRelease: 'Monthly',
+        },
     ]
 
     return (
@@ -65,24 +75,22 @@ const TopPodcasts = () => {
                         </div>
                         <div className={style.PodcastContainerRight}>
                             <span>
-                                <Player src={podcast.podcastVideo}/>
+                                <Player src={podcast.podcastVideo} type={'Short'}/>
+                                <h2>{podcast.podcastVideoTitle}</h2>
+                                <p>{podcast.podcastVideoDesc}</p>
                             </span>
                             <div>
                                 <div className={style.TextBlock}>
-                                    <p>Total {podcast.podcastTitle}</p>
-                                    <h2>Over {podcast.podcastTitle} {podcast.podcastTitle}</h2>
-                                </div>
-                                <div className={style.DownloadBlock}>
-                                    <div className={style.TextBlock}>
-                                        <p>Download Formats</p>
-                                        <h2>PDF format for access.</h2>
-                                    </div>
-                                    <span><Button foo={() => {
-                                    }}>Preview <HiOutlineEye/> </Button></span>
+                                    <p>Total Episodes</p>
+                                    <h2>{podcast.podcastVideoEpisodes}</h2>
                                 </div>
                                 <div className={style.TextBlock}>
-                                    <p>Average Author Expertise</p>
-                                    <h2>{podcast.podcastTitle}</h2>
+                                    <p>Average Episode Length</p>
+                                    <h2>{podcast.podcastVideoEpisodeLength} min</h2>
+                                </div>
+                                <div className={style.TextBlock}>
+                                    <p>Release Frequency</p>
+                                    <h2>{podcast.podcastVideoEpisodeRelease}</h2>
                                 </div>
                             </div>
                         </div>

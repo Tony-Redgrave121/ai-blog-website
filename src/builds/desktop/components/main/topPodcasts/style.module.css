@@ -73,7 +73,7 @@ h2, h3, p {
 }
 .PodcastContainer .PodcastContainerRight {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   flex-direction: column;
   padding: 80px 0 80px 80px;
   width: 60%;
@@ -81,15 +81,19 @@ h2, h3, p {
 }
 .PodcastContainer .PodcastContainerRight > span {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  flex-direction: column;
+  gap: 30px;
+}
+.PodcastContainer .PodcastContainerRight > span video {
+  max-height: 455px;
+  border-radius: 20px;
+  width: 100%;
 }
 .PodcastContainer .PodcastContainerRight > span h2 {
-  text-wrap: nowrap;
   color: white;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 39px;
 }
 .PodcastContainer .PodcastContainerRight > span p {
   color: #98989A;
@@ -99,22 +103,15 @@ h2, h3, p {
 }
 .PodcastContainer .PodcastContainerRight > :last-child {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.PodcastContainer .PodcastContainerRight > :last-child .DownloadBlock {
-  display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .PodcastContainer .PodcastContainerRight > :last-child > div {
   background-color: #1A1A1A;
   border: 1px solid #262626;
   padding: 30px;
   border-radius: 13px;
-  flex-grow: 1;
-}
-.PodcastContainer .PodcastContainerRight > :last-child > :first-child {
-  flex-grow: 0;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.module.css.map */
