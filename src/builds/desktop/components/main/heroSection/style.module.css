@@ -1,5 +1,5 @@
 @import url("../../../../../utils/styles/base/_normalize.scss");
-* {
+h2, h3, p {
   font-family: "Inter", sans-serif;
 }
 
@@ -44,55 +44,37 @@
   font-weight: unset;
   line-height: 27px;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer {
   display: flex;
   justify-content: end;
   padding-left: 162px;
   border-top: 1px solid #262626;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div {
   display: flex;
   max-width: 960px;
   width: 100%;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div > :nth-child(1) {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(1) {
   flex: 3;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div > :nth-child(2) {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(2) {
   flex: 2.5;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div > :nth-child(3) {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(3) {
   flex: 2;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div h3 {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div {
   display: flex;
-  color: white;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: unset;
-}
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div h3 p {
-  color: #FFD11A;
-}
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div div > p {
-  color: #98989A;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: unset;
-}
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div .Stat {
-  display: flex;
+  flex-direction: column;
   justify-content: left;
   padding: 50px 0 50px 0;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div .Stat:not(:first-child) {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div:not(:first-child) {
   padding-left: 50px;
 }
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div .Stat:not(:last-child) {
+.StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div:not(:last-child) {
   border-right: 1px solid #262626;
-}
-.StatContainer .TopSubContainer .LeftContainer .StatBlock > div .Stat h3 {
-  margin-bottom: 10px;
 }
 .StatContainer .TopSubContainer .RightContainer {
   position: relative;

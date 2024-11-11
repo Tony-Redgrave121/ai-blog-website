@@ -4,10 +4,10 @@ import AbstractDesign from "../../../../../utils/icons/main/abstract-design--.sv
 import Button from "../../buttons/Button"
 import {HiArrowUpRight} from "react-icons/hi2"
 import {Link} from "react-router-dom"
-import formatCompact from "../../../../../utils/formats/formatCompact";
 import links from './json/links.json'
 import stats from './json/stats.json'
 import Developer from './developer/Developers'
+import StatBlock from "../statBlock/StatBlock";
 
 const HeroSection = () => {
     return (
@@ -21,16 +21,11 @@ const HeroSection = () => {
                             <p>Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
                         </div>
                     </div>
-                    <div className={style.StatBlock}>
+                    <div className={style.StatBlockContainer}>
                         <div>
                             {
                                 stats.map(stat => (
-                                    <div className={style.Stat} key={stat.title}>
-                                        <div>
-                                            <h3>{formatCompact(stat.count)}<p>+</p></h3>
-                                            <p>{stat.title}</p>
-                                        </div>
-                                    </div>
+                                    <StatBlock stat={stat} key={stat.title} />
                                 ))
                             }
                         </div>
