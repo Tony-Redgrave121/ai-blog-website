@@ -28,12 +28,12 @@ h2, h3, p {
   width: 40%;
   max-width: 768px;
   border-right: 1px solid #262626;
+  padding-right: 80px;
 }
 .PodcastContainer .PodcastContainerLeft > div {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding-right: 80px;
   width: 100%;
 }
 .PodcastContainer .PodcastContainerLeft > div > img {
@@ -57,9 +57,6 @@ h2, h3, p {
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
-}
-.PodcastContainer .PodcastContainerLeft > div button {
-  justify-content: center;
 }
 .PodcastContainer .PodcastContainerLeft > div > :last-child > div {
   display: flex;

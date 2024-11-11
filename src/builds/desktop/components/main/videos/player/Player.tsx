@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import style from "./style.module.css"
 import './animation.css'
 import {HiPlayCircle, HiPauseCircle} from "react-icons/hi2";
-import { CSSTransition } from "react-transition-group"
+import {CSSTransition} from "react-transition-group"
 
 interface IPlayer {
     src: string
@@ -52,19 +52,16 @@ const Player: React.FC<IPlayer> = ({src, type}) => {
     useEffect(() => {
         const videoPlayer = player.current
         const controller = playerController.current
+
         const handleVideoEnd = () => setPlayerState((prevState) => ({
             ...prevState,
             state: false,
         }))
 
-        const handleMouse = (state: boolean) => {
-            setPlayerState((prevState) => ({
-                ...prevState,
-                mouseState: state,
-            }))
-
-            console.log(state)
-        }
+        const handleMouse = (state: boolean) => setPlayerState((prevState) => ({
+            ...prevState,
+            mouseState: state,
+        }))
 
         if (videoPlayer && controller) {
             videoPlayer.addEventListener('ended', handleVideoEnd)

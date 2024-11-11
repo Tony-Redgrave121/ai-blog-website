@@ -9,6 +9,7 @@
   left: -12px;
   display: flex;
   justify-content: space-between;
+  height: 100%;
   width: calc(100% + 24px);
   padding: 10px 24px;
   box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
@@ -18,9 +19,11 @@
   opacity: 0;
 }
 .VideoPlayer span svg {
+  position: relative;
   cursor: pointer;
   font-size: 70px;
   color: white;
+  margin-top: auto;
 }
 .VideoPlayer span time {
   display: flex;
@@ -32,10 +35,9 @@
   line-height: 27px;
 }
 .VideoPlayer .Short svg {
-  position: relative;
   left: 50%;
-  margin-bottom: 15%;
-  transform: translate(-50%);
+  bottom: 50%;
+  transform: translate(-50%, 50%);
 }
 
 /*# sourceMappingURL=style.module.css.map */

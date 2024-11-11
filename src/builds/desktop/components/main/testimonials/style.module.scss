@@ -2,92 +2,56 @@
 @use "../../../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../../../utils/styles/base/_normalize.scss");
 
-* {
+h2, h3, p {
   font-family: "Inter", sans-serif;
 }
 
-.TestimonialsContainer {
+.TestimonialsBlock {
   display: flex;
-  justify-content: center;
-  padding: 0 162px;
-  border-bottom: 1px solid v.$dark-shade-15;
-  background-color: v.$dark-shade-08;
 
   > div {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 60px;
     width: 100%;
-    max-width: 1920px;
+    max-width: 640px;
 
-    > div {
-      width: 33.3333333%;
+    > :first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
 
-      &:not(:first-child) {
-        border-left: 1px solid v.$dark-shade-15;
+      img {
+        width: 60px;
+      }
+
+      h2 {
+        @include m.font(white, 20px, 500, 30px);
+      }
+
+      p {
+        @include m.font(v.$dark-shade-40, 18px, 400, 27px);
       }
     }
 
-    > :nth-child(1) {
-      padding: 80px 50px 80px 0;
-    }
-
-    > :nth-child(2) {
-      padding: 80px 50px;
-    }
-
-    > :nth-child(3) {
-      padding: 80px 0 80px 50px;
-    }
-
-    .TestimonialsBlock {
-      display: flex;
-
-      > div {
+    > :last-child {
+      > :first-child {
+        position: relative;
+        top: -35px;
         display: flex;
-        flex-direction: column;
-        gap: 60px;
-        width: 100%;
-        max-width: 640px;
+        justify-content: center;
+      }
 
-        > :first-child {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 12px;
+      position: relative;
+      text-align: center;
+      padding: 10px 30px 30px 30px;
+      background-color: v.$dark-shade-10;
+      border: 1px solid v.$dark-shade-15;
+      border-radius: 12px;
 
-          img {
-            width: 60px;
-          }
-
-          h2 {
-            @include m.font(white, 20px, 500, 30px);
-          }
-
-          p {
-            @include m.font(v.$dark-shade-40, 18px, 400, 27px);
-          }
-        }
-
-        > :last-child {
-          > :first-child {
-            position: relative;
-            top: -35px;
-            display: flex;
-            justify-content: center;
-          }
-
-          position: relative;
-          text-align: center;
-          padding: 10px 30px 30px 30px;
-          background-color: v.$dark-shade-10;
-          border: 1px solid v.$dark-shade-15;
-          border-radius: 12px;
-
-          p {
-            @include m.font(white, 18px, 400, 27px);
-          }
-        }
+      p {
+        @include m.font(white, 18px, 400, 27px);
       }
     }
   }

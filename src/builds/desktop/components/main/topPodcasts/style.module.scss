@@ -29,12 +29,12 @@ h2, h3, p {
     width: 40%;
     max-width: 768px;
     border-right: 1px solid v.$dark-shade-15;
+    padding-right: 80px;
 
     > div {
       display: flex;
       flex-direction: column;
       gap: 50px;
-      padding-right: 80px;
       width: 100%;
 
       > img {
@@ -55,10 +55,6 @@ h2, h3, p {
 
       p {
         @include m.font(v.$grey-shade-60, 20px, 400, 30px);
-      }
-
-      button {
-        justify-content: center;
       }
 
       > :last-child {

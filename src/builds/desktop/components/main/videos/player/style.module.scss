@@ -12,6 +12,7 @@
     left: -12px;
     display: flex;
     justify-content: space-between;
+    height: 100%;
     width: calc(100% + 24px);
     padding: 10px 24px;
     box-shadow: 0 -64px 40px -22px rgba(20, 20, 20, 1) inset;
@@ -21,9 +22,11 @@
     opacity: 0;
 
     svg {
+      position: relative;
       cursor: pointer;
       font-size: 70px;
       color: white;
+      margin-top: auto;
     }
 
     time {
@@ -35,9 +38,8 @@
   }
 
   .Short svg {
-    position: relative;
     left: 50%;
-    margin-bottom: 15%;
-    transform: translate(-50%);
+    bottom: 50%;
+    transform: translate(-50%, 50%);
   }
 }

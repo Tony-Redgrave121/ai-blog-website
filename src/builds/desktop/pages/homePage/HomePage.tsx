@@ -10,6 +10,7 @@ import Resources from "../../components/main/resources/Resources";
 import Testimonials from "../../components/main/testimonials/Testimonials";
 import IPostLow from "../../../../utils/types/IPostLow";
 import {ITestimonial} from "../../../../utils/types/ITestimonial";
+import TripleContainer from "../../components/main/testimonials/tripleContainer/TripleContainer";
 
 const HomePage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
@@ -53,8 +54,16 @@ const HomePage = () => {
             <Crossing desc="What Our Readers Say" title="Real Words from Real Readers">
                 <Button foo={() => {}}>View All Testimonials <HiArrowUpRight/></Button>
             </Crossing>
-            {testimonials && <Testimonials testimonials={testimonials.slice(0, 3)}/>}
-            {testimonials && <Testimonials testimonials={testimonials.slice(3, 6)}/>}
+            { testimonials &&
+                <TripleContainer>
+                    <Testimonials testimonials={testimonials.slice(0, 3)}/>
+                </TripleContainer>
+            }
+            { testimonials &&
+                <TripleContainer>
+                    <Testimonials testimonials={testimonials.slice(3, 6)}/>
+                </TripleContainer>
+            }
         </main>
     )
 }
