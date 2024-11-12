@@ -37,8 +37,14 @@ const BlogPage = () => {
 
     return (
         <main>
-            {blog && <Information blog={blog}/>}
-            <HeaderSection sections={sections}>{createTitle("Similar News", <>View All News <HiArrowUpRight/></>)}</HeaderSection>
+            { blog &&
+                <Information blog={blog}/>
+            }
+            <HeaderSection sections={sections}>
+                {
+                    createTitle("Similar News", <>View All News <HiArrowUpRight/></>)
+                }
+            </HeaderSection>
         </main>
     )
 }

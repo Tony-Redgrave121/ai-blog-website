@@ -3,7 +3,6 @@ import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 import TopPodcasts from "../../components/main/topPodcasts/TopPodcasts";
 import Crossing from "../../components/main/crossing/Сrossing";
 import LatestPodcasts from "../../components/main/latestPodcasts/LatestPodcasts";
-import TripleContainer from "../../components/main/testimonials/tripleContainer/TripleContainer";
 import IPodcast from "../../../../utils/types/IPodcast";
 
 const BlogPage = () => {
@@ -25,14 +24,10 @@ const BlogPage = () => {
             <TopPodcasts />
             <Crossing desc="Stay Informed with Fresh Content" title="Latest Podcast Episodes"/>
             { latestPodcasts &&
-                <TripleContainer>
-                    <LatestPodcasts blocks={latestPodcasts.slice(0, 3)}/>
-                </TripleContainer>
+                <LatestPodcasts blocks={latestPodcasts.slice(0, 3)}/>
             }
             { latestPodcasts &&
-                <TripleContainer>
-                    <LatestPodcasts blocks={latestPodcasts.slice(3, 6)}/>
-                </TripleContainer>
+                <LatestPodcasts blocks={latestPodcasts.slice(3, 6)}/>
             }
         </main>
     )

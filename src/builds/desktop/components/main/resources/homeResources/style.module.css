@@ -1,21 +1,13 @@
-@import url("../../../../../utils/styles/base/_normalize.scss");
+@import url("../../../../../../utils/styles/base/_normalize.scss");
 h2, h3, p {
   font-family: "Inter", sans-serif;
 }
 
-.TextBlock {
-  background-color: #1A1A1A;
-  border: 1px solid #262626;
-  padding: 30px;
-  border-radius: 13px;
-  width: 33.333333%;
-}
 .TextBlock p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  margin-bottom: 4px;
 }
 .TextBlock h2 {
   color: white;
@@ -46,21 +38,34 @@ h2, h3, p {
   font-weight: 400;
   line-height: 30px;
 }
+.ResourceContainerLeft > div button {
+  justify-content: center;
+}
+.ResourceContainerLeft > div > :last-child {
+  display: flex;
+}
+.ResourceContainerLeft > div > :last-child > div {
+  display: flex;
+  gap: 50px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 13px;
+  padding: 30px;
+}
 
-.ResourceContainerRight .ResourceTitleBlock {
+.ResourceContainerRight > span {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 50px;
 }
-.ResourceContainerRight .ResourceTitleBlock h2 {
+.ResourceContainerRight > span h2 {
   text-wrap: nowrap;
   color: white;
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
 }
-.ResourceContainerRight .ResourceTitleBlock p {
+.ResourceContainerRight > span p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
@@ -68,39 +73,22 @@ h2, h3, p {
 }
 .ResourceContainerRight > :last-child {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
-
-.ResourceContainerMore {
+.ResourceContainerRight > :last-child .DownloadBlock {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
 }
-.ResourceContainerMore h2 {
-  color: white;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 33px;
+.ResourceContainerRight > :last-child > div {
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  padding: 30px;
+  border-radius: 13px;
+  flex-grow: 1;
 }
-.ResourceContainerMore p {
-  color: #98989A;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-}
-.ResourceContainerMore img {
-  max-height: 290px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-.ResourceContainerMore span {
-  display: flex;
-  gap: 20px;
-}
-.ResourceContainerMore span button {
-  width: 50%;
-  padding: 18px 24px;
+.ResourceContainerRight > :last-child > :first-child {
+  flex-grow: 0;
 }
 
 /*# sourceMappingURL=style.module.css.map */

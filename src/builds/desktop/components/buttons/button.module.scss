@@ -15,6 +15,7 @@
   background-color: v.$dark-shade-08;
   border: 1px solid v.$dark-shade-20;
   color: v.$grey-shade-60;
+  white-space: nowrap;
   transition: .2s ease-in-out;
 
   &:hover {

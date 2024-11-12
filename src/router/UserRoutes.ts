@@ -3,6 +3,7 @@ import HomePage from "../builds/desktop/pages/homePage/HomePage";
 import BlogPage from "../builds/desktop/pages/blogPage/BlogPage";
 import PodcastPage from "../builds/desktop/pages/podcastPage/PodcastPage";
 import ResourcePage from "../builds/desktop/pages/resourcesPage/ResourcePage";
+import ContactPage from "../builds/desktop/pages/contactPage/ContactPage";
 
 const UserRoutes = [
     {
@@ -25,6 +26,10 @@ const UserRoutes = [
         path: "/resource",
         Component: ResourcePage
     },
+    {
+        path: "/contact",
+        Component: ContactPage
+    }
 ]
 
 export default UserRoutes

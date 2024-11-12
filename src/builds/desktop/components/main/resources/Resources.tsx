@@ -1,91 +1,88 @@
 import React, {useEffect} from 'react'
 import style from "./style.module.css"
-import Button from "../../buttons/Button";
+import IResource from "../../../../../utils/types/IResource";
+import formatShortDate from "../../../../../utils/formats/formatShortDate";
 import {HiArrowUpRight} from "react-icons/hi2";
-import formatCompact from "../../../../../utils/formats/formatCompact";
-import { HiOutlineEye } from "react-icons/hi2";
-import Developer from '../heroSection/developer/Developers'
+import Button from "../../buttons/Button";
+import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
+import TripleContainer from "../testimonials/tripleContainer/TripleContainer";
 
-interface IResource {
-    resourceId: string,
-    image: string,
-    title: string,
-    desc: string,
-    downloadCount: number,
-    developers: Array<string>,
-    topic: string,
-    topicDesc: string,
-    topicImage: string,
-    topicTotal: number,
-    topicExpertise: string
+interface IResourcesProps {
+    resources: Array<IResource>
 }
 
-const Resources = () => {
-    const [resources, setResources] = React.useState<Array<IResource>>()
+const Resources: React.FC<IResourcesProps> = ({resources}) => {
+    const [activeResource, setActiveResource] = React.useState<Array<IResource>>([])
+    const [moreResource, setMoreResource] = React.useState<Array<IResource>>([])
 
     useEffect(() => {
-        fetch("http://localhost:3000//server/resources/resources.json")
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
-                return response.json()
-            })
-            .then(resources => setResources(resources))
-    }, [])
+        setActiveResource(resources.slice(0, 2))
+        setMoreResource(resources.slice(2, resources.length))
+    }, [resources])
+
+    console.log(moreResource)
 
     return (
         <>
-            {
-                resources && resources.map(resource => (
-                    <div className={style.ResourceContainer} key={resource.title}>
-                        <div className={style.ResourceContainerLeft}>
-                            <div>
-                                <img src={require(`../../../../../utils/icons/main/topics/${resource.image}.svg`)}
-                                     alt={resource.title}/>
+            <ResourceContainer>
+                {
+                    resources && activeResource.map(resource => (
+                        <div key={resource.resourceTitle}>
+                            <div className={style.ResourceContainerLeft}>
                                 <div>
-                                    <h1>{resource.title}</h1>
-                                    <p>{resource.desc}</p>
+                                    <img
+                                        src={require(`../../../../../utils/icons/main/topics/${resource.resourceImage}.svg`)}
+                                        alt={resource.resourceTitle}/>
+                                    <h1>{resource.resourceTitle}</h1>
+                                    <p>{resource.resourceDesc}</p>
                                 </div>
-                                <Button foo={() => {
-                                }} type={["ActiveSelectButton"]}>Download {resource.title} Now <HiArrowUpRight/></Button>
-                                <div>
+                            </div>
+                            <div className={style.ResourceContainerRight}>
+                                <img
+                                    src={require(`../../../../../utils/icons/main/topics/image/${resource.resourceTopicImage}`)}
+                                    alt={resource.resourceTopicTitle}/>
+                                <div className={style.ResourceTitleBlock}>
                                     <div>
-                                        <div className={style.TextBlock}>
-                                            <p>Downloaded By</p>
-                                            <h2>{formatCompact(10000)} + {resource.downloadCount}</h2>
-                                        </div>
-                                        <Developer type="DeveloperTopicBlock"/>
+                                        <h2>{resource.resourceTopicTitle}</h2>
+                                        <p>{resource.resourceTopicDesc}</p>
                                     </div>
+                                    <Button foo={() => {
+                                    }}>Download PDF Now <HiArrowUpRight/></Button>
                                 </div>
-                            </div>
-                        </div>
-                        <div className={style.ResourceContainerRight}>
-                            <span>
-                                <h2>{resource.topic}</h2>
-                                <p>{resource.topicDesc}</p>
-                            </span>
-                            <img src={require(`../../../../../utils/icons/main/topics/image/${resource.topicImage}`)} alt={resource.topic}/>
-                            <div>
-                                <div className={style.TextBlock}>
-                                    <p>Total {resource.title}</p>
-                                    <h2>Over {resource.topicTotal} {resource.title.toLowerCase()}</h2>
-                                </div>
-                                <div className={style.DownloadBlock}>
+                                <div>
                                     <div className={style.TextBlock}>
-                                        <p>Download Formats</p>
-                                        <h2>PDF format for access.</h2>
+                                        <p>Publication Date</p>
+                                        <h2>{formatShortDate(resource.resourceTopicDate!)}</h2>
                                     </div>
-                                    <span><Button foo={() => {
-                                    }}>Preview <HiOutlineEye/> </Button></span>
-                                </div>
-                                <div className={style.TextBlock}>
-                                    <p>Average Author Expertise</p>
-                                    <h2>{resource.topicExpertise}</h2>
+                                    <div className={style.TextBlock}>
+                                        <p>Category</p>
+                                        <h2>{resource.resourceTopicCategory}</h2>
+                                    </div>
+                                    <div className={style.TextBlock}>
+                                        <p>Author</p>
+                                        <h2>{resource.resourceTopicAuthor}</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </ResourceContainer>
+            <TripleContainer>
+                {
+                    moreResource.map(resource => (
+                        <div className={style.ResourceContainerMore} key={resource.resourceTitle}>
+                            <img src={require(`../../../../../utils/icons/main/topics/image/${resource.resourceTopicImage}`)} alt={resource.resourceTopicTitle}/>
+                            <h2>{resource.resourceTopicTitle}</h2>
+                            <p>{resource.resourceTopicDesc}</p>
+                            <span>
+                                <Button foo={() => {}} type={["SelectButton"]}>View Details</Button>
+                                <Button foo={() => {}} type={["SelectButton"]}>Download PDF Now</Button>
+                            </span>
+                        </div>
+                    ))
+                }
+            </TripleContainer>
         </>
     )
 }

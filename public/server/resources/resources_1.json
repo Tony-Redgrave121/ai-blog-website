@@ -1,0 +1,24 @@
+[
+  {
+    "resourceImage": "topic_1",
+    "resourceTitle": "Ebooks",
+    "resourceDesc": "Explore our collection of ebooks covering a wide spectrum of future technology topics.",
+    "resourceDownloads": 10000,
+    "resourceTopicTitle": "Variety of Topics",
+    "resourceTopicDesc": "Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).",
+    "resourceTopicImage": "image_1.png",
+    "resourceTotal": 100,
+    "resourceExpertise": "Ebooks are authored by renowned experts with an average of 15 years of experience."
+  },
+  {
+    "resourceImage": "topic_2",
+    "resourceTitle": "Whitepapers",
+    "resourceDesc": "Dive into comprehensive reports and analyses with our collection of whitepapers.",
+    "resourceDownloads": 10000,
+    "resourceTopicTitle": "Topics Coverage",
+    "resourceTopicDesc": "Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).",
+    "resourceTopicImage": "image_2.png",
+    "resourceTotal": 50,
+    "resourceExpertise": "Whitepapers are authored by subject matter experts with an average of 20 years of experience."
+  }
+]

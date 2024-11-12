@@ -6,15 +6,18 @@ import Features from "../../components/main/features/Features";
 import Button from "../../components/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Blogs from "../../components/main/blogs/Blogs";
-import Resources from "../../components/main/resources/Resources";
 import Testimonials from "../../components/main/testimonials/Testimonials";
 import IPostLow from "../../../../utils/types/IPostLow";
 import {ITestimonial} from "../../../../utils/types/ITestimonial";
 import TripleContainer from "../../components/main/testimonials/tripleContainer/TripleContainer";
+import ResourceContainer from "../../components/main/generalComponents/resourceContainer/ResourceContainer";
+import IHomeResources from "../../../../utils/types/IHomeResources";
+import HomeResources from "../../components/main/resources/homeResources/HomeResources";
 
 const HomePage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
     const [testimonials, setTestimonials] = React.useState<Array<ITestimonial>>()
+    const [resources, setResources] = React.useState<Array<IHomeResources>>()
 
     useEffect(() => {
         fetch("http://localhost:3000/server/posts/posts.json")
@@ -31,6 +34,13 @@ const HomePage = () => {
                 return response.json();
             })
             .then(data => setTestimonials(data))
+            .catch(error => console.log(error))
+        fetch("http://localhost:3000/server/resources/resources_1.json")
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => setResources(data))
             .catch(error => console.log(error))
     }, [])
 
@@ -50,7 +60,11 @@ const HomePage = () => {
             <Crossing desc="Your Gateway to In-Depth Information" title="Unlock Valuable Knowledge with FutureTech's TCA">
                 <Button foo={() => {}}>View All TCA <HiArrowUpRight/></Button>
             </Crossing>
-            <Resources/>
+            { resources &&
+                <ResourceContainer>
+                    <HomeResources resources={resources}/>
+                </ResourceContainer>
+            }
             <Crossing desc="What Our Readers Say" title="Real Words from Real Readers">
                 <Button foo={() => {}}>View All Testimonials <HiArrowUpRight/></Button>
             </Crossing>

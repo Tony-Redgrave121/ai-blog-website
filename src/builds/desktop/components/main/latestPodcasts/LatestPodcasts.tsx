@@ -4,6 +4,7 @@ import IPodcast from "../../../../../utils/types/IPodcast";
 import Player from "../videos/player/Player";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../../buttons/Button";
+import TripleContainer from "../testimonials/tripleContainer/TripleContainer";
 
 interface ILatestPodcastsProps {
     blocks: Array<IPodcast>
@@ -11,7 +12,7 @@ interface ILatestPodcastsProps {
 
 const LatestPodcasts: React.FC<ILatestPodcastsProps> = ({blocks}) => {
     return (
-        <>
+        <TripleContainer>
             {
                 blocks && blocks.map((podcast, index) => (
                     <div className={style.TestimonialsBlock} key={index}>
@@ -26,7 +27,7 @@ const LatestPodcasts: React.FC<ILatestPodcastsProps> = ({blocks}) => {
                     </div>
                 ))
             }
-        </>
+        </TripleContainer>
     )
 }
 

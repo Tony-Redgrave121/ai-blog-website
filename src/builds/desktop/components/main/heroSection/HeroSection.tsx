@@ -40,8 +40,7 @@ const HeroSection = () => {
                             <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
                         </div>
                         <span>
-                            <Button foo={() => {
-                            }}>Explore Resources <HiArrowUpRight/></Button>
+                            <Button foo={() => {}}>Explore Resources <HiArrowUpRight/></Button>
                         </span>
                     </div>
                 </div>
