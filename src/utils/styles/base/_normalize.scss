@@ -23,9 +23,16 @@ time, mark, audio, video {
   box-sizing: border-box;
 }
 
-button {
+button, input, textarea {
   all: unset;
+}
+
+button {
   cursor: pointer;
+}
+
+input[text], textarea {
+  cursor: text;
 }
 
 article, aside, details, figcaption, figure,
