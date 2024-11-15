@@ -1,17 +1,21 @@
 import React from 'react'
 import style from "./style.module.css"
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
-import PhoneInput from 'react-phone-input-2'
-import './phoneBlockStyle.css'
+import {HiArrowUpRight} from "react-icons/hi2";
+import Button from "../../buttons/Button";
 
-const ContactForm = () => {
+const FAQ = () => {
     return (
         <ResourceContainer>
             <div>
                 <div className={style.ResourceContainerLeft}>
                     <div>
-                        <img src={require(`../../../../../utils/icons/main/contact/image_1.svg`).default} alt="Contact Form"/>
-                        <h1>Get in Touch with AI Podcasts</h1>
+                        <img src={require(`../../../../../utils/icons/main/contact/image_2.svg`).default} alt="Contact Form"/>
+                        <h1>Asked question</h1>
+                        <p>If the question is not available on our FAQ section, Feel free to contact us personally, we will resolve your respective doubts. </p>
+                        <span>
+                            <Button foo={() => {}}>Ask Qustion <HiArrowUpRight/></Button>
+                        </span>
                     </div>
                 </div>
                 <div className={style.ResourceContainerRight}>
@@ -33,7 +37,6 @@ const ContactForm = () => {
                             </div>
                             <div className={style.InputBlock}>
                                 <label htmlFor="phone">Phone Number</label>
-                                <PhoneInput country={'ua'} />
                             </div>
                         </div>
                         <div className={style.WideBlock}>
@@ -58,4 +61,4 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm
+export default FAQ
