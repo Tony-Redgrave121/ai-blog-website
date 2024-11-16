@@ -21,118 +21,15 @@ h2, h3, p {
       font-family: "Kumbh Sans", sans-serif;
       @include m.font(white, 40px, 600, 60px);
     }
+
+    p {
+      @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+    }
   }
 }
 
 .ResourceContainerRight {
-  form {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 50px;
+  > div {
 
-    > div {
-      display: flex;
-      gap: 50px;
-      width: 100%;
-    }
-
-    .InputBlock {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      width: 50%;
-
-      label {
-        @include m.font(white, 18px, 500, 27px);
-      }
-
-      input, textarea {
-        padding: 20px;
-        border-radius: 8px;
-        border: 1px solid v.$dark-shade-15;
-        background-color: v.$dark-shade-10;
-        width: 100%;
-        height: auto;
-        transition: .2s all ease-in-out;
-        @include m.font(v.$dark-shade-40, 18px, 400, 27px);
-
-        &:focus {
-          color: white;
-          border-color: v.$dark-shade-40;
-        }
-      }
-
-      textarea {
-        word-wrap: break-word;
-
-        &::-webkit-scrollbar {
-          width: 5px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: v.$dark-shade-40;
-          border-radius: 5px;
-        }
-      }
-    }
-
-    .WideBlock {
-      > div, & {
-        width: 100%;
-      }
-    }
-
-    > :last-child {
-      > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        span {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-
-          input {
-            position: relative;
-            width: 28px;
-            height: 28px;
-            border-radius: 4px;
-            border: 1px solid v.$dark-shade-15;
-            background-color: v.$dark-shade-10;
-            cursor: pointer;
-
-            &:checked {
-              background-color: v.$yellow-shade-55;
-            }
-
-            &:after {
-              content: '';
-              position: absolute;
-              left: 10px;
-              top: 6px;
-              width: 5px;
-              height: 10px;
-              border: solid v.$dark-shade-10;
-              border-width: 0 3px 3px 0;
-              transform: rotate(45deg);
-            }
-          }
-
-          label {
-            @include m.font(white, 18px, 400, 27px);
-          }
-        }
-      }
-
-      button {
-        font-weight: 500;
-        padding: 18px 46px;
-        border-radius: 8px;
-        background-color: v.$yellow-shade-90;
-        @include m.font(v.$dark-shade-08, 18px, 500, 24px);
-      }
-    }
   }
 }

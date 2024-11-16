@@ -1,10 +1,33 @@
 import React from 'react'
 import style from "./style.module.css"
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
-import {HiArrowUpRight} from "react-icons/hi2";
+import {HiArrowUpRight, HiOutlinePlus} from "react-icons/hi2";
 import Button from "../../buttons/Button";
 
 const FAQ = () => {
+    const questions = [
+        {
+            title: "What is AI?",
+            desc: "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making."
+        },
+        {
+            title: "How can I listen to your podcasts?",
+            desc: "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making."
+        },
+        {
+            title: "Are your podcasts free to listen to?",
+            desc: "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making."
+        },
+        {
+            title: "Can I download episodes to listen offline?",
+            desc: "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making."
+        },
+        {
+            title: "How often do you release new episodes?",
+            desc: "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making."
+        },
+    ]
+
     return (
         <ResourceContainer>
             <div>
@@ -19,42 +42,14 @@ const FAQ = () => {
                     </div>
                 </div>
                 <div className={style.ResourceContainerRight}>
-                    <form>
-                        <div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="first-name">First Name</label>
-                                <input type='text' name="first-name" placeholder="Enter First Name"></input>
-                            </div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="last-name">Last Name</label>
-                                <input type='text' name="last-name" placeholder="Enter Last Name"></input>
-                            </div>
-                        </div>
-                        <div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="email">Email</label>
-                                <input type='email' name="email" placeholder="Enter your Email"></input>
-                            </div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="phone">Phone Number</label>
-                            </div>
-                        </div>
-                        <div className={style.WideBlock}>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="message">Message</label>
-                                <textarea rows={4} name="message" placeholder="Enter your Message"></textarea>
-                            </div>
-                        </div>
-                        <div className={style.WideBlock}>
+                    {
+                        questions.map(question => (
                             <div>
-                                <span>
-                                    <input type='checkbox' name="checkbox"></input>
-                                    <label htmlFor="checkbox">I agree with Terms of Use and Privacy Policy</label>
-                                </span>
-                                <button type='button'>Send</button>
+                                <span><h2>{question.title}</h2> <HiOutlinePlus /></span>
+                                <p>{question.desc}</p>
                             </div>
-                        </div>
-                    </form>
+                        ))
+                    }
                 </div>
             </div>
         </ResourceContainer>
