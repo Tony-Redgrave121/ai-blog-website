@@ -1,7 +1,7 @@
 @use '../../../../utils/styles/base/_variables' as v;
 @import url("../../../../utils/styles/base/_normalize.scss");
 
-* {
+a {
   font-family: "Inter", sans-serif;
 }
 
@@ -51,7 +51,12 @@
       font-weight: 500;
       padding: 14px 20px;
       border-radius: 10px;
-      background-color: v.$yellow-shade-55;
+      background-color: v.$yellow-shade-60;
+      transition: .2s all ease-in-out;
+
+      &:hover {
+        background-color: v.$yellow-shade-55;
+      }
     }
 
     .ButtonsContainer ul {
@@ -62,7 +67,8 @@
         border-radius: 10px;
         padding: 14px 24px;
         color: v.$grey-shade-50;
-        transition: .2s ease-in-out;
+        border: 1px solid rgba(0, 0, 0, 0);
+        transition: .3s all ease-in-out;
 
         &:hover {
           color: white;

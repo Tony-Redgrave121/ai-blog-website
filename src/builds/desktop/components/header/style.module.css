@@ -1,5 +1,5 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
-* {
+a {
   font-family: "Inter", sans-serif;
 }
 
@@ -47,6 +47,10 @@
   font-weight: 500;
   padding: 14px 20px;
   border-radius: 10px;
+  background-color: #FFD633;
+  transition: 0.2s all ease-in-out;
+}
+.Header .Navbar > button:hover {
   background-color: #FFD11A;
 }
 .Header .Navbar .ButtonsContainer ul {
@@ -57,7 +61,8 @@
   border-radius: 10px;
   padding: 14px 24px;
   color: #7E7E81;
-  transition: 0.2s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: 0.3s all ease-in-out;
 }
 .Header .Navbar .ButtonsContainer ul a:hover {
   color: white;

@@ -20,8 +20,6 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
         setMoreResource(resources.slice(2, resources.length))
     }, [resources])
 
-    console.log(moreResource)
-
     return (
         <>
             <ResourceContainer>

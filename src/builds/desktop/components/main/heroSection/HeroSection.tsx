@@ -3,13 +3,15 @@ import style from "./style.module.css"
 import AbstractDesign from "../../../../../utils/icons/main/abstract-design--.svg"
 import Button from "../../buttons/Button"
 import {HiArrowUpRight} from "react-icons/hi2"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import links from './json/links.json'
 import stats from './json/stats.json'
 import Developer from './developer/Developers'
 import StatBlock from "../statBlock/StatBlock";
 
 const HeroSection = () => {
+    const navigate = useNavigate()
+
     return (
         <div className={style.StatContainer}>
             <div className={style.TopSubContainer}>
@@ -40,7 +42,7 @@ const HeroSection = () => {
                             <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
                         </div>
                         <span>
-                            <Button foo={() => {}}>Explore Resources <HiArrowUpRight/></Button>
+                            <Button foo={() => navigate('/resource')}>Explore Resources <HiArrowUpRight/></Button>
                         </span>
                     </div>
                 </div>

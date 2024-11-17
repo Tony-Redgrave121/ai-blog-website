@@ -12,8 +12,11 @@ h3, p {
 
   h3 {
     display: flex;
-    @include m.font(white, 40px, 600, unset);
     margin-bottom: 20px;
+
+    &, p {
+      @include m.font(white, 40px, 600, unset);
+    }
 
     p {
       color: v.$yellow-shade-55;

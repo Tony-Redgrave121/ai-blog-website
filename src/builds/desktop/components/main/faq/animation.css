@@ -1,0 +1,21 @@
+.desc-block-node-enter-active {
+    max-height: 0!important;
+    opacity: 0!important;
+}
+
+.desc-block-node-enter-done {
+    max-height: 250px!important;
+    opacity: 1!important;
+    transition: .5s all ease-in-out;
+}
+
+.desc-block-node-exit-active {
+    max-height: 250px!important;
+    opacity: 1!important;
+}
+
+.desc-block-node-exit-done {
+    max-height: 0!important;
+    opacity: 0!important;
+    transition: .5s all ease-in-out;
+}

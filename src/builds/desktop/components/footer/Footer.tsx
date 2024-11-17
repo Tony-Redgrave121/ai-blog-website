@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {memo } from 'react'
 import style from './style.module.css'
 import {HiArrowUpRight} from "react-icons/hi2"
 import {FaTwitter, FaMedium, FaLinkedin} from "react-icons/fa6";
 import {Link} from "react-router-dom";
 import Button from "../buttons/Button";
 
-const Footer = () => {
+const Footer: React.FC = memo(() => {
+    console.log('footer')
     const list = [
         {
             title: "Home",
@@ -190,9 +191,8 @@ const Footer = () => {
         },
     ]
 
-    //
     return (
-        <header className={style.Footer}>
+        <footer className={style.Footer}>
             <div>
                 {
                     list.map((item, index) => (
@@ -232,8 +232,8 @@ const Footer = () => {
                     </ul>
                 </nav>
             </div>
-        </header>
+        </footer>
     )
-}
+})
 
-export default Footer
+export default memo(Footer)

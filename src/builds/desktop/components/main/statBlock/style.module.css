@@ -9,11 +9,13 @@ h3, p {
 }
 .StatBlock h3 {
   display: flex;
+  margin-bottom: 20px;
+}
+.StatBlock h3, .StatBlock h3 p {
   color: white;
   font-size: 40px;
   font-weight: 600;
   line-height: unset;
-  margin-bottom: 20px;
 }
 .StatBlock h3 p {
   color: #FFD11A;

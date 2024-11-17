@@ -1,11 +1,15 @@
-import React, {useEffect, useRef} from 'react'
+import React, {memo, useEffect, useRef, useState} from 'react'
 import style from './style.module.css'
 import {HiArrowUpRight} from "react-icons/hi2"
 import DesktopLogo from "../../../../utils/icons/logo/desktop-logo.svg"
 import {useDebouncedCallback} from 'use-debounce'
+import {Link} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
+    const [current, setCurrent] = useState('')
+    const navigate = useNavigate()
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -23,6 +27,29 @@ const Header = () => {
         return () => window.removeEventListener('scroll', () => handleBackground)
     }, [handleBackground])
 
+    const links = [
+        {
+            link: '/',
+            title: 'Home',
+        },
+        {
+            link: '/news',
+            title: 'News',
+        },
+        {
+            link: '/podcast',
+            title: 'Podcasts',
+        },
+        {
+            link: '/resource',
+            title: 'Resources',
+        },
+    ]
+
+    useEffect(() => {
+        setCurrent(document.location.pathname.toString())
+    }, [])
+
     return (
         <>
             <div className={style.TopBanner}>
@@ -30,20 +57,26 @@ const Header = () => {
             </div>
             <header className={style.Header} ref={header}>
                 <div className={style.Navbar}>
-                    <a href="https://"><img src={DesktopLogo} alt="Desktop Logo"/></a>
+                    <Link to="/"><img src={DesktopLogo} alt="Desktop Logo"/></Link>
                     <nav className={style.ButtonsContainer}>
                         <ul>
-                            <li><a href="/Home" className={style.Active}>Home</a></li>
-                            <li><a href="/News">News</a></li>
-                            <li><a href="/Podcasts">Podcasts</a></li>
-                            <li><a href="/Resources">TCA</a></li>
+                            {
+                                links.map(link=> (
+                                    <li key={link.title}>
+                                        <Link to={link.link} className={link.link === current ? style.Active : ''} onClick={() => setCurrent(link.link)}>{link.title}</Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </nav>
-                    <button type="button">Contact Us</button>
+                    <button onClick={() => {
+                        navigate('/contact')
+                        setCurrent('/contact')
+                    }}>Contact Us</button>
                 </div>
             </header>
         </>
     )
 }
 
-export default Header
+export default memo(Header)
