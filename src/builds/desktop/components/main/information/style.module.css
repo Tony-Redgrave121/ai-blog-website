@@ -121,14 +121,14 @@ h1, h2, h3, h4, p {
   width: calc(100% - 2px);
   background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 80%);
 }
-.InformationContainer .ContentBlock > div > div {
+.InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
   display: flex;
   justify-content: end;
   padding: 80px 80px 80px 162px;
   border-right: 1px solid #262626;
   border-bottom: 1px solid #262626;
 }
-.InformationContainer .ContentBlock > div > div div {
+.InformationContainer .ContentBlock > div:not(.ButtonBlock) > div div {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -157,13 +157,11 @@ h1, h2, h3, h4, p {
   bottom: 25px;
   right: 0;
   z-index: 2;
+  width: 100%;
+  padding-left: 162px;
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 960px;
-}
-.InformationContainer .ContentBlock .ButtonBlock button {
-  transform: translate(-25%);
+  max-width: 1122px;
 }
 .InformationContainer .ContentBlock .ButtonBlock button svg {
   color: #98989A;

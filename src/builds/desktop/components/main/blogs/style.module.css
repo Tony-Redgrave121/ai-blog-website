@@ -25,6 +25,7 @@
   display: flex;
   justify-content: center;
   padding: 80px 162px;
+  transition: 0.3s all ease-in-out;
 }
 .TabsContainer .PostContainer > div {
   display: flex;

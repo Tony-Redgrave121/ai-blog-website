@@ -56,7 +56,7 @@ const HomePage = () => {
             <Crossing desc="Explore FutureTech's In-Depth TCA Posts" title="A Knowledge Treasure Trove">
                 <Button foo={() => {}}>View All Blogs <HiArrowUpRight/></Button>
             </Crossing>
-            <Blogs posts={posts}></Blogs>
+            {posts && <Blogs posts={posts}></Blogs>}
             <Crossing desc="Your Gateway to In-Depth Information" title="Unlock Valuable Knowledge with FutureTech's TCA">
                 <Button foo={() => {}}>View All TCA <HiArrowUpRight/></Button>
             </Crossing>

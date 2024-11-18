@@ -11,7 +11,8 @@
     "postState": true,
     "postLikeCount": 24000,
     "postCommentCount": 50,
-    "postReplyCount": 20
+    "postReplyCount": 20,
+    "postTags": ["Quantum Computing", "Renewable Energy", "Biotechnology"]
   },
   {
     "userId": "user2",
@@ -25,7 +26,8 @@
     "postState": false,
     "postLikeCount": 32000,
     "postCommentCount": 72,
-    "postReplyCount": 18
+    "postReplyCount": 18,
+    "postTags": ["AI Ethics", "Biotechnology", "Renewable Energy"]
   },
   {
     "userId": "user3",
@@ -39,6 +41,7 @@
     "postState": false,
     "postLikeCount": 20000,
     "postCommentCount": 31,
-    "postReplyCount": 12
+    "postReplyCount": 12,
+    "postTags": ["Space Exploration", "Renewable Energy"]
   }
 ]

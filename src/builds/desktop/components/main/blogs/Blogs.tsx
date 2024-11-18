@@ -1,30 +1,43 @@
-import React from 'react'
+import React, {useEffect, useMemo} from 'react'
 import style from "./style.module.css"
 import Button from '../../buttons/Button'
-import { HiArrowUpRight, HiOutlineHeart, HiOutlineChatBubbleOvalLeft, HiHeart  } from "react-icons/hi2";
+import {HiArrowUpRight, HiOutlineHeart, HiOutlineChatBubbleOvalLeft, HiHeart} from "react-icons/hi2";
 import formatCompact from "../../../../../utils/formats/formatCompact";
-import { VscSend } from "react-icons/vsc";
+import {VscSend} from "react-icons/vsc";
 import IPostLow from '../../../../../utils/types/IPostLow'
 
 interface ITabs {
-    posts?: Array<IPostLow>,
+    posts: Array<IPostLow> | undefined,
 }
 
 const Blogs: React.FC<ITabs> = ({posts}) => {
-    const select = ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy']
+    const [filteredPosts, setFilteredPosts] = React.useState<Array<IPostLow>>([])
+    const [filterParam, setFilterParam] = React.useState('All')
+    const select = useMemo(() => ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy'], [])
+
+    useEffect(() => {
+        posts && setFilteredPosts(posts)
+    }, [posts])
+
+    useEffect(() => {
+        if (posts) {
+            if (filterParam !== 'All') setFilteredPosts(posts.filter(post => post.postTags.includes(filterParam)))
+            else setFilteredPosts(posts)
+        }
+    }, [filterParam, posts])
 
     return (
         <div className={style.TabsContainer}>
             <div className={style.SelectContainer}>
                 <div>
                     {
-                        select.map((select, index) => (
-                            <Button foo={() => {}} key={select} type={['SelectButton', index === 0 ? 'ActiveSelectButton' : '']}>{select}</Button>
+                        select.map(select => (
+                            <Button foo={() => setFilterParam(select)} key={select} type={['SelectButton', filterParam === select ? 'ActiveSelectButton' : '']}>{select}</Button>
                         ))
                     }
                 </div>
             </div>
-            { posts && posts.map(post => (
+            {filteredPosts && filteredPosts.map(post => (
                 <div className={style.PostContainer} key={post.postId}>
                     <div>
                         <div className={style.PostContainerLeft}>
@@ -46,7 +59,8 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                                 }} type={["PostButton"]}>{post.postState ? <HiHeart color="#FF5500"/> :
                                     <HiOutlineHeart/>} {formatCompact(post.postLikeCount)}</Button>
                                 <Button foo={() => {
-                                }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
+                                }}
+                                        type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
                                 </Button>
                                 <Button foo={() => {
                                 }} type={["PostButton"]}><VscSend/> {formatCompact(post.postReplyCount)}</Button>

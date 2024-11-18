@@ -15,7 +15,7 @@ const UserRoutes = [
         Component: NewsPage
     },
     {
-        path: "/blog/:id",
+        path: "/blogs/:id",
         Component: BlogPage
     },
     {

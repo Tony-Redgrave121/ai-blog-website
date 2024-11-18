@@ -1,15 +1,16 @@
-import React, {memo, useEffect, useRef, useState} from 'react'
+import React, {memo, useEffect, useRef} from 'react'
 import style from './style.module.css'
 import {HiArrowUpRight} from "react-icons/hi2"
 import DesktopLogo from "../../../../utils/icons/logo/desktop-logo.svg"
 import {useDebouncedCallback} from 'use-debounce'
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
-    const [current, setCurrent] = useState('')
     const navigate = useNavigate()
+    const location = useLocation()
+    const [currentLocation, setCurrentLocation] = React.useState('')
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -23,7 +24,6 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => handleBackground(26, 38))
-
         return () => window.removeEventListener('scroll', () => handleBackground)
     }, [handleBackground])
 
@@ -47,8 +47,9 @@ const Header = () => {
     ]
 
     useEffect(() => {
-        setCurrent(document.location.pathname.toString())
-    }, [])
+        // window.scrollTo({ top: 0 })
+        setCurrentLocation(document.location.pathname)
+    }, [location])
 
     return (
         <>
@@ -63,16 +64,13 @@ const Header = () => {
                             {
                                 links.map(link=> (
                                     <li key={link.title}>
-                                        <Link to={link.link} className={link.link === current ? style.Active : ''} onClick={() => setCurrent(link.link)}>{link.title}</Link>
+                                        <Link to={link.link} className={link.link === currentLocation ? style.Active : ''}>{link.title}</Link>
                                     </li>
                                 ))
                             }
                         </ul>
                     </nav>
-                    <button onClick={() => {
-                        navigate('/contact')
-                        setCurrent('/contact')
-                    }}>Contact Us</button>
+                    <button onClick={() => navigate('/contact')}>Contact Us</button>
                 </div>
             </header>
         </>

@@ -7,7 +7,7 @@ import formatCompact from "../../../../../utils/formats/formatCompact";
 import formatDate from "../../../../../utils/formats/formatDate";
 import {VscSend} from "react-icons/vsc"
 import { CSSTransition } from "react-transition-group"
-import useContentBlock from "./hooks/useContentBlock"
+import useContentBlock from "../../../../../utils/hooks/useContentBlock"
 import IBlog from '../../../../../utils/types/IBlog'
 
 interface IBlogProps {
@@ -38,10 +38,10 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                         <div ref={contentBlock} className={style.ContentBlock}>
                             <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
                             <div className={style.ButtonBlock}>
-                                <Button foo={() => handleBlockHeight()}>{blockState
-                                    ? <>Read Short Blog <HiArrowUp/></>
-                                    : <>Read Full Blog <HiArrowDown/></>}
-                                </Button>
+                                    <Button foo={() => handleBlockHeight()}>{blockState
+                                        ? <>Read Short Blog <HiArrowUp/></>
+                                        : <>Read Full Blog <HiArrowDown/></>}
+                                    </Button>
                             </div>
                         </div>
                     </CSSTransition>

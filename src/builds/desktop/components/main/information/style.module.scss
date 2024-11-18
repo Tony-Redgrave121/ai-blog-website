@@ -135,7 +135,7 @@ h1, h2, h3, h4, p {
       background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 1) 80%);
     }
 
-    > div {
+    > div:not(.ButtonBlock) {
       > div {
         display: flex;
         justify-content: end;
@@ -169,17 +169,19 @@ h1, h2, h3, h4, p {
       bottom: 25px;
       right: 0;
       z-index: 2;
+      width: 100%;
+      padding-left: 162px;
       display: flex;
       justify-content: center;
-      width: 100%;
-      max-width: 960px;
+      max-width: 1122px;
 
       button {
-        transform: translate(-25%);
-
         svg {
           color: v.$grey-shade-60;
         }
+      }
+      > div {
+
       }
     }
   }

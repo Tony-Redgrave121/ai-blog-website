@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 import Button from "../buttons/Button";
 
 const Footer: React.FC = memo(() => {
-    console.log('footer')
     const list = [
         {
             title: "Home",
