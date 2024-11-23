@@ -5,6 +5,7 @@ import {HiArrowUpRight, HiOutlineHeart, HiOutlineChatBubbleOvalLeft, HiHeart} fr
 import formatCompact from "../../../../../utils/formats/formatCompact";
 import {VscSend} from "react-icons/vsc";
 import IPostLow from '../../../../../utils/types/IPostLow'
+import {useNavigate} from "react-router-dom";
 
 interface ITabs {
     posts: Array<IPostLow> | undefined,
@@ -14,6 +15,7 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
     const [filteredPosts, setFilteredPosts] = React.useState<Array<IPostLow>>([])
     const [filterParam, setFilterParam] = React.useState('All')
     const select = useMemo(() => ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy'], [])
+    const navigate = useNavigate()
 
     useEffect(() => {
         posts && setFilteredPosts(posts)
@@ -59,16 +61,14 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                                 }} type={["PostButton"]}>{post.postState ? <HiHeart color="#FF5500"/> :
                                     <HiOutlineHeart/>} {formatCompact(post.postLikeCount)}</Button>
                                 <Button foo={() => {
-                                }}
-                                        type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
+                                }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
                                 </Button>
                                 <Button foo={() => {
                                 }} type={["PostButton"]}><VscSend/> {formatCompact(post.postReplyCount)}</Button>
                             </div>
                         </div>
                         <div>
-                            <Button foo={() => {
-                            }}>View Blog <HiArrowUpRight/></Button>
+                            <Button foo={() => navigate(`blog/${post.postId}`)}>View Blog <HiArrowUpRight/></Button>
                         </div>
                     </div>
                 </div>

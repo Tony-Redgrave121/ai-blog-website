@@ -38,7 +38,7 @@ const FAQ = () => {
                         <h1>Asked question</h1>
                         <p>If the question is not available on our FAQ section, Feel free to contact us personally, we will resolve your respective doubts. </p>
                         <span>
-                            <Button foo={() => {}}>Ask Qustion <HiArrowUpRight/></Button>
+                            <Button foo={() => {}}>Ask Question <HiArrowUpRight/></Button>
                         </span>
                     </div>
                 </div>

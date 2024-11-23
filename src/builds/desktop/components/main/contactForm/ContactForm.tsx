@@ -3,8 +3,23 @@ import style from "./style.module.css"
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
 import PhoneInput from 'react-phone-input-2'
 import './phoneBlockStyle.css'
+import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm()
+
+    const registerOptions = {
+        firstName: { required: "First name is required" },
+        lastName: { required: "Last name is required" },
+        email: { required: "Email is required" },
+        phone: { required: "Phone number is required" },
+        message: { required: "Message is required" },
+        agree: { required: "Your agree is required" },
+    }
+
+    const handleRegistration = (data: any) => console.log(data);
+    const handleError = (errors: any) => {};
+
     return (
         <ResourceContainer>
             <div>
@@ -15,11 +30,14 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className={style.ResourceContainerRight}>
-                    <form>
+                    <form onSubmit={handleSubmit(handleRegistration, handleError)}>
                         <div>
                             <div className={style.InputBlock}>
                                 <label htmlFor="first-name">First Name</label>
-                                <input type='text' name="first-name" placeholder="Enter First Name"></input>
+                                <input type='text' placeholder="Enter First Name" {...register('firstName', registerOptions.firstName) }></input>
+                                <small className="text-danger">
+                                    {errors.firstName && errors.firstName.message?.toString()}
+                                </small>
                             </div>
                             <div className={style.InputBlock}>
                                 <label htmlFor="last-name">Last Name</label>
@@ -48,7 +66,7 @@ const ContactForm = () => {
                                     <input type='checkbox' name="checkbox"></input>
                                     <label htmlFor="checkbox">I agree with Terms of Use and Privacy Policy</label>
                                 </span>
-                                <button type='button'>Send</button>
+                                <button >Send</button>
                             </div>
                         </div>
                     </form>
