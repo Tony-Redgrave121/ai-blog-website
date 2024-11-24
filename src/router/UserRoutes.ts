@@ -1,9 +1,11 @@
-import NewsPage from "../builds/desktop/pages/newsPage/NewsPage";
-import HomePage from "../builds/desktop/pages/homePage/HomePage";
-import BlogPage from "../builds/desktop/pages/blogPage/BlogPage";
-import PodcastPage from "../builds/desktop/pages/podcastPage/PodcastPage";
-import ResourcePage from "../builds/desktop/pages/resourcesPage/ResourcePage";
-import ContactPage from "../builds/desktop/pages/contactPage/ContactPage";
+import {lazy} from "react";
+
+const HomePage = lazy(() => import("../builds/desktop/pages/homePage/HomePage"))
+const BlogPage = lazy(() => import("../builds/desktop/pages/blogPage/BlogPage"))
+const PodcastPage = lazy(() => import("../builds/desktop/pages/podcastPage/PodcastPage"))
+const ResourcePage = lazy(() => import("../builds/desktop/pages/resourcesPage/ResourcePage"))
+const ContactPage = lazy(() => import("../builds/desktop/pages/contactPage/ContactPage"))
+const NewsPage = lazy(() => import("../builds/desktop/pages/newsPage/NewsPage"))
 
 const UserRoutes = [
     {
