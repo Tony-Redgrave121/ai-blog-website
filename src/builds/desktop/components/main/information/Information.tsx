@@ -9,6 +9,8 @@ import {VscSend} from "react-icons/vsc"
 import { CSSTransition } from "react-transition-group"
 import useContentBlock from "../../../../../utils/hooks/useContentBlock"
 import IBlog from '../../../../../utils/types/IBlog'
+import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
+import {useParams} from "react-router-dom";
 
 interface IBlogProps {
     blog: IBlog
@@ -17,6 +19,7 @@ interface IBlogProps {
 const Information: React.FC<IBlogProps> = ({blog}) => {
     const [navigationLink, setNavigationLink] = useState([''])
     const {blockState, contentBlock, handleBlockHeight, handleLink} = useContentBlock()
+    const params = useParams()
 
     useEffect(() => {
         setNavigationLink([""])
@@ -29,7 +32,8 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
 
     return (
         <div className={style.InformationContainer}>
-            <div style={{backgroundImage: `url(${require(`../../../../../utils/icons/main/blogs/images/${blog.image}`)}`}}>
+            <div>
+                <BlurHashImage imagePath={`blogs/${params.id}/${blog.image}`} hash={blog.hash}></BlurHashImage>
                 <h1>{blog.title}</h1>
             </div>
             <div>
@@ -38,10 +42,10 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                         <div ref={contentBlock} className={style.ContentBlock}>
                             <div dangerouslySetInnerHTML={{__html: blog.content}}></div>
                             <div className={style.ButtonBlock}>
-                                    <Button foo={() => handleBlockHeight()}>{blockState
-                                        ? <>Read Short Blog <HiArrowUp/></>
-                                        : <>Read Full Blog <HiArrowDown/></>}
-                                    </Button>
+                                <Button foo={() => handleBlockHeight()}>{blockState
+                                    ? <>Read Short Blog <HiArrowUp/></>
+                                    : <>Read Full Blog <HiArrowDown/></>}
+                                </Button>
                             </div>
                         </div>
                     </CSSTransition>

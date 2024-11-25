@@ -12,7 +12,7 @@ const Developers: React.FC<IDeveloper> = ({type}) => {
             <div className={`${style.DeveloperBlock} ${type ? style[type] : null}`}>
                 {
                     developers.map(developer => (
-                        <img src={require(`../../../../../../utils/icons/main/developers/${developer.developer}.png`)} alt={developer.developer} key={developer.developer}/>
+                        <img src={require(`../../../../../../utils/icons/main/developers/${developer.developer}.webp`)} alt={developer.developer} key={developer.developer}/>
                     ))
                 }
             </div>

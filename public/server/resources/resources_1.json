@@ -6,7 +6,7 @@
     "resourceDownloads": 10000,
     "resourceTopicTitle": "Variety of Topics",
     "resourceTopicDesc": "Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).",
-    "resourceTopicImage": "image_1.png",
+    "resourceTopicImage": "image_1.webp",
     "resourceTotal": 100,
     "resourceExpertise": "Ebooks are authored by renowned experts with an average of 15 years of experience."
   },
@@ -17,7 +17,7 @@
     "resourceDownloads": 10000,
     "resourceTopicTitle": "Topics Coverage",
     "resourceTopicDesc": "Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).",
-    "resourceTopicImage": "image_2.png",
+    "resourceTopicImage": "image_2.webp",
     "resourceTotal": 50,
     "resourceExpertise": "Whitepapers are authored by subject matter experts with an average of 20 years of experience."
   }

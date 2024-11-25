@@ -1,0 +1,16 @@
+.blur-hash-node-enter {
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.blur-hash-node-enter-active {
+    filter: blur(0);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.blur-hash-node-exit-active {
+    filter: blur(10px);
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+}

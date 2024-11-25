@@ -1,1 +1,36 @@
-[{"section":[{"image":"img_2.png","title":"A Decisive Victory for Progressive Policies","desc":"Politics","stat":[],"likeCount":2200,"replyCount":60,"link":"/"},{"image":"img_3.png","title":"Tech Giants Unveil Cutting-Edge AI Innovations","desc":"Technology","stat":[],"likeCount":6000,"replyCount":92,"link":"/"},{"image":"img_4.png","title":"COVID-19 Variants","desc":"Health","stat":[],"likeCount":10000,"replyCount":124,"link":"/"}]}]
+[
+  {
+    "section": [
+      {
+        "image": "img_2.webp",
+        "hash": "L~Ku=9W:M}bG~8bHeVbFxskBr?j?",
+        "title": "A Decisive Victory for Progressive Policies",
+        "desc": "Politics",
+        "stat": [],
+        "likeCount": 2200,
+        "replyCount": 60,
+        "link": "/"
+      },
+      {
+        "image": "img_3.webp",
+        "hash": "L25;jrQ-00_M^*VsD*t,9tbvxuMx",
+        "title": "Tech Giants Unveil Cutting-Edge AI Innovations",
+        "desc": "Technology",
+        "stat": [],
+        "likeCount": 6000,
+        "replyCount": 92,
+        "link": "/"
+      },
+      {
+        "image": "img_4.webp",
+        "hash": "LOIr:D00_3H@0KEMOXxt~lIVIB={",
+        "title": "COVID-19 Variants",
+        "desc": "Health",
+        "stat": [],
+        "likeCount": 10000,
+        "replyCount": 124,
+        "link": "/"
+      }
+    ]
+  }
+]

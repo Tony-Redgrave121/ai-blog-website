@@ -1,1 +1,44 @@
-[{"userImage":"developer_5.png","userName":"Sarah Thompson","userLocation":"San Francisco, USA","userRate":5,"userComment":"The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated."},{"userImage":"developer_6.png","userName":"Raj Patel","userLocation":"Mumbai, India","userRate":4,"userComment":"The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions."},{"userImage":"developer_7.png","userName":"Emily Adams","userLocation":"London, UK","userRate":5,"userComment":"The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care."},{"userImage":"developer_8.png","userName":"Alan Jackson","userLocation":"Houston, USA","userRate":4,"userComment":"The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth."},{"userImage":"developer_3.png","userName":"Jessica Miller","userLocation":"Boston, USA","userRate":5,"userComment":"The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics."},{"userImage":"developer_2.png","userName":"Diego Lopez","userLocation":"Barcelona, Spain","userRate":5,"userComment":"The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability."}]
+[
+  {
+    "userImage": "developer_5.webp",
+    "userName": "Sarah Thompson",
+    "userLocation": "San Francisco, USA",
+    "userRate": 5,
+    "userComment": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated."
+  },
+  {
+    "userImage": "developer_6.webp",
+    "userName": "Raj Patel",
+    "userLocation": "Mumbai, India",
+    "userRate": 4,
+    "userComment": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions."
+  },
+  {
+    "userImage": "developer_7.webp",
+    "userName": "Emily Adams",
+    "userLocation": "London, UK",
+    "userRate": 5,
+    "userComment": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care."
+  },
+  {
+    "userImage": "developer_8.webp",
+    "userName": "Alan Jackson",
+    "userLocation": "Houston, USA",
+    "userRate": 4,
+    "userComment": "The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth."
+  },
+  {
+    "userImage": "developer_3.webp",
+    "userName": "Jessica Miller",
+    "userLocation": "Boston, USA",
+    "userRate": 5,
+    "userComment": "The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics."
+  },
+  {
+    "userImage": "developer_2.webp",
+    "userName": "Diego Lopez",
+    "userLocation": "Barcelona, Spain",
+    "userRate": 5,
+    "userComment": "The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability."
+  }
+]

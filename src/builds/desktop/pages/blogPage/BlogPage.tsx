@@ -5,15 +5,14 @@ import Information from "../../components/main/information/Information";
 import sections from '../../components/main/headerSection/sections_2.json'
 import Button from "../../components/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
+import {useParams} from 'react-router-dom'
 
 const BlogPage = () => {
     const [blog, setBlog] = React.useState<IBlog>()
+    const params = useParams()
 
     useEffect(() => {
-        const url = new URL(window.location.href)
-        const blogName = url.pathname.split("/")[2]
-
-        fetch(`http://localhost:3000/server/blogs/${blogName}.json`)
+        fetch(`http://localhost:3000/server/blogs/${params.id}.json`)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
                 return response.json()
@@ -22,7 +21,7 @@ const BlogPage = () => {
                 setBlog(data)
             })
             .catch(error => console.log(error))
-    }, [])
+    }, [params.id])
 
     const createTitle = (title: string, button: React.ReactNode) => {
         return (
@@ -49,4 +48,4 @@ const BlogPage = () => {
     )
 }
 
-export default BlogPage;
+export default BlogPage

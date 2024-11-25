@@ -2,7 +2,8 @@
   {
     "section": [
       {
-        "image": "img_1.png",
+        "image": "img_1.webp",
+        "hash": "LzO]:YwfSMj@}oWXWWjtEif%azja",
         "title": "Global Climate Summit Addresses Urgent Climate Action",
         "desc": "World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.",
         "stat": [
@@ -28,7 +29,8 @@
   {
     "section": [
       {
-        "image": "img_2.png",
+        "image": "img_2.webp",
+        "hash": "L~Ku=9W:M}bG~8bHeVbFxskBr?j?",
         "title": "A Decisive Victory for Progressive Policies",
         "desc": "Politics",
         "stat": [],
@@ -37,7 +39,8 @@
         "link": "/"
       },
       {
-        "image": "img_3.png",
+        "image": "img_3.webp",
+        "hash": "L25;jrQ-00_M^*VsD*t,9tbvxuMx",
         "title": "Tech Giants Unveil Cutting-Edge AI Innovations",
         "desc": "Technology",
         "stat": [],
@@ -46,7 +49,8 @@
         "link": "/"
       },
       {
-        "image": "img_4.png",
+        "image": "img_4.webp",
+        "hash": "LOIr:D00_3H@0KEMOXxt~lIVIB={",
         "title": "COVID-19 Variants",
         "desc": "Health",
         "stat": [],

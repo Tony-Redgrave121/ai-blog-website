@@ -1,10 +1,10 @@
 [
   {
     "userId": "user1",
-    "userImg": "developer_2.png",
+    "userImg": "developer_2.webp",
     "userName": "John Techson",
     "userDesc": "Quantum Computing",
-    "postId": "post1",
+    "postId": "blog_1",
     "postDate": "October 15, 2023",
     "postTitle": "The Quantum Leap in Computing",
     "postDesc": "Explore the revolution in quantum computing, its applications, and its potential impact on various industries.",
@@ -16,10 +16,10 @@
   },
   {
     "userId": "user2",
-    "userImg": "developer_3.png",
+    "userImg": "developer_3.webp",
     "userName": "Sarah Ethicist",
     "userDesc": "AI Ethics",
-    "postId": "post2",
+    "postId": "blog_2",
     "postDate": "November 5, 2023",
     "postTitle": "The Ethical Dilemmas of AI",
     "postDesc": "A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.",
@@ -31,10 +31,10 @@
   },
   {
     "userId": "user3",
-    "userImg": "developer_4.png",
+    "userImg": "developer_4.webp",
     "userName": "Astronomer X",
     "userDesc": "Space Exploration",
-    "postId": "post3",
+    "postId": "blog_3",
     "postDate": "December 10, 2023",
     "postTitle": "The Mars Colonization Challenge",
     "postDesc": "Exploring the technical and logistical challenges of human colonization on Mars.",

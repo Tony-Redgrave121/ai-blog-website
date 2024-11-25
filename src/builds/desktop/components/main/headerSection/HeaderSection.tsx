@@ -4,10 +4,12 @@ import {HiArrowUpRight, HiHeart, HiOutlineHeart} from "react-icons/hi2";
 import formatCompact from "../../../../../utils/formats/formatCompact";
 import Button from "../../buttons/Button";
 import {VscSend} from "react-icons/vsc";
+import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface ISection {
     section: Array<{
         image: string,
+        hash: string,
         title: string,
         desc: string,
         stat: Array<
@@ -39,11 +41,9 @@ const HeaderSection: React.FC<IHeaderSection> = ({sections, children}) => {
                                 {
                                     section.section.map(item => (
                                         <div
-                                            className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]}
-                                            key={item.title}>
-                                            <img
-                                                src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)}
-                                                alt={item.title}/>
+                                            className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]} key={item.title}>
+                                            {/*<img src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)} alt={item.title}/>*/}
+                                            <BlurHashImage imagePath={`images/headerSection/${item.image}`} hash={item.hash}></BlurHashImage>
                                             <div>
                                                 <div>
                                                     <h2>{item.title}</h2>

@@ -27,7 +27,6 @@ const HomePage = () => {
             })
             .then(data => setPosts(data))
             .catch(error => console.log(error))
-
         fetch("http://localhost:3000/server/testimonials/testimonials.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);

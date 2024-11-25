@@ -68,7 +68,7 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                             </div>
                         </div>
                         <div>
-                            <Button foo={() => navigate(`blog/${post.postId}`)}>View Blog <HiArrowUpRight/></Button>
+                            <Button foo={() => navigate(`blogs/${post.postId}`)}>View Blog <HiArrowUpRight/></Button>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ export default interface IBlog {
     title: string,
     content: string,
     image: string,
+    hash: string,
     likeCount: number,
     likeState: boolean,
     viewCount: number,

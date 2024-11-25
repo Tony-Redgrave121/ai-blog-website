@@ -11,20 +11,40 @@ h1, h2, h3, h4, p {
   background-color: #141414;
 }
 .InformationContainer > :first-child {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: end;
   border-bottom: 1px solid #262626;
-  box-shadow: 0 -70px 150px 70px rgb(20, 20, 20) inset;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 598px;
   padding: 50px 0;
+  overflow: hidden;
+}
+.InformationContainer > :first-child > div {
+  position: absolute !important;
+  top: 0;
+  z-index: 0;
+}
+.InformationContainer > :first-child > div, .InformationContainer > :first-child > div img, .InformationContainer > :first-child > div:after {
+  width: 100%;
+  height: 100%;
+}
+.InformationContainer > :first-child > div img {
+  position: absolute;
+  object-fit: cover;
+}
+.InformationContainer > :first-child > div:after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.880208) 75.52%, #141414 100%);
 }
 .InformationContainer > :first-child h1 {
+  z-index: 1;
   color: white;
   font-size: 64px;
   font-weight: 500;
@@ -119,7 +139,7 @@ h1, h2, h3, h4, p {
   left: 0;
   height: 120px;
   width: calc(100% - 2px);
-  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 80%);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 60%);
 }
 .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
   display: flex;
