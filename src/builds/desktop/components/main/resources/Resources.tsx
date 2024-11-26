@@ -6,6 +6,7 @@ import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../../buttons/Button";
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
 import TripleContainer from "../testimonials/tripleContainer/TripleContainer";
+import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface IResourcesProps {
     resources: Array<IResource>
@@ -28,24 +29,20 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
                         <div key={resource.resourceTitle}>
                             <div className={style.ResourceContainerLeft}>
                                 <div>
-                                    <img
-                                        src={require(`../../../../../utils/icons/main/topics/${resource.resourceImage}.svg`)}
+                                    <img src={require(`../../../../../utils/icons/main/topics/${resource.resourceImage}.svg`)}
                                         alt={resource.resourceTitle}/>
                                     <h1>{resource.resourceTitle}</h1>
                                     <p>{resource.resourceDesc}</p>
                                 </div>
                             </div>
                             <div className={style.ResourceContainerRight}>
-                                <img
-                                    src={require(`../../../../../utils/icons/main/topics/image/${resource.resourceTopicImage}`)}
-                                    alt={resource.resourceTopicTitle}/>
+                                <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle}></BlurHashImage>
                                 <div className={style.ResourceTitleBlock}>
                                     <div>
                                         <h2>{resource.resourceTopicTitle}</h2>
                                         <p>{resource.resourceTopicDesc}</p>
                                     </div>
-                                    <Button foo={() => {
-                                    }}>Download PDF Now <HiArrowUpRight/></Button>
+                                    <Button foo={() => {}}>Download PDF Now <HiArrowUpRight/></Button>
                                 </div>
                                 <div>
                                     <div className={style.TextBlock}>
@@ -70,7 +67,7 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
                 {
                     moreResource.map(resource => (
                         <div className={style.ResourceContainerMore} key={resource.resourceTitle}>
-                            <img src={require(`../../../../../utils/icons/main/topics/image/${resource.resourceTopicImage}`)} alt={resource.resourceTopicTitle}/>
+                            <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle}></BlurHashImage>
                             <h2>{resource.resourceTopicTitle}</h2>
                             <p>{resource.resourceTopicDesc}</p>
                             <span>

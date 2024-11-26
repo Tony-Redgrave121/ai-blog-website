@@ -19,8 +19,9 @@ h2, h3, p {
   align-items: center;
   gap: 12px;
 }
-.TestimonialsBlock > div > :first-child img {
+.TestimonialsBlock > div > :first-child canvas, .TestimonialsBlock > div > :first-child img {
   width: 60px;
+  border-radius: 50%;
 }
 .TestimonialsBlock > div > :first-child h2 {
   color: white;

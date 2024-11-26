@@ -40,9 +40,7 @@ const HeaderSection: React.FC<IHeaderSection> = ({sections, children}) => {
                             <div>
                                 {
                                     section.section.map(item => (
-                                        <div
-                                            className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]} key={item.title}>
-                                            {/*<img src={require(`../../../../../utils/icons/main/headerSection/${item.image}`)} alt={item.title}/>*/}
+                                        <div className={item.stat.length > 0 ? style["WideSection"] : style["ShortSection"]} key={item.title}>
                                             <BlurHashImage imagePath={`images/headerSection/${item.image}`} hash={item.hash}></BlurHashImage>
                                             <div>
                                                 <div>

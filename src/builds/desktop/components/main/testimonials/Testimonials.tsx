@@ -2,6 +2,7 @@ import React from 'react'
 import style from "./style.module.css"
 import {ITestimonial} from "../../../../../utils/types/ITestimonial";
 import RateBlock from "./rateBlock/RateBlock";
+import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface ITestimonialsProps {
     testimonials: Array<ITestimonial>
@@ -15,7 +16,7 @@ const Testimonials: React.FC<ITestimonialsProps> = ({testimonials}) => {
                     <div className={style.TestimonialsBlock} key={index}>
                         <div>
                             <div>
-                                <img src={require(`../../../../../utils/icons/main/developers/${testimonial.userImage}`)} alt={testimonial.userName}/>
+                                <BlurHashImage imagePath={`images/developers/${testimonial.userImage}`} hash={testimonial.hash} alt={testimonial.userName} width="60px"></BlurHashImage>
                                 <div>
                                     <h2>{testimonial.userName}</h2>
                                     <p>{testimonial.userLocation}</p>

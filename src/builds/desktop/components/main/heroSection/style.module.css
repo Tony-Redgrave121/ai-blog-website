@@ -96,9 +96,9 @@ h2, h3, p {
 .StatContainer .TopSubContainer .RightContainer > div > img {
   position: absolute;
   top: -7%;
-  left: -9%;
+  left: -7%;
   transform: rotate(35.39deg);
-  width: 65%;
+  width: 800px;
   mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
 }
 .StatContainer .TopSubContainer .RightContainer > div .TextBlock h3 {

@@ -71,6 +71,10 @@ h2, h3, p {
   font-weight: 400;
   line-height: 27px;
 }
+.ResourceContainerRight canvas, .ResourceContainerRight img {
+  width: 100%;
+  border-radius: 12px;
+}
 .ResourceContainerRight > :last-child {
   display: flex;
   flex-wrap: wrap;

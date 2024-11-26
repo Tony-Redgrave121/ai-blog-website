@@ -52,6 +52,10 @@
         gap: 16px;
         width: 25%;
 
+        canvas, img {
+          border-radius: 100%;
+        }
+
         div {
           h3 {
             @include m.font(white, 20px, 600, 30px);

@@ -2,6 +2,7 @@
   {
     "userId": "user1",
     "userImg": "developer_2.webp",
+    "hash": "LIGH*WxY1+NI0CRk~9t5~pWCpJs-",
     "userName": "John Techson",
     "userDesc": "Quantum Computing",
     "postId": "blog_1",
@@ -17,6 +18,7 @@
   {
     "userId": "user2",
     "userImg": "developer_3.webp",
+    "hash": "LICi~?of58RjD%WB.8of?^j@tSWV",
     "userName": "Sarah Ethicist",
     "userDesc": "AI Ethics",
     "postId": "blog_2",
@@ -32,6 +34,7 @@
   {
     "userId": "user3",
     "userImg": "developer_4.webp",
+    "hash": "LEBM[IkBBWjY%LWBXAf6Y6j?~qbI",
     "userName": "Astronomer X",
     "userDesc": "Space Exploration",
     "postId": "blog_3",

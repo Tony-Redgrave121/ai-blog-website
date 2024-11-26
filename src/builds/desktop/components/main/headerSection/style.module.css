@@ -85,8 +85,14 @@ h2, p {
   align-items: center;
   gap: 10px;
 }
+.HeaderSection > div canvas, .HeaderSection > div img {
+  border-radius: 12px;
+}
 .HeaderSection > div .WideSection {
   gap: 80px;
+}
+.HeaderSection > div .WideSection > :first-child {
+  max-width: 515px;
 }
 .HeaderSection > div .WideSection > div {
   gap: 50px;
@@ -98,14 +104,14 @@ h2, p {
   font-weight: 600;
   line-height: 48px;
 }
-.HeaderSection > div .WideSection img {
-  max-width: 515px;
-}
 .HeaderSection > div .ShortSection {
   flex-direction: column;
   gap: 10px;
   height: 100%;
   width: 33.33333%;
+}
+.HeaderSection > div .ShortSection > :first-child {
+  height: 222px !important;
 }
 .HeaderSection > div .ShortSection > div {
   height: 100%;
@@ -118,9 +124,10 @@ h2, p {
   font-weight: 600;
   line-height: 30px;
 }
-.HeaderSection > div .ShortSection img {
+.HeaderSection > div .ShortSection canvas, .HeaderSection > div .ShortSection img {
+  position: static !important;
   width: 100%;
-  max-height: 222px;
+  height: 222px !important;
 }
 
 /*# sourceMappingURL=style.module.css.map */

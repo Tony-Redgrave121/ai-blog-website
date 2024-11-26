@@ -1,6 +1,7 @@
 export default interface IPostLow {
     userId: string,
     userImg: string,
+    hash: string,
     userName: string,
     userDesc: string,
     postId: string,

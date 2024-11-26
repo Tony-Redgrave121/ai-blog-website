@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react'
 import style from "./style.module.css"
 import './animation.css'
 import {HiArrowDown, HiArrowUp, HiHeart, HiOutlineEye, HiOutlineHeart} from "react-icons/hi2";
+import {VscSend} from "react-icons/vsc"
 import Button from "../../buttons/Button";
 import formatCompact from "../../../../../utils/formats/formatCompact";
 import formatDate from "../../../../../utils/formats/formatDate";
-import {VscSend} from "react-icons/vsc"
 import { CSSTransition } from "react-transition-group"
 import useContentBlock from "../../../../../utils/hooks/useContentBlock"
 import IBlog from '../../../../../utils/types/IBlog'

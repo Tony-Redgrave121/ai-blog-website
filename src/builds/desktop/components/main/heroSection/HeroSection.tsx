@@ -6,8 +6,8 @@ import {HiArrowUpRight} from "react-icons/hi2"
 import {Link, useNavigate} from "react-router-dom"
 import links from './json/links.json'
 import stats from './json/stats.json'
-import Developer from './developer/Developers'
 import StatBlock from "../statBlock/StatBlock";
+import Developers from "../generalComponents/developer/Developers";
 
 const HeroSection = () => {
     const navigate = useNavigate()
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 <div className={style.RightContainer}>
                     <div>
                         <img src={AbstractDesign} alt="Abstract Design"/>
-                        <Developer/>
+                        <Developers />
                         <div className={style.TextBlock}>
                             <h3>Explore 1000+ resources</h3>
                             <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>

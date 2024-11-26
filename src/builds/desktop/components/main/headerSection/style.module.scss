@@ -95,8 +95,16 @@ h2, p {
       }
     }
 
+    canvas, img {
+      border-radius: 12px;
+    }
+
     .WideSection {
       gap: 80px;
+
+      > :first-child {
+        max-width: 515px;
+      }
 
       > div {
         gap: 50px;
@@ -106,10 +114,6 @@ h2, p {
         margin-bottom: 30px;
         @include m.font(white, 32px, 600, 48px)
       }
-
-      img {
-        max-width: 515px;
-      }
     }
 
     .ShortSection {
@@ -117,6 +121,10 @@ h2, p {
       gap: 10px;
       height: 100%;
       width: 33.33333%;
+
+      > :first-child {
+        height: 222px!important;
+      }
 
       > div {
         height: 100%;
@@ -128,9 +136,10 @@ h2, p {
         @include m.font(white, 20px, 600, 30px)
       }
 
-      img {
+      canvas, img {
+        position: static!important;
         width: 100%;
-        max-height: 222px;
+        height: 222px!important;
       }
     }
   }

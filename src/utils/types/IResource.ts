@@ -1,5 +1,6 @@
 export default interface IResource {
     resourceImage: string,
+    hash: string,
     resourceTitle: string,
     resourceDesc: string,
     resourceLink: string,

@@ -71,6 +71,11 @@ h2, h3, p {
     }
   }
 
+  canvas, img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
   > :last-child {
     display: flex;
     flex-wrap: wrap;

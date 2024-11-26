@@ -22,8 +22,9 @@ h2, h3, p {
       align-items: center;
       gap: 12px;
 
-      img {
+      canvas, img {
         width: 60px;
+        border-radius: 50%;
       }
 
       h2 {

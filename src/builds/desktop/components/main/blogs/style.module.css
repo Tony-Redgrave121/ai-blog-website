@@ -45,6 +45,9 @@
   gap: 16px;
   width: 25%;
 }
+.TabsContainer .PostContainer > div .PostContainerLeft canvas, .TabsContainer .PostContainer > div .PostContainerLeft img {
+  border-radius: 100%;
+}
 .TabsContainer .PostContainer > div .PostContainerLeft div h3 {
   color: white;
   font-size: 20px;

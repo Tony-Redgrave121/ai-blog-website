@@ -4,8 +4,9 @@ import Button from "../../../buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import formatCompact from "../../../../../../utils/formats/formatCompact";
 import {HiOutlineEye} from "react-icons/hi2";
-import Developer from '../../heroSection/developer/Developers'
+import Developer from '../../generalComponents/developer/Developers'
 import IHomeResources from "../../../../../../utils/types/IHomeResources";
+import BlurHashImage from "../../generalComponents/blurhashImage/BlurHashImage";
 
 interface IResourcesProps {
     resources: Array<IHomeResources>
@@ -31,7 +32,7 @@ const HomeResources: React.FC<IResourcesProps> = ({resources}) => {
                                             <p>Downloaded By</p>
                                             <h2>{formatCompact(10000)} + {resource.resourceDownloads}</h2>
                                         </div>
-                                        <Developer type="DeveloperTopicBlock"/>
+                                        <Developer type="DeveloperTopicBlock" />
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +42,7 @@ const HomeResources: React.FC<IResourcesProps> = ({resources}) => {
                                 <h2>{resource.resourceTopicTitle}</h2>
                                 <p>{resource.resourceTopicDesc}</p>
                             </span>
-                            <img src={require(`../../../../../../utils/icons/main/topics/image/${resource.resourceTopicImage}`)} alt={resource.resourceTopicTitle}/>
+                            <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle} height="388px"></BlurHashImage>
                             <div>
                                 <div className={style.TextBlock}>
                                     <p>Total {resource.resourceTitle}</p>
