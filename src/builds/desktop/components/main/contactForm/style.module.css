@@ -32,6 +32,7 @@ h2, h3, p {
   width: 100%;
 }
 .ResourceContainerRight form .InputBlock {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -70,6 +71,11 @@ h2, h3, p {
   background: #666666;
   border-radius: 5px;
 }
+.ResourceContainerRight form small {
+  position: absolute;
+  bottom: -28px;
+  color: #ca0000;
+}
 .ResourceContainerRight form .WideBlock > div, .ResourceContainerRight form .WideBlock {
   width: 100%;
 }
@@ -79,6 +85,7 @@ h2, h3, p {
   align-items: center;
 }
 .ResourceContainerRight form > :last-child > div span {
+  position: relative;
   display: flex;
   gap: 10px;
   align-items: center;

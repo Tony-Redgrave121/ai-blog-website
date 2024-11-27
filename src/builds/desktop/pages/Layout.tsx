@@ -4,6 +4,7 @@ import Footer from "../components/footer/Footer"
 import TCA from "../components/main/tca/TCA"
 import {Outlet} from "react-router-dom"
 import Loader from "../components/main/generalComponents/spinner/Loader";
+import Popup from "../components/main/generalComponents/popup/Popup";
 
 const Layout = () => {
     return (
@@ -14,6 +15,7 @@ const Layout = () => {
             </Suspense>
             <TCA />
             <Footer/>
+            <Popup />
         </>
     )
 }

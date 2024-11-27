@@ -79,7 +79,7 @@ const Player: React.FC<IPlayer> = ({src, type}) => {
     return (
         <section className={style.VideoPlayer}>
             <video ref={player}>
-                <source src={require(`../../../../../../utils/icons/main/${src}.mp4`)} type="video/mp4"/>
+                <source src={src} type="video/mp4"/>
             </video>
             <CSSTransition nodeRef={playerController} in={playerState.mouseState} timeout={200} classNames="player-controller-node">
                 <span className={type && style[type]} ref={playerController}>

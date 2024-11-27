@@ -1,0 +1,53 @@
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+p {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.PopupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.6);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.PopupContainer .Popup {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #141414;
+  border-radius: 8px;
+  border: 1px solid #262626;
+  max-width: 768px;
+  width: 100%;
+  padding: 80px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

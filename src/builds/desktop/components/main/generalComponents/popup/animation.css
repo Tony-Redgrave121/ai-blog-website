@@ -1,0 +1,17 @@
+.popup-node-enter-active {
+    opacity: 0!important;
+}
+
+.popup-node-enter-done {
+    opacity: 1!important;
+    transition: .3s opacity ease-in-out;
+}
+
+.popup-node-exit-active {
+    opacity: 1!important;
+}
+
+.popup-node-exit-done {
+    opacity: 0!important;
+    transition: .3s opacity ease-in-out;
+}

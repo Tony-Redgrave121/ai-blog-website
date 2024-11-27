@@ -1,1 +1,44 @@
-[{"podcastVideo":"latestPodcasts/podcast_video_1","podcastTitle":"AI in Healthcare","podcastDesc":"Dr. Lisa Adams discusses how AI is revolutionizing healthcare, from diagnostic tools to patient care.","podcastLink":"/"},{"podcastVideo":"latestPodcasts/podcast_video_2","podcastTitle":"AI Ethics","podcastDesc":"Explore the ethical dilemmas and considerations surrounding AI with guest speaker Dr. Michael Turner.","podcastLink":"/"},{"podcastVideo":"latestPodcasts/podcast_video_3","podcastTitle":"Machine Learning Explained","podcastDesc":"Dive into the intricacies of machine learning with AI expert Sarah Davis. In this episode","podcastLink":"/"},{"podcastVideo":"latestPodcasts/podcast_video_4","podcastTitle":"AI and the Future of Work","podcastDesc":"Dr. Olivia White joins John Parker to discuss the evolving role of AI in the workplace.","podcastLink":"/"},{"podcastVideo":"latestPodcasts/podcast_video_5","podcastTitle":"AI in Education","podcastDesc":"Explore the role of AI in education as Emily Turner discusses how AI is transforming the learning experience.","podcastLink":"/"},{"podcastVideo":"latestPodcasts/podcast_video_6","podcastTitle":"AI in Entertainment","podcastDesc":"David Smith as they explore the influence of AI in the entertainment industry.","podcastLink":"/"}]
+[
+  {
+    "podcastVideo": "videos/podcast_video_3.mp4",
+    "hash": "LgFZQmo09Ft8?wRjIUWVM{oLt7WB",
+    "podcastTitle": "AI in Healthcare",
+    "podcastDesc": "Dr. Lisa Adams discusses how AI is revolutionizing healthcare, from diagnostic tools to patient care.",
+    "podcastLink": "/"
+  },
+  {
+    "podcastVideo": "videos/podcast_video_4.mp4",
+    "hash": "L-KBdjofxDj[~qWBaeayslj[R-fQ",
+    "podcastTitle": "AI Ethics",
+    "podcastDesc": "Explore the ethical dilemmas and considerations surrounding AI with guest speaker Dr. Michael Turner.",
+    "podcastLink": "/"
+  },
+  {
+    "podcastVideo": "videos/podcast_video_5.mp4",
+    "hash": "LBB:8K?w7h,b?IEjAD$i1IS~-Tx@",
+    "podcastTitle": "Machine Learning Explained",
+    "podcastDesc": "Dive into the intricacies of machine learning with AI expert Sarah Davis. In this episode",
+    "podcastLink": "/"
+  },
+  {
+    "podcastVideo": "videos/podcast_video_6.mp4",
+    "hash": "LiIh54%2%~Nx~Ws:pIM|M|ofbIV?",
+    "podcastTitle": "AI and the Future of Work",
+    "podcastDesc": "Dr. Olivia White joins John Parker to discuss the evolving role of AI in the workplace.",
+    "podcastLink": "/"
+  },
+  {
+    "podcastVideo": "videos/podcast_video_7.mp4",
+    "hash": "LDFrIoEMTc%g~V9FMxWW00xWVtIU",
+    "podcastTitle": "AI in Education",
+    "podcastDesc": "Explore the role of AI in education as Emily Turner discusses how AI is transforming the learning experience.",
+    "podcastLink": "/"
+  },
+  {
+    "podcastVideo": "videos/podcast_video_8.mp4",
+    "hash": "LtK1dfe-yD%g~pRPtRtQM|WBoLV[",
+    "podcastTitle": "AI in Entertainment",
+    "podcastDesc": "David Smith as they explore the influence of AI in the entertainment industry.",
+    "podcastLink": "/"
+  }
+]
