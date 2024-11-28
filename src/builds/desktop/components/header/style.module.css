@@ -42,15 +42,33 @@ a {
   max-width: 1920px;
   width: 100%;
 }
-.Header .Navbar > button {
+.Header .Navbar span {
+  display: flex;
+  gap: 24px;
+}
+.Header .Navbar span > * {
+  transition: 0.2s background-color ease-in-out;
+}
+.Header .Navbar span > :first-child {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 38px;
+  border-radius: 50%;
+  border: 1px solid #262626;
+  padding: 8px;
+}
+.Header .Navbar span > :first-child:hover {
+  background-color: #262626;
+}
+.Header .Navbar span > :last-child {
   font-size: 18px;
   font-weight: 500;
   padding: 14px 20px;
   border-radius: 10px;
   background-color: #FFD633;
-  transition: 0.2s all ease-in-out;
 }
-.Header .Navbar > button:hover {
+.Header .Navbar span > :last-child:hover {
   background-color: #FFD11A;
 }
 .Header .Navbar .ButtonsContainer ul {

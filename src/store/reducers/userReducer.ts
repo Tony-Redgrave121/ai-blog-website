@@ -1,17 +1,21 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 interface IUsersState {
-    userLocation: string,
+    userId: string,
+    userName: string,
+    userImg: string,
+    isAuth: boolean,
     isLoading: boolean,
-    error: string,
     popupState: boolean
     popupContent: string,
 }
 
 const initialState: IUsersState = {
-    userLocation: '',
+    userId: '',
+    userName: '',
+    userImg: '',
+    isAuth: false,
     isLoading: false,
-    error: '',
     popupState: false,
     popupContent: ''
 }
@@ -20,8 +24,17 @@ const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        updateLocation(state, action) {
-            state.userLocation = action.payload
+        updateUserId(state, action) {
+            state.userId = action.payload
+        },
+        updateUserName(state, action) {
+            state.userName = action.payload
+        },
+        updateUserImg(state, action) {
+            state.userImg = action.payload
+        },
+        updateIsAuth(state, action) {
+            state.isAuth = action.payload
         },
         updateIsLoading(state, action) {
             state.isLoading = action.payload
@@ -36,4 +49,12 @@ const userSlice = createSlice({
 })
 
 export default userSlice.reducer
-export const {updateLocation, updateIsLoading, updatePopupState, updatePopupContent} = userSlice.actions
+export const {
+    updateUserId,
+    updateUserName,
+    updateUserImg,
+    updateIsAuth,
+    updateIsLoading,
+    updatePopupState,
+    updatePopupContent
+} = userSlice.actions

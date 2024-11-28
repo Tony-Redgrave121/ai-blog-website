@@ -29,8 +29,7 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
                         <div key={resource.resourceTitle}>
                             <div className={style.ResourceContainerLeft}>
                                 <div>
-                                    <img src={require(`../../../../../utils/icons/main/topics/${resource.resourceImage}.svg`)}
-                                        alt={resource.resourceTitle}/>
+                                    <img src={require(`../../../../../utils/icons/main/topics/${resource.resourceImage}.svg`)} alt={resource.resourceTitle}/>
                                     <h1>{resource.resourceTitle}</h1>
                                     <p>{resource.resourceDesc}</p>
                                 </div>

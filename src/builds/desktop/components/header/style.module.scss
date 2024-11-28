@@ -46,16 +46,38 @@ a {
     max-width: 1920px;
     width: 100%;
 
-    > button {
-      font-size: 18px;
-      font-weight: 500;
-      padding: 14px 20px;
-      border-radius: 10px;
-      background-color: v.$yellow-shade-60;
-      transition: .2s all ease-in-out;
+    span {
+      display: flex;
+      gap: 24px;
 
-      &:hover {
-        background-color: v.$yellow-shade-55;
+      > * {
+        transition: .2s background-color ease-in-out;
+      }
+
+      > :first-child {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 38px;
+        border-radius: 50%;
+        border: 1px solid v.$dark-shade-15;
+        padding: 8px;
+
+        &:hover {
+          background-color: v.$dark-shade-15;
+        }
+      }
+
+      > :last-child {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 14px 20px;
+        border-radius: 10px;
+        background-color: v.$yellow-shade-60;
+
+        &:hover {
+          background-color: v.$yellow-shade-55;
+        }
       }
     }
 
