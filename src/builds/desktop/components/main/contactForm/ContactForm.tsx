@@ -7,12 +7,13 @@ import { useForm, Controller } from "react-hook-form";
 import {validatePhoneNumberLength, formatIncompletePhoneNumber, CountryCode } from 'libphonenumber-js'
 import {updatePopupContent, updatePopupState} from '../../../../../store/reducers/userReducer'
 import {useAppDispatch} from "../../../../../utils/hooks/redux";
+import InputBlock from "../generalComponents/inputBlock/InputBlock";
 
 const ContactForm = () => {
     const { register, control, handleSubmit, formState: { errors } } = useForm()
     const dispatch = useAppDispatch()
 
-    const registerOptions = {
+    const sendingOptions = {
         firstName: { required: "First name is required" },
         lastName: { required: "Last name is required" },
         email: {
@@ -26,14 +27,7 @@ const ContactForm = () => {
     }
 
     const handleRegistration = (data: any) => {
-        console.log(data)
-
-        dispatch(updatePopupContent(`   
-             <h1>Message Sent Successfully!</h1>
-             <h3>Thank you for getting in touch with AI Podcasts!</h3>
-             <p>Your message has been successfully submitted, and our team will review it shortly. We appreciate your interest and will get back to you as soon as possible.</p>
-             <p>If your inquiry is urgent, feel free to reach out directly via phone or email. In the meantime, stay tuned for updates, exciting content, and the latest from AI Podcasts!</p> 
-        `))
+        dispatch(updatePopupContent('contactSuccess'))
         dispatch(updatePopupState(true))
     }
 
@@ -62,32 +56,19 @@ const ContactForm = () => {
                 <div className={style.ResourceContainerRight}>
                     <form onSubmit={handleSubmit(handleRegistration)} noValidate>
                         <div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="first-name">First Name</label>
-                                <input type='text' placeholder="Enter First Name" {...register('firstName', registerOptions.firstName)}></input>
-                                <small>
-                                    {errors.firstName && errors.firstName.message?.toString() + '*'}
-                                </small>
-                            </div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="last-name">Last Name</label>
-                                <input type='text' placeholder="Enter Last Name" {...register('lastName', registerOptions.lastName)}></input>
-                                <small>
-                                    {errors.lastName && errors.lastName.message?.toString() + '*'}
-                                </small>
-                            </div>
+                            <InputBlock errors={errors} field={"firstName"} htmlFor={"first-name"} label={"First Name"}>
+                                <input type='text' placeholder="Enter First Name" {...register('firstName', sendingOptions.firstName)}></input>
+                            </InputBlock>
+                            <InputBlock errors={errors} field={"lastName"} htmlFor={"last-name"} label={"Last Name"}>
+                                <input type='text' placeholder="Enter Last Name" {...register('lastName', sendingOptions.lastName)}></input>
+                            </InputBlock>
                         </div>
                         <div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="email">Email</label>
-                                <input type='email' placeholder="Enter your Email" {...register('email', registerOptions.email,
+                            <InputBlock errors={errors} field={"email"} htmlFor={"email"} label={"Email"}>
+                                <input type='email' placeholder="Enter your Email" {...register('email', sendingOptions.email,
                                 )}></input>
-                                <small>
-                                    {errors.email && errors.email.message?.toString() + '*'}
-                                </small>
-                            </div>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="phone">Phone Number</label>
+                            </InputBlock>
+                            <InputBlock errors={errors} field={"phone"} htmlFor={"phone"} label={"Phone Number"}>
                                 <Controller
                                     control={control}
                                     name="phone"
@@ -99,24 +80,17 @@ const ContactForm = () => {
                                         setPhone(value)
                                     }}/>}
                                 />
-                                <small>
-                                    {errors.phone && errors.phone.message?.toString() + '*'}
-                                </small>
-                            </div>
+                            </InputBlock>
                         </div>
                         <div className={style.WideBlock}>
-                            <div className={style.InputBlock}>
-                                <label htmlFor="message">Message</label>
-                                <textarea rows={4} placeholder="Enter your Message" {...register('message', registerOptions.message)}></textarea>
-                                <small>
-                                    {errors.message && errors.message.message?.toString() + '*'}
-                                </small>
-                            </div>
+                            <InputBlock errors={errors} field={"message"} htmlFor={"message"} label={"Message"}>
+                                <textarea rows={4} placeholder="Enter your Message" {...register('message', sendingOptions.message)}></textarea>
+                            </InputBlock>
                         </div>
                         <div className={style.WideBlock}>
                             <div>
                                 <span>
-                                    <input type='checkbox' {...register('agree', registerOptions.agree)}></input>
+                                    <input type='checkbox' {...register('agree', sendingOptions.agree)}></input>
                                     <label htmlFor="checkbox">I agree with Terms of Use and Privacy Policy</label>
                                     <small>
                                         {errors.agree && errors.agree.message?.toString() + '*'}

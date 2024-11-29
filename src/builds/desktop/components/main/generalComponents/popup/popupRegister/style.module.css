@@ -1,0 +1,45 @@
+@import url("../../../../../../../utils/styles/base/_normalize.scss");
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+}
+.FormContainer > :first-child {
+  position: relative;
+}
+.FormContainer > :first-child input {
+  display: none;
+}
+.FormContainer > :first-child label {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+}
+.FormContainer > :first-child label img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  border: 1px solid #262626;
+  object-fit: cover;
+  cursor: pointer;
+}
+.FormContainer > * {
+  width: 100%;
+}
+.FormContainer > :last-child {
+  display: flex;
+  justify-content: center;
+}
+.FormContainer button {
+  background-color: #FFF5CC;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #141414;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

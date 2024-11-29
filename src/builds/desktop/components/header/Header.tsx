@@ -3,10 +3,10 @@ import style from './style.module.css'
 import {HiArrowUpRight, HiMiniUser } from "react-icons/hi2"
 import DesktopLogo from "../../../../utils/icons/logo/desktop-logo.svg"
 import {useDebouncedCallback} from 'use-debounce'
-import {Link, useLocation} from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import {updatePopupContent, updatePopupState} from "../../../../store/reducers/userReducer";
-import {useAppDispatch} from "../../../../utils/hooks/redux";
+import {Link, useLocation} from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
+import {updatePopupContent, updatePopupState} from "../../../../store/reducers/userReducer"
+import {useAppDispatch} from "../../../../utils/hooks/redux"
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
@@ -55,12 +55,7 @@ const Header = () => {
     }, [location])
 
     const handleProfile = () => {
-        dispatch(updatePopupContent(`   
-             <h1>Message Sent Successfully!</h1>
-             <h3>Thank you for getting in touch with AI Podcasts!</h3>
-             <p>Your message has been successfully submitted, and our team will review it shortly. We appreciate your interest and will get back to you as soon as possible.</p>
-             <p>If your inquiry is urgent, feel free to reach out directly via phone or email. In the meantime, stay tuned for updates, exciting content, and the latest from AI Podcasts!</p> 
-        `))
+        dispatch(updatePopupContent('register'))
         dispatch(updatePopupState(true))
     }
 

@@ -31,51 +31,6 @@ h2, h3, p {
   gap: 50px;
   width: 100%;
 }
-.ResourceContainerRight form .InputBlock {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 50%;
-}
-.ResourceContainerRight form .InputBlock label {
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-}
-.ResourceContainerRight form .InputBlock input, .ResourceContainerRight form .InputBlock textarea {
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #262626;
-  background-color: #1A1A1A;
-  width: 100%;
-  height: auto;
-  transition: 0.2s all ease-in-out;
-  color: #666666;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-}
-.ResourceContainerRight form .InputBlock input:focus, .ResourceContainerRight form .InputBlock textarea:focus {
-  color: white;
-  border-color: #666666;
-}
-.ResourceContainerRight form .InputBlock textarea {
-  word-wrap: break-word;
-}
-.ResourceContainerRight form .InputBlock textarea::-webkit-scrollbar {
-  width: 5px;
-}
-.ResourceContainerRight form .InputBlock textarea::-webkit-scrollbar-thumb {
-  background: #666666;
-  border-radius: 5px;
-}
-.ResourceContainerRight form small {
-  position: absolute;
-  bottom: -28px;
-  color: #ca0000;
-}
 .ResourceContainerRight form .WideBlock > div, .ResourceContainerRight form .WideBlock {
   width: 100%;
 }
@@ -120,7 +75,6 @@ h2, h3, p {
   line-height: 27px;
 }
 .ResourceContainerRight form > :last-child button {
-  font-weight: 500;
   padding: 18px 46px;
   border-radius: 8px;
   background-color: #FFF5CC;

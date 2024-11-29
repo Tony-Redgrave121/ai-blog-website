@@ -1,0 +1,49 @@
+@import url("../../../../../../utils/styles/base/_normalize.scss");
+.InputBlock {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 50%;
+}
+.InputBlock label {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+.InputBlock input, .InputBlock textarea, .InputBlock input[type=tel] {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #262626;
+  background-color: #1A1A1A;
+  width: 100%;
+  height: auto;
+  transition: 0.2s all ease-in-out;
+  color: #666666;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.InputBlock input:focus, .InputBlock textarea:focus, .InputBlock input[type=tel]:focus {
+  color: white;
+  border-color: #666666;
+}
+.InputBlock textarea {
+  word-wrap: break-word;
+}
+.InputBlock textarea::-webkit-scrollbar {
+  width: 5px;
+}
+.InputBlock textarea::-webkit-scrollbar-thumb {
+  background: #666666;
+  border-radius: 5px;
+}
+
+small {
+  position: absolute;
+  bottom: -25px;
+  color: #ca0000;
+}
+
+/*# sourceMappingURL=style.module.css.map */

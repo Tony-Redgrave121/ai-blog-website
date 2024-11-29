@@ -37,18 +37,32 @@ p {
   height: 100%;
   cursor: pointer;
   opacity: 0;
+  z-index: 9;
 }
 .PopupContainer .Popup {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 18px;
   background-color: #141414;
   border-radius: 8px;
   border: 1px solid #262626;
-  max-width: 768px;
+  max-width: 650px;
   width: 100%;
   padding: 80px;
+  cursor: auto;
+}
+.PopupContainer .Popup .CloseButton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s color ease-in-out;
+}
+.PopupContainer .Popup .CloseButton:hover {
+  color: #CCCCCC;
 }
 
 /*# sourceMappingURL=style.module.css.map */

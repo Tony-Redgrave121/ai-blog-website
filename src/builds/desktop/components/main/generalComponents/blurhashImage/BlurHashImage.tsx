@@ -20,7 +20,7 @@ const BlurHashImage: React.FC<IBlurHashImageProps> = ({imagePath, hash, alt, wid
 
     useEffect(() => {
         const loadImage = async () => {
-            fetch(`http://localhost:3000/server/${imagePath}`)
+            fetch(`http://localhost:5000/${imagePath}`)
                 .then(resolve => resolve.blob())
                 .then(data => {
                     setFileBlob(URL.createObjectURL(data))

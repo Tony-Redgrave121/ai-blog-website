@@ -31,17 +31,33 @@ p {
   height: 100%;
   cursor: pointer;
   opacity: 0;
+  z-index: 9;
 
   .Popup {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 25px;
+    gap: 18px;
     background-color: v.$dark-shade-08;
     border-radius: 8px;
     border: 1px solid v.$dark-shade-15;
-    max-width: 768px;
+    max-width: 650px;
     width: 100%;
     padding: 80px;
+    cursor: auto;
+
+    .CloseButton {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: white;
+      cursor: pointer;
+      transition: .2s color ease-in-out;
+
+      &:hover {
+        color: v.$grey-shade-80;
+      }
+    }
   }
 }
