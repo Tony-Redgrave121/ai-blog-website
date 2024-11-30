@@ -17,10 +17,10 @@ const models_1 = __importDefault(require("../model/models"));
 const userService_1 = __importDefault(require("../service/userService"));
 class UserController {
     constructor() {
-        this.userResponse = (user_name) => {
+        this.userResponse = (user_email) => {
             return {
                 attributes: ['user_id', 'user_name', 'user_img'],
-                where: { user_name: user_name }
+                where: { user_email: user_email }
             };
         };
         this.getUser = this.getUser.bind(this);
@@ -28,10 +28,10 @@ class UserController {
     getUser(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const user_name = req.params.name;
-                if (!user_name)
+                const user_email = req.params.email;
+                if (!user_email)
                     return next(ApiError_1.default.badRequest('Missing required fields'));
-                const userResponse = this.userResponse(user_name);
+                const userResponse = this.userResponse(user_email);
                 const user = yield models_1.default.users.findOne({
                     attributes: [...userResponse.attributes],
                     where: Object.assign({}, userResponse.where)
@@ -46,14 +46,17 @@ class UserController {
     registration(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
+                console.log(req.files);
+                console.log(req.body);
+                console.log(req.body.user_image);
                 const userData = yield userService_1.default.registration(req.body, req.files);
                 if (userData instanceof ApiError_1.default)
-                    return next(ApiError_1.default.internalServerError('An error occurred while registration'));
+                    return res.json(ApiError_1.default.internalServerError(userData.message));
                 res.cookie('refreshToken', userData.refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
-                return next(res.json(userData));
+                return res.json(userData);
             }
             catch (e) {
-                return next(ApiError_1.default.internalServerError('An error occurred while registration'));
+                return ApiError_1.default.internalServerError('An error occurred while registration');
             }
         });
     }

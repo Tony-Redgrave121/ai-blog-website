@@ -15,6 +15,7 @@
 
 /server/.env
 /server/node_modules
+/server/db/static/users
 
 # misc
 .DS_Store

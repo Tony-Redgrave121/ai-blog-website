@@ -28,22 +28,22 @@ class UserController {
                 where: {...userResponse.where}
             })
 
-            return next(res.json(user))
+            return next(res.json(user));
         } catch (e) {
             return next(ApiError.internalServerError('An error occurred while getting user'))
         }
     }
 
-    async registration(req: Request, res: Response, next: NextFunction) {
+    async registration(req: Request, res: Response, next: NextFunction): Promise<any> {
         try {
             const userData = await userService.registration(req.body, req.files)
-            if (userData instanceof ApiError) return next(ApiError.internalServerError('An error occurred while registration'))
+            if (userData instanceof ApiError) return res.json(ApiError.internalServerError(userData.message))
 
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true})
 
-            return next(res.json(userData))
+            return res.json(userData)
         } catch (e) {
-            return next(ApiError.internalServerError('An error occurred while registration'))
+            return ApiError.internalServerError('An error occurred while registration')
         }
     }
 

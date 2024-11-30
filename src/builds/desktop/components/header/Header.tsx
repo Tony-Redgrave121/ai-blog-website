@@ -6,7 +6,7 @@ import {useDebouncedCallback} from 'use-debounce'
 import {Link, useLocation} from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
 import {updatePopupContent, updatePopupState} from "../../../../store/reducers/userReducer"
-import {useAppDispatch} from "../../../../utils/hooks/redux"
+import {useAppDispatch, useAppSelector} from "../../../../utils/hooks/redux"
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
@@ -14,6 +14,7 @@ const Header = () => {
     const location = useLocation()
     const [currentLocation, setCurrentLocation] = React.useState('')
     const dispatch = useAppDispatch()
+    const isAuth = useAppSelector(state => state.user.isAuth)
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -79,7 +80,11 @@ const Header = () => {
                         </ul>
                     </nav>
                     <span>
-                        <button onClick={() => handleProfile()}><HiMiniUser/></button>
+                        { isAuth ?
+                            <button onClick={() => handleProfile()}><HiMiniUser/></button>
+                            :
+                            <button onClick={() => handleProfile()}><HiMiniUser/></button>
+                        }
                         <button onClick={() => navigate('/contact')}>Contact Us</button>
                     </span>
                 </div>

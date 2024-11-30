@@ -4,11 +4,11 @@ import * as fs from "fs";
 import ApiError from "../error/ApiError.js";
 import { UploadedFile } from 'express-fileupload'
 
-export default function getUserImgService(folderName: string, file: UploadedFile, fileName: string) {
+export default function getUserImgService(folder: string, file: UploadedFile, fileName: string) {
     try {
         const fileExtension = fileName.split('.').pop()!.toLowerCase()
         const resFile = uuid.v4() + "." + fileExtension
-        const folderPath = path.resolve("server/DB/static", folderName)
+        const folderPath = path.resolve("db/static/users", folder)
 
         if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath, {recursive: true})
         else return ApiError.internalServerError('An error occurred while fetching the user')

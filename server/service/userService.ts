@@ -1,7 +1,6 @@
 import tokenService from "./tokenService"
 import ApiError from "../error/ApiError"
 import models from "../model/models"
-import {Sequelize} from "sequelize"
 import * as uuid from "uuid"
 import IUser from "../types/IUser"
 import bcrypt from "bcrypt"
@@ -11,19 +10,24 @@ import { UploadedFile } from 'express-fileupload'
 import IRegistrationResponse from "../types/IRegistrationResponse";
 
 interface IUserFiles {
-    user_img?: UploadedFile
+    user_image?: UploadedFile
+}
+
+interface IRegistrationResponseExtend extends IRegistrationResponse {
+    user_id: string
 }
 
 class UserService {
-    async registration(user_body: IUser, user_files?: IUserFiles | null): Promise<IRegistrationResponse | ApiError> {
+    async registration(user_body: IUser, user_files?: IUserFiles | null): Promise<IRegistrationResponseExtend | ApiError> {
         const {user_name, user_email, user_password} = user_body
-        const userCheck = await models.users.findOne({where: Sequelize.or({user_email: user_email}, {user_name: user_name})})
+        const userCheck = await models.users.findOne({where: {user_email: user_email}})
         if(userCheck) return ApiError.badRequest(`User with email or name already exists`)
 
         let userImg = null
-
         if (user_files) {
-            if (user_files.user_img) userImg = getUserImgService(user_name + '/user_img', user_files.user_img, user_files.user_img.name)
+            console.log(user_files.user_image)
+
+            if (user_files.user_image) userImg = getUserImgService(user_email + '/image', user_files.user_image, user_files.user_image.name)
         }
 
         const hash_user_password = await bcrypt.hash(user_password, 5)
@@ -39,6 +43,7 @@ class UserService {
 
         return {
             ...tokens,
+            user_id: user_id,
             user_name: user_name,
             user_img: userImg,
         }

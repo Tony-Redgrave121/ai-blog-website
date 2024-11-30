@@ -7,8 +7,8 @@ const db_js_1 = __importDefault(require("../db.js"));
 const sequelize_1 = require("sequelize");
 const users = db_js_1.default.define("users", {
     user_id: { type: sequelize_1.DataTypes.UUID, primaryKey: true },
-    user_name: { type: sequelize_1.DataTypes.STRING, allowNull: false, unique: true },
-    user_email: { type: sequelize_1.DataTypes.STRING, allowNull: true, unique: true },
+    user_name: { type: sequelize_1.DataTypes.STRING, allowNull: false },
+    user_email: { type: sequelize_1.DataTypes.STRING, allowNull: false, unique: true },
     user_password: { type: sequelize_1.DataTypes.STRING, allowNull: false },
     user_img: { type: sequelize_1.DataTypes.STRING, allowNull: true },
     user_state: { type: sequelize_1.DataTypes.BOOLEAN, defaultValue: false },

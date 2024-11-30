@@ -15,13 +15,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -38,7 +48,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tokenService_1 = __importDefault(require("./tokenService"));
 const ApiError_1 = __importDefault(require("../error/ApiError"));
 const models_1 = __importDefault(require("../model/models"));
-const sequelize_1 = require("sequelize");
 const uuid = __importStar(require("uuid"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const getUserImgService_1 = __importDefault(require("./getUserImgService"));
@@ -47,13 +56,14 @@ class UserService {
     registration(user_body, user_files) {
         return __awaiter(this, void 0, void 0, function* () {
             const { user_name, user_email, user_password } = user_body;
-            const userCheck = yield models_1.default.users.findOne({ where: sequelize_1.Sequelize.or({ user_email: user_email }, { user_name: user_name }) });
+            const userCheck = yield models_1.default.users.findOne({ where: { user_email: user_email } });
             if (userCheck)
                 return ApiError_1.default.badRequest(`User with email or name already exists`);
             let userImg = null;
             if (user_files) {
-                if (user_files.user_img)
-                    userImg = (0, getUserImgService_1.default)(user_name + '/user_img', user_files.user_img, user_files.user_img.name);
+                console.log(user_files.user_image);
+                if (user_files.user_image)
+                    userImg = (0, getUserImgService_1.default)(user_email + '/user_img', user_files.user_image, user_files.user_image.name);
             }
             const hash_user_password = yield bcrypt_1.default.hash(user_password, 5);
             const user_id = uuid.v4(), user_activation_link = uuid.v4();
@@ -63,7 +73,7 @@ class UserService {
             yield mailService_1.default.sendMail(user_email, `${process.env.API_URL}/activate/${user_activation_link}`);
             if (userImg instanceof ApiError_1.default)
                 return ApiError_1.default.badRequest(`Error with user image creation`);
-            return Object.assign(Object.assign({}, tokens), { user_name: user_name, user_img: userImg });
+            return Object.assign(Object.assign({}, tokens), { user_id: user_id, user_name: user_name, user_img: userImg });
         });
     }
     login(user_body) {

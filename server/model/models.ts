@@ -3,8 +3,8 @@ import {DataTypes} from "sequelize"
 
 const users = sequelize.define("users", {
     user_id: {type: DataTypes.UUID, primaryKey: true},
-    user_name: {type: DataTypes.STRING, allowNull: false, unique: true},
-    user_email: {type: DataTypes.STRING, allowNull: true, unique: true},
+    user_name: {type: DataTypes.STRING, allowNull: false},
+    user_email: {type: DataTypes.STRING, allowNull: false, unique: true},
     user_password: {type: DataTypes.STRING, allowNull: false},
     user_img: {type: DataTypes.STRING, allowNull: true},
     user_state: {type: DataTypes.BOOLEAN, defaultValue: false},

@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 import IAuthResponse from "../../utils/types/IAuthResponse";
+import AuthService from "../../service/AuthService";
 
 interface IUsersState {
     userId: string,
@@ -22,7 +23,22 @@ const initialState: IUsersState = {
     popupContent: 'register'
 }
 
-export const userCheckAuth = createAsyncThunk("user/fetch", async (_, thunkAPI) => {
+interface RegistrationArgs {
+    formData: FormData
+}
+
+export const registration = createAsyncThunk("registration", async ({formData}: RegistrationArgs, thunkAPI) => {
+    try {
+        const response = await AuthService.registration(formData)
+        localStorage.setItem('token', response.data.accessToken)
+
+        return response.data
+    } catch (e: any) {
+        return thunkAPI.rejectWithValue(e.response?.data?.message || "Could not fetch user data")
+    }
+})
+
+export const userCheckAuth = createAsyncThunk("userCheckAuth", async (_, thunkAPI) => {
     thunkAPI.dispatch(updateIsLoading(true))
     try {
         const response = await axios.get<IAuthResponse>(`http://localhost:5000/refresh`, {withCredentials: true})
@@ -69,8 +85,15 @@ const userSlice = createSlice({
         builder.addCase(userCheckAuth.fulfilled, (state, action) => {
             state.userId = action.payload.user_id
             state.userName = action.payload.user_name
-            state.userImg = action.payload.user_img
+            state.userImg = action.payload.user_image
             state.isAuth = true
+        })
+
+        builder.addCase(registration.fulfilled, (state, action) => {
+            state.isAuth = true
+            state.userId = action.payload.user_id
+            state.userName = action.payload.user_name
+            state.userImg = action.payload.user_image
         })
     }
 })
