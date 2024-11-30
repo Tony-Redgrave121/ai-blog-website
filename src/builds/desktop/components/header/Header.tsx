@@ -81,7 +81,7 @@ const Header = () => {
                     </nav>
                     <span>
                         { isAuth ?
-                            <button onClick={() => handleProfile()}><HiMiniUser/></button>
+                            <button onClick={() => {}}>Auth</button>
                             :
                             <button onClick={() => handleProfile()}><HiMiniUser/></button>
                         }

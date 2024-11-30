@@ -52,12 +52,12 @@ class UserService {
     async login(user_body: { user_email: string, user_password: string }) {
         const {user_email, user_password} = user_body
         const user: IUser | null = await models.users.findOne({where: {user_email: user_email}}) as IUser | null
-        if (!user) return ApiError.notFound("UserPage not found")
+        if (!user) return ApiError.notFound("User account not found")
 
         if (!user) return ApiError.unauthorized("Unauthorized")
 
         let comparePassword = bcrypt.compareSync(user_password, user.user_password)
-        if(!comparePassword) return ApiError.forbidden('Password is incorrect')
+        if (!comparePassword) return ApiError.forbidden('Password is incorrect')
 
         const tokens = tokenService.generateToken({user_id: user.user_id, user_email})
 

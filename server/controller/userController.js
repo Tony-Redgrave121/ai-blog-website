@@ -43,12 +43,9 @@ class UserController {
             }
         });
     }
-    registration(req, res, next) {
+    registration(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                console.log(req.files);
-                console.log(req.body);
-                console.log(req.body.user_image);
                 const userData = yield userService_1.default.registration(req.body, req.files);
                 if (userData instanceof ApiError_1.default)
                     return res.json(ApiError_1.default.internalServerError(userData.message));
@@ -56,21 +53,21 @@ class UserController {
                 return res.json(userData);
             }
             catch (e) {
-                return ApiError_1.default.internalServerError('An error occurred while registration');
+                return res.json(ApiError_1.default.internalServerError('An error occurred while registration'));
             }
         });
     }
-    login(req, res, next) {
+    login(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const userData = yield userService_1.default.login(req.body);
                 if (userData instanceof ApiError_1.default)
-                    return next(ApiError_1.default.internalServerError('An error occurred while login'));
+                    return res.json(ApiError_1.default.internalServerError('An error occurred while login'));
                 res.cookie('refreshToken', userData.refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
-                return next(res.json(userData));
+                return res.json(userData);
             }
             catch (e) {
-                return next(ApiError_1.default.internalServerError('An error occurred while login'));
+                return res.json(ApiError_1.default.internalServerError('An error occurred while login'));
             }
         });
     }

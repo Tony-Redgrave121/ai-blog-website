@@ -7,7 +7,6 @@ import {
 } from "../utils/const"
 import express from "express"
 import UserController from "../controller/userController"
-import authHandler from "../middleware/authHandler";
 const router = express.Router()
 
 router.post(REGISTRATION_ROUTE, UserController.registration)

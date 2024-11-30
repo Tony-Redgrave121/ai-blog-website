@@ -34,7 +34,7 @@ class UserController {
         }
     }
 
-    async registration(req: Request, res: Response, next: NextFunction): Promise<any> {
+    async registration(req: Request, res: Response): Promise<any> {
         try {
             const userData = await userService.registration(req.body, req.files)
             if (userData instanceof ApiError) return res.json(ApiError.internalServerError(userData.message))
@@ -43,21 +43,21 @@ class UserController {
 
             return res.json(userData)
         } catch (e) {
-            return ApiError.internalServerError('An error occurred while registration')
+            return res.json(ApiError.internalServerError('An error occurred while registration'))
         }
     }
 
-    async login(req: Request, res: Response, next: NextFunction) {
+    async login(req: Request, res: Response): Promise<any> {
         try {
             const userData = await userService.login(req.body)
 
-            if (userData instanceof ApiError) return next(ApiError.internalServerError('An error occurred while login'))
+            if (userData instanceof ApiError) return res.json(ApiError.internalServerError('An error occurred while login'))
 
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true})
 
-            return next(res.json(userData))
+            return res.json(userData)
         } catch (e) {
-            return next(ApiError.internalServerError('An error occurred while login'))
+            return res.json(ApiError.internalServerError('An error occurred while login'))
         }
     }
 

@@ -38,6 +38,17 @@ export const registration = createAsyncThunk("registration", async ({formData}: 
     }
 })
 
+export const login = createAsyncThunk("login", async ({formData}: RegistrationArgs, thunkAPI) => {
+    try {
+        const response = await AuthService.login(formData)
+        localStorage.setItem('token', response.data.accessToken)
+
+        return response.data
+    } catch (e: any) {
+        return thunkAPI.rejectWithValue(e.response?.data?.message || "Could not fetch user data")
+    }
+})
+
 export const userCheckAuth = createAsyncThunk("userCheckAuth", async (_, thunkAPI) => {
     thunkAPI.dispatch(updateIsLoading(true))
     try {
@@ -90,6 +101,13 @@ const userSlice = createSlice({
         })
 
         builder.addCase(registration.fulfilled, (state, action) => {
+            state.isAuth = true
+            state.userId = action.payload.user_id
+            state.userName = action.payload.user_name
+            state.userImg = action.payload.user_image
+        })
+
+        builder.addCase(login.fulfilled, (state, action) => {
             state.isAuth = true
             state.userId = action.payload.user_id
             state.userName = action.payload.user_name

@@ -22,7 +22,7 @@ const PopupRegister = () => {
             user_image: null,
             user_name: '',
             user_email: '',
-            user_password: '',
+            user_password: ''
         }
     })
 
@@ -32,9 +32,15 @@ const PopupRegister = () => {
             required: "Email is required",
             pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "invalid email address"
+                message: "Invalid email address"
             }},
-        user_password: { required: "Password is required" }
+        user_password: {
+            required: "Password is required",
+            pattern: {
+                value: /^.{8,}$/,
+                message: "Password must be at least 8 characters long"
+            }
+        }
     }
 
     const handleRegistration = async (data: IRegistration) => {

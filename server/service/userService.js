@@ -63,7 +63,7 @@ class UserService {
             if (user_files) {
                 console.log(user_files.user_image);
                 if (user_files.user_image)
-                    userImg = (0, getUserImgService_1.default)(user_email + '/user_img', user_files.user_image, user_files.user_image.name);
+                    userImg = (0, getUserImgService_1.default)(user_email + '/image', user_files.user_image, user_files.user_image.name);
             }
             const hash_user_password = yield bcrypt_1.default.hash(user_password, 5);
             const user_id = uuid.v4(), user_activation_link = uuid.v4();
@@ -81,7 +81,7 @@ class UserService {
             const { user_email, user_password } = user_body;
             const user = yield models_1.default.users.findOne({ where: { user_email: user_email } });
             if (!user)
-                return ApiError_1.default.notFound("UserPage not found");
+                return ApiError_1.default.notFound("User account not found");
             if (!user)
                 return ApiError_1.default.unauthorized("Unauthorized");
             let comparePassword = bcrypt_1.default.compareSync(user_password, user.user_password);

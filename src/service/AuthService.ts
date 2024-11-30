@@ -8,8 +8,8 @@ import {AxiosResponse} from 'axios'
 import IAuthResponse from "../utils/types/IAuthResponse"
 
 export default class AuthService {
-    static async login(user_email: string, user_password: string): Promise<AxiosResponse<IAuthResponse>> {
-        return $api.post<IAuthResponse>(LOGIN_ROUTE, {user_email, user_password})
+    static async login(formData: FormData): Promise<AxiosResponse<IAuthResponse>> {
+        return $api.post<IAuthResponse>(LOGIN_ROUTE, formData)
     }
 
     static async registration(formData: FormData): Promise<AxiosResponse<IAuthResponse>> {
