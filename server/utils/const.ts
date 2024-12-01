@@ -2,5 +2,6 @@ export const LOGIN_ROUTE = '/login'
 export const LOGOUT_ROUTE = '/logout'
 export const REFRESH_ROUTE = '/refresh'
 export const REGISTRATION_ROUTE = '/registration'
-export const USER_ROUTE = '/user/:email'
 export const ACTIVATION_PAGE = '/activate/:link'
+export const DELETE_ACCOUNT_ROUTE = '/delete'
+

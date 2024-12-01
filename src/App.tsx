@@ -5,15 +5,15 @@ import {useAppDispatch, useAppSelector} from "./utils/hooks/redux";
 import {updateIsLoading, userCheckAuth} from "./store/reducers/userReducer"
 
 function App() {
-    // const isLoading = useAppSelector(state => state.user.isLoading)
-    // const dispatch = useAppDispatch()
-    //
-    // useEffect(() => {
-    //     if (localStorage.getItem('token')) dispatch(userCheckAuth())
-    //     else dispatch(updateIsLoading(false))
-    // }, [userCheckAuth])
-    //
-    // if (isLoading) return <h1>Loading...</h1>
+    const isLoading = useAppSelector(state => state.user.isLoading)
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) dispatch(userCheckAuth())
+        else dispatch(updateIsLoading(false))
+    }, [userCheckAuth])
+
+    if (isLoading) return <h1>Loading...</h1>
 
     return (
         <BrowserRouter>

@@ -45,7 +45,7 @@ function getUserImgService(folder, file, fileName) {
     try {
         const fileExtension = fileName.split('.').pop().toLowerCase();
         const resFile = uuid.v4() + "." + fileExtension;
-        const folderPath = path.resolve("db/static/users", folder);
+        const folderPath = path.resolve(__dirname + "/../src/static/users", folder);
         if (!fs.existsSync(folderPath))
             fs.mkdirSync(folderPath, { recursive: true });
         else

@@ -20,21 +20,21 @@ const HomePage = () => {
     const [resources, setResources] = React.useState<Array<IHomeResources>>()
 
     useEffect(() => {
-        fetch("http://localhost:3000/server/posts/posts.json")
+        fetch("http://localhost:5000/static/jsons/posts/posts.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 return response.json();
             })
             .then(data => setPosts(data))
             .catch(error => console.log(error))
-        fetch("http://localhost:3000/server/testimonials/testimonials.json")
+        fetch("http://localhost:5000/static/jsons/testimonials/testimonials.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 return response.json();
             })
             .then(data => setTestimonials(data))
             .catch(error => console.log(error))
-        fetch("http://localhost:3000/server/resources/resources_1.json")
+        fetch("http://localhost:5000/static/jsons/resources/resources_1.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 return response.json();

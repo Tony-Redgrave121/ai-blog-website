@@ -16,39 +16,12 @@ const ApiError_1 = __importDefault(require("../error/ApiError"));
 const models_1 = __importDefault(require("../model/models"));
 const userService_1 = __importDefault(require("../service/userService"));
 class UserController {
-    constructor() {
-        this.userResponse = (user_email) => {
-            return {
-                attributes: ['user_id', 'user_name', 'user_img'],
-                where: { user_email: user_email }
-            };
-        };
-        this.getUser = this.getUser.bind(this);
-    }
-    getUser(req, res, next) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const user_email = req.params.email;
-                if (!user_email)
-                    return next(ApiError_1.default.badRequest('Missing required fields'));
-                const userResponse = this.userResponse(user_email);
-                const user = yield models_1.default.users.findOne({
-                    attributes: [...userResponse.attributes],
-                    where: Object.assign({}, userResponse.where)
-                });
-                return next(res.json(user));
-            }
-            catch (e) {
-                return next(ApiError_1.default.internalServerError('An error occurred while getting user'));
-            }
-        });
-    }
     registration(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const userData = yield userService_1.default.registration(req.body, req.files);
                 if (userData instanceof ApiError_1.default)
-                    return res.json(ApiError_1.default.internalServerError(userData.message));
+                    return res.json(userData);
                 res.cookie('refreshToken', userData.refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
                 return res.json(userData);
             }
@@ -62,7 +35,7 @@ class UserController {
             try {
                 const userData = yield userService_1.default.login(req.body);
                 if (userData instanceof ApiError_1.default)
-                    return res.json(ApiError_1.default.internalServerError('An error occurred while login'));
+                    return res.json(userData);
                 res.cookie('refreshToken', userData.refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
                 return res.json(userData);
             }
@@ -71,47 +44,60 @@ class UserController {
             }
         });
     }
-    logout(req, res, next) {
+    logout(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { refreshToken } = req.cookies;
                 const token = yield userService_1.default.logout(refreshToken);
                 res.clearCookie('refreshToken');
-                return next(res.json(token));
+                return res.json(token);
             }
             catch (e) {
-                return next(ApiError_1.default.internalServerError("An error occurred while logging out"));
+                return res.json(ApiError_1.default.internalServerError("An error occurred while logging out"));
             }
         });
     }
-    activate(req, res, next) {
+    deleteAccount(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { refreshToken } = req.cookies;
+                const token = yield userService_1.default.deleteAccount(refreshToken, req.body.user_id);
+                res.clearCookie('refreshToken');
+                return res.json(token);
+            }
+            catch (e) {
+                return res.json(ApiError_1.default.internalServerError("An error occurred while deleting account"));
+            }
+        });
+    }
+    activate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const link = req.params.link;
                 const user = yield models_1.default.users.findOne({ where: { user_activation_link: link } });
                 if (!user)
-                    return next(ApiError_1.default.notFound("User not found"));
+                    return res.json(ApiError_1.default.notFound("User not found"));
                 user.user_state = true;
                 yield user.save();
                 return res.redirect(process.env.CLIENT_URL);
             }
             catch (e) {
-                return next(ApiError_1.default.internalServerError('An error occurred while activating account'));
+                return res.json(ApiError_1.default.internalServerError('An error occurred while activating account'));
             }
         });
     }
-    refresh(req, res, next) {
+    refresh(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { refreshToken } = req.cookies;
                 const userData = yield userService_1.default.refresh(refreshToken);
                 if (userData instanceof ApiError_1.default)
-                    return next(ApiError_1.default.internalServerError('An error occurred while refreshing'));
+                    return res.json(ApiError_1.default.internalServerError('An error occurred while refreshing'));
                 res.cookie('refreshToken', userData.refreshToken, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
-                return next(res.json(userData));
+                return res.json(userData);
             }
             catch (e) {
-                return next(ApiError_1.default.internalServerError("An error occurred while refreshing"));
+                return res.json(ApiError_1.default.internalServerError("An error occurred while refreshing"));
             }
         });
     }

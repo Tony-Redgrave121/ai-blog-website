@@ -1,12 +1,13 @@
 import React, {memo, useEffect, useRef} from 'react'
 import style from './style.module.css'
-import {HiArrowUpRight, HiMiniUser } from "react-icons/hi2"
+import {HiArrowUpRight, HiMiniUser} from "react-icons/hi2"
 import DesktopLogo from "../../../../utils/icons/logo/desktop-logo.svg"
 import {useDebouncedCallback} from 'use-debounce'
 import {Link, useLocation} from "react-router-dom"
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {updatePopupContent, updatePopupState} from "../../../../store/reducers/userReducer"
 import {useAppDispatch, useAppSelector} from "../../../../utils/hooks/redux"
+import BlurHashImage from "../main/generalComponents/blurhashImage/BlurHashImage";
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
@@ -14,7 +15,7 @@ const Header = () => {
     const location = useLocation()
     const [currentLocation, setCurrentLocation] = React.useState('')
     const dispatch = useAppDispatch()
-    const isAuth = useAppSelector(state => state.user.isAuth)
+    const {isAuth, userImg, userId} = useAppSelector(state => state.user)
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -60,6 +61,11 @@ const Header = () => {
         dispatch(updatePopupState(true))
     }
 
+    const handleActiveProfile = () => {
+        dispatch(updatePopupContent('profile'))
+        dispatch(updatePopupState(true))
+    }
+
     return (
         <>
             <div className={style.TopBanner}>
@@ -71,19 +77,29 @@ const Header = () => {
                     <nav className={style.ButtonsContainer}>
                         <ul>
                             {
-                                links.map(link=> (
+                                links.map(link => (
                                     <li key={link.title}>
-                                        <Link to={link.link} className={link.link === currentLocation ? style.Active : ''}>{link.title}</Link>
+                                        <Link to={link.link}
+                                              className={link.link === currentLocation ? style.Active : ''}>{link.title}</Link>
                                     </li>
                                 ))
                             }
                         </ul>
                     </nav>
                     <span>
-                        { isAuth ?
-                            <button onClick={() => {}}>Auth</button>
+                        {isAuth ?
+                            <button onClick={() => handleActiveProfile()} className={style.ProfileButtonActive}>
+                                {userImg ?
+                                    <BlurHashImage imagePath={`users/${userId}/image/${userImg}`}
+                                                   hash='K9J8V04n00~q%MD%00-;%M' alt='profile'></BlurHashImage>
+                                    :
+                                    <img src={require('../../../../utils/icons/profile/default-image.jpg')}
+                                         alt="profile"/>
+                                }
+                            </button>
                             :
-                            <button onClick={() => handleProfile()}><HiMiniUser/></button>
+                            <button onClick={() => handleProfile()} className={style.ProfileButton}><HiMiniUser/>
+                            </button>
                         }
                         <button onClick={() => navigate('/contact')}>Contact Us</button>
                     </span>

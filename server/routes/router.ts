@@ -1,9 +1,10 @@
 import {
     ACTIVATION_PAGE,
-    LOGIN_ROUTE, LOGOUT_ROUTE,
+    DELETE_ACCOUNT_ROUTE,
+    LOGIN_ROUTE,
+    LOGOUT_ROUTE,
     REFRESH_ROUTE,
     REGISTRATION_ROUTE,
-    USER_ROUTE
 } from "../utils/const"
 import express from "express"
 import UserController from "../controller/userController"
@@ -13,7 +14,7 @@ router.post(REGISTRATION_ROUTE, UserController.registration)
 router.post(LOGIN_ROUTE, UserController.login)
 router.post(LOGOUT_ROUTE, UserController.logout)
 router.get(REFRESH_ROUTE, UserController.refresh)
-router.get(USER_ROUTE, UserController.getUser)
 router.get(ACTIVATION_PAGE, UserController.activate)
+router.post(DELETE_ACCOUNT_ROUTE, UserController.deleteAccount)
 
 export default router

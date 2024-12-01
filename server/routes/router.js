@@ -11,6 +11,6 @@ router.post(const_1.REGISTRATION_ROUTE, userController_1.default.registration);
 router.post(const_1.LOGIN_ROUTE, userController_1.default.login);
 router.post(const_1.LOGOUT_ROUTE, userController_1.default.logout);
 router.get(const_1.REFRESH_ROUTE, userController_1.default.refresh);
-router.get(const_1.USER_ROUTE, userController_1.default.getUser);
 router.get(const_1.ACTIVATION_PAGE, userController_1.default.activate);
+router.post(const_1.DELETE_ACCOUNT_ROUTE, userController_1.default.deleteAccount);
 exports.default = router;

@@ -9,7 +9,7 @@ const BlogPage = () => {
     const [latestPodcasts, setLatestPodcasts] = React.useState<Array<IPodcast>>()
 
     useEffect(() => {
-        fetch("http://localhost:3000/server/podcasts/latestPodcasts.json")
+        fetch("http://localhost:5000/static/jsons/podcasts/latestPodcasts.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 return response.json();

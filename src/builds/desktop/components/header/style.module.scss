@@ -55,7 +55,7 @@ a {
         transition: .2s background-color ease-in-out;
       }
 
-      > :first-child {
+      .ProfileButton {
         display: flex;
         align-items: center;
         color: white;
@@ -66,6 +66,17 @@ a {
 
         &:hover {
           background-color: v.$dark-shade-15;
+        }
+      }
+
+      .ProfileButtonActive {
+        height: 46px;
+
+        img {
+          border: 1px solid v.$dark-shade-15;
+          border-radius: 50%;
+          height: 46px;
+          object-fit: cover;
         }
       }
 
@@ -103,34 +114,6 @@ a {
         border: 1px solid v.$dark-shade-20;
         color: white;
       }
-    }
-  }
-}
-
-.InputBlock {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 50%;
-
-  label {
-    @include m.font(white, 18px, 500, 27px);
-  }
-
-  input, textarea {
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid v.$dark-shade-15;
-    background-color: v.$dark-shade-10;
-    width: 100%;
-    height: auto;
-    transition: .2s all ease-in-out;
-    @include m.font(v.$dark-shade-40, 18px, 400, 27px);
-
-    &:focus {
-      color: white;
-      border-color: v.$dark-shade-40;
     }
   }
 }

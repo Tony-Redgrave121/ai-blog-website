@@ -7,6 +7,7 @@ import {useAppDispatch, useAppSelector} from "../../../../../../utils/hooks/redu
 import { HiOutlineXMark } from "react-icons/hi2"
 import PopupRegister from "./popupRegister/PopupRegister";
 import PopupLogin from "./popupLogin/PopupLogin";
+import PopupProfile from "./popupProfile/PopupProfile";
 
 const Popup = () => {
     const popupRef = React.useRef<HTMLDivElement>(null)
@@ -36,6 +37,7 @@ const Popup = () => {
         )
         else if (popupContent === 'register') return <PopupRegister />
         else if (popupContent === 'login') return <PopupLogin />
+        else if (popupContent === 'profile') return <PopupProfile />
     }
 
     return (

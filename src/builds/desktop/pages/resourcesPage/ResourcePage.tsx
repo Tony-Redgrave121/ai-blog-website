@@ -12,7 +12,7 @@ const ResourcePage = () => {
     const [resources, setResources] = React.useState<Array<IResource>>()
 
     useEffect(() => {
-        fetch("http://localhost:3000//server/resources/resources_2.json")
+        fetch("http://localhost:5000/static/jsons/resources/resources_2.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
                 return response.json()

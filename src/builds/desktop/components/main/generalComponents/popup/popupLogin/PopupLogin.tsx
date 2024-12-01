@@ -19,6 +19,7 @@ const PopupLogin = () => {
     })
     const dispatch = useAppDispatch()
 
+    const [errorForm, setErrorForm] = React.useState<string | null>()
     const loginOptions = {
         user_email: {
             required: "Email is required",
@@ -40,8 +41,10 @@ const PopupLogin = () => {
         formData.append('user_email', data.user_email)
         formData.append('user_password', data.user_password)
 
-        const res = await dispatch(login({formData: formData}))
-        console.log(res)
+        const res = await dispatch(login({formData: formData})) as any
+
+        if (res.payload.message) setErrorForm(res.payload.message)
+        else dispatch(updatePopupState(false))
     }
 
     const handleFormChange = () => {
@@ -64,6 +67,9 @@ const PopupLogin = () => {
             <div>
                 <span><button>Sign In</button></span>
                 <p onClick={() => handleFormChange()}>Don't have an account yet?</p>
+                <small>
+                    {errorForm && errorForm}
+                </small>
             </div>
         </form>
     )

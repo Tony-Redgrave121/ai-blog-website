@@ -27,6 +27,10 @@ button, input, textarea {
   all: unset;
 }
 
+::-ms-reveal {
+  filter: invert(100%);
+}
+
 button {
   cursor: pointer;
 }

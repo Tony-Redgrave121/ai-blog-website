@@ -1,12 +1,12 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import axios from "axios";
-import IAuthResponse from "../../utils/types/IAuthResponse";
 import AuthService from "../../service/AuthService";
 
 interface IUsersState {
     userId: string,
     userName: string,
-    userImg: string,
+    userEmail: string,
+    userState: boolean,
+    userImg: string | null,
     isAuth: boolean,
     isLoading: boolean,
     popupState: boolean
@@ -16,18 +16,24 @@ interface IUsersState {
 const initialState: IUsersState = {
     userId: '',
     userName: '',
-    userImg: '',
+    userEmail: '',
+    userState: false,
+    userImg: null,
     isAuth: false,
-    isLoading: false,
+    isLoading: true,
     popupState: false,
     popupContent: 'register'
 }
 
-interface RegistrationArgs {
+interface IRegistrationArgs {
     formData: FormData
 }
 
-export const registration = createAsyncThunk("registration", async ({formData}: RegistrationArgs, thunkAPI) => {
+interface IDeleteAccountArgs {
+    user_id: string
+}
+
+export const registration = createAsyncThunk("registration", async ({formData}: IRegistrationArgs, thunkAPI) => {
     try {
         const response = await AuthService.registration(formData)
         localStorage.setItem('token', response.data.accessToken)
@@ -38,7 +44,7 @@ export const registration = createAsyncThunk("registration", async ({formData}: 
     }
 })
 
-export const login = createAsyncThunk("login", async ({formData}: RegistrationArgs, thunkAPI) => {
+export const login = createAsyncThunk("login", async ({formData}: IRegistrationArgs, thunkAPI) => {
     try {
         const response = await AuthService.login(formData)
         localStorage.setItem('token', response.data.accessToken)
@@ -49,12 +55,31 @@ export const login = createAsyncThunk("login", async ({formData}: RegistrationAr
     }
 })
 
+export const logout = createAsyncThunk("logout", async (_, thunkAPI) => {
+    try {
+        await AuthService.logout()
+        localStorage.removeItem('token')
+    } catch (e: any) {
+        return thunkAPI.rejectWithValue(e.response?.data?.message || "Could not fetch user data")
+    }
+})
+
+export const deleteAccount = createAsyncThunk("deleteAccount", async ({user_id}: IDeleteAccountArgs, thunkAPI) => {
+    try {
+        await AuthService.deleteAccount(user_id)
+        localStorage.removeItem('token')
+    } catch (e: any) {
+        return thunkAPI.rejectWithValue(e.response?.data?.message || "Could not fetch user data")
+    }
+})
+
+
 export const userCheckAuth = createAsyncThunk("userCheckAuth", async (_, thunkAPI) => {
     thunkAPI.dispatch(updateIsLoading(true))
     try {
-        const response = await axios.get<IAuthResponse>(`http://localhost:5000/refresh`, {withCredentials: true})
+        const response = await AuthService.userCheckAuth()
 
-        if (response?.data) {
+        if (response.data) {
             localStorage.setItem('token', response.data.accessToken)
             return response.data
         }
@@ -66,22 +91,30 @@ export const userCheckAuth = createAsyncThunk("userCheckAuth", async (_, thunkAP
     }
 })
 
+const updateState = (state: any, action: any) => {
+    if (action.payload.user_id) {
+        state.userId = action.payload.user_id
+        state.userName = action.payload.user_name
+        state.userEmail = action.payload.user_email
+        state.userState = action.payload.user_state
+        state.userImg = action.payload.user_img
+        state.isAuth = true
+    }
+}
+
+const dropState = (state: any) => {
+    state.isAuth = false
+    state.userId = ""
+    state.userName = ""
+    state.userEmail = ""
+    state.userState = false
+    state.userImg = ""
+}
+
 const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        updateUserId(state, action) {
-            state.userId = action.payload
-        },
-        updateUserName(state, action) {
-            state.userName = action.payload
-        },
-        updateUserImg(state, action) {
-            state.userImg = action.payload
-        },
-        updateIsAuth(state, action) {
-            state.isAuth = action.payload
-        },
         updateIsLoading(state, action) {
             state.isLoading = action.payload
         },
@@ -93,35 +126,16 @@ const userSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(userCheckAuth.fulfilled, (state, action) => {
-            state.userId = action.payload.user_id
-            state.userName = action.payload.user_name
-            state.userImg = action.payload.user_image
-            state.isAuth = true
-        })
-
-        builder.addCase(registration.fulfilled, (state, action) => {
-            state.isAuth = true
-            state.userId = action.payload.user_id
-            state.userName = action.payload.user_name
-            state.userImg = action.payload.user_image
-        })
-
-        builder.addCase(login.fulfilled, (state, action) => {
-            state.isAuth = true
-            state.userId = action.payload.user_id
-            state.userName = action.payload.user_name
-            state.userImg = action.payload.user_image
-        })
+        builder.addCase(userCheckAuth.fulfilled, (state, action) => updateState(state, action))
+        builder.addCase(registration.fulfilled, (state, action) => updateState(state, action))
+        builder.addCase(login.fulfilled, (state, action) => updateState(state, action))
+        builder.addCase(logout.fulfilled, (state) => dropState(state))
+        builder.addCase(deleteAccount.fulfilled, (state) => dropState(state))
     }
 })
 
 export default userSlice.reducer
 export const {
-    updateUserId,
-    updateUserName,
-    updateUserImg,
-    updateIsAuth,
     updateIsLoading,
     updatePopupState,
     updatePopupContent

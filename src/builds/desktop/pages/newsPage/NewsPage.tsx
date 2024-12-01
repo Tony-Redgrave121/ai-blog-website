@@ -13,7 +13,7 @@ const NewsPage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
 
     useEffect(() => {
-        fetch("http://localhost:3000/server/posts/posts.json")
+        fetch("http://localhost:5000/static/jsons/posts/posts.json")
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 return response.json();

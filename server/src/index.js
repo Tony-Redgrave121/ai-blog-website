@@ -58,13 +58,13 @@ dotenv_1.default.config({ path: "./.env" });
 const PORT = process.env.SERVER_PORT;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use(express_1.default.static(path.resolve('server/db/static')));
-app.use((0, express_fileupload_1.default)({}));
-app.use((0, cookie_parser_1.default)());
 app.use((0, cors_1.default)({
     credentials: true,
     origin: process.env.CLIENT_URL
 }));
+app.use('/static', express_1.default.static(path.resolve(__dirname, 'static')));
+app.use((0, express_fileupload_1.default)({}));
+app.use((0, cookie_parser_1.default)());
 app.use(router_1.default);
 app.use(errorHandler_1.default);
 function startServer() {

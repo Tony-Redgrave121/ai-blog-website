@@ -15,6 +15,7 @@ interface IRegistration {
 
 const PopupRegister = () => {
     const [file, setFile] = React.useState<File | null>()
+    const [errorForm, setErrorForm] = React.useState<string | null>()
     const dispatch = useAppDispatch()
 
     const { register, handleSubmit, control, formState: { errors } } = useForm({
@@ -50,9 +51,10 @@ const PopupRegister = () => {
         formData.append('user_email', data.user_email)
         formData.append('user_password', data.user_password)
 
-        const res = await dispatch(registration({formData: formData}))
+        const res = await dispatch(registration({formData: formData})) as any
 
-        console.log(res)
+        if (res.payload.message) setErrorForm(res.payload.message)
+        else dispatch(updatePopupState(false))
     }
 
     const handleImageChange = (file: FileList | null, onChange: (value: File) => void) => {
@@ -100,6 +102,9 @@ const PopupRegister = () => {
             <div>
                 <span><button>Sign Up</button></span>
                 <p onClick={() => handleFormChange()}>Already have an account?</p>
+                <small>
+                    {errorForm && errorForm}
+                </small>
             </div>
         </form>
     )

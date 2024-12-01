@@ -52,28 +52,28 @@ const uuid = __importStar(require("uuid"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const getUserImgService_1 = __importDefault(require("./getUserImgService"));
 const mailService_1 = __importDefault(require("./mailService"));
+const path_1 = __importDefault(require("path"));
+const fs = __importStar(require("fs"));
 class UserService {
     registration(user_body, user_files) {
         return __awaiter(this, void 0, void 0, function* () {
             const { user_name, user_email, user_password } = user_body;
             const userCheck = yield models_1.default.users.findOne({ where: { user_email: user_email } });
             if (userCheck)
-                return ApiError_1.default.badRequest(`User with email or name already exists`);
+                return ApiError_1.default.badRequest(`User with email already exists`);
             let userImg = null;
-            if (user_files) {
-                console.log(user_files.user_image);
-                if (user_files.user_image)
-                    userImg = (0, getUserImgService_1.default)(user_email + '/image', user_files.user_image, user_files.user_image.name);
-            }
-            const hash_user_password = yield bcrypt_1.default.hash(user_password, 5);
             const user_id = uuid.v4(), user_activation_link = uuid.v4();
+            if (user_files)
+                if (user_files.user_image)
+                    userImg = (0, getUserImgService_1.default)(user_id + '/image', user_files.user_image, user_files.user_image.name);
+            const hash_user_password = yield bcrypt_1.default.hash(user_password, 5);
             yield models_1.default.users.create({ user_id: user_id, user_name, user_email, user_password: hash_user_password, user_img: userImg, user_activation_link: user_activation_link });
             const tokens = tokenService_1.default.generateToken({ user_id, user_email, user_name });
             yield tokenService_1.default.saveToken(user_id, tokens.refreshToken);
             yield mailService_1.default.sendMail(user_email, `${process.env.API_URL}/activate/${user_activation_link}`);
             if (userImg instanceof ApiError_1.default)
                 return ApiError_1.default.badRequest(`Error with user image creation`);
-            return Object.assign(Object.assign({}, tokens), { user_id: user_id, user_name: user_name, user_img: userImg });
+            return Object.assign(Object.assign({}, tokens), { user_id: user_id, user_name: user_name, user_email: user_email, user_state: false, user_img: userImg });
         });
     }
     login(user_body) {
@@ -82,18 +82,24 @@ class UserService {
             const user = yield models_1.default.users.findOne({ where: { user_email: user_email } });
             if (!user)
                 return ApiError_1.default.notFound("User account not found");
-            if (!user)
-                return ApiError_1.default.unauthorized("Unauthorized");
             let comparePassword = bcrypt_1.default.compareSync(user_password, user.user_password);
             if (!comparePassword)
                 return ApiError_1.default.forbidden('Password is incorrect');
             const tokens = tokenService_1.default.generateToken({ user_id: user.user_id, user_email });
             yield tokenService_1.default.saveToken(user.user_id, tokens.refreshToken);
-            return Object.assign(Object.assign({}, tokens), { user_id: user.user_id, user_name: user.user_name, user_img: user.user_img });
+            return Object.assign(Object.assign({}, tokens), { user_id: user.user_id, user_name: user.user_name, user_email: user.user_email, user_state: user.user_state, user_img: user.user_img });
         });
     }
     logout(refreshToken) {
         return __awaiter(this, void 0, void 0, function* () {
+            return yield tokenService_1.default.deleteToken(refreshToken);
+        });
+    }
+    deleteAccount(refreshToken, user_id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield models_1.default.users.destroy({ where: { user_id: user_id } });
+            const folderPath = path_1.default.resolve(__dirname + "/../src/static/users", user_id);
+            fs.rmSync(folderPath, { recursive: true, force: true });
             return yield tokenService_1.default.deleteToken(refreshToken);
         });
     }
@@ -111,7 +117,7 @@ class UserService {
             const tokens = tokenService_1.default.generateToken({ user_id: user.user_id, user_email: user.user_email });
             yield tokenService_1.default.saveToken(user.user_id, tokens.refreshToken);
             yield tokenService_1.default.deleteToken(refreshToken);
-            return Object.assign(Object.assign({}, tokens), { user_id: user.user_id, user_name: user.user_name, user_img: user.user_img });
+            return Object.assign(Object.assign({}, tokens), { user_id: user.user_id, user_name: user.user_name, user_email: user.user_email, user_state: user.user_state, user_img: user.user_img });
         });
     }
 }

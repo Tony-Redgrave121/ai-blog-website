@@ -12,7 +12,7 @@ const BlogPage = () => {
     const params = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:3000/server/blogs/${params.id}.json`)
+        fetch(`http://localhost:5000/static/jsons/blogs/${params.id}.json`)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
                 return response.json()
