@@ -1,11 +1,11 @@
 import {lazy} from "react";
 
-const HomePage = lazy(() => import("../builds/desktop/pages/homePage/HomePage"))
-const BlogPage = lazy(() => import("../builds/desktop/pages/blogPage/BlogPage"))
-const PodcastPage = lazy(() => import("../builds/desktop/pages/podcastPage/PodcastPage"))
-const ResourcePage = lazy(() => import("../builds/desktop/pages/resourcesPage/ResourcePage"))
-const ContactPage = lazy(() => import("../builds/desktop/pages/contactPage/ContactPage"))
-const NewsPage = lazy(() => import("../builds/desktop/pages/newsPage/NewsPage"))
+const HomePage = lazy(() => import("../pages/homePage/HomePage"))
+const BlogPage = lazy(() => import("../pages/blogPage/BlogPage"))
+const PodcastPage = lazy(() => import("../pages/podcastPage/PodcastPage"))
+const ResourcePage = lazy(() => import("../pages/resourcesPage/ResourcePage"))
+const ContactPage = lazy(() => import("../pages/contactPage/ContactPage"))
+const NewsPage = lazy(() => import("../pages/newsPage/NewsPage"))
 
 const UserRoutes = [
     {

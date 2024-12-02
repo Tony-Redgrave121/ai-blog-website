@@ -1,0 +1,92 @@
+@import url("../../../utils/styles/base/_normalize.scss");
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.TabsContainer {
+  background-color: #141414;
+}
+.TabsContainer > * {
+  border-bottom: 1px solid #262626;
+}
+.TabsContainer .SelectContainer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 162px;
+}
+.TabsContainer .SelectContainer > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1920px;
+}
+.TabsContainer .PostContainer {
+  display: flex;
+  justify-content: center;
+  padding: 80px 162px;
+  transition: 0.3s all ease-in-out;
+}
+.TabsContainer .PostContainer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 50px;
+  max-width: 1920px;
+  width: 100%;
+}
+.TabsContainer .PostContainer > div > :last-child {
+  align-self: center;
+  flex-wrap: nowrap;
+}
+.TabsContainer .PostContainer > div .PostContainerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 25%;
+}
+.TabsContainer .PostContainer > div .PostContainerLeft canvas, .TabsContainer .PostContainer > div .PostContainerLeft img {
+  border-radius: 100%;
+}
+.TabsContainer .PostContainer > div .PostContainerLeft div h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.TabsContainer .PostContainer > div .PostContainerLeft div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TabsContainer .PostContainer > div .PostContainerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+}
+.TabsContainer .PostContainer > div .PostContainerRight > p {
+  color: #98989A;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.TabsContainer .PostContainer > div .PostContainerRight div h1 {
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 39px;
+}
+.TabsContainer .PostContainer > div .PostContainerRight div p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.TabsContainer .PostContainer > div .PostContainerRight > :last-child {
+  display: flex;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

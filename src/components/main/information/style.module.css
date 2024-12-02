@@ -1,0 +1,190 @@
+@import url("../../../utils/styles/base/_normalize.scss");
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p {
+  font-family: "Inter", sans-serif;
+}
+
+.InformationContainer {
+  background-color: #141414;
+}
+.InformationContainer > :first-child {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: end;
+  border-bottom: 1px solid #262626;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 598px;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.InformationContainer > :first-child > div {
+  position: absolute !important;
+  top: 0;
+  z-index: 0;
+}
+.InformationContainer > :first-child > div, .InformationContainer > :first-child > div img, .InformationContainer > :first-child > div:after {
+  width: 100%;
+  height: 100%;
+}
+.InformationContainer > :first-child > div img {
+  position: absolute;
+  object-fit: cover;
+}
+.InformationContainer > :first-child > div:after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.880208) 75.52%, #141414 100%);
+}
+.InformationContainer > :first-child h1 {
+  z-index: 1;
+  color: white;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 96px;
+}
+.InformationContainer > :last-child {
+  width: 100%;
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer > :last-child > div {
+  display: flex;
+  justify-content: center;
+}
+.InformationContainer > :last-child > div .SideBar {
+  width: 50%;
+}
+.InformationContainer > :last-child > div .SideBar > div {
+  width: 100%;
+  padding: 50px 162px 50px 80px;
+}
+.InformationContainer > :last-child > div .SideBar > div:first-child {
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer > :last-child > div .SideBar > div > div {
+  max-width: 880px;
+}
+.InformationContainer > :last-child > div .SideBar .ReactionBlock {
+  display: flex;
+  gap: 14px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child {
+  padding: 80px 162px 80px 80px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child > div {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child > div > div > p {
+  margin-bottom: 16px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child p, .InformationContainer > :last-child > div .SideBar > :last-child a {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: calc(50% - 15px);
+}
+.InformationContainer > :last-child > div .SideBar > :last-child section > div h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child ul {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #1A1A1A;
+  list-style: disc;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child ul li, .InformationContainer > :last-child > div .SideBar > :last-child ul a {
+  color: white;
+}
+.InformationContainer > :last-child > div .SideBar > :last-child ul li {
+  margin-left: 20px;
+}
+.InformationContainer .ContentBlock {
+  position: relative;
+  max-height: 1026px;
+  width: 50%;
+  overflow-y: hidden;
+}
+.InformationContainer .ContentBlock:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: calc(100% - 2px);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 60%);
+}
+.InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
+  display: flex;
+  justify-content: end;
+  padding: 80px 80px 80px 162px;
+  border-right: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+}
+.InformationContainer .ContentBlock > div:not(.ButtonBlock) > div div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 880px;
+}
+.InformationContainer .ContentBlock h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 42px;
+}
+.InformationContainer .ContentBlock h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.InformationContainer .ContentBlock p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.InformationContainer .ContentBlock .ButtonBlock {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  padding-left: 162px;
+  display: flex;
+  justify-content: center;
+  max-width: 1122px;
+}
+.InformationContainer .ContentBlock .ButtonBlock button svg {
+  color: #98989A;
+}
+
+/*# sourceMappingURL=style.module.css.map */

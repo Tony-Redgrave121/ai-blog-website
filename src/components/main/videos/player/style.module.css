@@ -1,0 +1,43 @@
+@import url("../../../../utils/styles/base/_normalize.scss");
+.VideoPlayer {
+  position: relative;
+  width: 100%;
+}
+.VideoPlayer span {
+  position: absolute;
+  bottom: 2px;
+  left: -12px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: calc(100% + 24px);
+  padding: 10px 24px;
+  box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
+  -webkit-box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
+  -moz-box-shadow: 0 -64px 40px -22px rgb(20, 20, 20) inset;
+  border-radius: 12px;
+  opacity: 0;
+}
+.VideoPlayer span svg {
+  position: relative;
+  cursor: pointer;
+  font-size: 70px;
+  color: white;
+  margin-top: auto;
+}
+.VideoPlayer span time {
+  display: flex;
+  align-items: end;
+  font-family: "Inter", sans-serif;
+  color: #7E7E81;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.VideoPlayer .Short svg {
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/*# sourceMappingURL=style.module.css.map */

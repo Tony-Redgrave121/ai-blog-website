@@ -1,0 +1,41 @@
+@import url("../../../utils/styles/base/_normalize.scss");
+h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.ContactHeaderBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.ContactHeaderBlock h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.ContactHeaderBlock p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.ContactHeaderBlock > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ContactHeaderBlock:last-child button svg {
+  color: white;
+  font-size: 24px;
+  transition: 0.2s color ease-in-out;
+}
+.ContactHeaderBlock:last-child button:hover svg {
+  color: #FFD11A;
+}
+.ContactHeaderBlock:last-child > div {
+  flex-direction: row;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.module.css.map */

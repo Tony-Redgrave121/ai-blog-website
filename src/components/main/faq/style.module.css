@@ -1,0 +1,63 @@
+@import url("../../../utils/styles/base/_normalize.scss");
+h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.ResourceContainerLeft > div {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-right: 80px;
+}
+.ResourceContainerLeft > div > img {
+  width: 80px;
+}
+.ResourceContainerLeft > div h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.ResourceContainerRight > div {
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+  background-color: #1A1A1A;
+  padding: 34px;
+}
+.ResourceContainerRight > div h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+}
+.ResourceContainerRight > div .DescBlock {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.ResourceContainerRight > div .DescBlock hr {
+  border: 1px solid #262626;
+  margin: 24px 0;
+}
+.ResourceContainerRight > div > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.ResourceContainerRight > div svg {
+  font-size: 24px;
+  color: #FFD11A;
+}
+
+/*# sourceMappingURL=style.module.css.map */

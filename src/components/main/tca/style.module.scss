@@ -1,0 +1,237 @@
+@use '../../../utils/styles/base/_variables' as v;
+@use "../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../utils/styles/base/_normalize.scss");
+
+h2, h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.TCAContainer {
+  display: flex;
+  justify-content: center;
+  background-color: v.$dark-shade-10;
+  padding: 120px 162px;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    max-width: 1920px;
+    width: 100%;
+
+    > :first-child {
+      display: flex;
+      gap: 80px;
+
+      img {
+        width: 150px;
+      }
+
+      > :last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        span {
+          display: flex;
+
+          h3 {
+            border-radius: 4px;
+            padding: 6px 10px;
+            background-color: v.$dark-shade-20;
+            @include m.font(white, 20px, 500, 30px);
+          }
+        }
+
+        h1 {
+          font-family: "Kumbh Sans", sans-serif;
+          @include m.font(white, 58px, 500, 75.4px);
+        }
+
+        p {
+          @include m.font(v.$grey-shade-50, 18px, 400, 27px);
+        }
+      }
+    }
+
+    > :last-child {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid v.$dark-shade-15;
+      background-color: v.$dark-shade-08;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid v.$dark-shade-15;
+        background-color: v.$dark-shade-10;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          a {
+            display: flex;
+            padding: 14px;
+            background-color: v.$yellow-shade-55;
+            border-radius: 100px;
+            transition: background-color .2s ease-in-out;
+
+            &:hover {
+              background-color: white;
+            }
+
+            svg {
+              color: black;
+            }
+          }
+
+          h3 {
+            @include m.font(white, 22px, 600, 33px);
+          }
+        }
+
+        p {
+          @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .TCAContainer {
+    padding: 80px;
+
+    > div {
+      gap: 50px;
+
+      > :first-child {
+        gap: 60px;
+
+        img {
+          width: 120px;
+        }
+
+        > :last-child {
+          span h3 {
+            padding: 4px 8px;
+            @include m.font(white, 16px, 500, 24px);
+          }
+
+          h1 {
+            @include m.font(white, 44px, 500, 57.2px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-50, 16px, 400, 24px);
+          }
+        }
+      }
+
+      > :last-child {
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+
+        div {
+          gap: 16px;
+          padding: 30px;
+          border-radius: 10px;
+
+          span {
+            a {
+              padding: 12px;
+
+              svg {
+                height: 20px;
+                width: 20px;
+              }
+            }
+
+            h3 {
+              @include m.font(white, 18px, 600, 27px);
+            }
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1240px) {
+  .TCAContainer {
+    padding: 40px 16px;
+
+    > div {
+      gap: 40px;
+
+      > :first-child {
+        flex-direction: column;
+        gap: 20px;
+
+        > :first-child {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          img {
+            width: 60px;
+          }
+          span h3 {
+            border-radius: 4px;
+            padding: 4px 8px;
+            @include m.font(white, 14px, 500, 21px);
+            background-color: v.$dark-shade-20;
+          }
+        }
+
+        > :last-child {
+          h1 {
+            @include m.font(white, 28px, 500, 36.4px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-50, 14px, 400, 21px);
+          }
+        }
+      }
+
+      > :last-child {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+
+        div {
+          gap: 10px;
+          padding: 24px;
+
+          span {
+            a {
+              padding: 10px;
+            }
+
+            h3 {
+              @include m.font(white, 16px, 600, 24px);
+            }
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+          }
+        }
+      }
+    }
+  }
+}

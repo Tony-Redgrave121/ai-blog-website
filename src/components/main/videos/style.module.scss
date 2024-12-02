@@ -1,0 +1,58 @@
+@use '../../../utils/styles/base/_variables' as v;
+@use "../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../utils/styles/base/_normalize.scss");
+
+h2, p {
+  font-family: "Inter", sans-serif;
+}
+
+.VideosSection {
+  background-color: v.$dark-shade-08;
+
+  > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    > :nth-child(odd) {
+      > div {
+        justify-self: right;
+      }
+
+      padding: 80px 80px 80px 162px;
+      border-right: 1px solid v.$dark-shade-15;
+      border-bottom: 1px solid v.$dark-shade-15;
+    }
+
+    > :nth-child(even) {
+      padding: 80px 162px 80px 80px;
+      border-bottom: 1px solid v.$dark-shade-15;
+    }
+
+    .VideoBlock {
+      width: 50%;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 880px;
+
+        video {
+          object-fit: cover;
+          height: 412px;
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        h2 {
+          @include m.font(white, 24px, 600, 36px);
+        }
+
+        p {
+          @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+        }
+      }
+    }
+  }
+}

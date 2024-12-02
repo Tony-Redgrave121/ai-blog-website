@@ -11,6 +11,7 @@ interface IUsersState {
     isLoading: boolean,
     popupState: boolean
     popupContent: string,
+    isMobile: boolean,
 }
 
 const initialState: IUsersState = {
@@ -22,7 +23,8 @@ const initialState: IUsersState = {
     isAuth: false,
     isLoading: true,
     popupState: false,
-    popupContent: 'register'
+    popupContent: 'register',
+    isMobile: false
 }
 
 interface IRegistrationArgs {
@@ -124,6 +126,9 @@ const userSlice = createSlice({
         updatePopupContent(state, action) {
             state.popupContent = action.payload
         },
+        updateIsMobile(state, action) {
+            state.isMobile = action.payload
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(userCheckAuth.fulfilled, (state, action) => updateState(state, action))
@@ -138,5 +143,6 @@ export default userSlice.reducer
 export const {
     updateIsLoading,
     updatePopupState,
-    updatePopupContent
+    updatePopupContent,
+    updateIsMobile
 } = userSlice.actions

@@ -1,0 +1,146 @@
+@use '../../../utils/styles/base/_variables' as v;
+@use "../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../utils/styles/base/_normalize.scss");
+
+h2, p {
+  font-family: "Inter", sans-serif;
+}
+
+.HeaderSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: v.$dark-shade-08;
+
+  > span {
+    display: flex;
+    justify-content: center;
+    padding: 60px 162px;
+
+    span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1920px;
+
+      h2 {
+        @include m.font(v.$grey-shade-60, 28px, 500, 36.4px);
+      }
+    }
+  }
+
+  > div {
+    border-bottom: 1px solid v.$dark-shade-15;
+
+    .HeaderBlock {
+      display: flex;
+      justify-content: center;
+      padding: 80px 162px;
+
+      > div {
+        display: flex;
+        gap: 30px;
+        max-width: 1920px;
+
+        > div {
+          display: flex;
+          align-items: center;
+
+          img {
+            object-fit: cover;
+            border-radius: 12px;
+          }
+
+          > div {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            width: 100%;
+
+            > :first-child {
+              p {
+                @include m.font(v.$grey-shade-60, 20px, 400, 30px)
+              }
+            }
+
+            .StatContainer {
+              display: flex;
+              gap: 50px;
+              width: 100%;
+
+              div {
+                @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+
+                > :last-child {
+                  margin-top: 4px;
+                  color: white;
+                }
+              }
+            }
+
+            > :last-child {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+
+              span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    canvas, img {
+      border-radius: 12px;
+    }
+
+    .WideSection {
+      gap: 80px;
+
+      > :first-child {
+        max-width: 515px;
+      }
+
+      > div {
+        gap: 50px;
+      }
+
+      h2 {
+        margin-bottom: 30px;
+        @include m.font(white, 32px, 600, 48px)
+      }
+    }
+
+    .ShortSection {
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+      width: 33.33333%;
+
+      > :first-child {
+        height: 222px!important;
+      }
+
+      > div {
+        height: 100%;
+        gap: 20px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        @include m.font(white, 20px, 600, 30px)
+      }
+
+      canvas, img {
+        position: static!important;
+        width: 100%;
+        height: 222px!important;
+      }
+    }
+  }
+}

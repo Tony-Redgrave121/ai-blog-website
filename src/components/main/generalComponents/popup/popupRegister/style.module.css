@@ -1,0 +1,55 @@
+@import url("../../../../../utils/styles/base/_normalize.scss");
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+}
+.FormContainer .FileBlock {
+  position: relative;
+}
+.FormContainer .FileBlock input {
+  display: none;
+}
+.FormContainer .FileBlock label {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+}
+.FormContainer .FileBlock label img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  border: 1px solid #262626;
+  object-fit: cover;
+  cursor: pointer;
+}
+.FormContainer > * {
+  width: 100%;
+}
+.FormContainer > :last-child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.FormContainer > :last-child button {
+  background-color: #FFF5CC;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #141414;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.FormContainer > :last-child p {
+  transition: 0.2s color ease-in-out;
+  cursor: pointer;
+}
+.FormContainer > :last-child p:hover {
+  color: white;
+}
+
+/*# sourceMappingURL=style.module.css.map */

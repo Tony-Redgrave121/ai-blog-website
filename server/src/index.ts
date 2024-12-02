@@ -7,12 +7,17 @@ import fileUpload from 'express-fileupload'
 import * as path from "path"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
+import helmet from 'helmet'
 
 dotenv.config({path: "./.env"})
 const PORT = process.env.SERVER_PORT
 const app = express()
 
 app.use(express.json())
+app.use(helmet({
+    contentSecurityPolicy: false,
+    xXssProtection: false
+}))
 app.use(cors({
     credentials: true,
     origin: process.env.CLIENT_URL

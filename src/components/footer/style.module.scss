@@ -1,0 +1,212 @@
+@use '../../utils/styles/base/_variables' as v;
+@use "../../utils/styles/base/_mixin.scss" as m;
+@import url("../../utils/styles/base/_normalize.scss");
+
+h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Footer {
+  background-color: v.$dark-shade-08;
+  padding: 0 162px;
+
+  h3 {
+    @include m.font(white, 20px, 500, 26px);
+  }
+
+  a, p {
+    @include m.font(v.$dark-shade-40, 18px, 400, 23.4px);
+  }
+
+  a {
+    transition: .2s color ease-in-out;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  > :first-child, > :last-child {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 100%;
+  }
+
+  > :first-child {
+    padding: 80px 0;
+
+    ul {
+      > :first-child {
+        margin-bottom: 36px;
+      }
+
+      > *:not(:last-child) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .NewBlock {
+        padding: 4px 12px;
+        margin-left: 10px;
+        border: 1px solid transparent;
+        background: linear-gradient(70.33deg, v.$dark-shade-10 61.2%, v.$dark-shade-10 61.2%),
+        linear-gradient(to right, v.$dark-shade-10, v.$yellow-shade-60 216.15%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        border-radius: 6px;
+        @include m.font(white, 16px, 400, 24px);
+      }
+    }
+  }
+
+  > :last-child {
+    border-top: 1px solid v.$dark-shade-15;
+    padding: 40px 0;
+
+    > :first-child {
+      ul > *:not(:last-child) {
+        padding-right: 11px;
+        border-right: 1px solid v.$dark-shade-15;
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 11px;
+
+      svg {
+        color: white;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .Footer {
+    padding: 0 80px;
+
+    h3 {
+      @include m.font(white, 18px, 500, 23.4px);
+    }
+
+    a, p {
+      @include m.font(v.$dark-shade-40, 14px, 400, 18.2px);
+    }
+
+    > :first-child {
+      padding: 60px 0;
+
+      ul {
+        > :first-child {
+          margin-bottom: 28px;
+        }
+
+        > *:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        .NewBlock {
+          padding: 2px 10px;
+          border-radius: 4px;
+          @include m.font(white, 12px, 400, 18px);
+        }
+      }
+    }
+
+    > :last-child {
+      padding: 24px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .Footer {
+    padding: 0 16px;
+
+    h3 {
+      @include m.font(white, 16px, 500, 20.8px);
+    }
+
+    a, p {
+      @include m.font(v.$dark-shade-40, 14px, 400, 18.2px);
+    }
+
+    > :first-child {
+      flex-wrap: wrap;
+      padding: 60px 0;
+      gap: 20px;
+
+      > *:not(:last-child) {
+        display: flex;
+        justify-content: center;
+        width: calc(50% - 10px);
+
+        ul {
+          max-width: 200px;
+          width: 100%;
+        }
+      }
+
+      > :last-child {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        ul {
+          > :first-child {
+            width: 100%;
+          }
+
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+      }
+
+      ul {
+        > :first-child {
+          margin-bottom: 16px;
+        }
+
+        > *:not(:last-child) {
+          margin-bottom: 8px;
+        }
+
+        .NewBlock {
+          padding: 2px 10px;
+          border-radius: 4px;
+          @include m.font(white, 12px, 400, 18px);
+        }
+      }
+    }
+
+    > :last-child {
+      >:nth-child(1) {
+        order: 1;
+      }
+
+      >:nth-child(2) {
+        order: 0;
+      }
+
+      >:nth-child(3) {
+        order: 2;
+      }
+
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 0;
+      gap: 20px;
+    }
+  }
+}

@@ -54,10 +54,15 @@ const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const path = __importStar(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const helmet_1 = __importDefault(require("helmet"));
 dotenv_1.default.config({ path: "./.env" });
 const PORT = process.env.SERVER_PORT;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
+app.use((0, helmet_1.default)({
+    contentSecurityPolicy: false,
+    xXssProtection: false
+}));
 app.use((0, cors_1.default)({
     credentials: true,
     origin: process.env.CLIENT_URL

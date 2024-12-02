@@ -1,0 +1,15 @@
+@use '../../../../utils/styles/base/_variables' as v;
+@import url("../../../../utils/styles/base/_normalize.scss");
+
+.CrossingButtonBlock {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: v.$dark-shade-08;
+  border: 1px solid v.$dark-shade-15;
+  border-radius: 10px;
+
+  button {
+    padding: 18px 38px;
+  }
+}

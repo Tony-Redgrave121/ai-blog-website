@@ -1,0 +1,63 @@
+@use '../../../../utils/styles/base/_variables' as v;
+@use "../../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../../utils/styles/base/_normalize.scss");
+
+h1 {
+  font-family: "Kumbh Sans", sans-serif;
+  @include m.font(white, 40px, 600, 60px);
+}
+
+h3, p {
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  @include m.font(white, 22px, 600, 27px);
+}
+
+p {
+  @include m.font(v.$dark-shade-40, 18px, 400, 27px);
+}
+
+.PopupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.6);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 9;
+
+  .Popup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+    background-color: v.$dark-shade-08;
+    border-radius: 8px;
+    border: 1px solid v.$dark-shade-15;
+    max-width: 650px;
+    width: 100%;
+    padding: 80px;
+    cursor: auto;
+
+    .CloseButton {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: white;
+      cursor: pointer;
+      transition: .2s color ease-in-out;
+
+      &:hover {
+        color: v.$grey-shade-80;
+      }
+    }
+  }
+}

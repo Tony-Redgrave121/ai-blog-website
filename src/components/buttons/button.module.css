@@ -1,0 +1,93 @@
+@import url("../../utils/styles/base/_normalize.scss");
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.Button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background-color: #141414;
+  border: 1px solid #333333;
+  color: #98989A;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.Button:hover {
+  color: white;
+}
+.Button svg {
+  font-size: 24px;
+  color: #FFD11A;
+}
+
+.SelectButton {
+  justify-content: center;
+  padding: 30px 24px;
+  max-width: 250px;
+  width: 100%;
+}
+.SelectButton:hover {
+  color: white;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+}
+
+.ActiveSelectButton {
+  color: #98989A;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+}
+
+.PostButton {
+  gap: 5px;
+  color: #98989A;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 100px;
+  padding: 8px 16px;
+}
+.PostButton svg {
+  color: #98989A;
+}
+
+@media screen and (max-width: 1680px) {
+  .Button {
+    gap: 4px;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+  .Button svg {
+    font-size: 18px;
+  }
+  .SelectButton {
+    justify-content: center;
+    padding: 30px 24px;
+    max-width: 250px;
+    width: 100%;
+  }
+  .SelectButton:hover {
+    color: white;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+  }
+  .ActiveSelectButton {
+    color: #98989A;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+  }
+  .PostButton {
+    gap: 5px;
+    color: #98989A;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    border-radius: 100px;
+    padding: 8px 16px;
+  }
+}
+
+/*# sourceMappingURL=button.module.css.map */
