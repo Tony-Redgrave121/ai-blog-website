@@ -1,5 +1,5 @@
 @import url("../../utils/styles/base/_normalize.scss");
-* {
+button, button > * {
   font-family: "Inter", sans-serif;
 }
 
@@ -58,35 +58,40 @@
   .Button {
     gap: 4px;
     font-size: 14px;
-    padding: 8px 14px;
-    border-radius: 6px;
+    padding: 14px 24px;
+    border-radius: 8px;
   }
   .Button svg {
-    font-size: 18px;
+    font-size: 20px;
   }
   .SelectButton {
-    justify-content: center;
-    padding: 30px 24px;
-    max-width: 250px;
-    width: 100%;
-  }
-  .SelectButton:hover {
-    color: white;
-    background-color: #1A1A1A;
-    border: 1px solid #262626;
-  }
-  .ActiveSelectButton {
-    color: #98989A;
-    background-color: #1A1A1A;
-    border: 1px solid #262626;
+    padding: 24px 20px;
+    border-radius: 7px;
+    max-width: 200px;
   }
   .PostButton {
-    gap: 5px;
-    color: #98989A;
-    background-color: #1A1A1A;
-    border: 1px solid #262626;
+    gap: 2px;
+    padding: 6px 12px;
     border-radius: 100px;
-    padding: 8px 16px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .Button {
+    padding: 14px 20px;
+    border-radius: 8px;
+  }
+  .Button svg {
+    font-size: 20px;
+  }
+  .SelectButton {
+    padding: 18px 16px;
+    border-radius: 7px;
+    max-width: 150px;
+  }
+  .PostButton {
+    gap: 2px;
+    padding: 6px 12px;
+    border-radius: 100px;
   }
 }
 

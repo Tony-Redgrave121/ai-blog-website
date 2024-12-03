@@ -16,7 +16,7 @@
     width: 100%;
 
     > :first-child {
-      width: 80%;
+      width: 70%;
     }
   }
 
@@ -41,5 +41,45 @@
   h1 {
     font-family: "Kumbh Sans", sans-serif;
     @include m.font(white, 58px, 500, 75.4px)
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .CrossingContainer {
+    padding: 80px;
+
+    span {
+      p {
+        padding: 4px 8px;
+        @include m.font(white, 16px, 500, 24px)
+      }
+    }
+
+    h1 {
+      @include m.font(white, 44px, 500, 57.2px)
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .CrossingContainer {
+    padding: 40px 16px;
+
+    > div {
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 868px;
+    }
+
+    span {
+      p {
+        padding: 4px 8px;
+        @include m.font(white, 14px, 500, 21px)
+      }
+    }
+
+    h1 {
+      @include m.font(white, 28px, 500, 36.4px)
+    }
   }
 }

@@ -96,18 +96,17 @@ h2, h3, p {
 
       > div {
         display: flex;
-        width: 65%;
         justify-content: end;
         flex-direction: column;
         font-family: "Inter", sans-serif;
-        gap: 39px;
+        gap: 30px;
         color: v.$grey-shade-60;
         max-width: 960px;
 
         > img {
           position: absolute;
-          top: -7%;
-          left: -7%;
+          top: -45px;
+          left: -70px;
           transform: rotate(35.39deg);
           width: 800px;
           mask-image: linear-gradient(to bottom, transparent, v.$dark-shade-08 50%, transparent);
@@ -117,7 +116,7 @@ h2, h3, p {
           h3 {
             color: white;
             font-size: 24px;
-            margin-bottom: 30px;
+            margin-bottom: 14px;
           }
 
           p {
@@ -164,12 +163,16 @@ h2, h3, p {
           display: flex;
           flex-direction: column;
           gap: 30px;
+          width: 100%;
 
           img {
             width: 50px;
           }
 
-          div {
+          > div {
+            display: flex;
+            justify-content: space-between;
+
             h3 {
               @include m.font(white, 20px, 500, 30px);
             }
@@ -182,23 +185,284 @@ h2, h3, p {
           p {
             @include m.font(v.$grey-shade-50, 20px, 400, 27px);
           }
+
+          span {
+            display: flex;
+            align-items: center;
+
+            a {
+              display: flex;
+              justify-content: center;
+              padding: 14px;
+              border-radius: 100px;
+              color: black;
+              background-color: v.$yellow-shade-55;
+              transition: .2s ease-in-out;
+
+              &:hover {
+                background-color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .StatContainer {
+    .TopSubContainer {
+      .LeftContainer {
+        .TextBlock {
+
+          padding: 80px;
+
+          > div {
+            gap: 20px;
+
+            :first-child {
+              font-size: 22px;
+            }
+
+            h1 {
+              @include m.font(white, 55px, 500, 66px);
+            }
+
+            :last-child {
+              @include m.font(v.$grey-shade-50, 16px, 400, 24px);
+            }
+          }
         }
 
-        > :last-child {
-          display: flex;
-          align-items: center;
+        .StatBlockContainer {
+          padding-left: 80px;
 
-          a {
-            display: flex;
-            justify-content: center;
-            padding: 14px;
-            border-radius: 100px;
-            color: black;
-            background-color: v.$yellow-shade-55;
-            transition: .2s ease-in-out;
+          > div {
+            > div {
+              padding: 30px 0 30px 0;
 
-            &:hover {
-              background-color: white;
+              &:not(:first-child) {
+                padding-left: 30px;
+              }
+            }
+          }
+        }
+      }
+
+      .RightContainer {
+        padding: 150px 80px 50px 50px;
+
+        > div {
+          gap: 20px;
+
+          > img {
+            left: -55px;
+            width: 600px;
+          }
+
+          .TextBlock {
+            h3 {
+              font-size: 20px;
+              margin-bottom: 6px;
+            }
+
+            p {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .DownSubContainer {
+      padding: 0 80px;
+
+      > div {
+        .LinkContainer {
+          gap: 20px;
+          padding: 40px 80px 40px 80px;
+
+          &:first-child {
+            padding: 40px 80px 40px 0;
+          }
+
+          &:last-child {
+            padding: 40px 0 40px 80px;
+          }
+
+          .LinkBlock {
+            gap: 20px;
+
+            img {
+              width: 40px;
+            }
+
+            > div {
+              h3 {
+                @include m.font(white, 18px, 500, 27px);
+              }
+
+              p {
+                font-size: 16px;
+              }
+            }
+
+            p {
+              @include m.font(v.$grey-shade-50, 16px, 400, 24px);
+            }
+
+            span a {
+              padding: 12px;
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .StatContainer {
+    .TopSubContainer {
+      flex-direction: column;
+
+      .LeftContainer {
+        width: 100%;
+        border-right: none;
+
+        .TextBlock {
+          justify-content: center;
+          padding: 40px 16px;
+
+          > div {
+            max-width: 868px;
+            gap: 14px;
+
+            :first-child {
+              font-size: 18px;
+            }
+
+            h1 {
+              @include m.font(white, 30px, 500, 36px);
+            }
+
+            :last-child {
+              @include m.font(v.$grey-shade-50, 14px, 400, 21px);
+            }
+          }
+        }
+
+        .StatBlockContainer {
+          justify-content: center;
+          padding: 0 16px;
+
+          > div {
+            max-width: 868px;
+
+            > div {
+              padding: 30px 0 30px 0;
+
+              &:not(:first-child) {
+                padding-left: 30px;
+              }
+            }
+          }
+        }
+      }
+
+      .RightContainer {
+        justify-content: center;
+        width: 100%;
+        padding: 100px 40px 40px 40px;
+
+        > div {
+          width: 100%;
+          max-width: 868px;
+          gap: 20px;
+
+          > img {
+            top: -30px;
+            left: -35px;
+            width: 420px;
+          }
+
+          .TextBlock {
+            h3 {
+              font-size: 18px;
+              margin-bottom: 4px;
+            }
+
+            p {
+              font-size: 14px;
+              line-height: 21px;
+            }
+          }
+        }
+      }
+    }
+
+    .DownSubContainer {
+      padding: 0 16px;
+
+      > div {
+        flex-direction: column;
+
+        .LinkContainer {
+          justify-content: center;
+          gap: 16px;
+          padding: 30px 0;
+          border-right: none;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid v.$dark-shade-15;
+            border-right: none;
+          }
+
+          &:first-child {
+            padding: 30px 0;
+            border-right: none;
+          }
+
+          &:last-child {
+            padding: 30px 0;
+          }
+
+          .LinkBlock {
+            max-width: 868px;
+            gap: 20px;
+
+            img {
+              width: 40px;
+            }
+
+            > div {
+              h3 {
+                @include m.font(white, 18px, 500, 27px);
+              }
+
+              p {
+                font-size: 16px;
+              }
+            }
+
+            p {
+              @include m.font(v.$grey-shade-50, 16px, 400, 24px);
+            }
+
+            span a {
+              padding: 12px;
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
             }
           }
         }

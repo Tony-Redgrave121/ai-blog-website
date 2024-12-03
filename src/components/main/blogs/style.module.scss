@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-* {
-  font-family: "Inter", sans-serif;
-}
-
 .TabsContainer {
   background-color: v.$dark-shade-08;
 
@@ -43,7 +39,6 @@
 
       > :last-child {
         align-self: center;
-        flex-wrap: nowrap;
       }
 
       .PostContainerLeft {
@@ -70,7 +65,7 @@
       .PostContainerRight {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
         width: 50%;
 
         > p {
@@ -90,6 +85,131 @@
         > :last-child {
           display: flex;
           gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .TabsContainer {
+    .SelectContainer {
+      padding: 40px 80px;
+
+      > div {
+        gap: 14px;
+      }
+    }
+
+    .PostContainer {
+      padding: 60px 80px;
+
+      > div {
+        gap: 40px;
+
+        .PostContainerLeft {
+          gap: 10px;
+
+          img {
+            width: 60px;
+          }
+
+          div {
+            h3 {
+              @include m.font(white, 18px, 600, 27px);
+            }
+
+            p {
+              @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+            }
+          }
+        }
+
+        .PostContainerRight {
+          gap: 40px;
+
+          > p {
+            @include m.font(v.$grey-shade-60, 18px, 600, 27px);
+          }
+
+          div {
+            h1 {
+              @include m.font(white, 22px, 600, 33px);
+            }
+
+            p {
+              @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+            }
+          }
+
+          > :last-child {
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .TabsContainer {
+    .SelectContainer {
+      padding: 20px 16px;
+      overflow-x: scroll;
+
+      > div {
+        max-width: 868px;
+      }
+    }
+
+    .PostContainer {
+      padding: 40px 16px;
+
+      > div {
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 868px;
+
+        > :nth-child(1) {
+          flex-grow: 1;
+          order: 0;
+        }
+
+        > :nth-child(2) {
+          width: 100%;
+          order: 2;
+        }
+
+        > :nth-child(3) {
+          order: 1;
+        }
+
+        .PostContainerLeft {
+          gap: 10px;
+
+          div {
+            p {
+              @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+            }
+          }
+        }
+
+        .PostContainerRight {
+          gap: 20px;
+
+          > p {
+            @include m.font(v.$grey-shade-60, 16px, 600, 24px);
+          }
+
+          div {
+            h1 {
+              @include m.font(white, 18px, 600, 27px);
+            }
+
+            p {
+              @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+            }
+          }
         }
       }
     }

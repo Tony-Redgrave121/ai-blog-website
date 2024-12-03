@@ -68,9 +68,18 @@ table {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #262626;
   border-radius: 5px;
+}
+
+h2, h3, h4, p {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-family: "Kumbh Sans", sans-serif;
 }

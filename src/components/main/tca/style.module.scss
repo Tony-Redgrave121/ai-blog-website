@@ -176,6 +176,7 @@ h2, h3, p {
     padding: 40px 16px;
 
     > div {
+      max-width: 868px;
       gap: 40px;
 
       > :first-child {

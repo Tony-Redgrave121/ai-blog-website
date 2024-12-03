@@ -2,10 +2,6 @@
 @use "../../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TextBlock {
   p {
     @include m.font(v.$grey-shade-60, 18px, 400, 27px);
@@ -59,7 +55,7 @@ h2, h3, p {
   > span {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
 
     h2 {
       text-wrap: nowrap;
@@ -96,6 +92,133 @@ h2, h3, p {
 
     > :first-child {
       flex-grow: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .TextBlock {
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+    }
+
+    h2 {
+      @include m.font(white, 18px, 600, 27px);
+    }
+  }
+
+  .ResourceContainerLeft {
+    > div {
+      gap: 40px;
+      padding-right: 60px;
+
+      > img {
+        width: 60px;
+      }
+
+      h1 {
+        @include m.font(white, 30px, 600, 45px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+
+      > :last-child {
+        > div {
+          gap: 30px;
+          border-radius: 8px;
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    > span {
+      gap: 16px;
+
+      h2 {
+        @include m.font(white, 20px, 600, 30px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+    }
+
+    > :last-child {
+      gap: 16px;
+
+      > div {
+        padding: 24px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+// ----------------------------------- //
+@media screen and (max-width: 1240px) {
+  .TextBlock {
+    p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+    }
+
+    h2 {
+      @include m.font(white, 16px, 600, 24px);
+    }
+  }
+
+  .ResourceContainerLeft {
+    > div {
+      width: 100%;
+      gap: 20px;
+      padding-right: 0;
+
+      > img {
+        width: 50px;
+      }
+
+      h1 {
+        @include m.font(white, 24px, 600, 36px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+      }
+
+      > :last-child {
+        > div {
+          padding: 20px 30px;
+        }
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    > span {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+
+      h2 {
+        @include m.font(white, 20px, 600, 30px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+    }
+
+    > :last-child {
+      gap: 16px;
+
+      > div {
+        width: 100%;
+        padding: 24px;
+        border-radius: 8px;
+      }
     }
   }
 }

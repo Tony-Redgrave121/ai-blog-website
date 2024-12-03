@@ -85,18 +85,17 @@ h2, h3, p {
 }
 .StatContainer .TopSubContainer .RightContainer > div {
   display: flex;
-  width: 65%;
   justify-content: end;
   flex-direction: column;
   font-family: "Inter", sans-serif;
-  gap: 39px;
+  gap: 30px;
   color: #98989A;
   max-width: 960px;
 }
 .StatContainer .TopSubContainer .RightContainer > div > img {
   position: absolute;
-  top: -7%;
-  left: -7%;
+  top: -45px;
+  left: -70px;
   transform: rotate(35.39deg);
   width: 800px;
   mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
@@ -104,7 +103,7 @@ h2, h3, p {
 .StatContainer .TopSubContainer .RightContainer > div .TextBlock h3 {
   color: white;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 .StatContainer .TopSubContainer .RightContainer > div .TextBlock p {
   font-size: 18px;
@@ -142,17 +141,22 @@ h2, h3, p {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock img {
   width: 50px;
 }
-.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock div h3 {
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div {
+  display: flex;
+  justify-content: space-between;
+}
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div h3 {
   color: white;
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
 }
-.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock div p {
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div p {
   font-size: 18px;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock p {
@@ -161,11 +165,11 @@ h2, h3, p {
   font-weight: 400;
   line-height: 27px;
 }
-.StatContainer .DownSubContainer > div .LinkContainer > :last-child {
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span {
   display: flex;
   align-items: center;
 }
-.StatContainer .DownSubContainer > div .LinkContainer > :last-child a {
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a {
   display: flex;
   justify-content: center;
   padding: 14px;
@@ -174,8 +178,220 @@ h2, h3, p {
   background-color: #FFD11A;
   transition: 0.2s ease-in-out;
 }
-.StatContainer .DownSubContainer > div .LinkContainer > :last-child a:hover {
+.StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a:hover {
   background-color: white;
+}
+
+@media screen and (max-width: 1680px) {
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock {
+    padding: 80px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div {
+    gap: 20px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div :first-child {
+    font-size: 22px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div h1 {
+    color: white;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 66px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div :last-child {
+    color: #7E7E81;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer {
+    padding-left: 80px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div {
+    padding: 30px 0 30px 0;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div:not(:first-child) {
+    padding-left: 30px;
+  }
+  .StatContainer .TopSubContainer .RightContainer {
+    padding: 150px 80px 50px 50px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div {
+    gap: 20px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div > img {
+    left: -55px;
+    width: 600px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div .TextBlock h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div .TextBlock p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .StatContainer .DownSubContainer {
+    padding: 0 80px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer {
+    gap: 20px;
+    padding: 40px 80px 40px 80px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer:first-child {
+    padding: 40px 80px 40px 0;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer:last-child {
+    padding: 40px 0 40px 80px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock {
+    gap: 20px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock img {
+    width: 40px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div p {
+    font-size: 16px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock p {
+    color: #7E7E81;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a {
+    padding: 12px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .StatContainer .TopSubContainer {
+    flex-direction: column;
+  }
+  .StatContainer .TopSubContainer .LeftContainer {
+    width: 100%;
+    border-right: none;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock {
+    justify-content: center;
+    padding: 40px 16px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div {
+    max-width: 868px;
+    gap: 14px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div :first-child {
+    font-size: 18px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .TextBlock > div :last-child {
+    color: #7E7E81;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer {
+    justify-content: center;
+    padding: 0 16px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div {
+    max-width: 868px;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div {
+    padding: 30px 0 30px 0;
+  }
+  .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div:not(:first-child) {
+    padding-left: 30px;
+  }
+  .StatContainer .TopSubContainer .RightContainer {
+    justify-content: center;
+    width: 100%;
+    padding: 100px 40px 40px 40px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div {
+    width: 100%;
+    max-width: 868px;
+    gap: 20px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div > img {
+    top: -30px;
+    left: -35px;
+    width: 420px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div .TextBlock h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .StatContainer .TopSubContainer .RightContainer > div .TextBlock p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .StatContainer .DownSubContainer {
+    padding: 0 16px;
+  }
+  .StatContainer .DownSubContainer > div {
+    flex-direction: column;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer {
+    justify-content: center;
+    gap: 16px;
+    padding: 30px 0;
+    border-right: none;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer:not(:last-child) {
+    border-bottom: 1px solid #262626;
+    border-right: none;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer:first-child {
+    padding: 30px 0;
+    border-right: none;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer:last-child {
+    padding: 30px 0;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock {
+    max-width: 868px;
+    gap: 20px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock img {
+    width: 40px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div p {
+    font-size: 16px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock p {
+    color: #7E7E81;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a {
+    padding: 12px;
+  }
+  .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

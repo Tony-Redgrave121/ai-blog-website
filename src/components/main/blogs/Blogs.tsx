@@ -72,8 +72,7 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                         </div>
                     </div>
                 </div>
-            ))
-            }
+            ))}
         </div>
     )
 }

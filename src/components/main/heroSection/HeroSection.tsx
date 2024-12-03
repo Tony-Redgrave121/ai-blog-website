@@ -56,13 +56,13 @@ const HeroSection = () => {
                                     <img src={require(`../../../utils/icons/main/links/${link.img}.svg`)}
                                          alt={link.title}/>
                                     <div>
-                                        <h3>{link.title}</h3>
-                                        <p>{link.desc}</p>
+                                        <div>
+                                            <h3>{link.title}</h3>
+                                            <p>{link.desc}</p>
+                                        </div>
+                                        <span><Link to={link.link}><HiArrowUpRight size={24}/></Link></span>
                                     </div>
                                     <p>{link.serv}</p>
-                                </div>
-                                <div>
-                                    <Link to={link.link}><HiArrowUpRight size={24}/></Link>
                                 </div>
                             </div>
                         ))

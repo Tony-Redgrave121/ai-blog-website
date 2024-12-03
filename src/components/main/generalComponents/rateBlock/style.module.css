@@ -8,7 +8,20 @@
   padding: 10px 16px;
 }
 .RateBlock svg {
+  width: 24px;
+  height: 24px;
   color: #FFD11A;
+}
+
+@media screen and (max-width: 1680px) {
+  .RateBlock {
+    gap: 4px;
+    padding: 8px 12px;
+  }
+  .RateBlock svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

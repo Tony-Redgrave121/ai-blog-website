@@ -9,15 +9,17 @@ import Blogs from "../../components/main/blogs/Blogs";
 import Testimonials from "../../components/main/testimonials/Testimonials";
 import IPostLow from "../../utils/types/IPostLow";
 import {ITestimonial} from "../../utils/types/ITestimonial";
-import TripleContainer from "../../components/main/testimonials/tripleContainer/TripleContainer";
+import TripleContainer from "../../components/main/generalComponents/tripleContainer/TripleContainer";
 import ResourceContainer from "../../components/main/generalComponents/resourceContainer/ResourceContainer";
 import IHomeResources from "../../utils/types/IHomeResources";
 import HomeResources from "../../components/main/resources/homeResources/HomeResources";
+import {useAppSelector} from "../../utils/hooks/redux";
 
 const HomePage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
     const [testimonials, setTestimonials] = React.useState<Array<ITestimonial>>()
     const [resources, setResources] = React.useState<Array<IHomeResources>>()
+    const isMobile = useAppSelector(state => state.user.isMobile)
 
     useEffect(() => {
         fetch("http://localhost:5000/static/jsons/posts/posts.json")
@@ -72,7 +74,7 @@ const HomePage = () => {
                     <Testimonials testimonials={testimonials.slice(0, 3)}/>
                 </TripleContainer>
             }
-            { testimonials &&
+            { testimonials && !isMobile &&
                 <TripleContainer>
                     <Testimonials testimonials={testimonials.slice(3, 6)}/>
                 </TripleContainer>

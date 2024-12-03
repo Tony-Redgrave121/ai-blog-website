@@ -2,10 +2,6 @@
 @use "../../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .ResourceContainer {
   > div {
     display: flex;
@@ -29,6 +25,44 @@ h2, h3, p {
       padding: 80px 0 80px 80px;
       width: 60%;
       max-width: 1152px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .ResourceContainer {
+    > div {
+      padding: 0 80px;
+
+      > :last-child {
+        gap: 24px;
+        padding: 60px 0 60px 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .ResourceContainer {
+    > div {
+      align-items: center;
+      flex-direction: column;
+      padding: 40px 16px;
+      gap: 40px;
+
+      > :first-child, > :last-child {
+        width: 100%;
+        max-width: 868px;
+      }
+
+      > :first-child {
+        border-right: none;
+      }
+
+      > :last-child {
+        border-top: 1px solid v.$dark-shade-15;
+        padding: 40px 0 0 0;
+      }
     }
   }
 }

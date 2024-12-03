@@ -11,7 +11,7 @@
     background-color: v.$dark-shade-10;
     border: 1px solid v.$dark-shade-15;
     padding: 10px;
-    width: 230px;
+    width: 218px;
 
     > div {
       position: relative;
@@ -26,6 +26,35 @@
     }
 
     :nth-child(2) {
+      left: -7.5%;
+    }
+
+    :nth-child(3) {
+      left: -15%;
+    }
+
+    :nth-child(4) {
+      left: -22.5%;
+    }
+  }
+
+  .DeveloperTopicBlock {
+    border-radius: 12px;
+    background-color: v.$dark-shade-08;
+    border: none;
+    padding: 10px;
+    width: 193px;
+
+    > div {
+      height: 50px!important;
+    }
+
+    canvas, img {
+      width: 50px!important;
+      height: 50px!important;
+    }
+
+    :nth-child(2) {
       left: -5%;
     }
 
@@ -36,26 +65,123 @@
     :nth-child(4) {
       left: -15%;
     }
+  }
+}
 
-    :nth-child(5) {
-      left: -20%;
+@media screen and (max-width: 1680px) {
+  .DeveloperContainer {
+    .DeveloperBlock {
+      padding: 8px;
+      width: 174px;
+
+      > div {
+        height: 50px!important;
+      }
+
+      canvas, img {
+        width: 50px!important;
+        height: 50px!important;
+        border: 1px solid v.$dark-shade-40;
+      }
+
+      :nth-child(2) {
+        left: -9%;
+      }
+
+      :nth-child(3) {
+        left: -18%;
+      }
+
+      :nth-child(4) {
+        left: -27%;
+      }
+    }
+
+    .DeveloperTopicBlock {
+      border-radius: 12px;
+      background-color: v.$dark-shade-08;
+      border: none;
+      padding: 8px;
+      width: 149px;
+
+      :nth-child(2) {
+        left: -7%;
+      }
+
+      :nth-child(3) {
+        left: -14%;
+      }
+
+      :nth-child(4) {
+        left: -21%;
+      }
+
+      > div {
+        height: 40px!important;
+      }
+
+      canvas, img {
+        width: 40px!important;
+        height: 40px!important;
+      }
     }
   }
+}
 
-  .DeveloperTopicBlock {
-    border-radius: 12px;
-    background-color: v.$dark-shade-08;
-    border: none;
-    padding: 10px;
-    width: 194px;
+@media screen and (max-width: 1240px) {
+  .DeveloperContainer {
+    .DeveloperBlock {
+      width: 134px;
 
-    > div {
-      height: 50px!important;
+      > div {
+        height: 40px!important;
+      }
+
+      canvas, img {
+        width: 40px!important;
+        height: 40px!important;
+      }
+
+      :nth-child(2) {
+        left: -12.5%;
+      }
+
+      :nth-child(3) {
+        left: -24%;
+      }
+
+      :nth-child(4) {
+        left: -36.5%;
+      }
     }
 
-    canvas, img {
-      width: 50px!important;
-      height: 50px!important;
+    .DeveloperTopicBlock {
+      border-radius: 12px;
+      background-color: v.$dark-shade-08;
+      border: none;
+      padding: 8px;
+      width: 149px;
+
+      :nth-child(2) {
+        left: -7%;
+      }
+
+      :nth-child(3) {
+        left: -14%;
+      }
+
+      :nth-child(4) {
+        left: -21%;
+      }
+
+      > div {
+        height: 40px!important;
+      }
+
+      canvas, img {
+        width: 40px!important;
+        height: 40px!important;
+      }
     }
   }
 }

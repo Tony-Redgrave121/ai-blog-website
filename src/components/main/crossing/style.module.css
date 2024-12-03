@@ -13,7 +13,7 @@
   width: 100%;
 }
 .CrossingContainer > div > :first-child {
-  width: 80%;
+  width: 70%;
 }
 .CrossingContainer .ButtonBlock {
   display: flex;
@@ -39,6 +39,48 @@
   font-size: 58px;
   font-weight: 500;
   line-height: 75.4px;
+}
+
+@media screen and (max-width: 1680px) {
+  .CrossingContainer {
+    padding: 80px;
+  }
+  .CrossingContainer span p {
+    padding: 4px 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .CrossingContainer h1 {
+    color: white;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 57.2px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .CrossingContainer {
+    padding: 40px 16px;
+  }
+  .CrossingContainer > div {
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 868px;
+  }
+  .CrossingContainer span p {
+    padding: 4px 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .CrossingContainer h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36.4px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

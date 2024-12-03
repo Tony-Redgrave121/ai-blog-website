@@ -1,29 +1,25 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-* {
-  font-family: "Inter", sans-serif;
-}
-
-.BlogContainer {
+.FeatureContainer {
   display: flex;
   justify-content: center;
   background-color: #141414;
   padding: 0 162px;
   border-bottom: 1px solid #262626;
 }
-.BlogContainer .BlogContainerLeft {
+.FeatureContainer .FeatureContainerLeft {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   padding-right: 80px;
   max-width: 768px;
   width: 40%;
   border-right: 1px solid #262626;
 }
-.BlogContainer .BlogContainerLeft img {
+.FeatureContainer .FeatureContainerLeft img {
   width: 80px;
 }
-.BlogContainer .BlogContainerLeft div h1 {
+.FeatureContainer .FeatureContainerLeft div h1 {
   font-family: "Kumbh Sans", sans-serif;
   color: white;
   font-size: 40px;
@@ -31,13 +27,13 @@
   line-height: 60px;
   margin-bottom: 10px;
 }
-.BlogContainer .BlogContainerLeft div p {
+.FeatureContainer .FeatureContainerLeft div p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-.BlogContainer .BlogContainerRight {
+.FeatureContainer .FeatureContainerRight {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -45,24 +41,124 @@
   max-width: 1152px;
   width: 60%;
 }
-.BlogContainer .BlogContainerRight div {
+.FeatureContainer .FeatureContainerRight div {
   background-color: #1A1A1A;
   border: 1px solid #262626;
   width: calc(50% - 10px);
   padding: 40px;
   border-radius: 12px;
 }
-.BlogContainer .BlogContainerRight div h2 {
+.FeatureContainer .FeatureContainerRight div h2 {
   color: white;
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
 }
-.BlogContainer .BlogContainerRight div p {
+.FeatureContainer .FeatureContainerRight div p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+}
+
+@media screen and (max-width: 1680px) {
+  .FeatureContainer {
+    padding: 0 80px;
+  }
+  .FeatureContainer .FeatureContainerLeft {
+    gap: 40px;
+    padding-right: 60px;
+  }
+  .FeatureContainer .FeatureContainerLeft img {
+    width: 60px;
+  }
+  .FeatureContainer .FeatureContainerLeft div h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+  }
+  .FeatureContainer .FeatureContainerLeft div p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .FeatureContainer .FeatureContainerRight {
+    padding: 60px 0 60px 60px;
+  }
+  .FeatureContainer .FeatureContainerRight div {
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .FeatureContainer .FeatureContainerRight div h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  .FeatureContainer .FeatureContainerRight div p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .FeatureContainer {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .FeatureContainer .FeatureContainerLeft {
+    gap: 20px;
+    padding: 50px 0;
+    border-right: none;
+    border-bottom: 1px solid #262626;
+    width: 100%;
+    max-width: 868px;
+  }
+  .FeatureContainer .FeatureContainerLeft img {
+    width: 50px;
+  }
+  .FeatureContainer .FeatureContainerLeft div h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 6px;
+  }
+  .FeatureContainer .FeatureContainerLeft div p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .FeatureContainer .FeatureContainerRight {
+    justify-content: center;
+    padding: 30px 16px;
+    gap: 10px;
+    width: 100%;
+    max-width: none;
+  }
+  .FeatureContainer .FeatureContainerRight div {
+    max-width: 868px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .FeatureContainer .FeatureContainerRight div h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .FeatureContainer .FeatureContainerRight div p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

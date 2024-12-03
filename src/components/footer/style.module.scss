@@ -115,6 +115,10 @@ h3, p {
           margin-bottom: 12px;
         }
 
+        button {
+          padding: 8px 14px;
+        }
+
         .NewBlock {
           padding: 2px 10px;
           border-radius: 4px;
@@ -143,12 +147,11 @@ h3, p {
 
     > :first-child {
       flex-wrap: wrap;
-      padding: 60px 0;
+      padding: 40px 0;
       gap: 20px;
+      max-width: 868px;
 
       > *:not(:last-child) {
-        display: flex;
-        justify-content: center;
         width: calc(50% - 10px);
 
         ul {
@@ -157,9 +160,19 @@ h3, p {
         }
       }
 
-      > :last-child {
+      > * {
         display: flex;
-        justify-content: center;
+      }
+
+      > *:nth-child(odd) {
+        justify-content: start;
+      }
+
+      > *:nth-child(even) {
+        justify-content: end;
+      }
+
+      > :last-child {
         width: 100%;
 
         ul {

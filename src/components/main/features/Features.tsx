@@ -15,15 +15,15 @@ interface IBlog {
 
 const Features: React.FC<IBlog> = ({icon, desc, title, params}) => {
     return (
-        <div className={style.BlogContainer}>
-            <div className={style.BlogContainerLeft}>
+        <div className={style.FeatureContainer}>
+            <div className={style.FeatureContainerLeft}>
                 <img src={require(`../../../utils/icons/main/blogs/${icon}.svg`)} alt={title}/>
                 <div>
                     <h1>{title}</h1>
                     <p>{desc}</p>
                 </div>
             </div>
-            <div className={style.BlogContainerRight}>
+            <div className={style.FeatureContainerRight}>
                 {
                     params.map(item => (
                         <div key={item.title}>

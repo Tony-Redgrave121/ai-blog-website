@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./style.module.css"
 import {ITestimonial} from "../../../utils/types/ITestimonial";
-import RateBlock from "./rateBlock/RateBlock";
+import RateBlock from "../generalComponents/rateBlock/RateBlock";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface ITestimonialsProps {

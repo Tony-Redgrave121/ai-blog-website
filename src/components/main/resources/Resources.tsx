@@ -5,7 +5,7 @@ import formatShortDate from "../../../utils/formats/formatShortDate";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../../buttons/Button";
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
-import TripleContainer from "../testimonials/tripleContainer/TripleContainer";
+import TripleContainer from "../generalComponents/tripleContainer/TripleContainer";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface IResourcesProps {

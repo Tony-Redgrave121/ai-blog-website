@@ -30,7 +30,7 @@ const HomeResources: React.FC<IResourcesProps> = ({resources}) => {
                                     <div>
                                         <div className={style.TextBlock}>
                                             <p>Downloaded By</p>
-                                            <h2>{formatCompact(10000)} + {resource.resourceDownloads}</h2>
+                                            <h2>{formatCompact(resource.resourceDownloads)} + Users</h2>
                                         </div>
                                         <Developer type="DeveloperTopicBlock" />
                                     </div>

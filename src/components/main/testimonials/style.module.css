@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TestimonialsBlock {
   display: flex;
 }
@@ -54,6 +50,61 @@ h2, h3, p {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+}
+
+@media screen and (max-width: 1680px) {
+  .TestimonialsBlock > div {
+    gap: 50px;
+  }
+  .TestimonialsBlock > div > :first-child {
+    gap: 10px;
+  }
+  .TestimonialsBlock > div > :first-child canvas, .TestimonialsBlock > div > :first-child img {
+    width: 50px;
+  }
+  .TestimonialsBlock > div > :first-child h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .TestimonialsBlock > div > :first-child p {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .TestimonialsBlock > div > :last-child {
+    padding: 10px 24px 24px 24px;
+  }
+  .TestimonialsBlock > div > :last-child > :first-child {
+    top: -30px;
+  }
+  .TestimonialsBlock > div > :last-child p {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .TestimonialsBlock {
+    justify-content: center;
+  }
+  .TestimonialsBlock > div {
+    gap: 40px;
+    width: 100%;
+    max-width: 868px;
+  }
+  .TestimonialsBlock > div > :last-child {
+    padding: 10px 20px 20px 20px;
+  }
+  .TestimonialsBlock > div > :last-child p {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

@@ -12,10 +12,10 @@ h3, p {
 
   h3 {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     &, p {
-      @include m.font(white, 40px, 600, unset);
+      @include m.font(white, 40px, 600, 60px);
     }
 
     p {
@@ -25,5 +25,45 @@ h3, p {
 
   div > p {
     @include m.font(v.$grey-shade-60, 18px, 400, unset);
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .StatBlock {
+    h3 {
+      margin-bottom: 2px;
+
+      &, p {
+        @include m.font(white, 30px, 600, 45px);
+      }
+
+      p {
+        color: v.$yellow-shade-55;
+      }
+    }
+
+    div > p {
+      @include m.font(v.$grey-shade-60, 14px, 400, unset);
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .StatBlock {
+    h3 {
+      margin-bottom: 0;
+
+      &, p {
+        @include m.font(white, 24px, 600, 36px);
+      }
+
+      p {
+        color: v.$yellow-shade-55;
+      }
+    }
+
+    div > p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+    }
   }
 }

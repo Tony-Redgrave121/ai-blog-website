@@ -1,4 +1,4 @@
-@use '../../../../utils/styles/base/_variables' as v;
+@use '../../../../utils/styles/base/variables' as v;
 @import url("../../../../utils/styles/base/_normalize.scss");
 
 .RateBlock {
@@ -10,6 +10,20 @@
   padding: 10px 16px;
 
   svg {
+    width: 24px;
+    height: 24px;
     color: v.$yellow-shade-55;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .RateBlock {
+    gap: 4px;
+    padding: 8px 12px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

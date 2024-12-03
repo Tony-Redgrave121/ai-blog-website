@@ -163,6 +163,9 @@ a {
   .Header {
     padding: 20px 16px;
   }
+  .Header .Navbar {
+    max-width: 868px;
+  }
   .Header .Navbar > a img {
     height: 35px;
   }

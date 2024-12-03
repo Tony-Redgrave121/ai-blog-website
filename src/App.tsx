@@ -10,7 +10,7 @@ function App() {
     const dispatch = useAppDispatch()
 
     const handleResize = useDebouncedCallback(() => {
-        if (window.innerWidth < 1240) dispatch(updateIsMobile(true))
+        if (window.innerWidth <= 1240) dispatch(updateIsMobile(true))
         else dispatch(updateIsMobile(false))
     }, 100)
 

@@ -3,7 +3,7 @@ import style from "./style.module.css"
 import IPodcast from "../../../utils/types/IPodcast";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../../buttons/Button";
-import TripleContainer from "../testimonials/tripleContainer/TripleContainer";
+import TripleContainer from "../generalComponents/tripleContainer/TripleContainer";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 
 interface ILatestPodcastsProps {

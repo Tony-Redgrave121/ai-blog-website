@@ -169,6 +169,7 @@ h2, h3, p {
     padding: 40px 16px;
   }
   .TCAContainer > div {
+    max-width: 868px;
     gap: 40px;
   }
   .TCAContainer > div > :first-child {
