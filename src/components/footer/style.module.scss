@@ -2,10 +2,6 @@
 @use "../../utils/styles/base/_mixin.scss" as m;
 @import url("../../utils/styles/base/_normalize.scss");
 
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .Footer {
   display: flex;
   justify-content: center;
@@ -14,6 +10,10 @@ h3, p {
 }
 
 .Footer {
+  h3, p, a {
+    font-family: "Inter", sans-serif;
+  }
+
   background-color: v.$dark-shade-08;
   padding: 0 162px;
 

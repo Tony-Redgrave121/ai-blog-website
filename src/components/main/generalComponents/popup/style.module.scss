@@ -2,24 +2,19 @@
 @use "../../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../../utils/styles/base/_normalize.scss");
 
-h1 {
-  font-family: "Kumbh Sans", sans-serif;
-  @include m.font(white, 40px, 600, 60px);
-}
-
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
-h3 {
-  @include m.font(white, 22px, 600, 27px);
-}
-
-p {
-  @include m.font(v.$dark-shade-40, 18px, 400, 27px);
-}
-
 .PopupContainer {
+  h1 {
+    @include m.font(white, 40px, 600, 60px);
+  }
+
+  h3 {
+    @include m.font(white, 22px, 600, 27px);
+  }
+
+  p {
+    @include m.font(v.$dark-shade-40, 18px, 400, 27px);
+  }
+
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +31,7 @@ p {
   .Popup {
     position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 18px;
     background-color: v.$dark-shade-08;
@@ -58,6 +53,40 @@ p {
       &:hover {
         color: v.$grey-shade-80;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .PopupContainer {
+    p {
+      @include m.font(v.$dark-shade-40, 16px, 400, 21px);
+    }
+
+    .Popup {
+      gap: 16px;
+      border-radius: 8px;
+      max-width: 550px;
+      padding: 60px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .PopupContainer {
+    .Popup {
+      height: 100%;
+      gap: 14px;
+      border-radius: 0;
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .PopupContainer {
+    .Popup {
+      height: 100%;
     }
   }
 }

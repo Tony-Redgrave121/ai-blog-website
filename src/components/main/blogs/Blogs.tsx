@@ -7,6 +7,7 @@ import {VscSend} from "react-icons/vsc";
 import IPostLow from '../../../utils/types/IPostLow'
 import {useNavigate} from "react-router-dom";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
+import {useAppSelector} from "../../../utils/hooks/redux";
 
 interface ITabs {
     posts: Array<IPostLow> | undefined,
@@ -17,6 +18,7 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
     const [filterParam, setFilterParam] = React.useState('All')
     const select = useMemo(() => ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy'], [])
     const navigate = useNavigate()
+    const isMobile = useAppSelector(state => state.user.isMobile)
 
     useEffect(() => {
         posts && setFilteredPosts(posts)
@@ -44,7 +46,7 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                 <div className={style.PostContainer} key={post.postId}>
                     <div>
                         <div className={style.PostContainerLeft}>
-                            <BlurHashImage imagePath={`images/developers/${post.userImg}`} hash={post.hash} alt={post.userName} width="80px" height="80px"></BlurHashImage>
+                            <BlurHashImage imagePath={`images/developers/${post.userImg}`} hash={post.hash} alt={post.userName} width={isMobile ? `60px` : `80px`} height={isMobile ? `60px` : `80px`}></BlurHashImage>
                             <div>
                                 <h3>{post.userName}</h3>
                                 <p>{post.userDesc}</p>

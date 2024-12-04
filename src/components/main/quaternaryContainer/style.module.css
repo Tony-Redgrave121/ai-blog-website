@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .QuaternaryContainer {
   display: flex;
   justify-content: center;
@@ -31,6 +27,42 @@ h2, h3, p {
 }
 .QuaternaryContainer > div > :nth-child(4) {
   padding: 80px 0 80px 50px;
+}
+
+@media screen and (max-width: 1680px) {
+  .QuaternaryContainer {
+    padding: 0 80px;
+  }
+  .QuaternaryContainer > div > div {
+    width: calc(25% + 20px);
+  }
+  .QuaternaryContainer > div > :nth-child(1) {
+    padding: 60px 25px 60px 0;
+  }
+  .QuaternaryContainer > div > :nth-child(2), .QuaternaryContainer > div > :nth-child(3) {
+    padding: 60px 25px;
+    width: calc(25% + 20px);
+  }
+  .QuaternaryContainer > div > :nth-child(4) {
+    padding: 60px 0 60px 25px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .QuaternaryContainer {
+    padding: 0 16px;
+  }
+  .QuaternaryContainer > div {
+    flex-direction: column;
+    max-width: 868px;
+  }
+  .QuaternaryContainer > div > div, .QuaternaryContainer > div > :nth-child(1), .QuaternaryContainer > div > :nth-child(2), .QuaternaryContainer > div > :nth-child(3), .QuaternaryContainer > div > :nth-child(4) {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #262626;
+  }
+  .QuaternaryContainer > div > div:not(:first-child), .QuaternaryContainer > div > :nth-child(1):not(:first-child), .QuaternaryContainer > div > :nth-child(2):not(:first-child), .QuaternaryContainer > div > :nth-child(3):not(:first-child), .QuaternaryContainer > div > :nth-child(4):not(:first-child) {
+    border-left: none;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

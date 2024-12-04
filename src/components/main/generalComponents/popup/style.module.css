@@ -1,30 +1,4 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
-h1 {
-  font-family: "Kumbh Sans", sans-serif;
-  color: white;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 60px;
-}
-
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
-h3 {
-  color: white;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 27px;
-}
-
-p {
-  color: #666666;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-}
-
 .PopupContainer {
   position: fixed;
   top: 0;
@@ -39,10 +13,28 @@ p {
   opacity: 0;
   z-index: 9;
 }
+.PopupContainer h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+}
+.PopupContainer h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+.PopupContainer p {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
 .PopupContainer .Popup {
   position: relative;
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 18px;
   background-color: #141414;
@@ -63,6 +55,34 @@ p {
 }
 .PopupContainer .Popup .CloseButton:hover {
   color: #CCCCCC;
+}
+
+@media screen and (max-width: 1680px) {
+  .PopupContainer p {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .PopupContainer .Popup {
+    gap: 16px;
+    border-radius: 8px;
+    max-width: 550px;
+    padding: 60px 0;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .PopupContainer .Popup {
+    height: 100%;
+    gap: 14px;
+    border-radius: 0;
+    max-width: 500px;
+  }
+}
+@media screen and (max-height: 650px) {
+  .PopupContainer .Popup {
+    height: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

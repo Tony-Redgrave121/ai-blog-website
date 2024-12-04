@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, p {
-  font-family: "Inter", sans-serif;
-}
-
 .HeaderSection {
   display: flex;
   justify-content: center;
@@ -93,6 +89,12 @@ h2, p {
 }
 .HeaderSection > div .WideSection > :first-child {
   max-width: 515px;
+  max-height: 427px;
+}
+.HeaderSection > div .WideSection > :first-child img {
+  max-width: inherit;
+  max-height: inherit;
+  object-fit: cover;
 }
 .HeaderSection > div .WideSection > div {
   gap: 50px;
@@ -106,12 +108,15 @@ h2, p {
 }
 .HeaderSection > div .ShortSection {
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   height: 100%;
   width: 33.33333%;
 }
 .HeaderSection > div .ShortSection > :first-child {
   height: 222px !important;
+}
+.HeaderSection > div .ShortSection > :first-child img {
+  object-fit: cover;
 }
 .HeaderSection > div .ShortSection > div {
   height: 100%;
@@ -128,6 +133,154 @@ h2, p {
   position: static !important;
   width: 100%;
   height: 222px !important;
+}
+
+@media screen and (max-width: 1680px) {
+  .HeaderSection > span {
+    padding: 60px 80px;
+  }
+  .HeaderSection > span span h2 {
+    color: #98989A;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28.6px;
+  }
+  .HeaderSection > div .HeaderBlock {
+    padding: 60px 80px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div > :first-child p {
+    color: #98989A;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div .StatContainer {
+    gap: 30px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div .StatContainer div {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div .StatContainer div > :last-child {
+    margin-top: 2px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div > :last-child span {
+    gap: 8px;
+  }
+  .HeaderSection > div .WideSection {
+    gap: 40px;
+  }
+  .HeaderSection > div .WideSection > :first-child {
+    max-width: 515px;
+    max-height: 325px;
+  }
+  .HeaderSection > div .WideSection > :first-child img {
+    max-width: inherit;
+    max-height: inherit;
+    object-fit: cover;
+  }
+  .HeaderSection > div .WideSection > div {
+    gap: 40px;
+  }
+  .HeaderSection > div .WideSection h2 {
+    margin-bottom: 14px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .HeaderSection > div .ShortSection {
+    gap: 16px;
+  }
+  .HeaderSection > div .ShortSection > :first-child {
+    height: 185px !important;
+  }
+  .HeaderSection > div .ShortSection h2 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .HeaderSection > div .ShortSection canvas, .HeaderSection > div .ShortSection img {
+    position: static !important;
+    width: 100%;
+    height: 185px !important;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .HeaderSection > span {
+    padding: 40px 16px;
+  }
+  .HeaderSection > span span h2 {
+    color: #98989A;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+  .HeaderSection > div .HeaderBlock {
+    padding: 40px 16px;
+  }
+  .HeaderSection > div .HeaderBlock > div, .HeaderSection > div .HeaderBlock > div > div {
+    flex-direction: column;
+    width: 100%;
+    max-width: 868px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div > :first-child p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div .StatContainer {
+    gap: 20px;
+  }
+  .HeaderSection > div .HeaderBlock > div > div > div .StatContainer div {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .HeaderSection > div .WideSection {
+    gap: 30px;
+  }
+  .HeaderSection > div .WideSection > :first-child {
+    max-width: none;
+    max-height: 213px;
+  }
+  .HeaderSection > div .WideSection > div {
+    gap: 20px;
+  }
+  .HeaderSection > div .WideSection h2 {
+    margin-bottom: 6px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .HeaderSection > div .ShortSection {
+    gap: 16px;
+  }
+  .HeaderSection > div .ShortSection > :first-child {
+    height: 185px !important;
+  }
+  .HeaderSection > div .ShortSection > div {
+    gap: 10px;
+  }
+  .HeaderSection > div .ShortSection h2 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .HeaderSection > div .ShortSection canvas, .HeaderSection > div .ShortSection img {
+    position: static !important;
+    width: 100%;
+    height: 185px !important;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

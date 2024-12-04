@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TextBlock {
   background-color: #1A1A1A;
   border: 1px solid #262626;

@@ -2,29 +2,28 @@
 @use "../../../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../../../utils/styles/base/_normalize.scss");
 
-h1 {
-  font-family: "Kumbh Sans", sans-serif;
-  @include m.font(white, 40px, 600, 60px);
-}
-
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
-h3 {
-  @include m.font(white, 22px, 600, 27px);
-}
-
-p {
-  @include m.font(v.$dark-shade-40, 18px, 400, 27px);
-}
-
 .ProfileContainer {
+  width: 100%;
+  overflow-y: scroll;
+
+  h1 {
+    @include m.font(white, 40px, 600, 60px);
+  }
+
+  h3 {
+    @include m.font(white, 22px, 600, 27px);
+  }
+
+  p {
+    @include m.font(v.$dark-shade-40, 18px, 400, 27px);
+  }
+
   &, > div {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   gap: 40px;
 
   > div {
@@ -36,5 +35,41 @@ p {
     border-radius: 50%;
     height: 100px;
     object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .ProfileContainer {
+    h1 {
+      @include m.font(white, 34px, 600, 60px);
+    }
+
+    h3 {
+      @include m.font(white, 18px, 600, 27px);
+    }
+
+    p {
+      @include m.font(v.$dark-shade-40, 14px, 400, 21px);
+    }
+
+    gap: 30px;
+
+    > div {
+      gap: 15px;
+    }
+
+    img {
+      height: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .ProfileContainer {
+    gap: 20px;
+
+    > div {
+      gap: 15px;
+    }
   }
 }

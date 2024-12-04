@@ -1,6 +1,7 @@
 import React, {memo, useEffect, useRef} from 'react'
 import style from './style.module.css'
-import './animation.css'
+import './animationBackground.css'
+import './animationNav.css'
 import {HiArrowUpRight, HiMiniUser, HiBars3BottomRight} from "react-icons/hi2"
 import DesktopLogo from "../../utils/icons/logo/desktop-logo.svg"
 import {useDebouncedCallback} from 'use-debounce'
@@ -10,16 +11,19 @@ import {updatePopupContent, updatePopupState} from "../../store/reducers/userRed
 import {useAppDispatch, useAppSelector} from "../../utils/hooks/redux"
 import BlurHashImage from "../main/generalComponents/blurhashImage/BlurHashImage";
 import {CSSTransition} from "react-transition-group";
+import useBody from "../../utils/hooks/useBody";
 
 const Header = () => {
     const header = useRef<HTMLHeadElement>(null)
-    const buttonsContainer = useRef(null)
+    const backgroundRef = useRef(null)
+    const navRef = useRef(null)
     const [isMobileOpen, setIsMobileOpen] = React.useState(false)
     const navigate = useNavigate()
     const location = useLocation()
     const [currentLocation, setCurrentLocation] = React.useState('')
     const dispatch = useAppDispatch()
     const {isAuth, userImg, userId, isMobile} = useAppSelector(state => state.user)
+    useBody(isMobileOpen, backgroundRef)
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -60,13 +64,8 @@ const Header = () => {
         setCurrentLocation(document.location.pathname)
     }, [location])
 
-    const handleProfile = () => {
-        dispatch(updatePopupContent('register'))
-        dispatch(updatePopupState(true))
-    }
-
-    const handleActiveProfile = () => {
-        dispatch(updatePopupContent('profile'))
+    const handleProfile = (popup: string) => {
+        dispatch(updatePopupContent(popup))
         dispatch(updatePopupState(true))
     }
 
@@ -80,7 +79,7 @@ const Header = () => {
         return (
             <span>
                 {isAuth ?
-                    <button onClick={e => handleEvent(e, () => handleActiveProfile())} className={style.ProfileButtonActive}>
+                    <button onClick={e => handleEvent(e, () => handleProfile('profile'))} className={style.ProfileButtonActive}>
                         {userImg ?
                             <BlurHashImage imagePath={`users/${userId}/image/${userImg}`} hash='K9J8V04n00~q%MD%00-;%M' alt='profile'></BlurHashImage>
                             :
@@ -88,7 +87,7 @@ const Header = () => {
                         }
                     </button>
                     :
-                    <button onClick={e => handleEvent(e, () => handleProfile())} className={style.ProfileButton}><HiMiniUser/></button>
+                    <button onClick={e => handleEvent(e, () => handleProfile('register'))} className={style.ProfileButton}><HiMiniUser/></button>
                 }
                 <button onClick={e => handleEvent(e, () => navigate('/contact'))}>Contact Us</button>
             </span>
@@ -97,7 +96,7 @@ const Header = () => {
 
     const ButtonContainer = memo(React.forwardRef<HTMLDivElement>((_, ref) => {
         return (
-            <nav className={style.ButtonsContainer} ref={ref}>
+            <nav className={style.ButtonContainer} ref={ref} onClick={event => event.stopPropagation()}>
                 <ul>
                     {
                         links.map(link => (
@@ -107,7 +106,7 @@ const Header = () => {
                         ))
                     }
                 </ul>
-                {isMobile && <RightButtons />}
+                {isMobile && <RightButtons/>}
             </nav>
         )
     }))
@@ -120,15 +119,25 @@ const Header = () => {
             <header className={style.Header} ref={header}>
                 <div className={style.Navbar}>
                     <Link to="/"><img src={DesktopLogo} alt="Desktop Logo"/></Link>
-                    {!(!isMobile && <ButtonContainer />) &&
-                        <button onClick={() => setIsMobileOpen(!isMobileOpen)}>
-                            <HiBars3BottomRight />
-                        </button>
+                    {isMobile &&
+                        <>
+                            <ButtonContainer/>
+                            <button onClick={() => setIsMobileOpen(!isMobileOpen)}><HiBars3BottomRight /></button>
+                            <CSSTransition in={isMobileOpen} nodeRef={backgroundRef} timeout={0} classNames="background-node">
+                                <div className={style.Background} ref={backgroundRef} onClick={() => setIsMobileOpen(false)}>
+                                    <CSSTransition in={isMobileOpen} nodeRef={navRef} timeout={0} classNames="nav-node">
+                                        <ButtonContainer ref={navRef}/>
+                                    </CSSTransition>
+                                </div>
+                            </CSSTransition>
+                        </>
                     }
-                    <CSSTransition in={isMobileOpen} nodeRef={buttonsContainer} timeout={0} classNames="button-container-node">
-                        <ButtonContainer ref={buttonsContainer}/>
-                    </CSSTransition>
-                    {!isMobile && <RightButtons />}
+                    {!isMobile &&
+                        <>
+                            <ButtonContainer ref={navRef}/>
+                            <RightButtons />
+                        </>
+                    }
                 </div>
             </header>
         </>

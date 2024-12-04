@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, p {
-  font-family: "Inter", sans-serif;
-}
-
 .HeaderSection {
   display: flex;
   justify-content: center;
@@ -104,6 +100,13 @@ h2, p {
 
       > :first-child {
         max-width: 515px;
+        max-height: 427px;
+
+        img {
+          max-width: inherit;
+          max-height: inherit;
+          object-fit: cover;
+        }
       }
 
       > div {
@@ -118,12 +121,16 @@ h2, p {
 
     .ShortSection {
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
       height: 100%;
       width: 33.33333%;
 
       > :first-child {
         height: 222px!important;
+
+        img {
+          object-fit: cover;
+        }
       }
 
       > div {
@@ -140,6 +147,186 @@ h2, p {
         position: static!important;
         width: 100%;
         height: 222px!important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .HeaderSection {
+    > span {
+      padding: 60px 80px;
+
+      span {
+        h2 {
+          @include m.font(v.$grey-shade-60, 22px, 500, 28.6px);
+        }
+      }
+    }
+
+    > div {
+      .HeaderBlock {
+        padding: 60px 80px;
+
+        > div {
+          > div {
+            > div {
+              > :first-child {
+                p {
+                  @include m.font(v.$grey-shade-60, 18px, 400, 27px)
+                }
+              }
+
+              .StatContainer {
+                gap: 30px;
+
+                div {
+                  @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+
+                  > :last-child {
+                    margin-top: 2px;
+                  }
+                }
+              }
+
+              > :last-child {
+                span {
+                  gap: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .WideSection {
+        gap: 40px;
+
+        > :first-child {
+          max-width: 515px;
+          max-height: 325px;
+
+          img {
+            max-width: inherit;
+            max-height: inherit;
+            object-fit: cover;
+          }
+        }
+
+        > div {
+          gap: 40px;
+        }
+
+        h2 {
+          margin-bottom: 14px;
+          @include m.font(white, 24px, 600, 36px)
+        }
+      }
+
+      .ShortSection {
+        gap: 16px;
+
+        > :first-child {
+          height: 185px!important;
+        }
+
+        h2 {
+          margin-bottom: 10px;
+          @include m.font(white, 16px, 600, 24px)
+        }
+
+        canvas, img {
+          position: static!important;
+          width: 100%;
+          height: 185px!important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .HeaderSection {
+    > span {
+      padding: 40px 16px;
+
+      span {
+        h2 {
+          @include m.font(v.$grey-shade-60, 20px, 500, 26px);
+        }
+      }
+    }
+
+    > div {
+      .HeaderBlock {
+        padding: 40px 16px;
+
+        > div {
+          &, > div {
+            flex-direction: column;
+            width: 100%;
+            max-width: 868px;
+          }
+
+          > div {
+            > div {
+              > :first-child {
+                p {
+                  @include m.font(v.$grey-shade-60, 16px, 400, 24px)
+                }
+              }
+
+              .StatContainer {
+                gap: 20px;
+
+                div {
+                  @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .WideSection {
+        gap: 30px;
+
+        > :first-child {
+          max-width: none;
+          max-height: 213px;
+        }
+
+        > div {
+          gap: 20px;
+        }
+
+        h2 {
+          margin-bottom: 6px;
+          @include m.font(white, 20px, 600, 30px)
+        }
+      }
+
+      .ShortSection {
+        gap: 16px;
+
+        > :first-child {
+          height: 185px!important;
+        }
+
+        > div {
+          gap: 10px;
+        }
+
+        h2 {
+          margin-bottom: 10px;
+          @include m.font(white, 16px, 600, 24px)
+        }
+
+        canvas, img {
+          position: static!important;
+          width: 100%;
+          height: 185px!important;
+        }
       }
     }
   }

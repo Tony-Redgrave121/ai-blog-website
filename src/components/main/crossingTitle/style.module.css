@@ -15,9 +15,9 @@
   white-space: nowrap;
   font-family: "Kumbh Sans", sans-serif;
   color: white;
-  font-size: 58px;
+  font-size: 80px;
   font-weight: 500;
-  line-height: 75.4px;
+  line-height: 104px;
 }
 .CrossingTitleSection > div span {
   display: flex;
@@ -30,6 +30,49 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+}
+
+@media screen and (max-width: 1680px) {
+  .CrossingTitleSection {
+    padding: 60px 80px;
+  }
+  .CrossingTitleSection > div h1 {
+    color: white;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 75.4px;
+  }
+  .CrossingTitleSection > div span {
+    gap: 60px;
+  }
+  .CrossingTitleSection > div span p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .CrossingTitleSection {
+    padding: 40px 16px;
+  }
+  .CrossingTitleSection > div h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36.4px;
+  }
+  .CrossingTitleSection > div span {
+    align-items: start;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .CrossingTitleSection > div span p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

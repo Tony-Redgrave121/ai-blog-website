@@ -1,15 +1,10 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
-p {
+.ResourceContainerLeft p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-
 .ResourceContainerLeft > div {
   display: flex;
   flex-direction: column;
@@ -20,13 +15,18 @@ p {
   width: 80px;
 }
 .ResourceContainerLeft > div h1 {
-  font-family: "Kumbh Sans", sans-serif;
   color: white;
   font-size: 40px;
   font-weight: 600;
   line-height: 60px;
 }
 
+.ResourceContainerRight p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
 .ResourceContainerRight > div {
   display: flex;
   gap: 20px;
@@ -58,6 +58,90 @@ p {
 .ResourceContainerRight > div svg {
   font-size: 24px;
   color: #FFD11A;
+}
+
+@media screen and (max-width: 1680px) {
+  .ResourceContainerLeft p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ResourceContainerLeft > div {
+    gap: 30px;
+    padding-right: 60px;
+  }
+  .ResourceContainerLeft > div > img {
+    width: 60px;
+  }
+  .ResourceContainerLeft > div h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+  }
+  .ResourceContainerRight p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ResourceContainerRight > div {
+    gap: 20px;
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .ResourceContainerRight > div h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+  }
+  .ResourceContainerRight > div .DescBlock hr {
+    margin: 20px 0;
+  }
+  .ResourceContainerRight > div svg {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .ResourceContainerLeft p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ResourceContainerLeft > div {
+    gap: 10px;
+    padding-right: 0;
+  }
+  .ResourceContainerLeft > div > img {
+    width: 50px;
+  }
+  .ResourceContainerLeft > div h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .ResourceContainerRight p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ResourceContainerRight > div {
+    padding: 24px;
+  }
+  .ResourceContainerRight > div h3 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+  }
+  .ResourceContainerRight > div .DescBlock hr {
+    margin: 16px 0;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

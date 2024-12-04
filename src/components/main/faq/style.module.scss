@@ -2,15 +2,11 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
-p {
-  @include m.font(v.$grey-shade-60, 18px, 400, 27px);
-}
-
 .ResourceContainerLeft {
+  p {
+    @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+  }
+
   > div {
     display: flex;
     flex-direction: column;
@@ -22,13 +18,16 @@ p {
     }
 
     h1 {
-      font-family: "Kumbh Sans", sans-serif;
       @include m.font(white, 40px, 600, 60px);
     }
   }
 }
 
 .ResourceContainerRight {
+  p {
+    @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+  }
+
   > div {
     display: flex;
     gap: 20px;
@@ -61,6 +60,94 @@ p {
     svg {
       font-size: 24px;
       color: v.$yellow-shade-55;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .ResourceContainerLeft {
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+    }
+
+    > div {
+      gap: 30px;
+      padding-right: 60px;
+
+      > img {
+        width: 60px;
+      }
+
+      h1 {
+        @include m.font(white, 28px, 600, 42px);
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+    }
+
+    > div {
+      gap: 20px;
+      border-radius: 10px;
+      padding: 24px;
+
+      h3 {
+        @include m.font(white, 18px, 500, 21.78px);
+      }
+
+      .DescBlock {
+        hr {
+          margin: 20px 0;
+        }
+      }
+
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .ResourceContainerLeft {
+    p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+    }
+
+    > div {
+      gap: 10px;
+      padding-right: 0;
+
+      > img {
+        width: 50px;
+      }
+
+      h1 {
+        @include m.font(white, 20px, 600, 30px);
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+    }
+
+    > div {
+      padding: 24px;
+
+      h3 {
+        @include m.font(white, 16px, 500, 19.36px);
+      }
+
+      .DescBlock {
+        hr {
+          margin: 16px 0;
+        }
+      }
     }
   }
 }

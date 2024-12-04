@@ -1,6 +1,6 @@
 @import url("../../utils/styles/base/_normalize.scss");
-button, button > * {
-  font-family: "Inter", sans-serif;
+.Button, .SelectButton, .PostButton {
+  font-family: Inter, sans-serif;
 }
 
 .Button {

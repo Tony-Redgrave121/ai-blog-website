@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .ContactHeaderBlock {
   display: flex;
   flex-direction: column;
@@ -23,10 +19,6 @@ h3, p {
     display: flex;
     flex-direction: column;
     gap: 15px;
-
-
-
-
   }
 
   &:last-child {
@@ -45,6 +37,54 @@ h3, p {
     > div {
       flex-direction: row;
       gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .ContactHeaderBlock {
+    gap: 30px;
+
+    h3 {
+      @include m.font(white, 18px, 500, 23.4px);
+    }
+
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+    }
+
+    > div {
+      gap: 10px;
+    }
+
+    &:last-child {
+      button {
+        svg {
+          font-size: 20px;
+        }
+      }
+
+      > div {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .ContactHeaderBlock {
+    gap: 20px;
+
+    > div {
+      padding-left: 50px;
+    }
+
+    h3 {
+      @include m.font(white, 16px, 500, 20.8px);
+    }
+
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
     }
   }
 }

@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, p {
-  font-family: "Inter", sans-serif;
-}
-
 .VideosSection {
   background-color: v.$dark-shade-08;
 
@@ -35,7 +31,7 @@ h2, p {
       > div {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
         max-width: 880px;
 
         video {
@@ -51,6 +47,81 @@ h2, p {
 
         p {
           @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .VideosSection {
+    > div {
+      > :nth-child(odd) {
+        padding: 60px 60px 60px 80px;
+      }
+
+      > :nth-child(even) {
+        padding: 60px 80px 60px 60px;
+      }
+
+      .VideoBlock {
+        > div {
+          gap: 20px;
+
+          video {
+            height: 331px;
+            border-radius: 10px;
+          }
+
+          h2 {
+            @include m.font(white, 20px, 600, 30px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .VideosSection {
+    > div {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px;
+
+      > :nth-child(odd), > :nth-child(even) {
+        border-right: none;
+        border-bottom: 1px solid v.$dark-shade-15;
+        padding: 40px 0;
+      }
+
+      .VideoBlock {
+        width: 100%;
+        max-width: 868px;
+
+        > div {
+          width: 100%;
+          gap: 4px;
+
+          > div {
+            margin-bottom: 16px;
+          }
+
+          video {
+            height: 210px;
+          }
+
+          h2 {
+            @include m.font(white, 18px, 600, 27px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+          }
         }
       }
     }

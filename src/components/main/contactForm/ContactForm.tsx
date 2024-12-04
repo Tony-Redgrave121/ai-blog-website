@@ -3,11 +3,11 @@ import style from "./style.module.css"
 import './phoneBlockStyle.css'
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
 import PhoneInput, {CountryData} from 'react-phone-input-2'
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form"
 import {validatePhoneNumberLength, formatIncompletePhoneNumber, CountryCode } from 'libphonenumber-js'
 import {updatePopupContent, updatePopupState} from '../../../store/reducers/userReducer'
-import {useAppDispatch} from "../../../utils/hooks/redux";
-import InputBlock from "../generalComponents/inputBlock/InputBlock";
+import {useAppDispatch} from "../../../utils/hooks/redux"
+import InputBlock from "../generalComponents/inputBlock/InputBlock"
 
 const ContactForm = () => {
     const { register, control, handleSubmit, formState: { errors } } = useForm()
@@ -26,7 +26,7 @@ const ContactForm = () => {
         agree: { required: "Your agree is required" }
     }
 
-    const handleRegistration = (data: any) => {
+    const handleRegistration = () => {
         dispatch(updatePopupContent('contactSuccess'))
         dispatch(updatePopupState(true))
     }

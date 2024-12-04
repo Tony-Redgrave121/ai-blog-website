@@ -44,8 +44,13 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1;
+  background-color: #141414FF;
 }
 
 ol, ul {
@@ -76,7 +81,7 @@ table {
   border-radius: 5px;
 }
 
-h2, h3, h4, p {
+h2, h3, h4, p, a, button, small {
   font-family: "Inter", sans-serif;
 }
 

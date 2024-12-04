@@ -1,0 +1,17 @@
+.background-node-enter-active {
+    opacity: 0!important;
+}
+
+.background-node-enter-done {
+    opacity: 1!important;
+    transition: .1s opacity ease-in-out;
+}
+
+.background-node-exit-active {
+    opacity: 1!important;
+}
+
+.background-node-exit-done {
+    opacity: 0!important;
+    transition: .1s opacity ease-in-out;
+}

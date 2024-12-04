@@ -43,3 +43,19 @@
     transform: translate(-50%, 50%);
   }
 }
+
+@media screen and (max-width: 1680px) {
+  .VideoPlayer {
+    span {
+      border-radius: 10px;
+
+      svg {
+        font-size: 50px;
+      }
+
+      time {
+        @include m.font(v.$grey-shade-50, 14px, 400, 21px);
+      }
+    }
+  }
+}

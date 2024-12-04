@@ -1,17 +1,17 @@
-.button-container-node-enter-active {
+.nav-node-enter-active {
     max-width: 0!important;
 }
 
-.button-container-node-enter-done {
+.nav-node-enter-done {
     max-width: 350px!important;
     transition: .1s max-width ease-in-out;
 }
 
-.button-container-node-exit-active {
+.nav-node-exit-active {
     max-width: 350px!important;
 }
 
-.button-container-node-exit-done {
+.nav-node-exit-done {
     max-width: 0!important;
     transition: .1s max-width ease-in-out;
 }

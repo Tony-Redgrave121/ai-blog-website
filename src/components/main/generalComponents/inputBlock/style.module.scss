@@ -3,6 +3,7 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
 
 .InputBlock {
+  font-family: Inter, sans-serif;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -47,4 +48,30 @@ small {
   position: absolute;
   bottom: -25px;
   color: #ca0000;
+}
+
+@media screen and (max-width: 1680px) {
+  .InputBlock {
+    gap: 12px;
+
+    label {
+      @include m.font(white, 16px, 500, 24px);
+    }
+
+    input, textarea, input[type="tel"] {
+      padding: 16px;
+      border-radius: 6px;
+      @include m.font(v.$dark-shade-40, 16px, 400, 21px);
+    }
+  }
+
+  small {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  small {
+    font-size: 12px;
+  }
 }

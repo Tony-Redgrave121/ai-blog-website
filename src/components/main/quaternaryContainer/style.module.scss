@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .QuaternaryContainer {
   display: flex;
   justify-content: center;
@@ -38,6 +34,52 @@ h2, h3, p {
 
     > :nth-child(4) {
       padding: 80px 0 80px 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .QuaternaryContainer {
+    padding: 0 80px;
+
+    > div {
+      > div {
+        width: calc(25% + 20px);
+      }
+
+      > :nth-child(1) {
+        padding: 60px 25px 60px 0;
+      }
+
+      > :nth-child(2), > :nth-child(3) {
+        padding: 60px 25px;
+        width: calc(25% + 20px);
+      }
+
+      > :nth-child(4) {
+        padding: 60px 0 60px 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .QuaternaryContainer {
+    padding: 0 16px;
+
+    > div {
+      flex-direction: column;
+      max-width: 868px;
+
+      > div, > :nth-child(1), > :nth-child(2), > :nth-child(3), > :nth-child(4) {
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid v.$dark-shade-15;
+
+        &:not(:first-child) {
+          border-left: none;
+        }
+      }
     }
   }
 }

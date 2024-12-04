@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import style from "./style.module.css"
 import "./animation.css"
 import {CSSTransition} from "react-transition-group"
@@ -8,23 +8,13 @@ import { HiOutlineXMark } from "react-icons/hi2"
 import PopupRegister from "./popupRegister/PopupRegister";
 import PopupLogin from "./popupLogin/PopupLogin";
 import PopupProfile from "./popupProfile/PopupProfile";
+import useBody from "../../../../utils/hooks/useBody";
 
 const Popup = () => {
     const popupRef = React.useRef<HTMLDivElement>(null)
     const {popupState, popupContent} = useAppSelector(state => state.user)
     const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        if (popupState) {
-            document.querySelector('body')!.style.overflow = 'hidden'
-            popupRef.current!.style.display = 'flex'
-        } else {
-            document.querySelector('body')!.style.overflow = 'visible'
-            setTimeout(() => {
-                if (popupRef.current) popupRef.current.style.display = 'none'
-            }, 300)
-        }
-    }, [popupState])
+    useBody(popupState, popupRef)
 
     const handleRender = () => {
         if (popupContent === 'contactSuccess') return (

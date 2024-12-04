@@ -40,4 +40,19 @@
   transform: translate(-50%, 50%);
 }
 
+@media screen and (max-width: 1680px) {
+  .VideoPlayer span {
+    border-radius: 10px;
+  }
+  .VideoPlayer span svg {
+    font-size: 50px;
+  }
+  .VideoPlayer span time {
+    color: #7E7E81;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+}
+
 /*# sourceMappingURL=style.module.css.map */

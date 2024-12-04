@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .ContactHeaderBlock {
   display: flex;
   flex-direction: column;
@@ -36,6 +32,53 @@ h3, p {
 .ContactHeaderBlock:last-child > div {
   flex-direction: row;
   gap: 20px;
+}
+
+@media screen and (max-width: 1680px) {
+  .ContactHeaderBlock {
+    gap: 30px;
+  }
+  .ContactHeaderBlock h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23.4px;
+  }
+  .ContactHeaderBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ContactHeaderBlock > div {
+    gap: 10px;
+  }
+  .ContactHeaderBlock:last-child button svg {
+    font-size: 20px;
+  }
+  .ContactHeaderBlock:last-child > div {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .ContactHeaderBlock {
+    gap: 20px;
+  }
+  .ContactHeaderBlock > div {
+    padding-left: 50px;
+  }
+  .ContactHeaderBlock h3 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+  }
+  .ContactHeaderBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */
