@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .StatContainer {
   background-color: #141414;
   border-bottom: 1px solid #262626;

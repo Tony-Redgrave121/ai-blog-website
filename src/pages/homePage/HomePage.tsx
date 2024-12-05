@@ -14,6 +14,7 @@ import ResourceContainer from "../../components/main/generalComponents/resourceC
 import IHomeResources from "../../utils/types/IHomeResources";
 import HomeResources from "../../components/main/resources/homeResources/HomeResources";
 import {useAppSelector} from "../../utils/hooks/redux";
+import fetchData from "../../utils/fetch/fetchData";
 
 const HomePage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
@@ -22,27 +23,19 @@ const HomePage = () => {
     const isMobile = useAppSelector(state => state.user.isMobile)
 
     useEffect(() => {
-        fetch("http://localhost:5000/static/jsons/posts/posts.json")
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return response.json();
-            })
-            .then(data => setPosts(data))
-            .catch(error => console.log(error))
-        fetch("http://localhost:5000/static/jsons/testimonials/testimonials.json")
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return response.json();
-            })
-            .then(data => setTestimonials(data))
-            .catch(error => console.log(error))
-        fetch("http://localhost:5000/static/jsons/resources/resources_1.json")
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return response.json();
-            })
-            .then(data => setResources(data))
-            .catch(error => console.log(error))
+        const fetchAll = async () => {
+            const [posts, testimonials, resources] = await Promise.all([
+                fetchData<IPostLow[]>('posts/posts.json'),
+                fetchData<ITestimonial[]>('testimonials/testimonials.json'),
+                fetchData<IHomeResources[]>('resources/resources_1.json'),
+            ])
+
+            setPosts(posts)
+            setTestimonials(testimonials)
+            setResources(resources)
+        }
+
+        fetchAll()
     }, [])
 
     return (

@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TCAContainer {
   display: flex;
   justify-content: center;
@@ -33,7 +29,7 @@ h2, h3, p {
         flex-direction: column;
         gap: 30px;
 
-        span {
+        section {
           display: flex;
 
           h3 {
@@ -72,7 +68,7 @@ h2, h3, p {
         border: 1px solid v.$dark-shade-15;
         background-color: v.$dark-shade-10;
 
-        span {
+        section {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -121,7 +117,7 @@ h2, h3, p {
         }
 
         > :last-child {
-          span h3 {
+          section h3 {
             padding: 4px 8px;
             @include m.font(white, 16px, 500, 24px);
           }
@@ -146,7 +142,7 @@ h2, h3, p {
           padding: 30px;
           border-radius: 10px;
 
-          span {
+          section {
             a {
               padding: 12px;
 
@@ -190,7 +186,7 @@ h2, h3, p {
           img {
             width: 60px;
           }
-          span h3 {
+          section h3 {
             border-radius: 4px;
             padding: 4px 8px;
             @include m.font(white, 14px, 500, 21px);
@@ -218,7 +214,7 @@ h2, h3, p {
           gap: 10px;
           padding: 24px;
 
-          span {
+          section {
             a {
               padding: 10px;
             }

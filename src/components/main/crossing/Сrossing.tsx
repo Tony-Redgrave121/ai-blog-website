@@ -10,15 +10,15 @@ interface ICrossing {
 const Crossing: React.FC<ICrossing> = ({desc, title, children}) => {
     return (
         <div className={style.CrossingContainer}>
-            <div>
+            <section>
                 <div>
-                    <span>
+                    <div>
                         <p>{desc}</p>
-                    </span>
+                    </div>
                     <h1>{title}</h1>
                 </div>
                 {children ? <div className={style.ButtonBlock}>{children}</div> : null}
-            </div>
+            </section>
         </div>
     )
 }

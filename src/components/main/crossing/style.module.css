@@ -6,23 +6,19 @@
   background-color: #1A1A1A;
   border-bottom: 1px solid #262626;
 }
-.CrossingContainer > div {
+.CrossingContainer > section {
   display: flex;
   justify-content: space-between;
   max-width: 1920px;
   width: 100%;
 }
-.CrossingContainer > div > :first-child {
+.CrossingContainer > section > :first-child {
   width: 70%;
 }
-.CrossingContainer .ButtonBlock {
-  display: flex;
-  align-items: center;
-}
-.CrossingContainer span {
+.CrossingContainer > section > :first-child > div {
   display: flex;
 }
-.CrossingContainer span p {
+.CrossingContainer > section > :first-child > div p {
   padding: 6px 10px;
   border-radius: 4px;
   background-color: #333333;
@@ -33,8 +29,11 @@
   font-weight: 500;
   line-height: 30px;
 }
+.CrossingContainer .ButtonBlock {
+  display: flex;
+  align-items: center;
+}
 .CrossingContainer h1 {
-  font-family: "Kumbh Sans", sans-serif;
   color: white;
   font-size: 58px;
   font-weight: 500;
@@ -45,7 +44,7 @@
   .CrossingContainer {
     padding: 80px;
   }
-  .CrossingContainer span p {
+  .CrossingContainer > section:first-child div p {
     padding: 4px 8px;
     color: white;
     font-size: 16px;
@@ -63,12 +62,12 @@
   .CrossingContainer {
     padding: 40px 16px;
   }
-  .CrossingContainer > div {
+  .CrossingContainer > section {
     flex-wrap: wrap;
     gap: 30px;
     max-width: 868px;
   }
-  .CrossingContainer span p {
+  .CrossingContainer > section > :first-child > div p {
     padding: 4px 8px;
     color: white;
     font-size: 14px;

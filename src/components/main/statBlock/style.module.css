@@ -1,23 +1,19 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .StatBlock {
   display: flex;
   justify-content: center;
 }
-.StatBlock h3 {
+.StatBlock section {
   display: flex;
   margin-bottom: 10px;
 }
-.StatBlock h3, .StatBlock h3 p {
+.StatBlock section, .StatBlock section p {
   color: white;
   font-size: 40px;
   font-weight: 600;
   line-height: 60px;
 }
-.StatBlock h3 p {
+.StatBlock section p {
   color: #FFD11A;
 }
 .StatBlock div > p {
@@ -28,16 +24,16 @@ h3, p {
 }
 
 @media screen and (max-width: 1680px) {
-  .StatBlock h3 {
+  .StatBlock section {
     margin-bottom: 2px;
   }
-  .StatBlock h3, .StatBlock h3 p {
+  .StatBlock section, .StatBlock section p {
     color: white;
     font-size: 30px;
     font-weight: 600;
     line-height: 45px;
   }
-  .StatBlock h3 p {
+  .StatBlock section p {
     color: #FFD11A;
   }
   .StatBlock div > p {
@@ -48,16 +44,16 @@ h3, p {
   }
 }
 @media screen and (max-width: 1240px) {
-  .StatBlock h3 {
+  .StatBlock section {
     margin-bottom: 0;
   }
-  .StatBlock h3, .StatBlock h3 p {
+  .StatBlock section, .StatBlock section p {
     color: white;
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
   }
-  .StatBlock h3 p {
+  .StatBlock section p {
     color: #FFD11A;
   }
   .StatBlock div > p {

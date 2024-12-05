@@ -1,4 +1,4 @@
-@import url("../../../utils/styles/base/_normalize.scss");
+@import url("../../../../utils/styles/base/_normalize.scss");
 .QuaternaryContainer {
   display: flex;
   justify-content: center;
@@ -62,6 +62,39 @@
   }
   .QuaternaryContainer > div > div:not(:first-child), .QuaternaryContainer > div > :nth-child(1):not(:first-child), .QuaternaryContainer > div > :nth-child(2):not(:first-child), .QuaternaryContainer > div > :nth-child(3):not(:first-child), .QuaternaryContainer > div > :nth-child(4):not(:first-child) {
     border-left: none;
+  }
+  .DoubleContainer {
+    padding: 0;
+  }
+  .DoubleContainer > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: none;
+  }
+  .DoubleContainer > div > :nth-child(odd) {
+    justify-content: end;
+    border-right: 1px solid #262626;
+  }
+  .DoubleContainer > div > :nth-child(even) {
+    justify-content: start;
+  }
+  .DoubleContainer > div > :nth-child(1), .DoubleContainer > div > :nth-child(2) {
+    border-bottom: 1px solid #262626;
+  }
+  .DoubleContainer > div > :nth-child(3), .DoubleContainer > div > :nth-child(4) {
+    border-bottom: none;
+  }
+  .DoubleContainer > div > div, .DoubleContainer > div > :nth-child(1), .DoubleContainer > div > :nth-child(2), .DoubleContainer > div > :nth-child(3), .DoubleContainer > div > :nth-child(4) {
+    width: 50%;
+    padding: 20px 16px;
+    border-left: none;
+  }
+  .DoubleContainer > div > div > div, .DoubleContainer > div > :nth-child(1) > div, .DoubleContainer > div > :nth-child(2) > div, .DoubleContainer > div > :nth-child(3) > div, .DoubleContainer > div > :nth-child(4) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 434px;
   }
 }
 

@@ -56,6 +56,9 @@
   .CrossingTitleSection {
     padding: 40px 16px;
   }
+  .CrossingTitleSection > div {
+    max-width: 868px;
+  }
   .CrossingTitleSection > div h1 {
     color: white;
     font-size: 28px;

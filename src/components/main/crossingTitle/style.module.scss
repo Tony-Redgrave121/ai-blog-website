@@ -58,6 +58,8 @@
     padding: 40px 16px;
 
     > div {
+      max-width: 868px;
+
       h1 {
         @include m.font(white, 28px, 500, 36.4px)
       }

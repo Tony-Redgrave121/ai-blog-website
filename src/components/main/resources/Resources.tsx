@@ -35,7 +35,7 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
                                 </div>
                             </div>
                             <div className={style.ResourceContainerRight}>
-                                <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle}></BlurHashImage>
+                                <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle} />
                                 <div className={style.ResourceTitleBlock}>
                                     <div>
                                         <h2>{resource.resourceTopicTitle}</h2>
@@ -66,7 +66,7 @@ const Resources: React.FC<IResourcesProps> = ({resources}) => {
                 {
                     moreResource.map(resource => (
                         <div className={style.ResourceContainerMore} key={resource.resourceTitle}>
-                            <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle}></BlurHashImage>
+                            <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle} />
                             <h2>{resource.resourceTopicTitle}</h2>
                             <p>{resource.resourceTopicDesc}</p>
                             <span>

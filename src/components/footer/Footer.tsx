@@ -198,14 +198,26 @@ const Footer: React.FC = memo(() => {
                         <nav key={index}>
                             <ul>
                                 <li><h3>{item.title}</h3></li>
-                                {item.links.map((link, index) => (
-                                    <li key={index}>
-                                        <Link to={link.link}>{link.linkName}</Link>
-                                        {
-                                            link.linkNew ? <p className={style.NewBlock}>New</p> : null
-                                        }
-                                    </li>
-                                ))}
+                                { item.title === 'Resources' ?
+                                    <>
+                                        {item.links.map((link, index) => (
+                                            <li key={index}>
+                                                {link.linkName}
+                                            </li>
+                                        ))}
+                                    </>
+                                    :
+                                    <>
+                                        {item.links.map((link, index) => (
+                                            <li key={index}>
+                                                <Link to={link.link}>{link.linkName}</Link>
+                                                {
+                                                    link.linkNew ? <p className={style.NewBlock}>New</p> : null
+                                                }
+                                            </li>
+                                        ))}
+                                    </>
+                                }
                             </ul>
                         </nav>
                     ))

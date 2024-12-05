@@ -13,7 +13,10 @@ const StatBlock: React.FC<IStatBlockProps> = ({stat}) => {
     return (
         <div className={style.StatBlock}>
             <div>
-                <h3>{formatCompact(stat.count)}<p>+</p></h3>
+                <section>
+                    <h3>{formatCompact(stat.count)}</h3>
+                    <p>+</p>
+                </section>
                 <p>{stat.title}</p>
             </div>
         </div>

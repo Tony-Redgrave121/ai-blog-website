@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .StatContainer {
   background-color: v.$dark-shade-08;
   border-bottom: 1px solid v.$dark-shade-15;

@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TCAContainer {
   display: flex;
   justify-content: center;
@@ -29,10 +25,10 @@ h2, h3, p {
   flex-direction: column;
   gap: 30px;
 }
-.TCAContainer > div > :first-child > :last-child span {
+.TCAContainer > div > :first-child > :last-child section {
   display: flex;
 }
-.TCAContainer > div > :first-child > :last-child span h3 {
+.TCAContainer > div > :first-child > :last-child section h3 {
   border-radius: 4px;
   padding: 6px 10px;
   background-color: #333333;
@@ -71,25 +67,25 @@ h2, h3, p {
   border: 1px solid #262626;
   background-color: #1A1A1A;
 }
-.TCAContainer > div > :last-child div span {
+.TCAContainer > div > :last-child div section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.TCAContainer > div > :last-child div span a {
+.TCAContainer > div > :last-child div section a {
   display: flex;
   padding: 14px;
   background-color: #FFD11A;
   border-radius: 100px;
   transition: background-color 0.2s ease-in-out;
 }
-.TCAContainer > div > :last-child div span a:hover {
+.TCAContainer > div > :last-child div section a:hover {
   background-color: white;
 }
-.TCAContainer > div > :last-child div span a svg {
+.TCAContainer > div > :last-child div section a svg {
   color: black;
 }
-.TCAContainer > div > :last-child div span h3 {
+.TCAContainer > div > :last-child div section h3 {
   color: white;
   font-size: 22px;
   font-weight: 600;
@@ -115,7 +111,7 @@ h2, h3, p {
   .TCAContainer > div > :first-child img {
     width: 120px;
   }
-  .TCAContainer > div > :first-child > :last-child span h3 {
+  .TCAContainer > div > :first-child > :last-child section h3 {
     padding: 4px 8px;
     color: white;
     font-size: 16px;
@@ -144,14 +140,14 @@ h2, h3, p {
     padding: 30px;
     border-radius: 10px;
   }
-  .TCAContainer > div > :last-child div span a {
+  .TCAContainer > div > :last-child div section a {
     padding: 12px;
   }
-  .TCAContainer > div > :last-child div span a svg {
+  .TCAContainer > div > :last-child div section a svg {
     height: 20px;
     width: 20px;
   }
-  .TCAContainer > div > :last-child div span h3 {
+  .TCAContainer > div > :last-child div section h3 {
     color: white;
     font-size: 18px;
     font-weight: 600;
@@ -184,7 +180,7 @@ h2, h3, p {
   .TCAContainer > div > :first-child > :first-child img {
     width: 60px;
   }
-  .TCAContainer > div > :first-child > :first-child span h3 {
+  .TCAContainer > div > :first-child > :first-child section h3 {
     border-radius: 4px;
     padding: 4px 8px;
     color: white;
@@ -214,10 +210,10 @@ h2, h3, p {
     gap: 10px;
     padding: 24px;
   }
-  .TCAContainer > div > :last-child div span a {
+  .TCAContainer > div > :last-child div section a {
     padding: 10px;
   }
-  .TCAContainer > div > :last-child div span h3 {
+  .TCAContainer > div > :last-child div section h3 {
     color: white;
     font-size: 16px;
     font-weight: 600;

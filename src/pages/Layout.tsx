@@ -1,10 +1,10 @@
-import React, {Suspense} from 'react'
+import React, {lazy, Suspense} from 'react'
 import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer"
-import TCA from "../components/main/tca/TCA"
 import {Outlet} from "react-router-dom"
 import Loader from "../components/main/generalComponents/spinner/Loader";
-import Popup from "../components/main/generalComponents/popup/Popup";
+const Popup = lazy(() => import("../components/main/generalComponents/popup/Popup"))
+const TCA = lazy(() => import("../components/main/tca/TCA"))
 
 const Layout = () => {
     return (
@@ -12,10 +12,10 @@ const Layout = () => {
             <Header/>
             <Suspense fallback={<Loader />}>
                 <Outlet />
+                <Popup />
+                <TCA />
             </Suspense>
-            <TCA />
             <Footer/>
-            <Popup />
         </>
     )
 }

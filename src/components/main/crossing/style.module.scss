@@ -9,7 +9,7 @@
   background-color: v.$dark-shade-10;
   border-bottom: 1px solid v.$dark-shade-15;
 
-  > div {
+  > section {
     display: flex;
     justify-content: space-between;
     max-width: 1920px;
@@ -17,6 +17,19 @@
 
     > :first-child {
       width: 70%;
+
+      > div {
+        display: flex;
+
+        p {
+          padding: 6px 10px;
+          border-radius: 4px;
+          background-color: v.$dark-shade-20;
+          font-family: "Inter", sans-serif;
+          margin-bottom: 10px;
+          @include m.font(white, 20px, 500, 30px)
+        }
+      }
     }
   }
 
@@ -25,21 +38,7 @@
     align-items: center;
   }
 
-  span {
-    display: flex;
-
-    p {
-      padding: 6px 10px;
-      border-radius: 4px;
-      background-color: v.$dark-shade-20;
-      font-family: "Inter", sans-serif;
-      margin-bottom: 10px;
-      @include m.font(white, 20px, 500, 30px)
-    }
-  }
-
   h1 {
-    font-family: "Kumbh Sans", sans-serif;
     @include m.font(white, 58px, 500, 75.4px)
   }
 }
@@ -48,10 +47,12 @@
   .CrossingContainer {
     padding: 80px;
 
-    span {
-      p {
-        padding: 4px 8px;
-        @include m.font(white, 16px, 500, 24px)
+    > section:first-child {
+      div {
+        p {
+          padding: 4px 8px;
+          @include m.font(white, 16px, 500, 24px)
+        }
       }
     }
 
@@ -65,16 +66,18 @@
   .CrossingContainer {
     padding: 40px 16px;
 
-    > div {
+    > section {
       flex-wrap: wrap;
       gap: 30px;
       max-width: 868px;
-    }
 
-    span {
-      p {
-        padding: 4px 8px;
-        @include m.font(white, 14px, 500, 21px)
+      > :first-child {
+        > div {
+          p {
+            padding: 4px 8px;
+            @include m.font(white, 14px, 500, 21px)
+          }
+        }
       }
     }
 

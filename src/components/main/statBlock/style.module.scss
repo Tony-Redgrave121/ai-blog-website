@@ -2,15 +2,11 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .StatBlock {
   display: flex;
   justify-content: center;
 
-  h3 {
+  section {
     display: flex;
     margin-bottom: 10px;
 
@@ -30,7 +26,7 @@ h3, p {
 
 @media screen and (max-width: 1680px) {
   .StatBlock {
-    h3 {
+    section {
       margin-bottom: 2px;
 
       &, p {
@@ -50,7 +46,7 @@ h3, p {
 
 @media screen and (max-width: 1240px) {
   .StatBlock {
-    h3 {
+    section {
       margin-bottom: 0;
 
       &, p {

@@ -2,10 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .TestimonialsBlock {
   display: flex;
 
@@ -29,6 +25,51 @@ h2, h3, p {
 
     p {
       @include m.font(v.$dark-shade-40, 18px, 400, 27px);
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .TestimonialsBlock {
+    > div {
+      gap: 24px;
+
+      video {
+        max-height: 244px;
+        border-radius: 10px;
+      }
+
+      h2 {
+        @include m.font(white, 18px, 500, 27px);
+      }
+
+      p {
+        @include m.font(v.$dark-shade-40, 16px, 400, 24px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .TestimonialsBlock {
+    max-width: 868px;
+
+    > div {
+      width: 100%;
+      max-width: none;
+      gap: 20px;
+
+      video {
+        max-height: 208px;
+      }
+
+      h2 {
+        @include m.font(white, 16px, 500, 24px);
+      }
+
+      p {
+        @include m.font(v.$dark-shade-40, 14px, 400, 21px);
+      }
     }
   }
 }

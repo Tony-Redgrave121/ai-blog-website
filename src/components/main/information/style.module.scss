@@ -2,14 +2,6 @@
 @use "../../../utils/styles/base/_mixin.scss" as m;
 @import url("../../../utils/styles/base/_normalize.scss");
 
-html {
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3, h4, p {
-  font-family: "Inter", sans-serif;
-}
-
 .InformationContainer {
   background-color: v.$dark-shade-08;
 
@@ -29,7 +21,7 @@ h1, h2, h3, h4, p {
     overflow: hidden;
 
     > div {
-      position: absolute!important;
+      position: absolute !important;
       top: 0;
       z-index: 0;
 
@@ -120,8 +112,6 @@ h1, h2, h3, h4, p {
           }
 
           ul {
-            position: sticky;
-            top: 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -204,8 +194,194 @@ h1, h2, h3, h4, p {
           color: v.$grey-shade-60;
         }
       }
-      > div {
+    }
+  }
+}
 
+@media screen and (max-width: 1680px) {
+  .InformationContainer {
+    > :first-child {
+      height: 439px;
+      padding: 40px 0;
+
+      h1 {
+        @include m.font(white, 44px, 500, 66px);
+      }
+    }
+
+    > :last-child {
+      > div {
+        .SideBar {
+          > div {
+            padding: 40px 80px 40px 60px;
+          }
+
+          > :last-child {
+            padding: 60px 80px 60px 60px;
+
+            > div {
+              gap: 40px;
+
+              > div > p {
+                margin-bottom: 14px;
+              }
+            }
+
+            p, a {
+              @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+            }
+
+            section {
+              gap: 20px;
+
+              > div {
+                gap: 10px;
+                width: calc(50% - 10px);
+
+                h4 {
+                  @include m.font(white, 16px, 500, 24px);
+                }
+              }
+            }
+
+            ul {
+              gap: 16px;
+              padding: 18px;
+              border-radius: 10px;
+
+              li {
+                margin-left: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ContentBlock {
+      > div:not(.ButtonBlock) {
+        > div {
+          padding: 60px 60px 60px 80px;
+
+          div {
+            gap: 24px;
+          }
+        }
+      }
+
+      h2 {
+        @include m.font(white, 22px, 500, 33px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+
+      .ButtonBlock {
+        padding-left: 80px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1240px) {
+  .InformationContainer {
+    > :first-child {
+      height: 281px;
+      padding: 15px 16px;
+
+      h1 {
+        text-align: center;
+        @include m.font(white, 28px, 500, 42px);
+      }
+    }
+
+    > :last-child {
+      > div {
+        flex-direction: column;
+
+        .SideBar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          order: 0;
+          width: 100%;
+          border-bottom: 1px solid v.$dark-shade-15;
+
+          > div {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+          }
+
+          > :last-child {
+            display: flex;
+            justify-content: center;
+            padding: 40px 24px;
+
+            > div {
+              width: 100%;
+              max-width: 868px;
+              gap: 30px;
+
+              > div > p {
+                margin-bottom: 10px;
+              }
+            }
+
+            p, a {
+              @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+            }
+
+            section {
+              > div {
+                gap: 4px;
+
+                h4 {
+                  @include m.font(white, 14px, 500, 21px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ContentBlock {
+      order: 1;
+      width: 100%;
+
+      > div:not(.ButtonBlock) {
+        > div {
+          justify-content: center;
+          padding: 40px 24px;
+          border-right: none;
+
+          div {
+            max-width: 868px;
+          }
+        }
+
+        > :last-child {
+          padding: 40px 24px 80px 24px;
+        }
+      }
+
+      h2 {
+        @include m.font(white, 18px, 500, 27px);
+      }
+
+      h3 {
+        @include m.font(white, 18px, 500, 27px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+      }
+
+      .ButtonBlock {
+        padding-left: 0;
       }
     }
   }

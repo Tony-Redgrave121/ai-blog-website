@@ -13,3 +13,11 @@
     padding: 18px 38px;
   }
 }
+
+@media screen and (max-width: 1680px) {
+  .CrossingButtonBlock {
+    button {
+      padding: 14px 24px;
+    }
+  }
+}

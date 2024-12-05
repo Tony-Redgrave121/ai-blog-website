@@ -54,6 +54,7 @@
   }
   .TripleContainer > div {
     flex-direction: column;
+    align-items: center;
   }
   .TripleContainer > div > div:not(:first-child) {
     border-left: none;

@@ -1,6 +1,6 @@
-@use '../../../utils/styles/base/_variables' as v;
-@use "../../../utils/styles/base/_mixin.scss" as m;
-@import url("../../../utils/styles/base/_normalize.scss");
+@use '../../../../utils/styles/base/variables' as v;
+@use "../../../../utils/styles/base/mixin" as m;
+@import url("../../../../utils/styles/base/_normalize.scss");
 
 .QuaternaryContainer {
   display: flex;
@@ -78,6 +78,47 @@
 
         &:not(:first-child) {
           border-left: none;
+        }
+      }
+    }
+  }
+
+  .DoubleContainer {
+    padding: 0;
+
+    > div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: none;
+
+      > :nth-child(odd) {
+        justify-content: end;
+        border-right: 1px solid v.$dark-shade-15;
+      }
+
+      > :nth-child(even) {
+        justify-content: start;
+      }
+
+      > :nth-child(1), > :nth-child(2) {
+        border-bottom: 1px solid v.$dark-shade-15;
+      }
+
+      > :nth-child(3), > :nth-child(4) {
+        border-bottom: none;
+      }
+
+      > div, > :nth-child(1), > :nth-child(2), > :nth-child(3), > :nth-child(4) {
+        width: 50%;
+        padding: 20px 16px;
+        border-left: none;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-width: 434px;
         }
       }
     }

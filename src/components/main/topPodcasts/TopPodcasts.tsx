@@ -4,57 +4,17 @@ import Button from "../../buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import RateBlock from "../generalComponents/rateBlock/RateBlock";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
+import ITopPodcast from "../../../utils/types/ITopPodcast";
 
-// interface Ipodcast {
-//     podcastId: string,
-//     image: string,
-//     title: string,
-//     desc: string,
-//     downloadCount: number,
-//     developers: Array<string>,
-//     topic: string,
-//     topicDesc: string,
-//     topicImage: string,
-//     topicTotal: number,
-//     topicExpertise: string
-// }
+interface ITopPodcastsProps {
+    topPodcasts: Array<ITopPodcast>
+}
 
-const TopPodcasts = () => {
-    const podcasts = [
-        {
-            podcastIcon: 'podcast_1',
-            podcastTitle: 'AI Revolution',
-            podcastRating: 5,
-            podcastHost: 'Dr. Sarah Mitchell',
-            podcastLink: '/',
-            podcastVideo: 'videos/podcast_video_1.mp4',
-            hash: 'LhI{$|ND=|WT}tR%%2WAEKbKjroJ',
-            podcastVideoTitle: 'Delves into the transformative impact of AI',
-            podcastVideoDesc: 'Join Dr. Sarah Mitchell as she delves into the transformative impact of AI on industries, featuring expert interviews and real-world case studies. Explore the possibilities of AI in healthcare, finance, and more.',
-            podcastVideoEpisodes: 50,
-            podcastVideoEpisodeLength: 30,
-            podcastVideoEpisodeRelease: 'Weekly',
-        },
-        {
-            podcastIcon: 'podcast_2',
-            podcastTitle: 'AI Conversations',
-            podcastRating: 5,
-            podcastHost: 'Mark Anderson',
-            podcastLink: '/',
-            podcastVideo: 'videos/podcast_video_2.mp4',
-            hash: 'LGBWA1.80K8_~q%gD%9FNbxaxuM|',
-            podcastVideoTitle: 'Engage in thought-provoking conversations with leading experts.',
-            podcastVideoDesc: 'Mark discusses the future of AI, the impact on society, and how it\'s shaping industries worldwide. Engage in thought-provoking conversations with leading experts.',
-            podcastVideoEpisodes: 40,
-            podcastVideoEpisodeLength: 40,
-            podcastVideoEpisodeRelease: 'Monthly',
-        },
-    ]
-
+const TopPodcasts: React.FC<ITopPodcastsProps> = ({topPodcasts}) => {
     return (
         <>
             {
-                podcasts && podcasts.map(podcast => (
+                topPodcasts.map(podcast => (
                     <div className={style.PodcastContainer} key={podcast.podcastTitle}>
                         <div className={style.PodcastContainerLeft}>
                             <div>

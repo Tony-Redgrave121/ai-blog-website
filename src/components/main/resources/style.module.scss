@@ -15,7 +15,7 @@
   }
 
   h2 {
-    @include m.font(white, 20px, 600, 30px);
+    @include m.font(white, 20px, 500, 30px);
   }
 }
 
@@ -31,7 +31,6 @@
     }
 
     h1 {
-      font-family: "Kumbh Sans", sans-serif;
       @include m.font(white, 40px, 600, 60px);
     }
 
@@ -53,11 +52,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
 
     h2 {
       text-wrap: nowrap;
       @include m.font(white, 24px, 600, 36px);
+      margin-bottom: 14px;
     }
 
     p {
@@ -98,6 +98,173 @@
     button {
       width: 50%;
       padding: 18px 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .TextBlock {
+    padding: 24px;
+    border-radius: 8px;
+    width: 33.333333%;
+
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      margin-bottom: 2px;
+    }
+
+    h2 {
+      @include m.font(white, 16px, 500, 24px);
+    }
+  }
+
+  .ResourceContainerLeft {
+    > div {
+      gap: 25px;
+      padding-right: 60px;
+
+      > img {
+        width: 60px;
+      }
+
+      h1 {
+        @include m.font(white, 30px, 600, 45px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    canvas, img {
+      max-height: 303px;
+    }
+
+    .ResourceTitleBlock {
+      gap: 20px;
+
+      h2 {
+        @include m.font(white, 20px, 600, 30px);
+        margin-bottom: 10px;
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+      }
+    }
+
+    > :last-child {
+      gap: 16px;
+    }
+  }
+
+  .ResourceContainerMore {
+    gap: 24px;
+
+    h2 {
+      @include m.font(white, 18px, 600, 27px);
+    }
+
+    p {
+      @include m.font(v.$grey-shade-60, 16px, 400, 24px);
+    }
+
+    span {
+      gap: 10px;
+
+      button {
+        padding: 14px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .TextBlock {
+    padding: 24px;
+    border-radius: 8px;
+    width: calc(50% - 5px);
+
+    p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+      margin-bottom: 2px;
+    }
+
+    h2 {
+      @include m.font(white, 14px, 500, 21px);
+    }
+  }
+
+  .ResourceContainerLeft {
+    > div {
+      gap: 10px;
+      padding-right: 0;
+
+      > img {
+        width: 50px;
+      }
+
+      h1 {
+        @include m.font(white, 21px, 600, 31.5px);
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+      }
+    }
+  }
+
+  .ResourceContainerRight {
+    canvas, img {
+      max-height: 165px;
+    }
+
+    .ResourceTitleBlock {
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+
+      h2 {
+        @include m.font(white, 18px, 600, 27px);
+        margin-bottom: 6px;
+      }
+
+      p {
+        @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+      }
+    }
+
+    > :last-child {
+      flex-wrap: wrap;
+      gap: 10px;
+
+      > :last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  .ResourceContainerMore {
+    gap: 20px;
+
+    img {
+      height: 223px;
+    }
+
+    h2 {
+      @include m.font(white, 16px, 600, 24px);
+    }
+
+    p {
+      @include m.font(v.$grey-shade-60, 14px, 400, 21px);
+    }
+
+    span {
+      button {
+        padding: 14px 20px;
+      }
     }
   }
 }

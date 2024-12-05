@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./style.module.css"
-import QuaternaryContainer from "../quaternaryContainer/QuaternaryContainer";
+import QuaternaryContainer from "../generalComponents/quaternaryContainer/QuaternaryContainer";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../../buttons/Button";
 import {FaLinkedin, FaMedium, FaTwitter} from "react-icons/fa6";

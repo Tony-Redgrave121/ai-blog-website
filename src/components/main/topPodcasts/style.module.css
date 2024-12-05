@@ -1,8 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-h2, h3, p {
-  font-family: "Inter", sans-serif;
-}
-
 .PodcastContainer {
   display: flex;
   justify-content: center;
@@ -109,6 +105,166 @@ h2, h3, p {
   padding: 30px;
   border-radius: 13px;
   width: 100%;
+}
+
+@media screen and (max-width: 1680px) {
+  .PodcastContainer {
+    padding: 0 80px;
+  }
+  .PodcastContainer .TextBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .PodcastContainer .TextBlock h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+  }
+  .PodcastContainer .PodcastContainerLeft {
+    padding-right: 60px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div {
+    gap: 40px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div > img {
+    width: 60px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div > div {
+    gap: 4px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div > :last-child > div {
+    gap: 4px;
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .PodcastContainer .PodcastContainerRight {
+    gap: 40px;
+    padding: 60px 0 60px 60px;
+  }
+  .PodcastContainer .PodcastContainerRight > span {
+    gap: 24px;
+  }
+  .PodcastContainer .PodcastContainerRight > span video {
+    max-height: 297px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  .PodcastContainer .PodcastContainerRight > span h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+  }
+  .PodcastContainer .PodcastContainerRight > span p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .PodcastContainer .PodcastContainerRight > :last-child {
+    gap: 16px;
+  }
+  .PodcastContainer .PodcastContainerRight > :last-child > div {
+    padding: 24px;
+    border-radius: 8px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .PodcastContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+  }
+  .PodcastContainer .TextBlock p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .PodcastContainer .TextBlock h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .PodcastContainer .PodcastContainerLeft {
+    justify-content: center;
+    padding: 40px 0;
+    border-right: none;
+    border-bottom: 1px solid #262626;
+    width: 100%;
+    max-width: none;
+  }
+  .PodcastContainer .PodcastContainerLeft > div {
+    max-width: 868px;
+    gap: 30px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div > img {
+    width: 50px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .PodcastContainer .PodcastContainerLeft > div > :last-child > div {
+    gap: 4px;
+    padding: 20px;
+  }
+  .PodcastContainer .PodcastContainerRight {
+    gap: 40px;
+    padding: 40px 24px;
+    width: 100%;
+    max-width: 868px;
+  }
+  .PodcastContainer .PodcastContainerRight > span {
+    gap: 20px;
+  }
+  .PodcastContainer .PodcastContainerRight > span video {
+    max-height: 157px;
+    border-radius: 12px;
+  }
+  .PodcastContainer .PodcastContainerRight > span h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+  }
+  .PodcastContainer .PodcastContainerRight > span p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .PodcastContainer .PodcastContainerRight > :last-child {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .PodcastContainer .PodcastContainerRight > :last-child > div {
+    padding: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

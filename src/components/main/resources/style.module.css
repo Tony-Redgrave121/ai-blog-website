@@ -16,7 +16,7 @@
 .TextBlock h2 {
   color: white;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 30px;
 }
 
@@ -30,7 +30,6 @@
   width: 80px;
 }
 .ResourceContainerLeft > div h1 {
-  font-family: "Kumbh Sans", sans-serif;
   color: white;
   font-size: 40px;
   font-weight: 600;
@@ -53,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 30px;
 }
 .ResourceContainerRight .ResourceTitleBlock h2 {
   text-wrap: nowrap;
@@ -61,6 +60,7 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
+  margin-bottom: 14px;
 }
 .ResourceContainerRight .ResourceTitleBlock p {
   color: #98989A;
@@ -103,6 +103,177 @@
 .ResourceContainerMore span button {
   width: 50%;
   padding: 18px 24px;
+}
+
+@media screen and (max-width: 1680px) {
+  .TextBlock {
+    padding: 24px;
+    border-radius: 8px;
+    width: 33.333333%;
+  }
+  .TextBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 2px;
+  }
+  .TextBlock h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .ResourceContainerLeft > div {
+    gap: 25px;
+    padding-right: 60px;
+  }
+  .ResourceContainerLeft > div > img {
+    width: 60px;
+  }
+  .ResourceContainerLeft > div h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+  }
+  .ResourceContainerLeft > div p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ResourceContainerRight canvas, .ResourceContainerRight img {
+    max-height: 303px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock {
+    gap: 20px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ResourceContainerRight > :last-child {
+    gap: 16px;
+  }
+  .ResourceContainerMore {
+    gap: 24px;
+  }
+  .ResourceContainerMore h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+  }
+  .ResourceContainerMore p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .ResourceContainerMore span {
+    gap: 10px;
+  }
+  .ResourceContainerMore span button {
+    padding: 14px 20px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .TextBlock {
+    padding: 24px;
+    border-radius: 8px;
+    width: calc(50% - 5px);
+  }
+  .TextBlock p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 2px;
+  }
+  .TextBlock h2 {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .ResourceContainerLeft > div {
+    gap: 10px;
+    padding-right: 0;
+  }
+  .ResourceContainerLeft > div > img {
+    width: 50px;
+  }
+  .ResourceContainerLeft > div h1 {
+    color: white;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 31.5px;
+  }
+  .ResourceContainerLeft > div p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ResourceContainerRight canvas, .ResourceContainerRight img {
+    max-height: 165px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 6px;
+  }
+  .ResourceContainerRight .ResourceTitleBlock p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ResourceContainerRight > :last-child {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .ResourceContainerRight > :last-child > :last-child {
+    width: 100%;
+  }
+  .ResourceContainerMore {
+    gap: 20px;
+  }
+  .ResourceContainerMore img {
+    height: 223px;
+  }
+  .ResourceContainerMore h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .ResourceContainerMore p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ResourceContainerMore span button {
+    padding: 14px 20px;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */

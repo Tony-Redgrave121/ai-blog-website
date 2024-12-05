@@ -1,12 +1,4 @@
 @import url("../../../utils/styles/base/_normalize.scss");
-html {
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3, h4, p {
-  font-family: "Inter", sans-serif;
-}
-
 .InformationContainer {
   background-color: #141414;
 }
@@ -110,8 +102,6 @@ h1, h2, h3, h4, p {
   line-height: 27px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child ul {
-  position: sticky;
-  top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -185,6 +175,172 @@ h1, h2, h3, h4, p {
 }
 .InformationContainer .ContentBlock .ButtonBlock button svg {
   color: #98989A;
+}
+
+@media screen and (max-width: 1680px) {
+  .InformationContainer > :first-child {
+    height: 439px;
+    padding: 40px 0;
+  }
+  .InformationContainer > :first-child h1 {
+    color: white;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 66px;
+  }
+  .InformationContainer > :last-child > div .SideBar > div {
+    padding: 40px 80px 40px 60px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child {
+    padding: 60px 80px 60px 60px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child > div {
+    gap: 40px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child > div > div > p {
+    margin-bottom: 14px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child p, .InformationContainer > :last-child > div .SideBar > :last-child a {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child section {
+    gap: 20px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child section > div {
+    gap: 10px;
+    width: calc(50% - 10px);
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child section > div h4 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child ul {
+    gap: 16px;
+    padding: 18px;
+    border-radius: 10px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child ul li {
+    margin-left: 18px;
+  }
+  .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
+    padding: 60px 60px 60px 80px;
+  }
+  .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div div {
+    gap: 24px;
+  }
+  .InformationContainer .ContentBlock h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+  }
+  .InformationContainer .ContentBlock p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .InformationContainer .ContentBlock .ButtonBlock {
+    padding-left: 80px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .InformationContainer > :first-child {
+    height: 281px;
+    padding: 15px 16px;
+  }
+  .InformationContainer > :first-child h1 {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+  .InformationContainer > :last-child > div {
+    flex-direction: column;
+  }
+  .InformationContainer > :last-child > div .SideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 0;
+    width: 100%;
+    border-bottom: 1px solid #262626;
+  }
+  .InformationContainer > :last-child > div .SideBar > div {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child {
+    display: flex;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child > div {
+    width: 100%;
+    max-width: 868px;
+    gap: 30px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child > div > div > p {
+    margin-bottom: 10px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child p, .InformationContainer > :last-child > div .SideBar > :last-child a {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child section > div {
+    gap: 4px;
+  }
+  .InformationContainer > :last-child > div .SideBar > :last-child section > div h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .InformationContainer .ContentBlock {
+    order: 1;
+    width: 100%;
+  }
+  .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
+    justify-content: center;
+    padding: 40px 24px;
+    border-right: none;
+  }
+  .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div div {
+    max-width: 868px;
+  }
+  .InformationContainer .ContentBlock > div:not(.ButtonBlock) > :last-child {
+    padding: 40px 24px 80px 24px;
+  }
+  .InformationContainer .ContentBlock h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .InformationContainer .ContentBlock h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+  .InformationContainer .ContentBlock p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .InformationContainer .ContentBlock .ButtonBlock {
+    padding-left: 0;
+  }
 }
 
 /*# sourceMappingURL=style.module.css.map */
