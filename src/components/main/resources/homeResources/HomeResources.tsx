@@ -38,10 +38,10 @@ const HomeResources: React.FC<IResourcesProps> = ({resources}) => {
                             </div>
                         </div>
                         <div className={style.ResourceContainerRight}>
-                            <span>
+                            <section>
                                 <h2>{resource.resourceTopicTitle}</h2>
                                 <p>{resource.resourceTopicDesc}</p>
-                            </span>
+                            </section>
                             <BlurHashImage imagePath={`images/topics/${resource.resourceTopicImage}`} hash={resource.hash} alt={resource.resourceTopicTitle} height="388px"></BlurHashImage>
                             <div>
                                 <div className={style.TextBlock}>
@@ -54,9 +54,7 @@ const HomeResources: React.FC<IResourcesProps> = ({resources}) => {
                                         <h2>PDF format for access.</h2>
                                     </div>
                                     <span>
-                                        <Button foo={() => {}}>
-                                            Preview <HiOutlineEye/>
-                                        </Button>
+                                        <Button foo={() => {}}>Preview <HiOutlineEye/></Button>
                                     </span>
                                 </div>
                                 <div className={style.TextBlock}>

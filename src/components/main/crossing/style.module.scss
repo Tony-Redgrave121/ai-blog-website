@@ -38,7 +38,7 @@
     align-items: center;
   }
 
-  h1 {
+  h2 {
     @include m.font(white, 58px, 500, 75.4px)
   }
 }
@@ -56,7 +56,7 @@
       }
     }
 
-    h1 {
+    h2 {
       @include m.font(white, 44px, 500, 57.2px)
     }
   }
@@ -81,7 +81,7 @@
       }
     }
 
-    h1 {
+    h2 {
       @include m.font(white, 28px, 500, 36.4px)
     }
   }

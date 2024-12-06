@@ -8,24 +8,30 @@ import * as path from "path"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 import helmet from 'helmet'
+import compression from 'compression'
 
 dotenv.config({path: "./.env"})
 const PORT = process.env.SERVER_PORT
 const app = express()
 
+app.use(compression())
 app.use(express.json())
 app.use(helmet({
     contentSecurityPolicy: false,
-    xXssProtection: false
+    xXssProtection: false,
+    xContentTypeOptions: true
 }))
 app.use(cors({
     credentials: true,
     origin: process.env.CLIENT_URL
 }))
-app.use('/static', express.static(path.resolve(__dirname, 'static')))
+app.use('/static', express.static(path.resolve(__dirname, 'static'), {
+    setHeaders: (res, _) => {
+        res.setHeader('Cache-Control', 'public, max-age=')
+    }
+}))
 app.use(fileUpload({}))
 app.use(cookieParser())
-
 app.use(router)
 app.use(errorHandler)
 

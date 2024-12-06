@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
 }
-.CrossingContainer h1 {
+.CrossingContainer h2 {
   color: white;
   font-size: 58px;
   font-weight: 500;
@@ -51,7 +51,7 @@
     font-weight: 500;
     line-height: 24px;
   }
-  .CrossingContainer h1 {
+  .CrossingContainer h2 {
     color: white;
     font-size: 44px;
     font-weight: 500;
@@ -74,7 +74,7 @@
     font-weight: 500;
     line-height: 21px;
   }
-  .CrossingContainer h1 {
+  .CrossingContainer h2 {
     color: white;
     font-size: 28px;
     font-weight: 500;

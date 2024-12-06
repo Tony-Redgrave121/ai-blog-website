@@ -15,7 +15,7 @@ const Crossing: React.FC<ICrossing> = ({desc, title, children}) => {
                     <div>
                         <p>{desc}</p>
                     </div>
-                    <h1>{title}</h1>
+                    <h2>{title}</h2>
                 </div>
                 {children ? <div className={style.ButtonBlock}>{children}</div> : null}
             </section>

@@ -52,7 +52,7 @@
 }
 
 .ResourceContainerRight {
-  > span {
+  > section {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -135,7 +135,7 @@
   }
 
   .ResourceContainerRight {
-    > span {
+    > section {
       gap: 16px;
 
       h2 {
@@ -196,7 +196,7 @@
   }
 
   .ResourceContainerRight {
-    > span {
+    > section {
       flex-direction: column;
       align-items: start;
       gap: 16px;

@@ -49,19 +49,19 @@
   padding: 30px;
 }
 
-.ResourceContainerRight > span {
+.ResourceContainerRight > section {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.ResourceContainerRight > span h2 {
+.ResourceContainerRight > section h2 {
   text-wrap: nowrap;
   color: white;
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
 }
-.ResourceContainerRight > span p {
+.ResourceContainerRight > section p {
   color: #98989A;
   font-size: 18px;
   font-weight: 400;
@@ -128,16 +128,16 @@
     border-radius: 8px;
     padding: 20px;
   }
-  .ResourceContainerRight > span {
+  .ResourceContainerRight > section {
     gap: 16px;
   }
-  .ResourceContainerRight > span h2 {
+  .ResourceContainerRight > section h2 {
     color: white;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
   }
-  .ResourceContainerRight > span p {
+  .ResourceContainerRight > section p {
     color: #98989A;
     font-size: 16px;
     font-weight: 400;
@@ -187,18 +187,18 @@
   .ResourceContainerLeft > div > :last-child > div {
     padding: 20px 30px;
   }
-  .ResourceContainerRight > span {
+  .ResourceContainerRight > section {
     flex-direction: column;
     align-items: start;
     gap: 16px;
   }
-  .ResourceContainerRight > span h2 {
+  .ResourceContainerRight > section h2 {
     color: white;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
   }
-  .ResourceContainerRight > span p {
+  .ResourceContainerRight > section p {
     color: #98989A;
     font-size: 16px;
     font-weight: 400;
