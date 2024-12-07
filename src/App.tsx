@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from "./utils/hooks/redux";
 import {updateIsLoading, updateIsMobile, userCheckAuth} from "./store/reducers/userReducer"
 import {useDebouncedCallback} from "use-debounce";
+import Loader from "./components/main/generalComponents/spinner/Loader";
 
 function App() {
     const isLoading = useAppSelector(state => state.user.isLoading)
@@ -25,7 +26,7 @@ function App() {
         else dispatch(updateIsLoading(false))
     }, [dispatch])
 
-    if (isLoading) return <h1>Loading...</h1>
+    if (isLoading) return <Loader />
 
     return (
         <BrowserRouter>

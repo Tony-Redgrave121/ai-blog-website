@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import style from "./style.module.css"
 
 interface ICrossing {
@@ -7,7 +7,7 @@ interface ICrossing {
     desc: string,
 }
 
-const CrossingTitle: React.FC<ICrossing> = ({title, subTitle, desc}) => {
+const CrossingTitle: React.FC<ICrossing> = memo(({title, subTitle, desc}) => {
     return (
         <section className={style.CrossingTitleSection}>
             <div>
@@ -19,6 +19,6 @@ const CrossingTitle: React.FC<ICrossing> = ({title, subTitle, desc}) => {
             </div>
         </section>
     )
-}
+})
 
 export default CrossingTitle

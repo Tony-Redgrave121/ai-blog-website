@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./style.module.css"
 import IPodcast from "../../../utils/types/IPodcast";
 import {HiArrowUpRight} from "react-icons/hi2";
-import Button from "../../buttons/Button";
+import Button from "../generalComponents/buttons/Button";
 import TripleContainer from "../generalComponents/tripleContainer/TripleContainer";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 

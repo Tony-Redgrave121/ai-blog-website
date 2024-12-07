@@ -3,7 +3,7 @@ import style from "./style.module.css"
 import {updatePopupContent, updatePopupState, logout, deleteAccount} from "../../../../../store/reducers/userReducer";
 import {useAppDispatch, useAppSelector} from "../../../../../utils/hooks/redux";
 import BlurHashImage from "../../blurhashImage/BlurHashImage";
-import Button from "../../../../buttons/Button";
+import Button from "../../buttons/Button";
 import { HiOutlineKey, HiOutlineTrash } from "react-icons/hi2";
 
 const PopupProfile = () => {

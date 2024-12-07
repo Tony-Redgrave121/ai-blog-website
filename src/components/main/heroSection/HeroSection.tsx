@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./style.module.css"
 import AbstractDesign from "../../../utils/icons/main/abstract-design.webp"
-import Button from "../../buttons/Button"
+import Button from "../generalComponents/buttons/Button"
 import {HiArrowUpRight} from "react-icons/hi2"
 import {Link, useNavigate} from "react-router-dom"
 import links from './json/links.json'

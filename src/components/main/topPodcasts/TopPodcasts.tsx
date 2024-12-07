@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./style.module.css"
-import Button from "../../buttons/Button";
+import Button from "../generalComponents/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import RateBlock from "../generalComponents/rateBlock/RateBlock";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";

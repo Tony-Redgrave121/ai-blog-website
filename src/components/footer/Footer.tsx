@@ -1,11 +1,11 @@
-import React, {memo } from 'react'
+import React from 'react'
 import style from './style.module.css'
 import {HiArrowUpRight} from "react-icons/hi2"
 import {FaTwitter, FaMedium, FaLinkedin} from "react-icons/fa6";
 import {Link} from "react-router-dom";
-import Button from "../buttons/Button";
+import Button from "../main/generalComponents/buttons/Button";
 
-const Footer: React.FC = memo(() => {
+const Footer: React.FC = () => {
     const list = [
         {
             title: "Home",
@@ -245,6 +245,6 @@ const Footer: React.FC = memo(() => {
             </div>
         </footer>
     )
-})
+}
 
-export default memo(Footer)
+export default Footer

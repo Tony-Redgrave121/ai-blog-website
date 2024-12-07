@@ -3,7 +3,7 @@ import Blogs from "../../components/main/blogs/Blogs";
 import IPostLow from "../../utils/types/IPostLow";
 import HeaderSection from "../../components/main/headerSection/HeaderSection";
 import Crossing from "../../components/main/crossing/Сrossing";
-import Button from "../../components/buttons/Button";
+import Button from "../../components/main/generalComponents/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 import Videos from "../../components/main/videos/Videos";

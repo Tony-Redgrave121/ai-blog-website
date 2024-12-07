@@ -3,7 +3,7 @@ import style from "./style.module.css"
 import './animation.css'
 import {HiArrowDown, HiArrowUp, HiHeart, HiOutlineEye, HiOutlineHeart} from "react-icons/hi2";
 import {VscSend} from "react-icons/vsc"
-import Button from "../../buttons/Button";
+import Button from "../generalComponents/buttons/Button";
 import formatCompact from "../../../utils/formats/formatCompact";
 import formatDate from "../../../utils/formats/formatDate";
 import { CSSTransition } from "react-transition-group"
@@ -14,6 +14,13 @@ import {useParams} from "react-router-dom";
 
 interface IBlogProps {
     blog: IBlog
+}
+
+interface IReactionBlockProps {
+    likeState: boolean,
+    likeCount: number,
+    viewCount: number,
+    replyCount: number
 }
 
 const Information: React.FC<IBlogProps> = ({blog}) => {
@@ -29,6 +36,20 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
             setNavigationLink(id)
         }
     }, [blog.content])
+
+    const ReactionBlock: React.FC<IReactionBlockProps> = (({likeState, likeCount, viewCount, replyCount}) => {
+        return (
+            <div className={style.ReactionBlock}>
+                <Button foo={() => {
+                }} type={["PostButton"]}>{likeState ? <HiHeart color="#FF5500"/> :
+                    <HiOutlineHeart/>} {formatCompact(likeCount)}</Button>
+                <Button foo={() => {
+                }} type={["PostButton"]}><HiOutlineEye/> {formatCompact(viewCount)}</Button>
+                <Button foo={() => {
+                }} type={["PostButton"]}><VscSend/> {formatCompact(replyCount)}</Button>
+            </div>
+        )
+    })
 
     return (
         <div className={style.InformationContainer}>
@@ -51,15 +72,7 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
                     </CSSTransition>
                     <div className={style.SideBar}>
                         <div>
-                            <div className={style.ReactionBlock}>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}>{blog.likeState ? <HiHeart color="#FF5500"/> :
-                                    <HiOutlineHeart/>} {formatCompact(blog.likeCount)}</Button>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}><HiOutlineEye/> {formatCompact(blog.viewCount)}</Button>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}><VscSend/> {formatCompact(blog.replyCount)}</Button>
-                            </div>
+                            <ReactionBlock likeState={blog.likeState} likeCount={blog.likeCount} viewCount={blog.viewCount} replyCount={blog.replyCount}/>
                         </div>
                         <div>
                             <div>

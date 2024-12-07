@@ -75,7 +75,7 @@ const Header = () => {
         setTimeout(foo, 100)
     }
 
-    const RightButtons = memo(() => {
+    const RightButtons = () => {
         return (
             <span>
                 {isAuth ?
@@ -92,7 +92,7 @@ const Header = () => {
                 <button onClick={e => handleEvent(e, () => navigate('/contact'))}>Contact Us</button>
             </span>
         )
-    })
+    }
 
     const ButtonContainer = memo(React.forwardRef<HTMLDivElement>((_, ref) => {
         return (
@@ -144,4 +144,4 @@ const Header = () => {
     )
 }
 
-export default memo(Header)
+export default Header

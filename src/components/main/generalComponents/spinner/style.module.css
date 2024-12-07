@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: #141414;
-  height: 597px;
+  height: 100vh;
   border-bottom: 1px solid #262626;
 }
 .LoaderContainer .Loader {

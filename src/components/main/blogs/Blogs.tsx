@@ -1,6 +1,6 @@
-import React, {useEffect, useMemo} from 'react'
+import React, {useEffect} from 'react'
 import style from "./style.module.css"
-import Button from '../../buttons/Button'
+import Button from '../generalComponents/buttons/Button'
 import {HiArrowUpRight, HiOutlineHeart, HiOutlineChatBubbleOvalLeft, HiHeart} from "react-icons/hi2";
 import formatCompact from "../../../utils/formats/formatCompact";
 import {VscSend} from "react-icons/vsc";
@@ -8,15 +8,16 @@ import IPostLow from '../../../utils/types/IPostLow'
 import {useNavigate} from "react-router-dom";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 import {useAppSelector} from "../../../utils/hooks/redux";
+import isEqual from "lodash/isEqual"
 
 interface ITabs {
     posts: Array<IPostLow> | undefined,
 }
 
 const Blogs: React.FC<ITabs> = ({posts}) => {
-    const [filteredPosts, setFilteredPosts] = React.useState<Array<IPostLow>>([])
+    const [filteredPosts, setFilteredPosts] = React.useState<Array<IPostLow> | null>(null)
     const [filterParam, setFilterParam] = React.useState('All')
-    const select = useMemo(() => ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy'], [])
+    const select = ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy']
     const navigate = useNavigate()
     const isMobile = useAppSelector(state => state.user.isMobile)
 
@@ -26,10 +27,11 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
 
     useEffect(() => {
         if (posts) {
-            if (filterParam !== 'All') setFilteredPosts(posts.filter(post => post.postTags.includes(filterParam)))
-            else setFilteredPosts(posts)
+            const filtered = filterParam === 'All' ? posts : posts.filter(post => post.postTags.includes(filterParam))
+
+            if (!isEqual(filtered, filteredPosts)) setFilteredPosts(filtered)
         }
-    }, [filterParam, posts])
+    }, [filterParam, filteredPosts, posts])
 
     return (
         <div className={style.TabsContainer}>

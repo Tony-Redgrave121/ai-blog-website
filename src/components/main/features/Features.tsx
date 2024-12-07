@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import style from "./style.module.css"
 
 interface IParams {
@@ -13,7 +13,7 @@ interface IBlog {
     params: Array<IParams>,
 }
 
-const Features: React.FC<IBlog> = ({icon, desc, title, params}) => {
+const Features: React.FC<IBlog> = memo(({icon, desc, title, params}) => {
     return (
         <div className={style.FeatureContainer}>
             <div className={style.FeatureContainerLeft}>
@@ -35,6 +35,6 @@ const Features: React.FC<IBlog> = ({icon, desc, title, params}) => {
             </div>
         </div>
     )
-}
+})
 
 export default Features

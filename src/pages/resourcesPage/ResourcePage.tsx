@@ -3,7 +3,7 @@ import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 import QuaternaryContainer from "../../components/main/generalComponents/quaternaryContainer/QuaternaryContainer";
 import StatBlock from "../../components/main/statBlock/StatBlock";
 import Crossing from "../../components/main/crossing/Сrossing";
-import Button from "../../components/buttons/Button";
+import Button from "../../components/main/generalComponents/buttons/Button";
 import CrossingButtonBlock from "../../components/main/generalComponents/crossingButtonBlock/CrossingButtonBlock";
 import IResource from "../../utils/types/IResource";
 import Resources from "../../components/main/resources/Resources";

@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./style.module.css"
 import {HiArrowUpRight, HiHeart, HiOutlineHeart} from "react-icons/hi2";
 import formatCompact from "../../../utils/formats/formatCompact";
-import Button from "../../buttons/Button";
+import Button from "../generalComponents/buttons/Button";
 import {VscSend} from "react-icons/vsc";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
 

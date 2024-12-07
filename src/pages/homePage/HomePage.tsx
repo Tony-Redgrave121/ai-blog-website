@@ -3,7 +3,7 @@ import HeroSection from "../../components/main/heroSection/HeroSection";
 import Crossing from "../../components/main/crossing/Сrossing";
 import technology from "../../components/main/features/technology.json";
 import Features from "../../components/main/features/Features";
-import Button from "../../components/buttons/Button";
+import Button from "../../components/main/generalComponents/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import Blogs from "../../components/main/blogs/Blogs";
 import Testimonials from "../../components/main/testimonials/Testimonials";

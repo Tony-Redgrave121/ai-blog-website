@@ -3,7 +3,7 @@ import HeaderSection from "../../components/main/headerSection/HeaderSection";
 import IBlog from '../../utils/types/IBlog'
 import Information from "../../components/main/information/Information";
 import sections from '../../components/main/headerSection/sections_2.json'
-import Button from "../../components/buttons/Button";
+import Button from "../../components/main/generalComponents/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import {useParams} from 'react-router-dom'
 

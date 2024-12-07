@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import style from "./style.module.css"
 
 interface ICrossing {
@@ -7,7 +7,7 @@ interface ICrossing {
     children?: React.ReactNode,
 }
 
-const Crossing: React.FC<ICrossing> = ({desc, title, children}) => {
+const Crossing: React.FC<ICrossing> = memo(({desc, title, children}) => {
     return (
         <div className={style.CrossingContainer}>
             <section>
@@ -21,6 +21,6 @@ const Crossing: React.FC<ICrossing> = ({desc, title, children}) => {
             </section>
         </div>
     )
-}
+})
 
 export default Crossing

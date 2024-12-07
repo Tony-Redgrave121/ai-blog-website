@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./style.module.css"
 import ResourceContainer from "../generalComponents/resourceContainer/ResourceContainer";
 import {HiArrowUpRight} from "react-icons/hi2";
-import Button from "../../buttons/Button";
+import Button from "../generalComponents/buttons/Button";
 import DescBlock from "./DescBlock";
 
 const FAQ = () => {
