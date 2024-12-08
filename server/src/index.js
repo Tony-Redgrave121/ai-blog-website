@@ -57,7 +57,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const helmet_1 = __importDefault(require("helmet"));
 const compression_1 = __importDefault(require("compression"));
 dotenv_1.default.config({ path: "./.env" });
-const PORT = process.env.SERVER_PORT;
+const PORT = Number(process.env.SERVER_PORT);
 const app = (0, express_1.default)();
 app.use((0, compression_1.default)());
 app.use(express_1.default.json());

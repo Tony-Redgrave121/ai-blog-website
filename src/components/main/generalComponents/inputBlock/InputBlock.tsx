@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import style from './style.module.css'
 import {FieldErrors} from "react-hook-form";
 
@@ -10,7 +10,7 @@ interface IButton {
     field: string,
 }
 
-const InputBlock: React.FC<IButton> = ({children, errors, htmlFor, label, field}) => {
+const InputBlock: React.FC<IButton> = memo(({children, errors, htmlFor, label, field}) => {
     return (
         <div className={style.InputBlock}>
             <label htmlFor={htmlFor}>{label}</label>
@@ -20,6 +20,6 @@ const InputBlock: React.FC<IButton> = ({children, errors, htmlFor, label, field}
             </small>
         </div>
     )
-}
+})
 
 export default InputBlock

@@ -94,7 +94,6 @@
         display: flex;
         justify-content: end;
         flex-direction: column;
-        font-family: "Inter", sans-serif;
         gap: 30px;
         color: v.$grey-shade-60;
         max-width: 960px;
@@ -106,6 +105,10 @@
           transform: rotate(35.39deg);
           width: 800px;
           mask-image: linear-gradient(to bottom, transparent, v.$dark-shade-08 50%, transparent);
+        }
+
+        > span, .TextBlock {
+          z-index: 1;
         }
 
         .TextBlock {

@@ -8,18 +8,18 @@ import {HiArrowUpRight} from "react-icons/hi2";
 import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 import Videos from "../../components/main/videos/Videos";
 import sections from '../../components/main/headerSection/sections_1.json'
+import fetchData from "../../utils/fetch/fetchData"
 
 const NewsPage = () => {
     const [posts, setPosts] = React.useState<Array<IPostLow>>()
 
     useEffect(() => {
-        fetch("http://localhost:5000/static/jsons/posts/posts.json")
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return response.json();
-            })
-            .then(data => setPosts(data))
-            .catch(error => console.log(error))
+        const fetchAll = async () => {
+            const [news] = await Promise.all([fetchData<IPostLow[]>('posts/posts.json')])
+            setPosts(news)
+        }
+
+        fetchAll()
     }, [])
 
     return (

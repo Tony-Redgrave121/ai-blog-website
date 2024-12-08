@@ -11,32 +11,39 @@ interface ITopPodcastsProps {
 }
 
 const TopPodcasts: React.FC<ITopPodcastsProps> = ({topPodcasts}) => {
+    const PodcastContainerLeft: React.FC<{ podcast: ITopPodcast }> = ({podcast}) => (
+        <div className={style.PodcastContainerLeft}>
+            <div>
+                <img src={require(`../../../utils/icons/main/topPodcasts/${podcast.podcastIcon}.svg`)}
+                     alt={podcast.podcastTitle}/>
+                <div>
+                    <h1>{podcast.podcastTitle}</h1>
+                    <RateBlock rating={podcast.podcastRating}></RateBlock>
+                </div>
+                <div>
+                    <div>
+                        <div className={style.TextBlock}>
+                            <p>Host</p>
+                            <h2>{podcast.podcastHost}</h2>
+                        </div>
+                        <Button foo={() => {
+                        }}>Listen Podcast <HiArrowUpRight/></Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+
     return (
         <>
             {
                 topPodcasts.map(podcast => (
                     <div className={style.PodcastContainer} key={podcast.podcastTitle}>
-                        <div className={style.PodcastContainerLeft}>
-                            <div>
-                                <img src={require(`../../../utils/icons/main/topPodcasts/${podcast.podcastIcon}.svg`)} alt={podcast.podcastTitle}/>
-                                <div>
-                                    <h1>{podcast.podcastTitle}</h1>
-                                    <RateBlock rating={podcast.podcastRating}></RateBlock>
-                                </div>
-                                <div>
-                                    <div>
-                                        <div className={style.TextBlock}>
-                                            <p>Host</p>
-                                            <h2>{podcast.podcastHost}</h2>
-                                        </div>
-                                        <Button foo={() => {}}>Listen Podcast <HiArrowUpRight/></Button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <PodcastContainerLeft podcast={podcast}/>
                         <div className={style.PodcastContainerRight}>
                             <span>
-                                <BlurHashImage imagePath={podcast.podcastVideo} hash={podcast.hash} type={'Short'}></BlurHashImage>
+                                <BlurHashImage imagePath={podcast.podcastVideo} hash={podcast.hash}
+                                               type={'Short'}></BlurHashImage>
                                 <h2>{podcast.podcastVideoTitle}</h2>
                                 <p>{podcast.podcastVideoDesc}</p>
                             </span>

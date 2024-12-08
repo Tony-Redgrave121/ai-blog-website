@@ -38,19 +38,6 @@ const Player: React.FC<IPlayer> = ({src, type}) => {
 
     useEffect(() => {
         const videoPlayer = player.current
-        if (videoPlayer) {
-            const updateDuration = () => setPlayerState((prevState) => ({
-                ...prevState,
-                time: (videoPlayer.duration / 100).toFixed(2),
-            }))
-
-            videoPlayer.addEventListener('loadedmetadata', updateDuration)
-            return () => videoPlayer.removeEventListener('loadedmetadata', updateDuration)
-        }
-    }, [])
-
-    useEffect(() => {
-        const videoPlayer = player.current
         const controller = playerController.current
 
         const handleVideoEnd = () => setPlayerState((prevState) => ({
@@ -64,7 +51,13 @@ const Player: React.FC<IPlayer> = ({src, type}) => {
         }))
 
         if (videoPlayer && controller) {
+            const updateDuration = () => setPlayerState((prevState) => ({
+                ...prevState,
+                time: (videoPlayer.duration / 100).toFixed(2),
+            }))
+
             videoPlayer.addEventListener('ended', handleVideoEnd)
+            videoPlayer.addEventListener('loadedmetadata', updateDuration)
             controller.addEventListener('mouseenter', () => handleMouse(true))
             controller.addEventListener('mouseleave', () => handleMouse(false))
 
@@ -72,6 +65,7 @@ const Player: React.FC<IPlayer> = ({src, type}) => {
                 videoPlayer.removeEventListener('ended', handleVideoEnd)
                 controller.removeEventListener('mouseenter', () => handleMouse(true))
                 controller.removeEventListener('mouseleave', () => handleMouse(false))
+                videoPlayer.removeEventListener('loadedmetadata', updateDuration)
             }
         }
     }, [])

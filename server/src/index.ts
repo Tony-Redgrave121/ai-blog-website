@@ -11,7 +11,7 @@ import helmet from 'helmet'
 import compression from 'compression'
 
 dotenv.config({path: "./.env"})
-const PORT = process.env.SERVER_PORT
+const PORT = Number(process.env.SERVER_PORT)
 const app = express()
 
 app.use(compression())

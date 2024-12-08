@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {memo, useEffect} from 'react'
 import style from "./style.module.css"
 import Button from '../generalComponents/buttons/Button'
 import {HiArrowUpRight, HiOutlineHeart, HiOutlineChatBubbleOvalLeft, HiHeart} from "react-icons/hi2";
@@ -14,10 +14,12 @@ interface ITabs {
     posts: Array<IPostLow> | undefined,
 }
 
+const select = ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy']
+
 const Blogs: React.FC<ITabs> = ({posts}) => {
     const [filteredPosts, setFilteredPosts] = React.useState<Array<IPostLow> | null>(null)
     const [filterParam, setFilterParam] = React.useState('All')
-    const select = ['All', 'Quantum Computing', 'AI Ethics', 'Space Exploration', 'Biotechnology', 'Renewable Energy']
+
     const navigate = useNavigate()
     const isMobile = useAppSelector(state => state.user.isMobile)
 
@@ -33,17 +35,40 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
         }
     }, [filterParam, filteredPosts, posts])
 
+    const SelectContainer: React.FC = (() => (
+        <div className={style.SelectContainer}>
+            <div>
+                {
+                    select.map(select => (
+                        <Button foo={() => setFilterParam(select)} key={select} type={['SelectButton', filterParam === select ? 'ActiveSelectButton' : '']}>{select}</Button>
+                    ))
+                }
+            </div>
+        </div>
+    ))
+
+    const ReactionBlock: React.FC<{post: IPostLow}> = memo(({post}) => (
+        <div>
+            <Button foo={() => {
+            }} type={["PostButton"]}>{post.postState ? <HiHeart color="#FF5500"/> :
+                <HiOutlineHeart/>} {formatCompact(post.postLikeCount)}</Button>
+            <Button foo={() => {
+            }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
+            </Button>
+            <Button foo={() => {
+            }} type={["PostButton"]}><VscSend/> {formatCompact(post.postReplyCount)}</Button>
+        </div>
+    ))
+
+    const ButtonBlock: React.FC<{postId: string}> = memo(({postId}) => (
+        <div>
+            <Button foo={() => navigate(`blogs/${postId}`)}>View Blog <HiArrowUpRight/></Button>
+        </div>
+    ))
+
     return (
         <div className={style.TabsContainer}>
-            <div className={style.SelectContainer}>
-                <div>
-                    {
-                        select.map(select => (
-                            <Button foo={() => setFilterParam(select)} key={select} type={['SelectButton', filterParam === select ? 'ActiveSelectButton' : '']}>{select}</Button>
-                        ))
-                    }
-                </div>
-            </div>
+            <SelectContainer/>
             {filteredPosts && filteredPosts.map(post => (
                 <div className={style.PostContainer} key={post.postId}>
                     <div>
@@ -60,20 +85,9 @@ const Blogs: React.FC<ITabs> = ({posts}) => {
                                 <h1>{post.postTitle}</h1>
                                 <p>{post.postDesc}</p>
                             </div>
-                            <div>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}>{post.postState ? <HiHeart color="#FF5500"/> :
-                                    <HiOutlineHeart/>} {formatCompact(post.postLikeCount)}</Button>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}><HiOutlineChatBubbleOvalLeft/> {formatCompact(post.postCommentCount)}
-                                </Button>
-                                <Button foo={() => {
-                                }} type={["PostButton"]}><VscSend/> {formatCompact(post.postReplyCount)}</Button>
-                            </div>
+                            <ReactionBlock post={post}/>
                         </div>
-                        <div>
-                            <Button foo={() => navigate(`blogs/${post.postId}`)}>View Blog <HiArrowUpRight/></Button>
-                        </div>
+                        <ButtonBlock postId={post.postId}/>
                     </div>
                 </div>
             ))}

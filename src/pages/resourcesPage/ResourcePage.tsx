@@ -1,13 +1,32 @@
 import React, {useEffect} from 'react'
 import CrossingTitle from "../../components/main/crossingTitle/CrossingTitle";
 import QuaternaryContainer from "../../components/main/generalComponents/quaternaryContainer/QuaternaryContainer";
-import StatBlock from "../../components/main/statBlock/StatBlock";
+import StatBlock from "../../components/main/generalComponents/statBlock/StatBlock";
 import Crossing from "../../components/main/crossing/Сrossing";
 import Button from "../../components/main/generalComponents/buttons/Button";
 import CrossingButtonBlock from "../../components/main/generalComponents/crossingButtonBlock/CrossingButtonBlock";
 import IResource from "../../utils/types/IResource";
 import Resources from "../../components/main/resources/Resources";
 import fetchData from "../../utils/fetch/fetchData";
+
+const stats = [
+    {
+        count: 300,
+        title: 'Resources available'
+    },
+    {
+        count: 12000,
+        title: 'Total Downloads'
+    },
+    {
+        count: 10000,
+        title: 'Active Users'
+    },
+    {
+        count: 100,
+        title: 'Countries Accesses Our Content '
+    },
+]
 
 const ResourcePage = () => {
     const [resources, setResources] = React.useState<Array<IResource>>()
@@ -21,25 +40,6 @@ const ResourcePage = () => {
 
         fetchAll()
     }, [])
-
-    const stats = [
-        {
-            count: 300,
-            title: 'Resources available'
-        },
-        {
-            count: 12000,
-            title: 'Total Downloads'
-        },
-        {
-            count: 10000,
-            title: 'Active Users'
-        },
-        {
-            count: 100,
-            title: 'Countries Accesses Our Content '
-        },
-    ]
 
     return (
         <main>

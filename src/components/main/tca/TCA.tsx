@@ -4,25 +4,26 @@ import {HiArrowUpRight} from "react-icons/hi2";
 import {Link} from "react-router-dom";
 import {useAppSelector} from "../../../utils/hooks/redux";
 
+const list = [
+    {
+        title: "Resource Access",
+        desk: "Visitors can access a wide range of resources, including ebooks, whitepapers, reports.",
+        link: "/"
+    },
+    {
+        title: "Community Forum",
+        desk: "Join our active community forum to discuss industry trends, share insights, and collaborate with peers.",
+        link: "/"
+    },
+    {
+        title: "Tech Events",
+        desk: "Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.",
+        link: "/"
+    },
+]
+
 const TCA = () => {
     const isMobile = useAppSelector(state => state.user.isMobile)
-    const list = [
-        {
-            title: "Resource Access",
-            desk: "Visitors can access a wide range of resources, including ebooks, whitepapers, reports.",
-            link: "/"
-        },
-        {
-            title: "Community Forum",
-            desk: "Join our active community forum to discuss industry trends, share insights, and collaborate with peers.",
-            link: "/"
-        },
-        {
-            title: "Tech Events",
-            desk: "Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.",
-            link: "/"
-        },
-    ]
 
     return (
         <div className={style.TCAContainer}>

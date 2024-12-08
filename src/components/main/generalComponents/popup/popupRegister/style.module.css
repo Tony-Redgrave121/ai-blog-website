@@ -18,8 +18,8 @@
   height: 90px;
 }
 .FormContainer .FileBlock label img {
-  width: inherit;
-  height: inherit;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: 1px solid #262626;
   object-fit: cover;
@@ -61,6 +61,10 @@
     margin-bottom: 32px;
   }
   .FormContainer .FileBlock label {
+    width: 80px;
+    height: 80px;
+  }
+  .FormContainer .FileBlock label img {
     width: 80px;
     height: 80px;
   }

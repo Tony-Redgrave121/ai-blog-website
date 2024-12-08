@@ -5,10 +5,6 @@
   align-items: center;
 }
 
-.TopBanner a, .Header a {
-  font-family: "Inter", sans-serif;
-}
-
 .TopBanner {
   gap: 10px;
   height: 67px;
@@ -74,11 +70,13 @@
 }
 .Header .Navbar span .ProfileButtonActive {
   height: 46px;
+  width: 46px;
 }
 .Header .Navbar span .ProfileButtonActive img {
   border: 1px solid #262626;
   border-radius: 50%;
   height: 46px;
+  width: 46px;
   object-fit: cover;
 }
 .Header .Navbar span > :last-child {
@@ -135,9 +133,11 @@
   }
   .Header .Navbar span .ProfileButtonActive {
     height: 40px;
+    width: 40px;
   }
   .Header .Navbar span .ProfileButtonActive img {
     height: 40px;
+    width: 40px;
   }
   .Header .Navbar span > :last-child {
     font-size: 14px;
@@ -176,9 +176,11 @@
   }
   .Header .Navbar span .ProfileButtonActive {
     height: 35px;
+    width: 35px;
   }
   .Header .Navbar span .ProfileButtonActive img {
     height: 35px;
+    width: 35px;
   }
   .Header .Navbar span > :last-child {
     font-size: 14px;

@@ -61,6 +61,7 @@
       max-width: 868px;
 
       h1 {
+        white-space: wrap;
         @include m.font(white, 28px, 500, 36.4px)
       }
 

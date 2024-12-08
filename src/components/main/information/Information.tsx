@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {memo, useEffect, useState} from 'react'
 import style from "./style.module.css"
 import './animation.css'
 import {HiArrowDown, HiArrowUp, HiHeart, HiOutlineEye, HiOutlineHeart} from "react-icons/hi2";
@@ -37,7 +37,7 @@ const Information: React.FC<IBlogProps> = ({blog}) => {
         }
     }, [blog.content])
 
-    const ReactionBlock: React.FC<IReactionBlockProps> = (({likeState, likeCount, viewCount, replyCount}) => {
+    const ReactionBlock: React.FC<IReactionBlockProps> = memo(({likeState, likeCount, viewCount, replyCount}) => {
         return (
             <div className={style.ReactionBlock}>
                 <Button foo={() => {

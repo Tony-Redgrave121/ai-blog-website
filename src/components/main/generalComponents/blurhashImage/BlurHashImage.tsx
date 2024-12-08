@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {memo, useEffect, useRef, useState} from 'react'
 import {Blurhash} from "react-blurhash"
 import {CSSTransition} from "react-transition-group";
 import './animation.css'
@@ -13,14 +13,14 @@ interface IBlurHashImageProps {
     type?: string,
 }
 
-const BlurHashImage: React.FC<IBlurHashImageProps> = ({imagePath, hash, alt, width= '100%', height = '100%', type}) => {
+const BlurHashImage: React.FC<IBlurHashImageProps> = memo(({imagePath, hash, alt, width= '100%', height = '100%', type}) => {
     const [fileLoaded, setFileLoaded] = useState(false)
     const [fileBlob, setFileBlob] = useState('')
     const blurRef = useRef(null)
 
     useEffect(() => {
         const loadImage = async () => {
-            fetch(`http://localhost:5000/static/${imagePath}`)
+            fetch(`http://192.168.178.24:5000/static/${imagePath}`)
                 .then(resolve => resolve.blob())
                 .then(data => {
                     setFileBlob(URL.createObjectURL(data))
@@ -47,6 +47,6 @@ const BlurHashImage: React.FC<IBlurHashImageProps> = ({imagePath, hash, alt, wid
             </CSSTransition>
         </>
     )
-}
+})
 
 export default BlurHashImage

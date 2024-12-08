@@ -64,6 +64,8 @@
   }
   .ProfileContainer img {
     height: 80px;
+    width: 80px;
+    object-fit: cover;
   }
 }
 @media screen and (max-width: 1240px) {

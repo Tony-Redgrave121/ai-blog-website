@@ -60,6 +60,7 @@
     max-width: 868px;
   }
   .CrossingTitleSection > div h1 {
+    white-space: wrap;
     color: white;
     font-size: 28px;
     font-weight: 500;

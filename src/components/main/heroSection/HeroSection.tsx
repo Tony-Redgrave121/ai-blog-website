@@ -6,7 +6,7 @@ import {HiArrowUpRight} from "react-icons/hi2"
 import {Link, useNavigate} from "react-router-dom"
 import links from './json/links.json'
 import stats from './json/stats.json'
-import StatBlock from "../statBlock/StatBlock";
+import StatBlock from "../generalComponents/statBlock/StatBlock";
 import Developers from "../generalComponents/developer/Developers";
 
 const HeroSection = () => {

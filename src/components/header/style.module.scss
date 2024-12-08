@@ -8,12 +8,6 @@
   align-items: center;
 }
 
-.TopBanner, .Header {
-  a {
-    font-family: "Inter", sans-serif;
-  }
-}
-
 .TopBanner {
   gap: 10px;
   height: 67px;
@@ -87,11 +81,13 @@
 
       .ProfileButtonActive {
         height: 46px;
+        width: 46px;
 
         img {
           border: 1px solid v.$dark-shade-15;
           border-radius: 50%;
           height: 46px;
+          width: 46px;
           object-fit: cover;
         }
       }
@@ -165,9 +161,11 @@
 
         .ProfileButtonActive {
           height: 40px;
+          width: 40px;
 
           img {
             height: 40px;
+            width: 40px;
           }
         }
 
@@ -221,9 +219,11 @@
 
         .ProfileButtonActive {
           height: 35px;
+          width: 35px;
 
           img {
             height: 35px;
+            width: 35px;
           }
         }
 

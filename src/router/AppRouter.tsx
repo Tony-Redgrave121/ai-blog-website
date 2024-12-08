@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {lazy} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Layout from "../pages/Layout";
 import UserRoutes from "./UserRoutes";
-import NotFoundPage from "../pages/notFoundPage/NotFoundPage"
 
 const AppRouter = () => {
+    const NotFoundPage = lazy(() => import('../pages/notFoundPage/NotFoundPage'))
+
     return (
         <Routes>
             <Route path="/" element={<Layout/>}>

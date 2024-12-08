@@ -23,8 +23,8 @@
       height: 90px;
 
       img {
-        width: inherit;
-        height: inherit;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
         border: 1px solid v.$dark-shade-15;
         object-fit: cover;
@@ -75,6 +75,11 @@
       label {
         width: 80px;
         height: 80px;
+
+        img {
+          width: 80px;
+          height: 80px;
+        }
       }
     }
 

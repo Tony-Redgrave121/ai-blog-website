@@ -59,7 +59,7 @@ class UserController {
         try {
             const link = req.params.link
             const user: IUser | null = await models.users.findOne({where: {user_activation_link: link}}) as IUser | null
-            if (!user) return res.json(ApiError.notFound("User not found"))
+            if (!user) return res.json(ApiError.notFound("User not found")).redirect(process.env.CLIENT_URL!)
 
             user.user_state = true
             await user.save()

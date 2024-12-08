@@ -83,7 +83,6 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
   gap: 30px;
   color: #98989A;
   max-width: 960px;
@@ -95,6 +94,9 @@
   transform: rotate(35.39deg);
   width: 800px;
   mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
+}
+.StatContainer .TopSubContainer .RightContainer > div > span, .StatContainer .TopSubContainer .RightContainer > div .TextBlock {
+  z-index: 1;
 }
 .StatContainer .TopSubContainer .RightContainer > div .TextBlock h3 {
   color: white;

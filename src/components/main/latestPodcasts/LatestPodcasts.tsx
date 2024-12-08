@@ -5,12 +5,20 @@ import {HiArrowUpRight} from "react-icons/hi2";
 import Button from "../generalComponents/buttons/Button";
 import TripleContainer from "../generalComponents/tripleContainer/TripleContainer";
 import BlurHashImage from "../generalComponents/blurhashImage/BlurHashImage";
+import {useNavigate} from "react-router-dom";
 
 interface ILatestPodcastsProps {
     blocks: Array<IPodcast>
 }
 
 const LatestPodcasts: React.FC<ILatestPodcastsProps> = ({blocks}) => {
+    const navigate = useNavigate()
+    const ButtonContainer: React.FC<{foo: () => void}> = (({foo}) => (
+        <span>
+            <Button foo={() => foo()}>Listen Podcast <HiArrowUpRight/></Button>
+        </span>
+    ))
+
     return (
         <TripleContainer>
             {
@@ -20,9 +28,7 @@ const LatestPodcasts: React.FC<ILatestPodcastsProps> = ({blocks}) => {
                             <BlurHashImage imagePath={podcast.podcastVideo} hash={podcast.hash}></BlurHashImage>
                             <h2>{podcast.podcastTitle}</h2>
                             <p>{podcast.podcastDesc}</p>
-                            <span>
-                                <Button foo={() => {}}>Listen Podcast <HiArrowUpRight/></Button>
-                            </span>
+                            <ButtonContainer foo={() => navigate('/')}/>
                         </div>
                     </div>
                 ))

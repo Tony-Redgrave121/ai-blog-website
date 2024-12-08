@@ -13,7 +13,26 @@ import BlurHashImage from "../main/generalComponents/blurhashImage/BlurHashImage
 import {CSSTransition} from "react-transition-group";
 import useBody from "../../utils/hooks/useBody";
 
-const Header = () => {
+const links = [
+    {
+        link: '/',
+        title: 'Home',
+    },
+    {
+        link: '/news',
+        title: 'News',
+    },
+    {
+        link: '/podcast',
+        title: 'Podcasts',
+    },
+    {
+        link: '/resource',
+        title: 'Resources',
+    },
+]
+
+const Header = memo(() => {
     const header = useRef<HTMLHeadElement>(null)
     const backgroundRef = useRef(null)
     const navRef = useRef(null)
@@ -39,25 +58,6 @@ const Header = () => {
         window.addEventListener('scroll', () => handleBackground(26, 38))
         return () => window.removeEventListener('scroll', () => handleBackground)
     }, [handleBackground])
-
-    const links = [
-        {
-            link: '/',
-            title: 'Home',
-        },
-        {
-            link: '/news',
-            title: 'News',
-        },
-        {
-            link: '/podcast',
-            title: 'Podcasts',
-        },
-        {
-            link: '/resource',
-            title: 'Resources',
-        },
-    ]
 
     useEffect(() => {
         window.scrollTo({ top: 0 })
@@ -111,11 +111,15 @@ const Header = () => {
         )
     }))
 
+    const TopBanner = memo(() =>
+        <div className={style.TopBanner}>
+            <a href="/">Subscribe to our Newsletter For New & latest Blogs and TCA <HiArrowUpRight/></a>
+        </div>
+    )
+
     return (
         <>
-            <div className={style.TopBanner}>
-                <a href="/">Subscribe to our Newsletter For New & latest Blogs and TCA <HiArrowUpRight/></a>
-            </div>
+            <TopBanner />
             <header className={style.Header} ref={header}>
                 <div className={style.Navbar}>
                     <Link to="/"><img src={DesktopLogo} alt="Desktop Logo"/></Link>
@@ -142,6 +146,6 @@ const Header = () => {
             </header>
         </>
     )
-}
+})
 
 export default Header

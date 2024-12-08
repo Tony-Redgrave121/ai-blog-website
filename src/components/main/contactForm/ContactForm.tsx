@@ -10,7 +10,7 @@ import {useAppDispatch} from "../../../utils/hooks/redux"
 import InputBlock from "../generalComponents/inputBlock/InputBlock"
 
 const ContactForm = () => {
-    const { register, control, handleSubmit, formState: { errors } } = useForm()
+    const { register, control, handleSubmit, formState: {errors }} = useForm()
     const dispatch = useAppDispatch()
 
     const sendingOptions = {

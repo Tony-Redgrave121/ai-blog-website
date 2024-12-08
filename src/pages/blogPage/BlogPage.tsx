@@ -6,33 +6,20 @@ import sections from '../../components/main/headerSection/sections_2.json'
 import Button from "../../components/main/generalComponents/buttons/Button";
 import {HiArrowUpRight} from "react-icons/hi2";
 import {useParams} from 'react-router-dom'
+import fetchData from "../../utils/fetch/fetchData";
 
 const BlogPage = () => {
     const [blog, setBlog] = React.useState<IBlog>()
     const params = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/static/jsons/blogs/${params.id}.json`)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
-                return response.json()
-            })
-            .then(data => {
-                setBlog(data)
-            })
-            .catch(error => console.log(error))
-    }, [params.id])
+        const fetchAll = async () => {
+            const [blog] = await Promise.all([fetchData<IBlog>(`blogs/${params.id}.json`)])
+            setBlog(blog)
+        }
 
-    const createTitle = (title: string, button: React.ReactNode) => {
-        return (
-            <span>
-                <span>
-                    <h2>{title}</h2>
-                    <Button foo={() => {}}>{button}</Button>
-                </span>
-            </span>
-        )
-    }
+        fetchAll()
+    }, [params.id])
 
     return (
         <main>
@@ -40,9 +27,12 @@ const BlogPage = () => {
                 <Information blog={blog}/>
             }
             <HeaderSection sections={sections}>
-                {
-                    createTitle("Similar News", <>View All News <HiArrowUpRight/></>)
-                }
+                <span>
+                    <span>
+                        <h2>Similar News</h2>
+                        <Button foo={() => {}}>View All News <HiArrowUpRight/></Button>
+                    </span>
+                </span>
             </HeaderSection>
         </main>
     )
