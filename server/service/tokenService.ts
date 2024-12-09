@@ -10,13 +10,6 @@ class TokenService {
             return {accessToken, refreshToken}
         }
     }
-    validateAccessToken(token: string) {
-        try {
-            return process.env.SECRET_ACCESS_KEY && jwt.verify(token, process.env.SECRET_ACCESS_KEY)
-        } catch (e) {
-            return null
-        }
-    }
     validateRefreshToken(token: string) {
         try {
             return process.env.SECRET_REFRESH_KEY && jwt.verify(token, process.env.SECRET_REFRESH_KEY)

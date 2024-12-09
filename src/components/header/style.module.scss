@@ -90,6 +90,10 @@
           width: 46px;
           object-fit: cover;
         }
+
+        canvas {
+          border-radius: 50%;
+        }
       }
 
       > :last-child {

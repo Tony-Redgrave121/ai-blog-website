@@ -3,6 +3,7 @@ import {Blurhash} from "react-blurhash"
 import {CSSTransition} from "react-transition-group";
 import './animation.css'
 import Player from "../../videos/player/Player";
+import fetchImg from "../../../../utils/fetch/fetchImg";
 
 interface IBlurHashImageProps {
     imagePath: string,
@@ -20,16 +21,13 @@ const BlurHashImage: React.FC<IBlurHashImageProps> = memo(({imagePath, hash, alt
 
     useEffect(() => {
         const loadImage = async () => {
-            fetch(`http://192.168.178.24:5000/static/${imagePath}`)
-                .then(resolve => resolve.blob())
-                .then(data => {
-                    setFileBlob(URL.createObjectURL(data))
-                    setFileLoaded(true)
-                })
-                .catch(error => console.log(error))
+            const picture = await fetchImg(`${imagePath}`)
+            setFileBlob(URL.createObjectURL(picture))
+            setFileLoaded(true)
         }
+
         loadImage()
-    }, [imagePath, hash])
+    }, [imagePath])
 
     return (
         <>

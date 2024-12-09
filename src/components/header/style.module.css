@@ -79,6 +79,9 @@
   width: 46px;
   object-fit: cover;
 }
+.Header .Navbar span .ProfileButtonActive canvas {
+  border-radius: 50%;
+}
 .Header .Navbar span > :last-child {
   font-family: Inter, sans-serif;
   font-size: 18px;

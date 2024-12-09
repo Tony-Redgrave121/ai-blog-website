@@ -9,9 +9,9 @@ import {Link, useLocation} from "react-router-dom"
 import {useNavigate} from 'react-router-dom'
 import {updatePopupContent, updatePopupState} from "../../store/reducers/userReducer"
 import {useAppDispatch, useAppSelector} from "../../utils/hooks/redux"
-import BlurHashImage from "../main/generalComponents/blurhashImage/BlurHashImage";
 import {CSSTransition} from "react-transition-group";
-import useBody from "../../utils/hooks/useBody";
+import useBody from "../../utils/hooks/useBody"
+import fetchImg from "../../utils/fetch/fetchImg";
 
 const links = [
     {
@@ -40,9 +40,19 @@ const Header = memo(() => {
     const navigate = useNavigate()
     const location = useLocation()
     const [currentLocation, setCurrentLocation] = React.useState('')
+    const [profile, setProfile] = React.useState('')
     const dispatch = useAppDispatch()
     const {isAuth, userImg, userId, isMobile} = useAppSelector(state => state.user)
     useBody(isMobileOpen, backgroundRef)
+
+    useEffect(() => {
+        const loadImage = async () => {
+            const picture = await fetchImg(`users/${userId}/image/${userImg}`)
+            setProfile(URL.createObjectURL(picture))
+        }
+
+        userImg && loadImage()
+    }, [userId, userImg])
 
     const handleBackground = useDebouncedCallback((from: number, to: number) => {
         const pageHeight = document.documentElement.scrollHeight
@@ -64,11 +74,6 @@ const Header = memo(() => {
         setCurrentLocation(document.location.pathname)
     }, [location])
 
-    const handleProfile = (popup: string) => {
-        dispatch(updatePopupContent(popup))
-        dispatch(updatePopupState(true))
-    }
-
     const handleEvent = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>, foo: () => void) => {
         e.preventDefault()
         setIsMobileOpen(false)
@@ -76,15 +81,16 @@ const Header = memo(() => {
     }
 
     const RightButtons = () => {
+        const handleProfile = (popup: string) => {
+            dispatch(updatePopupContent(popup))
+            dispatch(updatePopupState(true))
+        }
+
         return (
             <span>
                 {isAuth ?
                     <button onClick={e => handleEvent(e, () => handleProfile('profile'))} className={style.ProfileButtonActive}>
-                        {userImg ?
-                            <BlurHashImage imagePath={`users/${userId}/image/${userImg}`} hash='K9J8V04n00~q%MD%00-;%M' alt='profile'></BlurHashImage>
-                            :
-                            <img src={require('../../utils/icons/profile/default-image.webp')} alt="profile"/>
-                        }
+                        <img src={(userImg && profile) ? profile : require('../../utils/icons/profile/default-image.webp')} alt="profile"/>
                     </button>
                     :
                     <button onClick={e => handleEvent(e, () => handleProfile('register'))} className={style.ProfileButton}><HiMiniUser/></button>

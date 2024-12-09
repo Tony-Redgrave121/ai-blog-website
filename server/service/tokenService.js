@@ -56,14 +56,6 @@ class TokenService {
             return { accessToken, refreshToken };
         }
     }
-    validateAccessToken(token) {
-        try {
-            return process.env.SECRET_ACCESS_KEY && jsonwebtoken_1.default.verify(token, process.env.SECRET_ACCESS_KEY);
-        }
-        catch (e) {
-            return null;
-        }
-    }
     validateRefreshToken(token) {
         try {
             return process.env.SECRET_REFRESH_KEY && jsonwebtoken_1.default.verify(token, process.env.SECRET_REFRESH_KEY);

@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import {useRef, useState} from "react"
 
 const useContentBlock = () => {
     const [blockState, setBlockState] = useState(false)

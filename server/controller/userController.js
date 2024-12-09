@@ -76,7 +76,7 @@ class UserController {
                 const link = req.params.link;
                 const user = yield models_1.default.users.findOne({ where: { user_activation_link: link } });
                 if (!user)
-                    return res.json(ApiError_1.default.notFound("User not found"));
+                    return res.json(ApiError_1.default.notFound("User not found")).redirect(process.env.CLIENT_URL);
                 user.user_state = true;
                 yield user.save();
                 return res.redirect(process.env.CLIENT_URL);
