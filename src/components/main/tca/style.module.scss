@@ -3,20 +3,31 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 
 .TCAContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: v.$dark-shade-10;
   padding: 120px 162px;
   border-bottom: 1px solid v.$dark-shade-15;
 
   > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 100px;
     max-width: 1920px;
     width: 100%;
 
     > :first-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 80px;
 
@@ -25,11 +36,18 @@
       }
 
       > :last-child {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 30px;
 
         section {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
 
           h3 {
@@ -52,6 +70,8 @@
     }
 
     > :last-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 20px;
       padding: 20px;
@@ -60,7 +80,12 @@
       background-color: v.$dark-shade-08;
 
       div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 20px;
         padding: 40px;
@@ -69,15 +94,25 @@
         background-color: v.$dark-shade-10;
 
         section {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
 
           a {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             padding: 14px;
             background-color: v.$yellow-shade-55;
             border-radius: 100px;
+            -webkit-transition: background-color .2s ease-in-out;
+            -o-transition: background-color .2s ease-in-out;
             transition: background-color .2s ease-in-out;
 
             &:hover {
@@ -176,12 +211,19 @@
       gap: 40px;
 
       > :first-child {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 20px;
 
         > :first-child {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           gap: 20px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           img {
             width: 60px;
@@ -206,6 +248,9 @@
       }
 
       > :last-child {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 10px;
         padding: 10px;

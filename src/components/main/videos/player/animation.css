@@ -4,6 +4,8 @@
 
 .player-controller-node-enter-done {
     opacity: 1!important;
+    -webkit-transition: .3s opacity ease-in-out;
+    -o-transition: .3s opacity ease-in-out;
     transition: .3s opacity ease-in-out;
 }
 
@@ -13,5 +15,7 @@
 
 .player-controller-node-exit-done {
     opacity: 0!important;
+    -webkit-transition: .3s opacity ease-in-out;
+    -o-transition: .3s opacity ease-in-out;
     transition: .3s opacity ease-in-out;
 }

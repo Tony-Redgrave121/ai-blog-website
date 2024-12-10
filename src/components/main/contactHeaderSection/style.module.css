@@ -1,6 +1,11 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .ContactHeaderBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 50px;
 }
@@ -17,19 +22,29 @@
   line-height: 27px;
 }
 .ContactHeaderBlock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 15px;
 }
 .ContactHeaderBlock:last-child button svg {
   color: white;
   font-size: 24px;
+  -webkit-transition: 0.2s color ease-in-out;
+  -o-transition: 0.2s color ease-in-out;
   transition: 0.2s color ease-in-out;
 }
 .ContactHeaderBlock:last-child button:hover svg {
   color: #FFD11A;
 }
 .ContactHeaderBlock:last-child > div {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   gap: 20px;
 }

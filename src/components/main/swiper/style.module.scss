@@ -1,0 +1,267 @@
+@use '../../../utils/styles/base/_variables' as v;
+@use "../../../utils/styles/base/_mixin.scss" as m;
+@import url("../../../utils/styles/base/_normalize.scss");
+
+.SwiperContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 120px 162px;
+  background-color: v.$dark-shade-10;
+  border-bottom: 1px solid v.$dark-shade-15;
+
+  > :first-child {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    overflow: hidden;
+
+    > :first-child {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+      will-change: transform;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      gap: 20px;
+      padding-bottom: 50px;
+      -webkit-transition: .3s all ease-in-out;
+      -o-transition: .3s all ease-in-out;
+      transition: .3s all ease-in-out;
+
+      > article {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        gap: 30px;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc((100% - 40px) / 3);
+        flex: 0 0 calc((100% - 40px) / 3);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid v.$dark-shade-15;
+
+        > div {
+          height: 280px;
+
+          canvas, img {
+            height: inherit;
+            border-radius: 12px;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+
+        span {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          gap: 20px;
+
+          button {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            padding: 18px 24px;
+          }
+        }
+
+        h2 {
+          @include m.font(white, 22px, 600, 33px);
+        }
+
+        p {
+          @include m.font(v.$grey-shade-60, 18px, 400, 27px);
+        }
+      }
+    }
+  }
+
+  .SwipeBlock {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+
+    .RightButton {
+      margin-left: auto;
+    }
+
+    button {
+      opacity: .6;
+      padding: 10px;
+      font-size: 24px;
+      border: 1px solid v.$dark-shade-15;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      background-color: v.$dark-shade-08;
+      -webkit-transition: .2s opacity ease-in-out;
+      -o-transition: .2s opacity ease-in-out;
+      transition: .2s opacity ease-in-out;
+
+      svg {
+        color: v.$yellow-shade-55;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ControlBlock {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+
+    button {
+      background-color: v.$dark-shade-08;
+      border: 1px solid v.$dark-shade-15;
+      border-radius: 50%;
+      -webkit-transition: .3s background-color ease-in-out;
+      -o-transition: .3s background-color ease-in-out;
+      transition: .3s background-color ease-in-out;
+      width: 17px;
+      height: 17px;
+
+      &:hover {
+        background-color: v.$yellow-shade-55;
+      }
+    }
+
+    .ActiveButton {
+      background-color: v.$yellow-shade-55;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .SwiperContainer {
+    padding: 80px;
+
+    > :first-child {
+      > :first-child {
+        padding-bottom: 50px;
+
+        > article {
+          gap: 15px;
+
+          > div {
+            height: 200px;
+          }
+
+          span {
+            gap: 10px;
+
+            button {
+              padding: 16px 22px;
+            }
+          }
+
+          h2 {
+            @include m.font(white, 21px, 600, 24px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 16px, 400, 21px);
+          }
+        }
+      }
+    }
+
+    .ControlBlock {
+      bottom: 90px;
+      gap: 8px;
+
+      button {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .SwiperContainer {
+    padding: 40px 16px;
+
+    > :first-child {
+      max-width: 868px;
+
+      > :first-child {
+        padding-bottom: 50px;
+
+        > article {
+          gap: 15px;
+          -webkit-box-flex: 0;
+          -ms-flex: none;
+          flex: none;
+          padding: 15px;
+          border-radius: 10px;
+          width: 100%;
+
+          > div {
+            height: 200px;
+          }
+
+          span {
+            gap: 10px;
+
+            button {
+              padding: 14px 20px;
+            }
+          }
+
+          h2 {
+            @include m.font(white, 18px, 600, 21px);
+          }
+
+          p {
+            @include m.font(v.$grey-shade-60, 14px, 400, 18px);
+          }
+        }
+      }
+    }
+
+    .SwipeBlock {
+      padding: 0 15px;
+    }
+
+    .ControlBlock {
+      bottom: 60px;
+      gap: 8px;
+
+      button {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}

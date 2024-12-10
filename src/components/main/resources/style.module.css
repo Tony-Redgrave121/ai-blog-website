@@ -21,7 +21,12 @@
 }
 
 .ResourceContainerLeft > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 50px;
   padding-right: 80px;
@@ -46,11 +51,18 @@
   max-height: 332px;
   border-radius: 12px;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .ResourceContainerRight .ResourceTitleBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 30px;
 }
@@ -69,13 +81,23 @@
   line-height: 27px;
 }
 .ResourceContainerRight > :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
 .ResourceContainerMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   gap: 30px;
 }
 .ResourceContainerMore h2 {
@@ -93,10 +115,13 @@
 .ResourceContainerMore img {
   max-height: 290px;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
 }
 .ResourceContainerMore span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
@@ -229,7 +254,12 @@
     max-height: 165px;
   }
   .ResourceContainerRight .ResourceTitleBlock {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
     gap: 20px;
   }
@@ -247,6 +277,7 @@
     line-height: 21px;
   }
   .ResourceContainerRight > :last-child {
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 10px;
   }

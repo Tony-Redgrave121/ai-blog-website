@@ -1,5 +1,7 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
 .RateBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 7px;
   background-color: #141414;

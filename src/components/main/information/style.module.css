@@ -4,9 +4,15 @@
 }
 .InformationContainer > :first-child {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-line-pack: end;
   align-content: end;
   border-bottom: 1px solid #262626;
   background-position: center;
@@ -28,6 +34,7 @@
 }
 .InformationContainer > :first-child > div img {
   position: absolute;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .InformationContainer > :first-child > div:after {
@@ -47,7 +54,11 @@
   border-bottom: 1px solid #262626;
 }
 .InformationContainer > :last-child > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .InformationContainer > :last-child > div .SideBar {
@@ -64,6 +75,8 @@
   max-width: 880px;
 }
 .InformationContainer > :last-child > div .SideBar .ReactionBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 14px;
 }
@@ -71,7 +84,12 @@
   padding: 80px 162px 80px 80px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 50px;
 }
@@ -85,12 +103,20 @@
   line-height: 27px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 30px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
   width: calc(50% - 15px);
@@ -102,7 +128,12 @@
   line-height: 27px;
 }
 .InformationContainer > :last-child > div .SideBar > :last-child ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
@@ -132,14 +163,23 @@
   background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 60%);
 }
 .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
   padding: 80px 80px 80px 162px;
   border-right: 1px solid #262626;
   border-bottom: 1px solid #262626;
 }
 .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
   max-width: 880px;
@@ -169,7 +209,11 @@
   z-index: 2;
   width: 100%;
   padding-left: 162px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   max-width: 1122px;
 }
@@ -262,23 +306,43 @@
     line-height: 42px;
   }
   .InformationContainer > :last-child > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .InformationContainer > :last-child > div .SideBar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
     order: 0;
     width: 100%;
     border-bottom: 1px solid #262626;
   }
   .InformationContainer > :last-child > div .SideBar > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 20px;
   }
   .InformationContainer > :last-child > div .SideBar > :last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 40px 24px;
   }
@@ -306,10 +370,14 @@
     line-height: 21px;
   }
   .InformationContainer .ContentBlock {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
     order: 1;
     width: 100%;
   }
   .InformationContainer .ContentBlock > div:not(.ButtonBlock) > div {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 40px 24px;
     border-right: none;

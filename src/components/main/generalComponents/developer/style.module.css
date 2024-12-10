@@ -1,9 +1,13 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
 .DeveloperContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   z-index: 1;
 }
 .DeveloperContainer .DeveloperBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 100px;
   background-color: #1A1A1A;

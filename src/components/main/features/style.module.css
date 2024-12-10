@@ -1,14 +1,25 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .FeatureContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #141414;
   padding: 0 162px;
   border-bottom: 1px solid #262626;
 }
 .FeatureContainer .FeatureContainerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 50px;
   padding-right: 80px;
@@ -34,7 +45,10 @@
   line-height: 27px;
 }
 .FeatureContainer .FeatureContainerRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 20px;
   padding: 80px 0 80px 80px;
@@ -106,7 +120,12 @@
 }
 @media screen and (max-width: 1240px) {
   .FeatureContainer {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 0 16px;
   }
@@ -135,6 +154,8 @@
     line-height: 21px;
   }
   .FeatureContainer .FeatureContainerRight {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 30px 16px;
     gap: 10px;

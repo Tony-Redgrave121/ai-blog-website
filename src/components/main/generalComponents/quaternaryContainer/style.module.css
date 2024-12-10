@@ -1,13 +1,21 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
 .QuaternaryContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 0 162px;
   border-bottom: 1px solid #262626;
   background-color: #141414;
 }
 .QuaternaryContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   max-width: 1920px;
@@ -52,6 +60,9 @@
     padding: 0 16px;
   }
   .QuaternaryContainer > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     max-width: 868px;
   }
@@ -67,15 +78,23 @@
     padding: 0;
   }
   .DoubleContainer > div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     max-width: none;
   }
   .DoubleContainer > div > :nth-child(odd) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: end;
     border-right: 1px solid #262626;
   }
   .DoubleContainer > div > :nth-child(even) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: start;
   }
   .DoubleContainer > div > :nth-child(1), .DoubleContainer > div > :nth-child(2) {
@@ -90,8 +109,15 @@
     border-left: none;
   }
   .DoubleContainer > div > div > div, .DoubleContainer > div > :nth-child(1) > div, .DoubleContainer > div > :nth-child(2) > div, .DoubleContainer > div > :nth-child(3) > div, .DoubleContainer > div > :nth-child(4) > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100%;
     max-width: 434px;

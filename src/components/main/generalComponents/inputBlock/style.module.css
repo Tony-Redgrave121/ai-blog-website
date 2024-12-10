@@ -2,7 +2,10 @@
 .InputBlock {
   font-family: Inter, sans-serif;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 16px;
   width: 50%;
@@ -20,6 +23,8 @@
   background-color: #1A1A1A;
   width: 100%;
   height: auto;
+  -webkit-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out;
   color: #666666;
   font-size: 18px;

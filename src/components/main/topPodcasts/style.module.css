@@ -1,6 +1,10 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .PodcastContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #141414;
   padding: 0 162px;
@@ -19,7 +23,11 @@
   line-height: 30px;
 }
 .PodcastContainer .PodcastContainerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 40%;
   max-width: 768px;
@@ -27,7 +35,12 @@
   padding-right: 80px;
 }
 .PodcastContainer .PodcastContainerLeft > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 50px;
   width: 100%;
@@ -36,8 +49,14 @@
   width: 80px;
 }
 .PodcastContainer .PodcastContainerLeft > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 16px;
 }
@@ -55,7 +74,11 @@
   line-height: 30px;
 }
 .PodcastContainer .PodcastContainerLeft > div > :last-child > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 50px;
   background-color: #1A1A1A;
@@ -65,15 +88,25 @@
   width: 100%;
 }
 .PodcastContainer .PodcastContainerRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 80px 0 80px 80px;
   width: 60%;
   max-width: 1152px;
 }
 .PodcastContainer .PodcastContainerRight > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
 }
@@ -95,7 +128,11 @@
   line-height: 27px;
 }
 .PodcastContainer .PodcastContainerRight > :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 20px;
 }
@@ -162,6 +199,7 @@
   .PodcastContainer .PodcastContainerRight > span video {
     max-height: 297px;
     border-radius: 16px;
+    -o-object-fit: cover;
     object-fit: cover;
   }
   .PodcastContainer .PodcastContainerRight > span h2 {
@@ -186,7 +224,12 @@
 }
 @media screen and (max-width: 1240px) {
   .PodcastContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 0 16px;
   }
@@ -203,6 +246,8 @@
     line-height: 24px;
   }
   .PodcastContainer .PodcastContainerLeft {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 40px 0;
     border-right: none;
@@ -259,6 +304,9 @@
     line-height: 21px;
   }
   .PodcastContainer .PodcastContainerRight > :last-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 14px;
   }

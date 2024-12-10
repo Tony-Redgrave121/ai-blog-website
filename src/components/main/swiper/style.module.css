@@ -1,0 +1,243 @@
+@import url("../../../utils/styles/base/_normalize.scss");
+.SwiperContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 120px 162px;
+  background-color: #1A1A1A;
+  border-bottom: 1px solid #262626;
+}
+.SwiperContainer > :first-child {
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+  overflow: hidden;
+}
+.SwiperContainer > :first-child > :first-child {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 50px;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+.SwiperContainer > :first-child > :first-child > article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 30px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc((100% - 40px) / 3);
+  flex: 0 0 calc((100% - 40px) / 3);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+}
+.SwiperContainer > :first-child > :first-child > article > div {
+  height: 280px;
+}
+.SwiperContainer > :first-child > :first-child > article > div canvas, .SwiperContainer > :first-child > :first-child > article > div img {
+  height: inherit;
+  border-radius: 12px;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.SwiperContainer > :first-child > :first-child > article span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.SwiperContainer > :first-child > :first-child > article span button {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 18px 24px;
+}
+.SwiperContainer > :first-child > :first-child > article h2 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+}
+.SwiperContainer > :first-child > :first-child > article p {
+  color: #98989A;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.SwiperContainer .SwipeBlock {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+}
+.SwiperContainer .SwipeBlock .RightButton {
+  margin-left: auto;
+}
+.SwiperContainer .SwipeBlock button {
+  opacity: 0.6;
+  padding: 10px;
+  font-size: 24px;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: #141414;
+  -webkit-transition: 0.2s opacity ease-in-out;
+  -o-transition: 0.2s opacity ease-in-out;
+  transition: 0.2s opacity ease-in-out;
+}
+.SwiperContainer .SwipeBlock button svg {
+  color: #FFD11A;
+}
+.SwiperContainer .SwipeBlock button:hover {
+  opacity: 1;
+}
+.SwiperContainer .ControlBlock {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+.SwiperContainer .ControlBlock button {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  -webkit-transition: 0.3s background-color ease-in-out;
+  -o-transition: 0.3s background-color ease-in-out;
+  transition: 0.3s background-color ease-in-out;
+  width: 17px;
+  height: 17px;
+}
+.SwiperContainer .ControlBlock button:hover {
+  background-color: #FFD11A;
+}
+.SwiperContainer .ControlBlock .ActiveButton {
+  background-color: #FFD11A;
+}
+
+@media screen and (max-width: 1680px) {
+  .SwiperContainer {
+    padding: 80px;
+  }
+  .SwiperContainer > :first-child > :first-child {
+    padding-bottom: 50px;
+  }
+  .SwiperContainer > :first-child > :first-child > article {
+    gap: 15px;
+  }
+  .SwiperContainer > :first-child > :first-child > article > div {
+    height: 200px;
+  }
+  .SwiperContainer > :first-child > :first-child > article span {
+    gap: 10px;
+  }
+  .SwiperContainer > :first-child > :first-child > article span button {
+    padding: 16px 22px;
+  }
+  .SwiperContainer > :first-child > :first-child > article h2 {
+    color: white;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .SwiperContainer > :first-child > :first-child > article p {
+    color: #98989A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .SwiperContainer .ControlBlock {
+    bottom: 90px;
+    gap: 8px;
+  }
+  .SwiperContainer .ControlBlock button {
+    width: 17px;
+    height: 17px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .SwiperContainer {
+    padding: 40px 16px;
+  }
+  .SwiperContainer > :first-child {
+    max-width: 868px;
+  }
+  .SwiperContainer > :first-child > :first-child {
+    padding-bottom: 50px;
+  }
+  .SwiperContainer > :first-child > :first-child > article {
+    gap: 15px;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .SwiperContainer > :first-child > :first-child > article > div {
+    height: 200px;
+  }
+  .SwiperContainer > :first-child > :first-child > article span {
+    gap: 10px;
+  }
+  .SwiperContainer > :first-child > :first-child > article span button {
+    padding: 14px 20px;
+  }
+  .SwiperContainer > :first-child > :first-child > article h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+  .SwiperContainer > :first-child > :first-child > article p {
+    color: #98989A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  .SwiperContainer .SwipeBlock {
+    padding: 0 15px;
+  }
+  .SwiperContainer .ControlBlock {
+    bottom: 60px;
+    gap: 8px;
+  }
+  .SwiperContainer .ControlBlock button {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/*# sourceMappingURL=style.module.css.map */

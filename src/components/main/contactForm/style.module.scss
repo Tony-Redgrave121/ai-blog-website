@@ -4,7 +4,12 @@
 
 .ResourceContainerLeft {
   > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 50px;
     padding-right: 80px;
@@ -21,12 +26,19 @@
 
 .ResourceContainerRight {
   form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 50px;
 
     > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 50px;
       width: 100%;
@@ -40,15 +52,25 @@
 
     > :last-child {
       > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 20px;
 
         span {
           position: relative;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           gap: 10px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
 
           input {
@@ -73,6 +95,8 @@
               height: 10px;
               border: solid v.$dark-shade-10;
               border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
               transform: rotate(45deg);
             }
           }
@@ -167,6 +191,9 @@
   .ResourceContainerRight {
     form {
       > div {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 30px;
 

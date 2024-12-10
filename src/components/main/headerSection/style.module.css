@@ -1,18 +1,35 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .HeaderSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background-color: #141414;
 }
 .HeaderSection > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 80px 162px 0 162px;
 }
 .HeaderSection > span span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   max-width: 1920px;
@@ -27,26 +44,41 @@
   border-bottom: 1px solid #262626;
 }
 .HeaderSection > div .HeaderBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 80px 162px;
 }
 .HeaderSection > div .HeaderBlock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 30px;
   max-width: 1920px;
 }
 .HeaderSection > div .HeaderBlock > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .HeaderSection > div .HeaderBlock > div > div img {
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
 }
 .HeaderSection > div .HeaderBlock > div > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
   align-content: space-between;
   width: 100%;
 }
@@ -57,6 +89,8 @@
   line-height: 30px;
 }
 .HeaderSection > div .HeaderBlock > div > div > div .StatContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 50px;
   width: 100%;
@@ -72,12 +106,20 @@
   color: white;
 }
 .HeaderSection > div .HeaderBlock > div > div > div > :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
 }
 .HeaderSection > div .HeaderBlock > div > div > div > :last-child span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
@@ -94,6 +136,7 @@
 .HeaderSection > div .WideSection > :first-child img {
   max-width: inherit;
   max-height: inherit;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .HeaderSection > div .WideSection > div {
@@ -107,6 +150,9 @@
   line-height: 48px;
 }
 .HeaderSection > div .ShortSection {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
   height: 100%;
@@ -116,6 +162,7 @@
   height: 222px !important;
 }
 .HeaderSection > div .ShortSection > :first-child img {
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .HeaderSection > div .ShortSection > div {
@@ -179,6 +226,7 @@
   .HeaderSection > div .WideSection > :first-child img {
     max-width: inherit;
     max-height: inherit;
+    -o-object-fit: cover;
     object-fit: cover;
   }
   .HeaderSection > div .WideSection > div {
@@ -212,6 +260,8 @@
 }
 @media screen and (max-width: 1240px) {
   .HeaderSection > span {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 40px 16px 0 16px;
   }
@@ -229,6 +279,9 @@
     padding: 40px 16px;
   }
   .HeaderSection > div .HeaderBlock > div, .HeaderSection > div .HeaderBlock > div > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
     max-width: 868px;

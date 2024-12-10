@@ -1,17 +1,30 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .TestimonialsBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .TestimonialsBlock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 60px;
   width: 100%;
   max-width: 640px;
 }
 .TestimonialsBlock > div > :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 12px;
 }
@@ -42,7 +55,11 @@
 .TestimonialsBlock > div > :last-child > :first-child {
   position: relative;
   top: -35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .TestimonialsBlock > div > :last-child p {
@@ -89,6 +106,8 @@
 }
 @media screen and (max-width: 1240px) {
   .TestimonialsBlock {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .TestimonialsBlock > div {

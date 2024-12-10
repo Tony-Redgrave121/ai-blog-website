@@ -23,8 +23,15 @@
   line-height: 27px;
 }
 .ProfileContainer, .ProfileContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .ProfileContainer > div {
@@ -34,6 +41,7 @@
   border: 1px solid #262626;
   border-radius: 50%;
   height: 100px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -65,6 +73,7 @@
   .ProfileContainer img {
     height: 80px;
     width: 80px;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 }

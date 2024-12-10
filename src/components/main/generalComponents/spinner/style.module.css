@@ -1,7 +1,13 @@
 @import url("../../../../utils/styles/base/_normalize.scss");
 .LoaderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #141414;
   height: 100vh;
@@ -13,17 +19,35 @@
   height: 48px;
   left: -40px;
   border-radius: 4px;
+  -webkit-animation: loader 2s linear infinite alternate;
   animation: loader 2s linear infinite alternate;
 }
 
-@keyframes loader {
+@-webkit-keyframes loader {
   0% {
+    -webkit-box-shadow: 20px 0 #141414, 40px 0 white, 60px 0 white;
     box-shadow: 20px 0 #141414, 40px 0 white, 60px 0 white;
   }
   50% {
+    -webkit-box-shadow: 20px 0 white, 40px 0 #141414, 60px 0 white;
     box-shadow: 20px 0 white, 40px 0 #141414, 60px 0 white;
   }
   100% {
+    -webkit-box-shadow: 20px 0 white, 40px 0 white, 60px 0 #141414;
+    box-shadow: 20px 0 white, 40px 0 white, 60px 0 #141414;
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-box-shadow: 20px 0 #141414, 40px 0 white, 60px 0 white;
+    box-shadow: 20px 0 #141414, 40px 0 white, 60px 0 white;
+  }
+  50% {
+    -webkit-box-shadow: 20px 0 white, 40px 0 #141414, 60px 0 white;
+    box-shadow: 20px 0 white, 40px 0 #141414, 60px 0 white;
+  }
+  100% {
+    -webkit-box-shadow: 20px 0 white, 40px 0 white, 60px 0 #141414;
     box-shadow: 20px 0 white, 40px 0 white, 60px 0 #141414;
   }
 }

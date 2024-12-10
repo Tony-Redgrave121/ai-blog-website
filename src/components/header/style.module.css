@@ -1,7 +1,13 @@
 @import url("../../utils/styles/base/_normalize.scss");
 .Header, .TopBanner, .TopBanner a, .Navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -26,13 +32,20 @@
   position: sticky;
   top: -1px;
   z-index: 5;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid #262626;
   background-color: #1A1A1A;
+  -webkit-transition: 0.3s background-color ease;
+  -o-transition: 0.3s background-color ease;
   transition: 0.3s background-color ease;
   padding: 24px 162px;
 }
 .Header .Navbar {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   max-width: 1920px;
   width: 100%;
@@ -41,23 +54,35 @@
   height: 50px;
 }
 .Header .Navbar > button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 34px;
   color: white;
+  -webkit-transition: 0.2s color ease-in-out;
+  -o-transition: 0.2s color ease-in-out;
   transition: 0.2s color ease-in-out;
 }
 .Header .Navbar > button:hover {
   color: #B3B3B3;
 }
 .Header .Navbar span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 24px;
 }
 .Header .Navbar span > * {
+  -webkit-transition: 0.2s background-color ease-in-out;
+  -o-transition: 0.2s background-color ease-in-out;
   transition: 0.2s background-color ease-in-out;
 }
 .Header .Navbar span .ProfileButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: white;
   font-size: 38px;
@@ -77,6 +102,7 @@
   border-radius: 50%;
   height: 46px;
   width: 46px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .Header .Navbar span .ProfileButtonActive canvas {
@@ -95,6 +121,8 @@
   background-color: #FFD11A;
 }
 .Header .Navbar .ButtonContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
@@ -103,6 +131,8 @@
   padding: 14px 24px;
   color: #7E7E81;
   border: 1px solid rgba(0, 0, 0, 0);
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }
 .Header .Navbar .ButtonContainer ul a:hover {
@@ -203,9 +233,18 @@
   }
   .Header .Navbar .ButtonContainer {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 30px;
     top: 0;
@@ -219,8 +258,15 @@
     cursor: auto;
   }
   .Header .Navbar .ButtonContainer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 30px;
   }

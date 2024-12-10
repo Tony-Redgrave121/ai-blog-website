@@ -27,6 +27,7 @@
         height: 90px;
         border-radius: 50%;
         border: 1px solid v.$dark-shade-15;
+        -o-object-fit: cover;
         object-fit: cover;
         cursor: pointer;
       }
@@ -39,8 +40,15 @@
 
   > :last-child {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 8px;
 
@@ -53,6 +61,8 @@
     }
 
     p {
+      -webkit-transition: .2s color ease-in-out;
+      -o-transition: .2s color ease-in-out;
       transition: .2s color ease-in-out;
       cursor: pointer;
 

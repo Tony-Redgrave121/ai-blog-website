@@ -7,7 +7,11 @@
   position: absolute;
   bottom: 2px;
   left: -12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   height: 100%;
   width: calc(100% + 24px);
@@ -26,7 +30,11 @@
   margin-top: auto;
 }
 .VideoPlayer span time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: end;
   font-family: "Inter", sans-serif;
   color: #7E7E81;
@@ -37,6 +45,8 @@
 .VideoPlayer .Short svg {
   left: 50%;
   bottom: 50%;
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%);
 }
 

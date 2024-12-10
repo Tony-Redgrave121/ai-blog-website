@@ -4,7 +4,11 @@
 }
 
 .Button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
   font-size: 18px;
@@ -14,6 +18,8 @@
   border: 1px solid #333333;
   color: #98989A;
   white-space: nowrap;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 .Button:hover {
@@ -25,6 +31,8 @@
 }
 
 .SelectButton {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 30px 24px;
   max-width: 250px;

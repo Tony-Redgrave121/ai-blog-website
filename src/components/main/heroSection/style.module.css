@@ -4,20 +4,33 @@
   border-bottom: 1px solid #262626;
 }
 .StatContainer .TopSubContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .StatContainer .TopSubContainer .LeftContainer {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   border-right: 1px solid #262626;
   width: 50%;
 }
 .StatContainer .TopSubContainer .LeftContainer .TextBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
   padding: 162px;
 }
 .StatContainer .TopSubContainer .LeftContainer .TextBlock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
   font-family: "Kumbh Sans", sans-serif;
@@ -41,27 +54,44 @@
   line-height: 27px;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
   padding-left: 162px;
   border-top: 1px solid #262626;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 960px;
   width: 100%;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(1) {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
   flex: 3;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(2) {
+  -webkit-box-flex: 2.5;
+  -ms-flex: 2.5;
   flex: 2.5;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > :nth-child(3) {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
   flex: 2;
 }
 .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: left;
   padding: 50px 0 50px 0;
@@ -74,14 +104,23 @@
 }
 .StatContainer .TopSubContainer .RightContainer {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 150px 162px 80px 80px;
   width: 50%;
   overflow: hidden;
 }
 .StatContainer .TopSubContainer .RightContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
   color: #98989A;
@@ -91,8 +130,11 @@
   position: absolute;
   top: -45px;
   left: -70px;
+  -webkit-transform: rotate(35.39deg);
+  -ms-transform: rotate(35.39deg);
   transform: rotate(35.39deg);
   width: 800px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
   mask-image: linear-gradient(to bottom, transparent, #141414 50%, transparent);
 }
 .StatContainer .TopSubContainer .RightContainer > div > span, .StatContainer .TopSubContainer .RightContainer > div .TextBlock {
@@ -108,21 +150,33 @@
   line-height: 27px;
 }
 .StatContainer .DownSubContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   padding: 0 162px;
   border-top: 1px solid #262626;
 }
 .StatContainer .DownSubContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 1920px;
 }
 .StatContainer .DownSubContainer > div .LinkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 30px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   padding: 50px 80px 50px 80px;
 }
@@ -136,7 +190,12 @@
   padding: 50px 0 50px 80px;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
   width: 100%;
@@ -145,7 +204,11 @@
   width: 50px;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock > div h3 {
@@ -164,16 +227,26 @@
   line-height: 27px;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 14px;
   border-radius: 100px;
   color: black;
   background-color: #FFD11A;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 .StatContainer .DownSubContainer > div .LinkContainer .LinkBlock span a:hover {
@@ -273,6 +346,9 @@
 }
 @media screen and (max-width: 1240px) {
   .StatContainer .TopSubContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .StatContainer .TopSubContainer .LeftContainer {
@@ -280,6 +356,8 @@
     border-right: none;
   }
   .StatContainer .TopSubContainer .LeftContainer .TextBlock {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 40px 16px;
   }
@@ -303,6 +381,8 @@
     line-height: 21px;
   }
   .StatContainer .TopSubContainer .LeftContainer .StatBlockContainer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 0 16px;
   }
@@ -316,6 +396,8 @@
     padding-left: 30px;
   }
   .StatContainer .TopSubContainer .RightContainer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
     padding: 100px 40px 40px 40px;
@@ -342,9 +424,14 @@
     padding: 0 16px;
   }
   .StatContainer .DownSubContainer > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .StatContainer .DownSubContainer > div .LinkContainer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 16px;
     padding: 30px 0;

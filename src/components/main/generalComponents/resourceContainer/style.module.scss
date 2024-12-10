@@ -4,14 +4,22 @@
 
 .ResourceContainer {
   > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     background-color: v.$dark-shade-08;
     padding: 0 162px;
     border-bottom: 1px solid v.$dark-shade-15;
 
     > :first-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       width: 40%;
       max-width: 768px;
@@ -19,8 +27,13 @@
     }
 
     > :last-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 30px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       padding: 80px 0 80px 80px;
       width: 60%;
@@ -45,7 +58,12 @@
 @media screen and (max-width: 1240px) {
   .ResourceContainer {
     > div {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       padding: 40px 16px;
       gap: 40px;

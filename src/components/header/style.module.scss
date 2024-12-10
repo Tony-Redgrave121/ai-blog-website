@@ -3,8 +3,14 @@
 @import url("../../utils/styles/base/_normalize.scss");
 
 .Header, .TopBanner, .TopBanner a, .Navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -31,13 +37,20 @@
   position: sticky;
   top: -1px;
   z-index: 5;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid v.$dark-shade-15;
   background-color: v.$dark-shade-10;
+  -webkit-transition: .3s background-color ease;
+  -o-transition: .3s background-color ease;
   transition: .3s background-color ease;
   padding: 24px 162px;
 
   .Navbar {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     max-width: 1920px;
     width: 100%;
@@ -47,9 +60,13 @@
     }
 
     > button {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       font-size: 34px;
       color: white;
+      -webkit-transition: .2s color ease-in-out;
+      -o-transition: .2s color ease-in-out;
       transition: .2s color ease-in-out;
 
       &:hover {
@@ -58,15 +75,23 @@
     }
 
     span {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 24px;
 
       > * {
+        -webkit-transition: .2s background-color ease-in-out;
+        -o-transition: .2s background-color ease-in-out;
         transition: .2s background-color ease-in-out;
       }
 
       .ProfileButton {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         color: white;
         font-size: 38px;
@@ -88,6 +113,7 @@
           border-radius: 50%;
           height: 46px;
           width: 46px;
+          -o-object-fit: cover;
           object-fit: cover;
         }
 
@@ -112,6 +138,8 @@
     }
 
     .ButtonContainer ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 10px;
 
@@ -120,6 +148,8 @@
         padding: 14px 24px;
         color: v.$grey-shade-50;
         border: 1px solid rgba(0, 0, 0, 0);
+        -webkit-transition: .3s all ease-in-out;
+        -o-transition: .3s all ease-in-out;
         transition: .3s all ease-in-out;
 
         &:hover {
@@ -252,9 +282,18 @@
 
       .ButtonContainer {
         position: absolute;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 30px;
         top: 0;
@@ -268,8 +307,15 @@
         cursor: auto;
 
         ul {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           gap: 30px;
 

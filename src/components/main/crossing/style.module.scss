@@ -3,14 +3,22 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 
 .CrossingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 120px 162px;
   background-color: v.$dark-shade-10;
   border-bottom: 1px solid v.$dark-shade-15;
 
   > section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     max-width: 1920px;
     width: 100%;
@@ -19,6 +27,8 @@
       width: 70%;
 
       > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         p {
@@ -34,7 +44,11 @@
   }
 
   .ButtonBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -67,6 +81,7 @@
     padding: 40px 16px;
 
     > section {
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       gap: 30px;
       max-width: 868px;

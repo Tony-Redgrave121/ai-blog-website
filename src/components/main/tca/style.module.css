@@ -1,19 +1,30 @@
 @import url("../../../utils/styles/base/_normalize.scss");
 .TCAContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #1A1A1A;
   padding: 120px 162px;
   border-bottom: 1px solid #262626;
 }
 .TCAContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 100px;
   max-width: 1920px;
   width: 100%;
 }
 .TCAContainer > div > :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 80px;
 }
@@ -21,11 +32,18 @@
   width: 150px;
 }
 .TCAContainer > div > :first-child > :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
 }
 .TCAContainer > div > :first-child > :last-child section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .TCAContainer > div > :first-child > :last-child section h3 {
@@ -51,6 +69,8 @@
   line-height: 27px;
 }
 .TCAContainer > div > :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
   padding: 20px;
@@ -59,7 +79,12 @@
   background-color: #141414;
 }
 .TCAContainer > div > :last-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
   padding: 40px;
@@ -68,15 +93,25 @@
   background-color: #1A1A1A;
 }
 .TCAContainer > div > :last-child div section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .TCAContainer > div > :last-child div section a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 14px;
   background-color: #FFD11A;
   border-radius: 100px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
 .TCAContainer > div > :last-child div section a:hover {
@@ -169,12 +204,19 @@
     gap: 40px;
   }
   .TCAContainer > div > :first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
   }
   .TCAContainer > div > :first-child > :first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
   .TCAContainer > div > :first-child > :first-child img {
@@ -202,6 +244,9 @@
     line-height: 21px;
   }
   .TCAContainer > div > :last-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
